@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { BookingModal } from '@/components/BookingModal';
-import { X } from 'lucide-react';
+import { X, ChevronDown } from 'lucide-react';
 import { toast } from 'sonner';
 
 export function CompactHeader() {
@@ -70,6 +70,28 @@ export function CompactHeader() {
             <Link href="/about" className="text-xs font-medium text-foreground hover:text-primary transition-colors">About</Link>
             <Link href="/testimonials" className="text-xs font-medium text-foreground hover:text-primary transition-colors">Success Stories</Link>
             <Link href="/video-testimonials" className="text-xs font-medium text-foreground hover:text-primary transition-colors">Videos</Link>
+            
+            {/* Learn Dropdown */}
+            <div className="relative group">
+              <button className="text-xs font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1">
+                Learn
+                <ChevronDown className="w-3 h-3" />
+              </button>
+              <div className="absolute left-0 mt-0 w-48 bg-white border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <Link href="/ayurveda-cures" className="block px-4 py-2 text-xs text-foreground hover:bg-primary/10 hover:text-primary transition-colors first:rounded-t-lg">
+                  Ayurveda Cures
+                </Link>
+                <Link href="/ayurveda-basics" className="block px-4 py-2 text-xs text-foreground hover:bg-primary/10 hover:text-primary transition-colors">
+                  Ayurveda Basics
+                </Link>
+                <Link href="/analytics" className="block px-4 py-2 text-xs text-foreground hover:bg-primary/10 hover:text-primary transition-colors">
+                  Analytics
+                </Link>
+                <Link href="/email-automation" className="block px-4 py-2 text-xs text-foreground hover:bg-primary/10 hover:text-primary transition-colors last:rounded-b-lg">
+                  Email Automation
+                </Link>
+              </div>
+            </div>
           </div>
 
           {/* CTA Button */}
