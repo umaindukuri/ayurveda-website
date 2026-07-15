@@ -6,6 +6,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { WhatsAppWidget } from "./components/WhatsAppWidget";
 import { LiveChatWidget } from "./components/LiveChatWidget";
+import { TawkToChat } from "./components/TawkToChat";
 import { SEOSchemaMarkup } from "./components/SEOSchemaMarkup";
 
 import Home from "@/pages/Home";
@@ -18,6 +19,8 @@ import Contact from "./pages/Contact";
 import AyurvedaCures from "./pages/AyurvedaCures";
 import AyurvediaBasics from "./pages/AyurvediaBasics";
 import SubmitTestimonial from "./pages/SubmitTestimonial";
+import Analytics from "./pages/Analytics";
+import EmailAutomation from "./pages/EmailAutomation";
 
 
 function Router() {
@@ -33,8 +36,10 @@ function Router() {
       <Route path={"/contact"} component={Contact} />
       <Route path={"/ayurveda-cures"} component={AyurvedaCures} />
       <Route path={"/ayurveda-basics"} component={AyurvediaBasics} />
-      <Route path={"/submit-testimonial"} component={SubmitTestimonial} />
-      <Route path={"/404"} component={NotFound} />
+      <Route path="/submit-testimonial" component={SubmitTestimonial} />
+      <Route path="/analytics" component={Analytics} />
+      <Route path="/email-automation" component={EmailAutomation} />
+      <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
     </Switch>
@@ -59,6 +64,7 @@ function App() {
           <Router />
           <WhatsAppWidget />
           <LiveChatWidget />
+          <TawkToChat />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
