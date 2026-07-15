@@ -6,6 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Link } from 'wouter';
 import { toast } from 'sonner';
 import { Star, CheckCircle } from 'lucide-react';
+import { CompactHeader } from '@/components/CompactHeader';
 
 export default function SubmitTestimonial() {
   const [formData, setFormData] = useState({
@@ -103,25 +104,7 @@ export default function SubmitTestimonial() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-border shadow-sm">
-        <div className="flex items-center justify-between h-20 px-6 max-w-full">
-          <div className="flex items-center gap-2 flex-shrink-0">
-            <img src="/manus-storage/dr_kalyan_logo_final_07bd8e78.png" alt="Dr. Kalyan Ayurveda" className="h-12 w-12" />
-            <div className="flex flex-col">
-              <span className="text-sm font-bold text-primary leading-tight">Dr. Kalyan</span>
-              <span className="text-sm font-bold text-primary leading-tight">Ayurveda</span>
-            </div>
-          </div>
-          <div className="hidden md:flex items-center gap-8 flex-1 justify-center">
-            <Link href="/" className="text-sm font-medium text-primary font-semibold hover:text-primary/80 transition-colors">Home</Link>
-            <Link href="/treatments" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Services</Link>
-            <Link href="/about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">About</Link>
-            <Link href="/testimonials" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Testimonials</Link>
-          </div>
-          <Button className="bg-primary hover:bg-primary/90 text-white text-sm px-6 flex-shrink-0">Book Consultation</Button>
-        </div>
-      </nav>
+      <CompactHeader />
 
       {/* Main Content */}
       <section className="py-20 bg-gradient-to-b from-white to-cream/30">

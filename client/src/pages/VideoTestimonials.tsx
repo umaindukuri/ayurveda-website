@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Play, Filter, X } from 'lucide-react';
 import { Link } from 'wouter';
+import { CompactHeader } from '@/components/CompactHeader';
 
 interface VideoTestimonial {
   id: string;
@@ -113,23 +114,7 @@ export default function VideoTestimonials() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-border shadow-sm">
-        <div className="flex items-center justify-between h-20 px-6 max-w-full">
-          <Link href="/">
-            <div className="flex items-center gap-2 cursor-pointer">
-              <img src="/manus-storage/dr_kalyan_logo_final_07bd8e78.png" alt="Dr. Kalyan Ayurveda" className="h-12 w-12" />
-              <div className="flex flex-col">
-                <span className="text-sm font-bold text-primary leading-tight">Dr. Kalyan</span>
-                <span className="text-sm font-bold text-primary leading-tight">Ayurveda</span>
-              </div>
-            </div>
-          </Link>
-          <Link href="/">
-            <Button variant="outline">Back to Home</Button>
-          </Link>
-        </div>
-      </nav>
+      <CompactHeader />
 
       {/* Hero Section */}
       <section className="py-12 bg-gradient-to-r from-primary/10 to-secondary/10">
