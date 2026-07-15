@@ -7,8 +7,8 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { WhatsAppWidget } from "./components/WhatsAppWidget";
 import { LiveChatWidget } from "./components/LiveChatWidget";
 import { NewsletterBanner } from "./components/NewsletterBanner";
-import Home from "./pages/Home";
-import Services from "./pages/Services";
+import Home from "@/pages/Home";
+import VideoTestimonials from "@/pages/VideoTestimonials";
 import About from "./pages/About";
 import Testimonials from "./pages/Testimonials";
 import Treatments from "./pages/Treatments";
@@ -22,8 +22,9 @@ import SubmitTestimonial from "./pages/SubmitTestimonial";
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/treatments"} component={Treatments} />
+      <Route path="/" component={Home} />
+      <Route path="/video-testimonials" component={VideoTestimonials} />
+      <Route path="/treatments" component={Treatments} />
       <Route path={"/services"} component={Treatments} />
       <Route path={"/about"} component={About} />
       <Route path={"/testimonials"} component={Testimonials} />

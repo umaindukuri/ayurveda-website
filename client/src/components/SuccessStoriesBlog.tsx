@@ -1,6 +1,8 @@
 import { ArrowRight, Calendar, User } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Share2, Facebook, Twitter, Linkedin, Mail } from 'lucide-react';
+import { useState } from 'react';
 
 interface BlogPost {
   id: string;
@@ -16,6 +18,12 @@ interface BlogPost {
 }
 
 export function SuccessStoriesBlog() {
+  const [sharedPostId, setSharedPostId] = useState<string | null>(null);
+
+  const sharePost = (postId: string, title: string) => {
+    setSharedPostId(postId);
+    setTimeout(() => setSharedPostId(null), 2000);
+  };
   const blogPosts: BlogPost[] = [
     {
       id: '1',
@@ -180,9 +188,41 @@ His recovery shows how addressing the underlying imbalance is more effective tha
                   </div>
                   <span>{blogPosts[0].readTime}</span>
                 </div>
-                <Button className="w-fit bg-primary hover:bg-primary/90 text-white">
-                  Read Full Story <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
+                <div className="space-y-4">
+                  <Button className="w-fit bg-primary hover:bg-primary/90 text-white">
+                    Read Full Story <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={() => sharePost(blogPosts[0].id, blogPosts[0].title)}
+                      className="p-2 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-600 transition-colors"
+                      title="Share on Facebook"
+                    >
+                      <Facebook className="w-4 h-4" />
+                    </button>
+                    <button
+                      onClick={() => sharePost(blogPosts[0].id, blogPosts[0].title)}
+                      className="p-2 rounded-lg bg-sky-50 hover:bg-sky-100 text-sky-600 transition-colors"
+                      title="Share on Twitter"
+                    >
+                      <Twitter className="w-4 h-4" />
+                    </button>
+                    <button
+                      onClick={() => sharePost(blogPosts[0].id, blogPosts[0].title)}
+                      className="p-2 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-700 transition-colors"
+                      title="Share on LinkedIn"
+                    >
+                      <Linkedin className="w-4 h-4" />
+                    </button>
+                    <button
+                      onClick={() => sharePost(blogPosts[0].id, blogPosts[0].title)}
+                      className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-600 transition-colors"
+                      title="Share via Email"
+                    >
+                      <Mail className="w-4 h-4" />
+                    </button>
+                  </div>
+                </div>
               </CardContent>
             </div>
           </Card>
@@ -214,9 +254,44 @@ His recovery shows how addressing the underlying imbalance is more effective tha
                   </div>
                   <span>{post.readTime}</span>
                 </div>
-                <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary/5">
-                  Read Story
-                </Button>
+                <div className="space-y-3">
+                  <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary/5">
+                    Read Story
+                  </Button>
+                  <div className="flex gap-2 justify-center">
+                    <button
+                      onClick={() => sharePost(post.id, post.title)}
+                      className="p-2 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-600 transition-colors"
+                      title="Share on Facebook"
+                    >
+                      <Facebook className="w-4 h-4" />
+                    </button>
+                    <button
+                      onClick={() => sharePost(post.id, post.title)}
+                      className="p-2 rounded-lg bg-sky-50 hover:bg-sky-100 text-sky-600 transition-colors"
+                      title="Share on Twitter"
+                    >
+                      <Twitter className="w-4 h-4" />
+                    </button>
+                    <button
+                      onClick={() => sharePost(post.id, post.title)}
+                      className="p-2 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-700 transition-colors"
+                      title="Share on LinkedIn"
+                    >
+                      <Linkedin className="w-4 h-4" />
+                    </button>
+                    <button
+                      onClick={() => sharePost(post.id, post.title)}
+                      className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-600 transition-colors"
+                      title="Share via Email"
+                    >
+                      <Mail className="w-4 h-4" />
+                    </button>
+                  </div>
+                  {sharedPostId === post.id && (
+                    <p className="text-xs text-green-600 text-center">✓ Shared successfully!</p>
+                  )}
+                </div>
               </CardContent>
             </Card>
           ))}

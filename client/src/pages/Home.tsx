@@ -10,7 +10,7 @@ import { TestimonialVideoSection } from "@/components/TestimonialVideoSection";
 import { FilteredBeforeAfterGallery } from "@/components/FilteredBeforeAfterGallery";
 import { TreatmentDurationCalculator } from "@/components/TreatmentDurationCalculator";
 import { TestimonialReviewSection } from "@/components/TestimonialReviewSection";
-import { AvailabilityCalendar } from "@/components/AvailabilityCalendar";
+import { EnhancedAvailabilityCalendar } from "@/components/EnhancedAvailabilityCalendar";
 import { SuccessStoriesBlog } from "@/components/SuccessStoriesBlog";
 import { ReferralRewardsProgram } from "@/components/ReferralRewardsProgram";
 
@@ -138,10 +138,10 @@ export default function Home() {
       </section>
 
       {/* Why Ayurveda */}
-      <section className="py-20 bg-white">
+      <section className="py-12 bg-white">
         <div className="container max-w-5xl">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-foreground mb-4">Why Choose Authentic Ayurveda?</h2>
+          <div className="text-center mb-10">
+            <h2 className="text-4xl font-bold text-foreground mb-3">Why Choose Authentic Ayurveda?</h2>
             <p className="text-xl text-muted-foreground">
               While modern medicine treats symptoms, Ayurveda heals the root cause—restoring balance to prevent disease and optimize wellness.
             </p>
@@ -222,7 +222,7 @@ export default function Home() {
       </section>
 
       {/* Panchakarma Highlight with Stock Image */}
-      <section className="py-20 bg-white">
+      <section className="py-12 bg-white">
         <div className="container max-w-5xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -264,9 +264,9 @@ export default function Home() {
       </section>
 
       {/* Conditions We Treat */}
-      <section className="py-20 bg-gradient-to-b from-white to-white/50">
+      <section className="py-12 bg-gradient-to-b from-white to-white/50">
         <div className="container max-w-5xl">
-          <h2 className="text-4xl font-playfair font-bold text-foreground mb-16 text-center">Conditions We Successfully Treat</h2>
+          <h2 className="text-4xl font-playfair font-bold text-foreground mb-10 text-center">Conditions We Successfully Treat</h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white rounded-lg border border-border p-8 hover:shadow-lg transition-shadow">
@@ -333,7 +333,7 @@ export default function Home() {
       <TestimonialReviewSection />
 
       {/* Availability Calendar */}
-      <AvailabilityCalendar />
+      <EnhancedAvailabilityCalendar />
 
       {/* Success Stories Blog */}
       <SuccessStoriesBlog />
@@ -342,9 +342,9 @@ export default function Home() {
       <ReferralRewardsProgram />
 
       {/* Patient Testimonials with Stock Images */}
-      <section className="py-20 bg-white">
+      <section className="py-12 bg-white">
         <div className="container max-w-5xl">
-          <h2 className="text-4xl font-playfair font-bold text-foreground mb-16 text-center">Patient Success Stories</h2>
+          <h2 className="text-4xl font-playfair font-bold text-foreground mb-10 text-center">Patient Success Stories</h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             {testimonials.map((testimonial, idx) => (
@@ -369,7 +369,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-8">
             <Link href="/testimonials">
               <Button variant="outline" className="border-primary text-primary hover:bg-primary/5">
                 View All Success Stories
@@ -383,9 +383,9 @@ export default function Home() {
       <FilteredTreatmentChart />
 
       {/* Program Options */}
-      <section className="py-20 bg-gradient-to-b from-white to-white/50">
+      <section className="py-12 bg-gradient-to-b from-white to-white/50">
         <div className="container max-w-5xl">
-          <h2 className="text-4xl font-playfair font-bold text-foreground mb-16 text-center">Customized Treatment Programs</h2>
+          <h2 className="text-4xl font-playfair font-bold text-foreground mb-10 text-center">Customized Treatment Programs</h2>
 
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="border-border hover:shadow-lg transition-shadow">
@@ -437,7 +437,7 @@ export default function Home() {
       <FAQSection />
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary/10 to-secondary/10 border-t border-border">
+      <section className="py-12 bg-gradient-to-r from-primary/10 to-secondary/10 border-t border-border">
         <div className="container max-w-3xl text-center">
           <h2 className="text-4xl font-playfair font-bold text-foreground mb-6">Begin Your Healing Journey</h2>
           <p className="text-lg text-muted-foreground mb-8">
@@ -452,21 +452,21 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-foreground text-white py-16">
+      <footer className="bg-foreground text-white py-8">
         <div className="container">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
+          <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <img src="/manus-storage/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-8 w-8 invert" />
-                <span className="font-bold">Dr. Kalyan Ayurveda</span>
+              <div className="flex items-center gap-2 mb-3">
+                <img src="/manus-storage/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-6 w-6 invert" />
+                <span className="font-bold text-sm">Ayurveda Wellness</span>
               </div>
-              <p className="text-white/70">
+              <p className="text-white/70 text-xs leading-relaxed">
                 Authentic Ayurvedic healing for chronic diseases, wellness optimization, and natural transformation.
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-white/70">
+              <h4 className="font-semibold mb-3 text-sm">Quick Links</h4>
+              <ul className="space-y-1 text-white/70 text-xs">
                 <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
                 <li><Link href="/treatments" className="hover:text-white transition-colors">Treatments</Link></li>
                 <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
@@ -474,8 +474,8 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Treatment Areas</h4>
-              <ul className="space-y-2 text-white/70">
+              <h4 className="font-semibold mb-3 text-sm">Treatment Areas</h4>
+              <ul className="space-y-1 text-white/70 text-xs">
                 <li><Link href="/treatments" className="hover:text-white transition-colors">Panchakarma</Link></li>
                 <li><Link href="/treatments" className="hover:text-white transition-colors">Chronic Diseases</Link></li>
                 <li><Link href="/treatments" className="hover:text-white transition-colors">Mental Health</Link></li>
@@ -483,24 +483,18 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Contact</h4>
-              <ul className="space-y-2 text-white/70">
-                <li>📧 <a href="mailto:contact@drkalyan.com" className="hover:text-white">contact@drkalyan.com</a></li>
-                <li>📞 <a href="tel:+919281332544" className="hover:text-white">+91 92813 32544</a></li>
-                <li>📞 <a href="tel:+917032221979" className="hover:text-white">+91 70322 21979</a></li>
-                <li>📍 Flat No.102, Plot No.309, Near Volkswagen Service Centre, Prashanth Hills Colony, Raidurg Navkhalsa</li>
-                <li>🕐 8:00 AM - 1:00 PM | 5:00 PM - 9:00 PM</li>
+              <h4 className="font-semibold mb-3 text-sm">Contact</h4>
+              <ul className="space-y-1 text-white/70 text-xs">
+                <li><a href="mailto:contact@drkalyan.com" className="hover:text-white">contact@drkalyan.com</a></li>
+                <li><a href="tel:+919281332544" className="hover:text-white">+91 92813 32544</a></li>
+                <li className="text-xs leading-snug">Flat No.102, Plot No.309, Near Volkswagen Service Centre, Prashanth Hills Colony, Raidurg Navkhalsa</li>
+                <li>8:00 AM - 1:00 PM | 5:00 PM - 9:00 PM</li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-white/10 pt-8">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <p className="text-white/70 text-center md:text-left">&copy; 2026 Dr. Kalyan Ayurveda Specialities & Panchakarma Center. All rights reserved.</p>
-              <div>
-                <p className="text-white/70 text-sm mb-3 text-center md:text-right">Follow Us</p>
-                <SocialMediaLinks variant="footer" size="md" />
-              </div>
-            </div>
+          <div className="border-t border-white/10 mt-6 pt-4 flex flex-col md:flex-row items-center justify-between gap-3">
+            <p className="text-white/70 text-xs text-center md:text-left">&copy; 2026 Dr. Kalyan Ayurveda. All rights reserved.</p>
+            <SocialMediaLinks variant="footer" size="sm" />
           </div>
         </div>
       </footer>
