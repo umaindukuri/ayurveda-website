@@ -243,11 +243,11 @@ export default function Home() {
               </Button>
             </div>
             <div>
-              <img 
-                src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&h=400&fit=crop" 
-                alt="Panchakarma Treatment" 
-                className="rounded-lg shadow-lg w-full"
-              />
+            <img 
+              src="/manus-storage/panchakarma_treatment_vibrant_d075a65b.png" 
+              alt="Panchakarma Treatment" 
+              className="rounded-lg shadow-lg w-full"
+            />
             </div>
           </div>
         </div>

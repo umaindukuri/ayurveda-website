@@ -12,7 +12,7 @@ export default function Blog() {
       author: "Dr. Ayurveda Wellness",
       date: "July 10, 2026",
       category: "Ayurveda Basics",
-      image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=400&fit=crop"
+      image: "/manus-storage/meditation_wellness_vibrant_f3efb442.png"
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ export default function Blog() {
       author: "Dr. Ayurveda Wellness",
       date: "July 8, 2026",
       category: "Panchakarma",
-      image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&h=400&fit=crop"
+      image: "/manus-storage/panchakarma_treatment_vibrant_d075a65b.png"
     },
     {
       id: 3,
@@ -30,7 +30,7 @@ export default function Blog() {
       author: "Dr. Ayurveda Wellness",
       date: "July 5, 2026",
       category: "Chronic Diseases",
-      image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=400&fit=crop"
+      image: "/manus-storage/meditation_wellness_vibrant_f3efb442.png"
     },
     {
       id: 4,
@@ -39,7 +39,7 @@ export default function Blog() {
       author: "Dr. Ayurveda Wellness",
       date: "July 1, 2026",
       category: "Mental Health",
-      image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=400&fit=crop"
+      image: "/manus-storage/meditation_wellness_vibrant_f3efb442.png"
     },
     {
       id: 5,
@@ -48,7 +48,7 @@ export default function Blog() {
       author: "Dr. Ayurveda Wellness",
       date: "June 28, 2026",
       category: "Digestive Health",
-      image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&h=400&fit=crop"
+      image: "/manus-storage/panchakarma_treatment_vibrant_d075a65b.png"
     },
     {
       id: 6,
@@ -57,7 +57,7 @@ export default function Blog() {
       author: "Dr. Ayurveda Wellness",
       date: "June 25, 2026",
       category: "Lifestyle",
-      image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=400&fit=crop"
+      image: "/manus-storage/meditation_wellness_vibrant_f3efb442.png"
     },
     {
       id: 7,
@@ -66,7 +66,7 @@ export default function Blog() {
       author: "Dr. Ayurveda Wellness",
       date: "June 22, 2026",
       category: "Fertility",
-      image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&h=400&fit=crop"
+      image: "/manus-storage/panchakarma_treatment_vibrant_d075a65b.png"
     },
     {
       id: 8,
@@ -75,7 +75,7 @@ export default function Blog() {
       author: "Dr. Ayurveda Wellness",
       date: "June 19, 2026",
       category: "Anti-Aging",
-      image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=400&fit=crop"
+      image: "/manus-storage/meditation_wellness_vibrant_f3efb442.png"
     }
   ];
 

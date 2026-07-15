@@ -39,7 +39,7 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <img 
-                src="/manus-storage/ayurveda_treatment_604e7957.png" 
+                src="/manus-storage/ayurveda_wellness_spa_070b5ed8.png" 
                 alt="Ayurveda Wellness Clinic" 
                 className="rounded-lg shadow-lg"
               />
