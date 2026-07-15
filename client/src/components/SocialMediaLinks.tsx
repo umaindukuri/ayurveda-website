@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Youtube, Twitter } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Youtube, Twitter, MessageCircle } from 'lucide-react';
 
 interface SocialMediaLinksProps {
   variant?: 'footer' | 'inline';
@@ -36,6 +36,12 @@ export function SocialMediaLinks({ variant = 'footer', size = 'md' }: SocialMedi
       icon: Twitter,
       url: 'https://twitter.com/drkalyanayu', // Update with actual URL
       color: 'hover:text-blue-400'
+    },
+    {
+      name: 'WhatsApp Channel',
+      icon: MessageCircle,
+      url: 'https://whatsapp.com/channel/0029VaAGMV1LSkq0agsqa91d', // Update with actual WhatsApp channel URL
+      color: 'hover:text-green-600'
     }
   ];
 
