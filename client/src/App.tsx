@@ -11,6 +11,8 @@ import Testimonials from "./pages/Testimonials";
 import Treatments from "./pages/Treatments";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
+import AyurvedaCures from "./pages/AyurvedaCures";
+import AyurvediaBasics from "./pages/AyurvediaBasics";
 
 
 function Router() {
@@ -23,6 +25,8 @@ function Router() {
       <Route path={"/testimonials"} component={Testimonials} />
       <Route path={"/blog"} component={Blog} />
       <Route path={"/contact"} component={Contact} />
+      <Route path={"/ayurveda-cures"} component={AyurvedaCures} />
+      <Route path={"/ayurveda-basics"} component={AyurvediaBasics} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
