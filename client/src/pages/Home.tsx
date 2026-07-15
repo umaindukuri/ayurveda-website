@@ -85,42 +85,40 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-border shadow-sm">
+      <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-border shadow-sm">
         <div className="container flex items-center justify-between h-16">
-          <div className="flex items-center gap-2">
-            <img src="/manus-storage/ayurveda_logo_30556739.png" alt="Ayurveda Wellness Clinic" className="h-10 w-10" />
-            <span className="font-playfair text-xl font-bold text-primary">Ayurveda Wellness</span>
+          <div className="flex items-center gap-3">
+            <img src="/manus-storage/ayurveda_logo_30556739.png" alt="Ayurveda Fertility" className="h-10 w-10" />
+            <span className="font-playfair text-lg font-bold text-primary">Ayurveda Fertility</span>
           </div>
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-12">
             <Link href="/" className="text-sm font-medium text-primary font-semibold">Home</Link>
-            <Link href="/treatments" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Treatments</Link>
+            <Link href="/treatments" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Services</Link>
             <Link href="/about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">About</Link>
-            <Link href="/testimonials" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Success Stories</Link>
-            <Link href="/blog" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Blog</Link>
-            <Link href="/contact" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Contact</Link>
+            <Link href="/testimonials" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Testimonials</Link>
             <Button className="bg-primary hover:bg-primary/90 text-white">Book Consultation</Button>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section with Stock Image */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Hero Section - Premium */}
+      <section className="relative h-screen flex items-center justify-start overflow-hidden">
         <img 
-          src="/manus-storage/treatment_room_1_d8f2e4a1.jpg" 
-          alt="Authentic Panchakarma Treatment" 
+          src="/manus-storage/hero_meditation_premium_0f0d5eb0.png" 
+          alt="Restore Your Fertility Naturally" 
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/50"></div>
-        <div className="relative z-10 container max-w-4xl text-center text-white">
-          <h1 className="text-6xl font-playfair font-bold mb-6">Restore Your Health Naturally</h1>
-          <p className="text-2xl mb-8 font-light">
-            Experience authentic Ayurvedic healing with Dr. Kalyan's specialized Panchakarma treatments for chronic diseases, fertility, and complete wellness transformation
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent"></div>
+        <div className="relative z-10 container max-w-2xl text-left text-white pl-12">
+          <h1 className="text-7xl font-playfair font-bold mb-6 leading-tight">Restore Your Fertility Naturally</h1>
+          <p className="text-xl mb-8 font-light leading-relaxed max-w-xl">
+            Discover the transformative power of authentic Ayurvedic Panchakarma and personalized fertility treatments rooted in 5,000 years of healing wisdom.
           </p>
-          <div className="flex gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-base">
-              Begin Your Healing Journey
+          <div className="flex gap-4">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-base px-8">
+              Begin Your Journey
             </Button>
-            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/20">
+            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10 text-base px-8">
               Learn More
             </Button>
           </div>
