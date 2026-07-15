@@ -10,7 +10,8 @@ export default function Testimonials() {
       condition: "Rheumatoid Arthritis (10 years)",
       story: "After 10 years of joint pain and limited mobility, I was losing hope. The 21-day Panchakarma program transformed my life. I'm now pain-free, active again, and off most medications. The holistic approach addressed the root cause, not just symptoms.",
       rating: 5,
-      highlight: "Pain-free after 10 years of suffering"
+      highlight: "Pain-free after 10 years of suffering",
+      image: "/manus-storage/treatment_chronic_disease_62ef6750.png"
     },
     {
       name: "Maria S.",
@@ -18,15 +19,17 @@ export default function Testimonials() {
       condition: "Type 2 Diabetes",
       story: "My blood sugar levels were completely out of control despite medication. After one 14-day program, my glucose normalized. The dietary guidance and herbal treatments gave me my health back. I'm now off insulin and managing naturally.",
       rating: 5,
-      highlight: "Blood sugar normalized, off insulin"
+      highlight: "Blood sugar normalized, off insulin",
+      image: "/manus-storage/treatment_digestive_health_866aa1e8.png"
     },
     {
       name: "David K.",
       location: "London, UK",
-      condition: "Chronic Anxiety &amp; Insomnia",
+      condition: "Chronic Anxiety & Insomnia",
       story: "Years of anxiety and sleepless nights were destroying my life. Shirodhara and meditation practices calmed my nervous system in ways medication never could. I now sleep deeply and feel genuinely peaceful for the first time in years.",
       rating: 5,
-      highlight: "Anxiety resolved, sleeping peacefully"
+      highlight: "Anxiety resolved, sleeping peacefully",
+      image: "/manus-storage/treatment_mental_health_d3e27509.png"
     },
     {
       name: "Lisa T.",
@@ -34,71 +37,80 @@ export default function Testimonials() {
       condition: "Severe Eczema",
       story: "My skin was covered in painful eczema that no dermatologist could help. My skin cleared completely within 2 months of treatment. The holistic approach addressed the root cause—internal inflammation—not just symptoms.",
       rating: 5,
-      highlight: "Severe eczema completely cleared"
+      highlight: "Severe eczema completely cleared",
+      image: "/manus-storage/treatment_skin_health_e6507ce9.png"
     },
     {
-      name: "Robert &amp; Susan",
+      name: "Robert & Susan",
       location: "Sydney, Australia",
       condition: "Unexplained Infertility (5 years)",
       story: "After 5 years of trying to conceive with no medical explanation, we were devastated. We completed a 14-day program together and conceived naturally within 3 months. We now have a beautiful 2-year-old daughter. The Ayurvedic approach gave us hope.",
       rating: 5,
-      highlight: "Natural conception after 5 years"
+      highlight: "Natural conception after 5 years",
+      image: "/manus-storage/blog_panchakarma_guide_c9ed2d56.png"
     },
     {
       name: "Emma T.",
       location: "Berlin, Germany",
-      condition: "IBS &amp; Digestive Issues",
+      condition: "IBS & Digestive Issues",
       story: "I suffered from severe IBS, bloating, and food sensitivities for years. After the Panchakarma program, my digestion completely normalized. I can now eat foods I couldn't tolerate before. My energy and quality of life have transformed.",
       rating: 5,
-      highlight: "IBS resolved, digestion normalized"
+      highlight: "IBS resolved, digestion normalized",
+      image: "/manus-storage/treatment_digestive_health_866aa1e8.png"
     },
     {
       name: "Michael K.",
       location: "Mumbai, India",
-      condition: "Asthma &amp; Respiratory Issues",
+      condition: "Asthma & Respiratory Issues",
       story: "I had severe asthma since childhood and was on multiple inhalers. After one program, my breathing capacity improved dramatically. I now rarely use inhalers and can exercise without limitation. The Nasya therapy was transformative.",
       rating: 5,
-      highlight: "Asthma dramatically improved"
+      highlight: "Asthma dramatically improved",
+      image: "/manus-storage/treatment_respiratory_18e9bd3b.png"
     },
     {
       name: "Priya D.",
       location: "Singapore",
-      condition: "Depression &amp; Burnout",
+      condition: "Depression & Burnout",
       story: "I was in a deep depression from years of work stress. The combination of Panchakarma, yoga, meditation, and herbal support lifted my mood naturally. I'm now energized, clear-headed, and genuinely happy for the first time in years.",
       rating: 5,
-      highlight: "Depression resolved, burnout healed"
+      highlight: "Depression resolved, burnout healed",
+      image: "/manus-storage/treatment_mental_health_d3e27509.png"
     },
     {
       name: "Thomas W.",
       location: "Amsterdam, Netherlands",
-      condition: "Hypertension &amp; Heart Disease Prevention",
+      condition: "Hypertension & Heart Disease Prevention",
       story: "My blood pressure was dangerously high despite medications. After the program, it normalized. My cholesterol improved, and my cardiologist was amazed. I feel healthier than I have in decades.",
       rating: 5,
-      highlight: "Hypertension normalized naturally"
+      highlight: "Hypertension normalized naturally",
+      image: "/manus-storage/treatment_chronic_disease_62ef6750.png"
     },
     {
       name: "Sophia L.",
       location: "Barcelona, Spain",
-      condition: "Hormonal Imbalance &amp; Menopause",
+      condition: "Hormonal Imbalance & Menopause",
       story: "Menopause was devastating—hot flashes, mood swings, sleep issues. The Panchakarma program and Rasayana therapy balanced my hormones naturally. I'm now thriving through menopause without hormone replacement therapy.",
       rating: 5,
-      highlight: "Menopause symptoms resolved naturally"
+      highlight: "Menopause symptoms resolved naturally",
+      image: "/manus-storage/blog_ayurveda_basics_75397dab.png"
     },
     {
       name: "Christopher M.",
       location: "Boston, USA",
-      condition: "Chronic Fatigue &amp; Low Energy",
+      condition: "Chronic Fatigue & Low Energy",
       story: "I was exhausted all the time despite sleeping. After the program, my energy returned completely. The Rasayana therapy rejuvenated me at a cellular level. I'm now more energetic and vital than I've been in years.",
       rating: 5,
-      highlight: "Energy and vitality fully restored"
+      highlight: "Energy and vitality fully restored",
+      image: "/manus-storage/blog_panchakarma_guide_c9ed2d56.png"
     },
     {
       name: "Ananya D.",
       location: "Delhi, India",
-      condition: "PCOS &amp; Fertility",
+      condition: "PCOS & Fertility",
       story: "PCOS made me believe I couldn't conceive. After the 21-day program with specialized Uttara Basti treatments, my cycles became regular. I conceived naturally within 6 months and now have a healthy 1-year-old son.",
       rating: 5,
-      highlight: "PCOS resolved, natural conception"
+      highlight: "PCOS resolved, natural conception",
+      image: "/manus-storage/blog_dosha_balance_d9df3e57.png"
     }
   ];
 
@@ -289,15 +301,14 @@ export default function Testimonials() {
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-white/70">
-                <li>📧 info@ayurvedawellness.com</li>
-                <li>📞 +1 (555) 123-4567</li>
-                <li>📍 123 Wellness Lane, Healing City</li>
-                <li>🕐 Mon-Fri: 9am-6pm</li>
+                <li>📧 <a href="mailto:contact@drkalyan.com" className="hover:text-white">contact@drkalyan.com</a></li>
+                <li>📞 <a href="tel:+919281332544" className="hover:text-white">+91 92813 32544</a></li>
+                <li>📍 Flat No.102, Plot No.309, Near Volkswagen Service Centre, Prashanth Hills Colony, Raidurg Navkhalsa</li>
+                <li>🕐 8:00 AM - 1:00 PM | 5:00 PM - 9:00 PM</li>
               </ul>
             </div>
           </div>
           <div className="border-t border-white/10 pt-8 text-center text-white/70">
-            <p>&copy; 2026 Ayurveda Wellness Clinic. All rights reserved. | Privacy Policy | Terms of Service</p>
           </div>
         </div>
       </footer>

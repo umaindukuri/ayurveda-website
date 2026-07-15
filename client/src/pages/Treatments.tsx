@@ -20,7 +20,8 @@ export default function Treatments() {
         "Foundation for treating all chronic diseases"
       ],
       procedures: ["Abhyanga (Oil Massage)", "Nasya (Nasal Therapy)", "Basti (Enema Therapy)", "Vamana (Therapeutic Vomiting)", "Virechana (Therapeutic Purgation)"],
-      successRate: "70-80%"
+      successRate: "70-80%",
+      image: "/manus-storage/blog_panchakarma_guide_c9ed2d56.png"
     },
     {
       id: "chronic-diseases",
@@ -45,7 +46,8 @@ export default function Treatments() {
         "Improve quality of life significantly",
         "Prevent disease progression",
         "Enhance overall vitality"
-      ]
+      ],
+      image: "/manus-storage/treatment_chronic_disease_62ef6750.png"
     },
     {
       id: "digestive-health",
@@ -71,7 +73,8 @@ export default function Treatments() {
         "Achieve healthy weight",
         "Increase energy levels",
         "Heal the gut lining"
-      ]
+      ],
+      image: "/manus-storage/treatment_digestive_health_866aa1e8.png"
     },
     {
       id: "respiratory",
@@ -97,7 +100,8 @@ export default function Treatments() {
         "Strengthen lungs &amp; sinuses",
         "Reduce allergy symptoms",
         "Improve sleep quality"
-      ]
+      ],
+      image: "/manus-storage/treatment_respiratory_18e9bd3b.png"
     },
     {
       id: "skin-health",
@@ -123,7 +127,8 @@ export default function Treatments() {
         "Strengthen hair &amp; nails",
         "Prevent recurrence",
         "Improve skin texture &amp; tone"
-      ]
+      ],
+      image: "/manus-storage/treatment_skin_health_e6507ce9.png"
     },
     {
       id: "mental-health",
@@ -147,9 +152,10 @@ export default function Treatments() {
         "Lift depression &amp; mood",
         "Improve sleep quality",
         "Enhance mental clarity",
-        "Reduce stress &amp; burnout",
-        "Restore emotional resilience"
-      ]
+        "Reduce stress & burnout",
+        "Restore emotional peace"
+      ],
+      image: "/manus-storage/treatment_mental_health_d3e27509.png"
     },
     {
       id: "fertility",
@@ -424,15 +430,14 @@ export default function Treatments() {
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-white/70">
-                <li>📧 info@ayurvedawellness.com</li>
-                <li>📞 +1 (555) 123-4567</li>
-                <li>📍 123 Wellness Lane, Healing City</li>
-                <li>🕐 Mon-Fri: 9am-6pm</li>
+                <li>📧 <a href="mailto:contact@drkalyan.com" className="hover:text-white">contact@drkalyan.com</a></li>
+                <li>📞 <a href="tel:+919281332544" className="hover:text-white">+91 92813 32544</a></li>
+                <li>📍 Flat No.102, Plot No.309, Near Volkswagen Service Centre, Prashanth Hills Colony, Raidurg Navkhalsa</li>
+                <li>🕐 8:00 AM - 1:00 PM | 5:00 PM - 9:00 PM</li>
               </ul>
             </div>
           </div>
           <div className="border-t border-white/10 pt-8 text-center text-white/70">
-            <p>&copy; 2026 Ayurveda Wellness Clinic. All rights reserved. | Privacy Policy | Terms of Service</p>
           </div>
         </div>
       </footer>

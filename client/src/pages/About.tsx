@@ -276,15 +276,14 @@ export default function About() {
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-white/70">
-                <li>📧 info@ayurvedawellness.com</li>
-                <li>📞 +1 (555) 123-4567</li>
-                <li>📍 123 Wellness Lane, Healing City</li>
-                <li>🕐 Mon-Fri: 9am-6pm</li>
+                <li>📧 <a href="mailto:contact@drkalyan.com" className="hover:text-white">contact@drkalyan.com</a></li>
+                <li>📞 <a href="tel:+919281332544" className="hover:text-white">+91 92813 32544</a></li>
+                <li>📍 Flat No.102, Plot No.309, Near Volkswagen Service Centre, Prashanth Hills Colony, Raidurg Navkhalsa</li>
+                <li>🕐 8:00 AM - 1:00 PM | 5:00 PM - 9:00 PM</li>
               </ul>
             </div>
           </div>
           <div className="border-t border-white/10 pt-8 text-center text-white/70">
-            <p>&copy; 2026 Ayurveda Wellness Clinic. All rights reserved. | Privacy Policy | Terms of Service</p>
           </div>
         </div>
       </footer>
