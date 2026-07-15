@@ -4,6 +4,9 @@ import { Heart, Leaf, Wind, Flame, Droplets, Brain, Zap, Users, Award, ArrowRigh
 import { Link } from "wouter";
 import { BookingModal } from "@/components/BookingModal";
 import { FAQSection } from "@/components/FAQSection";
+import { SocialMediaLinks } from "@/components/SocialMediaLinks";
+import { TreatmentComparisonChart } from "@/components/TreatmentComparisonChart";
+import { TestimonialVideoSection } from "@/components/TestimonialVideoSection";
 
 export default function Home() {
   const treatments = [
@@ -311,6 +314,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Patient Testimonial Videos */}
+      <TestimonialVideoSection />
+
       {/* Patient Testimonials with Stock Images */}
       <section className="py-20 bg-white">
         <div className="container max-w-5xl">
@@ -348,6 +354,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Treatment Comparison Chart */}
+      <TreatmentComparisonChart />
 
       {/* Program Options */}
       <section className="py-20 bg-gradient-to-b from-white to-white/50">
@@ -460,8 +469,14 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          <div className="border-t border-white/10 pt-8 text-center text-white/70">
-            <p>&copy; 2026 Dr. Kalyan Ayurveda Specialities & Panchakarma Center. All rights reserved.</p>
+          <div className="border-t border-white/10 pt-8">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <p className="text-white/70 text-center md:text-left">&copy; 2026 Dr. Kalyan Ayurveda Specialities & Panchakarma Center. All rights reserved.</p>
+              <div>
+                <p className="text-white/70 text-sm mb-3 text-center md:text-right">Follow Us</p>
+                <SocialMediaLinks variant="footer" size="md" />
+              </div>
+            </div>
           </div>
         </div>
       </footer>
