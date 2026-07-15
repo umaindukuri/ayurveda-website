@@ -22,6 +22,8 @@ import SubmitTestimonial from "./pages/SubmitTestimonial";
 import Analytics from "./pages/Analytics";
 import EmailAutomation from "./pages/EmailAutomation";
 import BookingSuccess from "./pages/BookingSuccess";
+import SMSReminders from "./pages/SMSReminders";
+import AppointmentManagement from "./pages/AppointmentManagement";
 
 
 function Router() {
@@ -41,6 +43,8 @@ function Router() {
       <Route path="/analytics" component={Analytics} />
       <Route path="/email-automation" component={EmailAutomation} />
       <Route path="/booking-success" component={BookingSuccess} />
+      <Route path="/sms-reminders" component={SMSReminders} />
+      <Route path="/appointment-management" component={AppointmentManagement} />
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

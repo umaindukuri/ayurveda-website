@@ -18,6 +18,7 @@ import { SuccessStoriesBlog } from "@/components/SuccessStoriesBlog";
 import { ReferralRewardsProgram } from "@/components/ReferralRewardsProgram";
 import { FilterablePatientRatings } from "@/components/FilterablePatientRatings";
 import { EnhancedDashboardWithTooltips } from "@/components/EnhancedDashboardWithTooltips";
+import { TestimonialVideoCarousel } from "@/components/TestimonialVideoCarousel";
 
 export default function Home() {
   const treatments = [
@@ -351,6 +352,17 @@ export default function Home() {
         <div className="container max-w-6xl">
           <h2 className="text-3xl font-playfair font-bold text-foreground mb-8 text-center">Treatment Outcomes & Success Rates</h2>
           <EnhancedDashboardWithTooltips />
+        </div>
+      </section>
+
+      {/* Testimonial Video Carousel */}
+      <section className="py-16 px-6 bg-gradient-to-br from-gray-50 to-white border-t border-border">
+        <div className="container">
+          <h2 className="text-3xl font-bold text-center text-foreground mb-3">Patient Transformation Videos</h2>
+          <p className="text-center text-foreground/60 mb-12 max-w-2xl mx-auto">
+            Watch real patients share their remarkable healing journeys and transformations through authentic Ayurvedic treatment
+          </p>
+          <TestimonialVideoCarousel />
         </div>
       </section>
 
