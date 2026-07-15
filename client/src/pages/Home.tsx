@@ -16,6 +16,8 @@ import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 import { EnhancedAvailabilityCalendar } from "@/components/EnhancedAvailabilityCalendar";
 import { SuccessStoriesBlog } from "@/components/SuccessStoriesBlog";
 import { ReferralRewardsProgram } from "@/components/ReferralRewardsProgram";
+import { PatientRatingsWidget } from "@/components/PatientRatingsWidget";
+import { TreatmentOutcomeDashboard } from "@/components/TreatmentOutcomeDashboard";
 
 export default function Home() {
   const treatments = [
@@ -333,7 +335,28 @@ export default function Home() {
           <h2 className="text-3xl font-playfair font-bold text-foreground mb-8 text-center">Patient Success Stories</h2>
 
           <TestimonialsCarousel />
+        </div>
+      </section>
 
+      {/* Patient Ratings Widget */}
+      <section className="py-10 bg-white">
+        <div className="container max-w-5xl">
+          <h2 className="text-3xl font-playfair font-bold text-foreground mb-8 text-center">Patient Testimonials & Ratings</h2>
+          <PatientRatingsWidget />
+        </div>
+      </section>
+
+      {/* Treatment Outcome Dashboard */}
+      <section className="py-10 bg-muted/30">
+        <div className="container max-w-6xl">
+          <h2 className="text-3xl font-playfair font-bold text-foreground mb-8 text-center">Treatment Outcomes & Success Rates</h2>
+          <TreatmentOutcomeDashboard />
+        </div>
+      </section>
+
+      {/* Testimonials Links */}
+      <section className="py-10 bg-white">
+        <div className="container max-w-5xl">
           <div className="text-center mt-8">
             <Link href="/testimonials">
               <Button variant="outline" className="border-primary text-primary hover:bg-primary/5">

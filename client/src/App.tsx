@@ -6,6 +6,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { WhatsAppWidget } from "./components/WhatsAppWidget";
 import { LiveChatWidget } from "./components/LiveChatWidget";
+import { SEOSchemaMarkup } from "./components/SEOSchemaMarkup";
 
 import Home from "@/pages/Home";
 import VideoTestimonials from "@/pages/VideoTestimonials";
@@ -48,6 +49,7 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
+      <SEOSchemaMarkup />
       <ThemeProvider
         defaultTheme="light"
         // switchable
