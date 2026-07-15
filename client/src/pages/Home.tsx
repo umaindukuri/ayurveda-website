@@ -106,15 +106,15 @@ export default function Home() {
       {/* Hero Section with Stock Image */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <img 
-          src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1600&h=900&fit=crop" 
-          alt="Ayurvedic Wellness" 
+          src="/manus-storage/treatment_room_1_d8f2e4a1.jpg" 
+          alt="Authentic Panchakarma Treatment" 
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10 container max-w-4xl text-center text-white">
-          <h1 className="text-6xl font-playfair font-bold mb-6">Authentic Ayurvedic Healing</h1>
+          <h1 className="text-6xl font-playfair font-bold mb-6">Restore Your Health Naturally</h1>
           <p className="text-2xl mb-8 font-light">
-            Comprehensive treatment for chronic diseases, wellness optimization, and natural healing rooted in 5,000 years of wisdom
+            Experience authentic Ayurvedic healing with Dr. Kalyan's specialized Panchakarma treatments for chronic diseases, fertility, and complete wellness transformation
           </p>
           <div className="flex gap-4 justify-center">
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-base">

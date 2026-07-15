@@ -45,21 +45,21 @@ export default function About() {
               />
             </div>
             <div>
-              <h2 className="text-4xl font-playfair font-bold text-foreground mb-6">Europe's Leading Ayurvedic Wellness Center</h2>
+              <h2 className="text-4xl font-playfair font-bold text-foreground mb-6">Dr. Kalyan's Ayurveda Specialities & Panchakarma Center</h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Our clinic is dedicated to providing authentic, evidence-based Ayurvedic treatment for chronic diseases and wellness optimization. With over 20 years of experience and thousands of patients successfully healed, we offer comprehensive Panchakarma programs and specialized treatments for every health condition.
+                Under the expert guidance of <strong>Dr. I. Kalyan Chakravarthy, M.D. (Ayurveda)</strong>, our clinic is dedicated to providing authentic, evidence-based Ayurvedic treatment for chronic diseases, fertility enhancement, and complete wellness optimization. With specialized expertise in Panchakarma detoxification, we offer comprehensive treatment programs for every health condition.
               </p>
 
               <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                Unlike clinics that focus on a single condition, we treat the whole spectrum of health concerns—from arthritis and diabetes to anxiety, skin conditions, and fertility. Our holistic approach addresses root causes, not just symptoms, leading to lasting healing and transformation.
+                Our clinic treats the whole spectrum of health concerns—from arthritis and diabetes to anxiety, skin conditions, and fertility. We combine traditional Ayurvedic wisdom with personalized care to address root causes, not just symptoms, leading to lasting healing and transformation.
               </p>
 
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <Award className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-semibold text-foreground">Certified &amp; Awarded</h4>
-                    <p className="text-sm text-muted-foreground">Multiple international awards for authentic Ayurveda and highest quality standards</p>
+                    <h4 className="font-semibold text-foreground">Dr. I. Kalyan Chakravarthy, M.D. (Ayurveda)</h4>
+                    <p className="text-sm text-muted-foreground">Certified Ayurvedic physician with specialized expertise in Panchakarma and fertility treatments</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

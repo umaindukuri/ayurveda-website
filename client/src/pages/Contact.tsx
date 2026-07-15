@@ -98,8 +98,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Phone</h3>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                    <p className="text-sm text-muted-foreground">Available Mon-Fri, 9am-6pm</p>
+                    <p className="text-muted-foreground">+91 92813 32544</p>
+                    <p className="text-muted-foreground">+91 70322 21979</p>
                   </div>
                 </div>
 
@@ -108,9 +108,9 @@ export default function Contact() {
                     <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                    <p className="text-muted-foreground">info@ayurvedawellness.com</p>
-                    <p className="text-sm text-muted-foreground">We respond within 24 hours</p>
+                    <h3 className="font-semibold text-foreground mb-1">Clinic</h3>
+                    <p className="text-muted-foreground">Dr. Kalyan Ayurveda Specialities</p>
+                    <p className="text-muted-foreground">& Panchakarma Center</p>
                   </div>
                 </div>
 
@@ -120,8 +120,10 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Address</h3>
-                    <p className="text-muted-foreground">123 Wellness Lane</p>
-                    <p className="text-muted-foreground">Healing City, HC 12345</p>
+                    <p className="text-muted-foreground">Flat No.102, Plot No.309</p>
+                    <p className="text-muted-foreground">Near Volkswagen Service Centre</p>
+                    <p className="text-muted-foreground">Prashanth Hills Colony</p>
+                    <p className="text-muted-foreground">Raidurg Navkhalsa</p>
                   </div>
                 </div>
 
@@ -130,10 +132,9 @@ export default function Contact() {
                     <Clock className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Hours</h3>
-                    <p className="text-muted-foreground">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p className="text-muted-foreground">Saturday: 10:00 AM - 4:00 PM</p>
-                    <p className="text-muted-foreground">Sunday: Closed</p>
+                    <h3 className="font-semibold text-foreground mb-1">Consultation Hours</h3>
+                    <p className="text-muted-foreground">8:00 AM - 1:00 PM</p>
+                    <p className="text-muted-foreground">5:00 PM - 9:00 PM</p>
                   </div>
                 </div>
               </div>
