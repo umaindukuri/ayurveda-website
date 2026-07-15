@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Heart, Leaf, Wind, Flame, Droplets, Brain, Zap, Users, Award, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { BookingModal } from "@/components/BookingModal";
+import { CompactHeader } from "@/components/CompactHeader";
 import { FAQSection } from "@/components/FAQSection";
 import { SocialMediaLinks } from "@/components/SocialMediaLinks";
 import { FilteredTreatmentChart } from "@/components/FilteredTreatmentChart";
@@ -95,28 +96,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-border shadow-sm">
-        <div className="flex items-center justify-between h-20 px-6 max-w-full">
-          <div className="flex items-center gap-2 flex-shrink-0">
-            <img src="/manus-storage/dr_kalyan_logo_final_07bd8e78.png" alt="Dr. Kalyan Ayurveda" className="h-12 w-12" />
-            <div className="flex flex-col">
-              <span className="text-sm font-bold text-primary leading-tight">Dr. Kalyan</span>
-              <span className="text-sm font-bold text-primary leading-tight">Ayurveda</span>
-            </div>
-          </div>
-          <div className="hidden md:flex items-center gap-8 flex-1 justify-center">
-            <Link href="/" className="text-sm font-medium text-primary font-semibold hover:text-primary/80 transition-colors">Home</Link>
-            <Link href="/treatments" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Services</Link>
-            <Link href="/about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">About</Link>
-            <Link href="/testimonials" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Testimonials</Link>
-          </div>
-          <BookingModal triggerText="Book Consultation" />
-        </div>
-      </nav>
+      {/* Compact Header with Newsletter */}
+      <CompactHeader />
 
       {/* Hero Section - Premium */}
-      <section className="relative h-screen flex items-center justify-start overflow-hidden">
+      <section className="relative h-[calc(100vh-120px)] flex items-center justify-start overflow-hidden">
         <img 
           src="/manus-storage/hero_meditation_premium_0f0d5eb0.png" 
           alt="Restore Your Fertility Naturally" 
@@ -138,10 +122,10 @@ export default function Home() {
       </section>
 
       {/* Why Ayurveda */}
-      <section className="py-12 bg-white">
+      <section className="py-10 bg-white">
         <div className="container max-w-5xl">
-          <div className="text-center mb-10">
-            <h2 className="text-4xl font-bold text-foreground mb-3">Why Choose Authentic Ayurveda?</h2>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-foreground mb-2">Why Choose Authentic Ayurveda?</h2>
             <p className="text-xl text-muted-foreground">
               While modern medicine treats symptoms, Ayurveda heals the root cause—restoring balance to prevent disease and optimize wellness.
             </p>
@@ -188,10 +172,10 @@ export default function Home() {
       </section>
 
       {/* Treatment Categories */}
-      <section className="py-20 bg-gradient-to-b from-white to-white/50">
+      <section className="py-10 bg-gradient-to-b from-white to-white/50">
         <div className="container max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-playfair font-bold text-foreground mb-4">Comprehensive Treatment Offerings</h2>
+          <div className="text-center mb-10">
+            <h2 className="text-4xl font-playfair font-bold text-foreground mb-2">Comprehensive Treatment Offerings</h2>
             <p className="text-xl text-muted-foreground">
               From chronic disease management to preventive wellness, we offer authentic Ayurvedic solutions for every health concern.
             </p>
@@ -222,15 +206,15 @@ export default function Home() {
       </section>
 
       {/* Panchakarma Highlight with Stock Image */}
-      <section className="py-12 bg-white">
+      <section className="py-10 bg-white">
         <div className="container max-w-5xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h2 className="text-4xl font-playfair font-bold text-foreground mb-6">The Heart of Ayurvedic Healing: Panchakarma</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              <h2 className="text-3xl font-playfair font-bold text-foreground mb-4">The Heart of Ayurvedic Healing: Panchakarma</h2>
+              <p className="text-base text-muted-foreground leading-relaxed mb-4">
                 Panchakarma is a comprehensive system of five coordinated detoxification procedures that gently yet profoundly cleanse the physiology from metabolic residue (ama). This ancient protocol is the foundation of authentic Ayurvedic treatment.
               </p>
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-2 mb-6">
                 <li className="flex gap-3">
                   <Leaf className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-muted-foreground"><strong>Removes toxins</strong> accumulated from diet, environment, and stress</span>
@@ -264,13 +248,13 @@ export default function Home() {
       </section>
 
       {/* Conditions We Treat */}
-      <section className="py-12 bg-gradient-to-b from-white to-white/50">
+      <section className="py-10 bg-gradient-to-b from-white to-white/50">
         <div className="container max-w-5xl">
-          <h2 className="text-4xl font-playfair font-bold text-foreground mb-10 text-center">Conditions We Successfully Treat</h2>
+          <h2 className="text-3xl font-playfair font-bold text-foreground mb-8 text-center">Conditions We Successfully Treat</h2>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-lg border border-border p-8 hover:shadow-lg transition-shadow">
-              <h3 className="text-2xl font-playfair font-bold text-foreground mb-6">Chronic Diseases</h3>
+            <div className="bg-white rounded-lg border border-border p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-lg font-playfair font-bold text-foreground mb-4">Chronic Diseases</h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li>✓ Arthritis &amp; Joint Pain</li>
                 <li>✓ Type 2 Diabetes</li>
@@ -342,9 +326,9 @@ export default function Home() {
       <ReferralRewardsProgram />
 
       {/* Patient Testimonials with Stock Images */}
-      <section className="py-12 bg-white">
+      <section className="py-10 bg-white">
         <div className="container max-w-5xl">
-          <h2 className="text-4xl font-playfair font-bold text-foreground mb-10 text-center">Patient Success Stories</h2>
+          <h2 className="text-3xl font-playfair font-bold text-foreground mb-8 text-center">Patient Success Stories</h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             {testimonials.map((testimonial, idx) => (
@@ -383,9 +367,9 @@ export default function Home() {
       <FilteredTreatmentChart />
 
       {/* Program Options */}
-      <section className="py-12 bg-gradient-to-b from-white to-white/50">
+      <section className="py-10 bg-gradient-to-b from-white to-white/50">
         <div className="container max-w-5xl">
-          <h2 className="text-4xl font-playfair font-bold text-foreground mb-10 text-center">Customized Treatment Programs</h2>
+          <h2 className="text-3xl font-playfair font-bold text-foreground mb-8 text-center">Customized Treatment Programs</h2>
 
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="border-border hover:shadow-lg transition-shadow">
