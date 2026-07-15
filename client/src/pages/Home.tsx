@@ -7,6 +7,8 @@ import { FAQSection } from "@/components/FAQSection";
 import { SocialMediaLinks } from "@/components/SocialMediaLinks";
 import { FilteredTreatmentChart } from "@/components/FilteredTreatmentChart";
 import { TestimonialVideoSection } from "@/components/TestimonialVideoSection";
+import { BeforeAfterGallery } from "@/components/BeforeAfterGallery";
+import { TreatmentDurationCalculator } from "@/components/TreatmentDurationCalculator";
 
 export default function Home() {
   const treatments = [
@@ -316,6 +318,12 @@ export default function Home() {
 
       {/* Patient Testimonial Videos */}
       <TestimonialVideoSection />
+
+      {/* Before/After Transformation Gallery */}
+      <BeforeAfterGallery />
+
+      {/* Treatment Duration Calculator */}
+      <TreatmentDurationCalculator />
 
       {/* Patient Testimonials with Stock Images */}
       <section className="py-20 bg-white">

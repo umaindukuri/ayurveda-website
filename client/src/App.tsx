@@ -6,6 +6,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { WhatsAppWidget } from "./components/WhatsAppWidget";
 import { LiveChatWidget } from "./components/LiveChatWidget";
+import { NewsletterBanner } from "./components/NewsletterBanner";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import About from "./pages/About";
@@ -55,6 +56,7 @@ function App() {
           <Router />
           <WhatsAppWidget />
           <LiveChatWidget />
+          <NewsletterBanner />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
