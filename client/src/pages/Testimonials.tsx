@@ -1,73 +1,104 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Heart } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Testimonials() {
   const testimonials = [
     {
-      name: "Sarah M.",
+      name: "James M.",
       location: "California, USA",
-      condition: "Unexplained Infertility (3 years)",
-      story: "After 3 years of trying to conceive with no medical explanation, I was losing hope. I completed a 21-day Panchakarma program and within 6 months, I conceived naturally. The personalized approach, daily treatments, and lifestyle guidance made all the difference. I'm now 8 months pregnant and feeling healthier than ever.",
+      condition: "Rheumatoid Arthritis (10 years)",
+      story: "After 10 years of joint pain and limited mobility, I was losing hope. The 21-day Panchakarma program transformed my life. I'm now pain-free, active again, and off most medications. The holistic approach addressed the root cause, not just symptoms.",
       rating: 5,
-      highlight: "Conceived naturally after 3 years"
+      highlight: "Pain-free after 10 years of suffering"
     },
     {
-      name: "Priya &amp; Raj",
+      name: "Maria S.",
       location: "New York, USA",
-      condition: "Multiple IVF Failures",
-      story: "We had failed two IVF cycles and were emotionally exhausted. We decided to try Panchakarma alongside our third IVF attempt. The combination of Uttara Basti, Nasya, and personalized nutrition transformed our health. Our third IVF succeeded, and we now have a beautiful 2-year-old daughter. The Ayurvedic approach gave us hope when we needed it most.",
+      condition: "Type 2 Diabetes",
+      story: "My blood sugar levels were completely out of control despite medication. After one 14-day program, my glucose normalized. The dietary guidance and herbal treatments gave me my health back. I'm now off insulin and managing naturally.",
       rating: 5,
-      highlight: "Successful IVF after Panchakarma support"
+      highlight: "Blood sugar normalized, off insulin"
     },
     {
-      name: "Emma T.",
+      name: "David K.",
       location: "London, UK",
-      condition: "PCOS &amp; Hormonal Imbalance",
-      story: "Diagnosed with PCOS and irregular cycles, I was skeptical about Ayurveda. But the 14-day program restored my cycle regularity within 2 months. My hormones balanced, my energy returned, and I conceived naturally 6 months later. The doctor's expertise in PCOS management was incredible—she understood my condition deeply.",
+      condition: "Chronic Anxiety &amp; Insomnia",
+      story: "Years of anxiety and sleepless nights were destroying my life. Shirodhara and meditation practices calmed my nervous system in ways medication never could. I now sleep deeply and feel genuinely peaceful for the first time in years.",
       rating: 5,
-      highlight: "PCOS resolved, natural conception"
+      highlight: "Anxiety resolved, sleeping peacefully"
     },
     {
-      name: "Michael K.",
-      location: "Texas, USA",
-      condition: "Low Sperm Count &amp; Motility",
-      story: "My sperm count was 5 million/ml with poor motility. After a 14-day Panchakarma program focused on male fertility (Yapana Basti, Nasya, and Rasayana), my count increased to 35 million/ml with improved motility. My wife conceived naturally 3 months after my treatment. The doctor's knowledge of male fertility was exceptional.",
+      name: "Lisa T.",
+      location: "Toronto, Canada",
+      condition: "Severe Eczema",
+      story: "My skin was covered in painful eczema that no dermatologist could help. My skin cleared completely within 2 months of treatment. The holistic approach addressed the root cause—internal inflammation—not just symptoms.",
       rating: 5,
-      highlight: "Sperm count increased 7x, natural conception"
-    },
-    {
-      name: "Lisa &amp; James",
-      location: "Australia",
-      condition: "Secondary Infertility &amp; Stress",
-      story: "After having our first child easily, we struggled for 4 years to conceive again. The stress was affecting our relationship. The Panchakarma program not only addressed our physical imbalances but also healed our emotional stress through yoga, meditation, and counseling. We conceived naturally and welcomed our second child. The holistic approach was transformative.",
-      rating: 5,
-      highlight: "Healed stress, natural conception after 4 years"
-    },
-    {
-      name: "Ananya D.",
-      location: "India",
-      condition: "Endometriosis &amp; Severe Pain",
-      story: "I suffered from severe endometriosis pain and was told I might not conceive. The 21-day Panchakarma program with specialized Uttara Basti treatments reduced my pain significantly. My cycles became regular, and I conceived naturally within 8 months. I'm now 6 months pregnant and pain-free. The doctor's compassion and expertise gave me my life back.",
-      rating: 5,
-      highlight: "Endometriosis pain resolved, natural conception"
+      highlight: "Severe eczema completely cleared"
     },
     {
       name: "Robert &amp; Susan",
-      location: "Canada",
-      condition: "Age-Related Infertility (42 &amp; 44)",
-      story: "At 42 and 44, we thought our fertility window had closed. We tried one Panchakarma program together and were amazed at the results. Within 4 months, Susan conceived naturally. The doctor's expertise in age-related fertility was remarkable—she optimized our health despite our age. We're now expecting our first child.",
+      location: "Sydney, Australia",
+      condition: "Unexplained Infertility (5 years)",
+      story: "After 5 years of trying to conceive with no medical explanation, we were devastated. We completed a 14-day program together and conceived naturally within 3 months. We now have a beautiful 2-year-old daughter. The Ayurvedic approach gave us hope.",
       rating: 5,
-      highlight: "Natural conception at 42 &amp; 44"
+      highlight: "Natural conception after 5 years"
     },
     {
-      name: "Deepa M.",
-      location: "Singapore",
-      condition: "Recurrent Miscarriages (3 losses)",
-      story: "After three miscarriages, I was devastated. The doctor identified underlying Vata imbalance and weak digestive fire affecting my ability to sustain pregnancy. A 21-day Panchakarma program with post-conception support protocols helped me carry my pregnancy to term successfully. I now have a healthy 1-year-old son. The preventive approach was life-changing.",
+      name: "Emma T.",
+      location: "Berlin, Germany",
+      condition: "IBS &amp; Digestive Issues",
+      story: "I suffered from severe IBS, bloating, and food sensitivities for years. After the Panchakarma program, my digestion completely normalized. I can now eat foods I couldn't tolerate before. My energy and quality of life have transformed.",
       rating: 5,
-      highlight: "Successful pregnancy after 3 miscarriages"
+      highlight: "IBS resolved, digestion normalized"
+    },
+    {
+      name: "Michael K.",
+      location: "Mumbai, India",
+      condition: "Asthma &amp; Respiratory Issues",
+      story: "I had severe asthma since childhood and was on multiple inhalers. After one program, my breathing capacity improved dramatically. I now rarely use inhalers and can exercise without limitation. The Nasya therapy was transformative.",
+      rating: 5,
+      highlight: "Asthma dramatically improved"
+    },
+    {
+      name: "Priya D.",
+      location: "Singapore",
+      condition: "Depression &amp; Burnout",
+      story: "I was in a deep depression from years of work stress. The combination of Panchakarma, yoga, meditation, and herbal support lifted my mood naturally. I'm now energized, clear-headed, and genuinely happy for the first time in years.",
+      rating: 5,
+      highlight: "Depression resolved, burnout healed"
+    },
+    {
+      name: "Thomas W.",
+      location: "Amsterdam, Netherlands",
+      condition: "Hypertension &amp; Heart Disease Prevention",
+      story: "My blood pressure was dangerously high despite medications. After the program, it normalized. My cholesterol improved, and my cardiologist was amazed. I feel healthier than I have in decades.",
+      rating: 5,
+      highlight: "Hypertension normalized naturally"
+    },
+    {
+      name: "Sophia L.",
+      location: "Barcelona, Spain",
+      condition: "Hormonal Imbalance &amp; Menopause",
+      story: "Menopause was devastating—hot flashes, mood swings, sleep issues. The Panchakarma program and Rasayana therapy balanced my hormones naturally. I'm now thriving through menopause without hormone replacement therapy.",
+      rating: 5,
+      highlight: "Menopause symptoms resolved naturally"
+    },
+    {
+      name: "Christopher M.",
+      location: "Boston, USA",
+      condition: "Chronic Fatigue &amp; Low Energy",
+      story: "I was exhausted all the time despite sleeping. After the program, my energy returned completely. The Rasayana therapy rejuvenated me at a cellular level. I'm now more energetic and vital than I've been in years.",
+      rating: 5,
+      highlight: "Energy and vitality fully restored"
+    },
+    {
+      name: "Ananya D.",
+      location: "Delhi, India",
+      condition: "PCOS &amp; Fertility",
+      story: "PCOS made me believe I couldn't conceive. After the 21-day program with specialized Uttara Basti treatments, my cycles became regular. I conceived naturally within 6 months and now have a healthy 1-year-old son.",
+      rating: 5,
+      highlight: "PCOS resolved, natural conception"
     }
   ];
 
@@ -77,14 +108,14 @@ export default function Testimonials() {
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-border shadow-sm">
         <div className="container flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
-            <img src="/manus-storage/ayurveda_logo_30556739.png" alt="Ayurveda Fertility Clinic" className="h-10 w-10" />
-            <span className="font-playfair text-xl font-bold text-primary">Ayurveda Fertility</span>
+            <img src="/manus-storage/ayurveda_logo_30556739.png" alt="Ayurveda Wellness Clinic" className="h-10 w-10" />
+            <span className="font-playfair text-xl font-bold text-primary">Ayurveda Wellness</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
             <Link href="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Home</Link>
-            <Link href="/services" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Services</Link>
+            <Link href="/treatments" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Treatments</Link>
             <Link href="/about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">About</Link>
-            <Link href="/testimonials" className="text-sm font-medium text-primary font-semibold">Testimonials</Link>
+            <Link href="/testimonials" className="text-sm font-medium text-primary font-semibold">Success Stories</Link>
             <Button className="bg-primary hover:bg-primary/90 text-white">Book Consultation</Button>
           </div>
         </div>
@@ -95,7 +126,7 @@ export default function Testimonials() {
         <div className="container max-w-4xl text-center">
           <h1 className="text-5xl font-playfair font-bold text-foreground mb-4">Patient Success Stories</h1>
           <p className="text-xl text-muted-foreground">
-            Real transformations from patients who have restored their fertility and achieved their dreams of parenthood.
+            Real transformations from patients who have recovered from conditions modern medicine couldn't resolve.
           </p>
         </div>
       </section>
@@ -105,7 +136,7 @@ export default function Testimonials() {
         <div className="container">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
-              <p className="text-4xl font-playfair font-bold text-primary mb-2">2000+</p>
+              <p className="text-4xl font-playfair font-bold text-primary mb-2">5000+</p>
               <p className="text-muted-foreground">Patients Treated</p>
             </div>
             <div>
@@ -117,8 +148,8 @@ export default function Testimonials() {
               <p className="text-muted-foreground">Years Experience</p>
             </div>
             <div>
-              <p className="text-4xl font-playfair font-bold text-secondary mb-2">500+</p>
-              <p className="text-muted-foreground">Babies Born</p>
+              <p className="text-4xl font-playfair font-bold text-secondary mb-2">All Conditions</p>
+              <p className="text-muted-foreground">Comprehensive Healing</p>
             </div>
           </div>
         </div>
@@ -167,16 +198,16 @@ export default function Testimonials() {
 
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white rounded-lg border border-border p-8">
-              <h3 className="text-2xl font-playfair font-bold text-foreground mb-4">Personalized Approach</h3>
+              <h3 className="text-2xl font-playfair font-bold text-foreground mb-4">Comprehensive Approach</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Every patient receives a customized treatment plan based on their unique constitution (Prakriti), current imbalances (Vikriti), and specific fertility challenges. We don't follow one-size-fits-all protocols.
+                We treat all conditions—not just one specialty. Whether you have arthritis, diabetes, anxiety, or fertility issues, we address your complete health picture with personalized protocols.
               </p>
             </div>
 
             <div className="bg-white rounded-lg border border-border p-8">
               <h3 className="text-2xl font-playfair font-bold text-foreground mb-4">Root Cause Treatment</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Rather than treating symptoms, we identify and address the underlying imbalances causing infertility. This leads to lasting results and improved overall health.
+                Rather than treating symptoms, we identify and address the underlying imbalances causing disease. This leads to lasting results and improved overall health.
               </p>
             </div>
 
@@ -190,21 +221,21 @@ export default function Testimonials() {
             <div className="bg-white rounded-lg border border-border p-8">
               <h3 className="text-2xl font-playfair font-bold text-foreground mb-4">Compassionate Support</h3>
               <p className="text-muted-foreground leading-relaxed">
-                We understand the emotional journey of infertility. Our approach includes emotional counseling, stress reduction, and spiritual guidance alongside physical treatments.
+                We understand the emotional journey of chronic illness. Our approach includes emotional counseling, stress reduction, and spiritual guidance alongside physical treatments.
               </p>
             </div>
 
             <div className="bg-white rounded-lg border border-border p-8">
               <h3 className="text-2xl font-playfair font-bold text-foreground mb-4">Evidence-Based Protocols</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Our treatments are grounded in 5,000 years of Ayurvedic wisdom and supported by modern research. Success rates of 70-80% for specific therapies like Uttara Basti.
+                Our treatments are grounded in 5,000 years of Ayurvedic wisdom and supported by modern research. Success rates of 70-80% for specific therapies like Panchakarma.
               </p>
             </div>
 
             <div className="bg-white rounded-lg border border-border p-8">
               <h3 className="text-2xl font-playfair font-bold text-foreground mb-4">Complementary Integration</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Whether seeking natural conception or supporting IVF/ART, our protocols enhance your fertility journey. We work alongside modern medicine, not against it.
+                Whether seeking natural healing or supporting conventional treatments, our protocols enhance your overall wellness journey. We work alongside modern medicine, not against it.
               </p>
             </div>
           </div>
@@ -216,7 +247,7 @@ export default function Testimonials() {
         <div className="container max-w-3xl text-center">
           <h2 className="text-4xl font-playfair font-bold text-foreground mb-6">Your Success Story Starts Here</h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Join thousands of patients who have restored their fertility and achieved their dreams of parenthood. Schedule your personalized consultation today.
+            Join thousands of patients who have recovered from chronic diseases and achieved lasting wellness. Schedule your personalized consultation today.
           </p>
           <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-base">
             Book Your Consultation
@@ -231,34 +262,34 @@ export default function Testimonials() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <img src="/manus-storage/ayurveda_logo_30556739.png" alt="Logo" className="h-8 w-8 invert" />
-                <span className="font-playfair font-bold">Ayurveda Fertility</span>
+                <span className="font-playfair font-bold">Ayurveda Wellness</span>
               </div>
               <p className="text-white/70">
-                Restoring fertility naturally through authentic Ayurvedic healing and personalized Panchakarma treatments.
+                Authentic Ayurvedic healing for chronic diseases, wellness optimization, and natural transformation.
               </p>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-white/70">
                 <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-                <li><Link href="/services" className="hover:text-white transition-colors">Services</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Treatments</Link></li>
                 <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
-                <li><Link href="/testimonials" className="hover:text-white transition-colors">Testimonials</Link></li>
+                <li><Link href="/testimonials" className="hover:text-white transition-colors">Success Stories</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Services</h4>
+              <h4 className="font-semibold mb-4">Treatment Areas</h4>
               <ul className="space-y-2 text-white/70">
-                <li><Link href="/services" className="hover:text-white transition-colors">Panchakarma</Link></li>
-                <li><Link href="/services" className="hover:text-white transition-colors">Fertility Programs</Link></li>
-                <li><Link href="/services" className="hover:text-white transition-colors">Consultations</Link></li>
-                <li><Link href="/services" className="hover:text-white transition-colors">Workshops</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Panchakarma</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Chronic Diseases</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Mental Health</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Fertility</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-white/70">
-                <li>📧 info@ayurvedafertility.com</li>
+                <li>📧 info@ayurvedawellness.com</li>
                 <li>📞 +1 (555) 123-4567</li>
                 <li>📍 123 Wellness Lane, Healing City</li>
                 <li>🕐 Mon-Fri: 9am-6pm</li>
@@ -266,7 +297,7 @@ export default function Testimonials() {
             </div>
           </div>
           <div className="border-t border-white/10 pt-8 text-center text-white/70">
-            <p>&copy; 2026 Ayurveda Fertility Clinic. All rights reserved. | Privacy Policy | Terms of Service</p>
+            <p>&copy; 2026 Ayurveda Wellness Clinic. All rights reserved. | Privacy Policy | Terms of Service</p>
           </div>
         </div>
       </footer>

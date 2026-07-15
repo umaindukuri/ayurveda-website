@@ -10,14 +10,14 @@ export default function About() {
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-border shadow-sm">
         <div className="container flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
-            <img src="/manus-storage/ayurveda_logo_30556739.png" alt="Ayurveda Fertility Clinic" className="h-10 w-10" />
-            <span className="font-playfair text-xl font-bold text-primary">Ayurveda Fertility</span>
+            <img src="/manus-storage/ayurveda_logo_30556739.png" alt="Ayurveda Wellness Clinic" className="h-10 w-10" />
+            <span className="font-playfair text-xl font-bold text-primary">Ayurveda Wellness</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
             <Link href="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Home</Link>
-            <Link href="/services" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Services</Link>
+            <Link href="/treatments" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Treatments</Link>
             <Link href="/about" className="text-sm font-medium text-primary font-semibold">About</Link>
-            <Link href="/testimonials" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Testimonials</Link>
+            <Link href="/testimonials" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Success Stories</Link>
             <Button className="bg-primary hover:bg-primary/90 text-white">Book Consultation</Button>
           </div>
         </div>
@@ -26,56 +26,54 @@ export default function About() {
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-b from-primary/5 to-white">
         <div className="container max-w-4xl text-center">
-          <h1 className="text-5xl font-playfair font-bold text-foreground mb-4">About Our Doctor</h1>
+          <h1 className="text-5xl font-playfair font-bold text-foreground mb-4">About Our Clinic</h1>
           <p className="text-xl text-muted-foreground">
-            Meet the compassionate healer dedicated to restoring your fertility through authentic Ayurvedic wisdom.
+            Authentic Ayurvedic healing for chronic diseases, wellness optimization, and natural transformation.
           </p>
         </div>
       </section>
 
-      {/* Doctor Profile */}
+      {/* Clinic Overview */}
       <section className="py-20 bg-white">
         <div className="container max-w-5xl">
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <img 
                 src="/manus-storage/ayurveda_treatment_604e7957.png" 
-                alt="Dr. Ayurveda Fertility Specialist" 
+                alt="Ayurveda Wellness Clinic" 
                 className="rounded-lg shadow-lg"
               />
             </div>
             <div>
-              <h2 className="text-4xl font-playfair font-bold text-foreground mb-2">Dr. Ayurveda Fertility Specialist</h2>
-              <p className="text-lg text-secondary font-semibold mb-6">Certified Ayurvedic Practitioner &amp; Fertility Expert</p>
-              
+              <h2 className="text-4xl font-playfair font-bold text-foreground mb-6">Europe's Leading Ayurvedic Wellness Center</h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                With over 20 years of dedicated practice in Ayurvedic medicine and reproductive health, Dr. Ayurveda brings deep expertise in Panchakarma protocols, fertility enhancement, and holistic wellness. Certified in traditional Ayurvedic medicine (BAMS degree) with specialized training in gynecological and male reproductive health.
+                Our clinic is dedicated to providing authentic, evidence-based Ayurvedic treatment for chronic diseases and wellness optimization. With over 20 years of experience and thousands of patients successfully healed, we offer comprehensive Panchakarma programs and specialized treatments for every health condition.
               </p>
 
               <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                Dr. Ayurveda's approach is rooted in the belief that true healing comes from understanding each person's unique constitution and addressing the root causes of imbalance. Rather than treating symptoms, the practice focuses on restoring harmony to the body, mind, and spirit—creating the optimal conditions for fertility and lifelong wellness.
+                Unlike clinics that focus on a single condition, we treat the whole spectrum of health concerns—from arthritis and diabetes to anxiety, skin conditions, and fertility. Our holistic approach addresses root causes, not just symptoms, leading to lasting healing and transformation.
               </p>
 
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <Award className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-semibold text-foreground">BAMS Degree</h4>
-                    <p className="text-sm text-muted-foreground">Bachelor of Ayurvedic Medicine and Surgery</p>
+                    <h4 className="font-semibold text-foreground">Certified &amp; Awarded</h4>
+                    <p className="text-sm text-muted-foreground">Multiple international awards for authentic Ayurveda and highest quality standards</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <BookOpen className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
+                  <Users className="w-6 h-6 text-secondary flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-semibold text-foreground">Specialized Training</h4>
-                    <p className="text-sm text-muted-foreground">Panchakarma, Gynecology, and Reproductive Health</p>
+                    <h4 className="font-semibold text-foreground">5,000+ Patients</h4>
+                    <p className="text-sm text-muted-foreground">Successfully treated for diverse conditions with 70-80% success rates</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Users className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                  <BookOpen className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-semibold text-foreground">20+ Years Experience</h4>
-                    <p className="text-sm text-muted-foreground">Thousands of patients successfully treated</p>
+                    <p className="text-sm text-muted-foreground">Deep expertise in Panchakarma, chronic disease management, and holistic wellness</p>
                   </div>
                 </div>
               </div>
@@ -84,13 +82,13 @@ export default function About() {
         </div>
       </section>
 
-      {/* Philosophy */}
+      {/* Our Philosophy */}
       <section className="py-20 bg-gradient-to-b from-white to-white/50">
         <div className="container max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-playfair font-bold text-foreground mb-4">Our Philosophy</h2>
             <p className="text-lg text-muted-foreground">
-              A holistic approach to fertility grounded in ancient wisdom and modern compassion.
+              A holistic approach to healing grounded in ancient wisdom and modern compassion.
             </p>
           </div>
 
@@ -102,7 +100,7 @@ export default function About() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  We don't treat symptoms; we identify and address the underlying imbalances causing infertility. This approach leads to lasting, transformative results.
+                  We don't treat symptoms; we identify and address the underlying imbalances causing disease. This approach leads to lasting, transformative results.
                 </p>
               </CardContent>
             </Card>
@@ -114,7 +112,7 @@ export default function About() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Every person is unique. We create individualized treatment plans based on your specific constitution, imbalances, and fertility goals.
+                  Every person is unique. We create individualized treatment plans based on your specific constitution, imbalances, and health goals.
                 </p>
               </CardContent>
             </Card>
@@ -126,7 +124,7 @@ export default function About() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Fertility is not just physical. We integrate nutrition, lifestyle, stress management, yoga, and meditation for complete mind-body-spirit healing.
+                  We integrate Panchakarma, nutrition, lifestyle, stress management, yoga, and meditation for complete mind-body-spirit healing.
                 </p>
               </CardContent>
             </Card>
@@ -134,129 +132,53 @@ export default function About() {
         </div>
       </section>
 
-      {/* Expertise Areas */}
+      {/* Treatment Spectrum */}
       <section className="py-20 bg-white">
         <div className="container max-w-5xl">
-          <h2 className="text-4xl font-playfair font-bold text-foreground mb-16 text-center">Areas of Expertise</h2>
+          <h2 className="text-4xl font-playfair font-bold text-foreground mb-16 text-center">Our Treatment Spectrum</h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white rounded-lg border border-border p-8">
-              <h3 className="text-2xl font-playfair font-bold text-foreground mb-4">Women's Fertility</h3>
-              <ul className="space-y-3 text-muted-foreground">
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>PCOS and hormonal imbalance</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Irregular or absent menstrual cycles</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Endometriosis and fibroids</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Egg quality and ovulation support</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Pre-conception and pregnancy support</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Recurrent miscarriage prevention</span>
-                </li>
+              <h3 className="text-2xl font-playfair font-bold text-foreground mb-4">Chronic Disease Management</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li>✓ Arthritis &amp; Joint Pain</li>
+                <li>✓ Type 2 Diabetes &amp; Metabolic Disorders</li>
+                <li>✓ Hypertension &amp; Heart Disease</li>
+                <li>✓ Autoimmune Disorders</li>
+                <li>✓ Chronic Fatigue &amp; Fibromyalgia</li>
               </ul>
             </div>
 
             <div className="bg-white rounded-lg border border-border p-8">
-              <h3 className="text-2xl font-playfair font-bold text-foreground mb-4">Men's Fertility</h3>
-              <ul className="space-y-3 text-muted-foreground">
-                <li className="flex gap-2">
-                  <span className="text-secondary">✓</span>
-                  <span>Low sperm count and motility</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-secondary">✓</span>
-                  <span>Sperm morphology improvement</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-secondary">✓</span>
-                  <span>Sexual dysfunction and vitality</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-secondary">✓</span>
-                  <span>Hormonal balance (testosterone)</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-secondary">✓</span>
-                  <span>Pre-conception detoxification</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-secondary">✓</span>
-                  <span>Stress and lifestyle optimization</span>
-                </li>
+              <h3 className="text-2xl font-playfair font-bold text-foreground mb-4">Digestive &amp; Respiratory</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li>✓ IBS &amp; Inflammatory Bowel Disease</li>
+                <li>✓ Acid Reflux &amp; GERD</li>
+                <li>✓ Asthma &amp; Bronchitis</li>
+                <li>✓ Allergies &amp; Sinusitis</li>
+                <li>✓ Weight Management &amp; Metabolism</li>
               </ul>
             </div>
 
             <div className="bg-white rounded-lg border border-border p-8">
-              <h3 className="text-2xl font-playfair font-bold text-foreground mb-4">Complementary Care</h3>
-              <ul className="space-y-3 text-muted-foreground">
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Support alongside IVF/ART treatments</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Enhanced success rates</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Reduced side effects</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Improved egg and sperm quality</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Emotional and stress support</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  <span>Post-treatment recovery</span>
-                </li>
+              <h3 className="text-2xl font-playfair font-bold text-foreground mb-4">Mental Health &amp; Skin</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li>✓ Anxiety &amp; Depression</li>
+                <li>✓ Insomnia &amp; Sleep Disorders</li>
+                <li>✓ Stress &amp; Burnout</li>
+                <li>✓ Eczema &amp; Psoriasis</li>
+                <li>✓ Acne &amp; Skin Conditions</li>
               </ul>
             </div>
 
             <div className="bg-white rounded-lg border border-border p-8">
-              <h3 className="text-2xl font-playfair font-bold text-foreground mb-4">General Wellness</h3>
-              <ul className="space-y-3 text-muted-foreground">
-                <li className="flex gap-2">
-                  <span className="text-secondary">✓</span>
-                  <span>Stress and anxiety management</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-secondary">✓</span>
-                  <span>Sleep and digestion optimization</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-secondary">✓</span>
-                  <span>Weight management and metabolism</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-secondary">✓</span>
-                  <span>Immune system strengthening</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-secondary">✓</span>
-                  <span>Chronic disease management</span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="text-secondary">✓</span>
-                  <span>Preventive health and longevity</span>
-                </li>
+              <h3 className="text-2xl font-playfair font-bold text-foreground mb-4">Fertility &amp; Wellness</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li>✓ Fertility &amp; Reproductive Health</li>
+                <li>✓ Hormonal Balance &amp; Menopause</li>
+                <li>✓ Rejuvenation &amp; Anti-Aging</li>
+                <li>✓ Preventive Health &amp; Longevity</li>
+                <li>✓ General Wellness Optimization</li>
               </ul>
             </div>
           </div>
@@ -270,37 +192,37 @@ export default function About() {
 
           <div className="space-y-6">
             <div className="bg-white rounded-lg border border-border p-8">
-              <h3 className="text-2xl font-playfair font-bold text-foreground mb-3">Proven Results</h3>
+              <h3 className="text-2xl font-playfair font-bold text-foreground mb-3">Proven Results Across All Conditions</h3>
               <p className="text-muted-foreground">
-                Thousands of patients have successfully restored their fertility and achieved natural conception through our personalized Panchakarma programs. Success rates of 70-80% for specific treatments like Uttara Basti.
+                Thousands of patients have successfully recovered from conditions modern medicine couldn't resolve. Success rates of 70-80% for specific treatments like Panchakarma.
               </p>
             </div>
 
             <div className="bg-white rounded-lg border border-border p-8">
               <h3 className="text-2xl font-playfair font-bold text-foreground mb-3">Authentic Ayurveda</h3>
               <p className="text-muted-foreground">
-                We practice traditional Ayurveda grounded in 5,000 years of wisdom, combined with modern understanding of reproductive physiology. No shortcuts, no compromises—only authentic, time-tested protocols.
+                We practice traditional Ayurveda grounded in 5,000 years of wisdom, combined with modern understanding of disease. No shortcuts, no compromises—only authentic, time-tested protocols.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-lg border border-border p-8">
+              <h3 className="text-2xl font-playfair font-bold text-foreground mb-3">Comprehensive Approach</h3>
+              <p className="text-muted-foreground">
+                Unlike specialists who focus on one condition, we treat the whole person. Whether you have arthritis, diabetes, anxiety, or fertility issues, we address your complete health picture.
               </p>
             </div>
 
             <div className="bg-white rounded-lg border border-border p-8">
               <h3 className="text-2xl font-playfair font-bold text-foreground mb-3">Personalized Care</h3>
               <p className="text-muted-foreground">
-                Every treatment plan is uniquely designed for your constitution and needs. We don't follow one-size-fits-all protocols; we listen, assess, and create a path tailored to your fertility journey.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg border border-border p-8">
-              <h3 className="text-2xl font-playfair font-bold text-foreground mb-3">Compassionate Support</h3>
-              <p className="text-muted-foreground">
-                We understand the emotional journey of infertility. Our approach integrates stress management, emotional support, and spiritual guidance alongside physical treatments for complete healing.
+                Every treatment plan is uniquely designed for your constitution and needs. We don't follow one-size-fits-all protocols; we listen, assess, and create a path tailored to your healing journey.
               </p>
             </div>
 
             <div className="bg-white rounded-lg border border-border p-8">
               <h3 className="text-2xl font-playfair font-bold text-foreground mb-3">Complementary Integration</h3>
               <p className="text-muted-foreground">
-                Whether you're seeking natural conception or supporting IVF/ART treatments, our protocols enhance your overall fertility journey. We work alongside modern medicine, not against it.
+                Whether you're seeking natural healing or supporting conventional treatments, our protocols enhance your overall wellness journey. We work alongside modern medicine, not against it.
               </p>
             </div>
           </div>
@@ -312,7 +234,7 @@ export default function About() {
         <div className="container max-w-3xl text-center">
           <h2 className="text-4xl font-playfair font-bold text-foreground mb-6">Ready to Begin Your Healing?</h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Schedule a personalized consultation with Dr. Ayurveda to discuss your fertility goals and create your customized treatment plan.
+            Schedule a personalized consultation with our experienced practitioners to discuss your health concerns and create your customized treatment plan.
           </p>
           <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-base">
             Book Your Consultation
@@ -327,34 +249,34 @@ export default function About() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <img src="/manus-storage/ayurveda_logo_30556739.png" alt="Logo" className="h-8 w-8 invert" />
-                <span className="font-playfair font-bold">Ayurveda Fertility</span>
+                <span className="font-playfair font-bold">Ayurveda Wellness</span>
               </div>
               <p className="text-white/70">
-                Restoring fertility naturally through authentic Ayurvedic healing and personalized Panchakarma treatments.
+                Authentic Ayurvedic healing for chronic diseases, wellness optimization, and natural transformation.
               </p>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2 text-white/70">
                 <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-                <li><Link href="/services" className="hover:text-white transition-colors">Services</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Treatments</Link></li>
                 <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
-                <li><Link href="/testimonials" className="hover:text-white transition-colors">Testimonials</Link></li>
+                <li><Link href="/testimonials" className="hover:text-white transition-colors">Success Stories</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Services</h4>
+              <h4 className="font-semibold mb-4">Treatment Areas</h4>
               <ul className="space-y-2 text-white/70">
-                <li><Link href="/services" className="hover:text-white transition-colors">Panchakarma</Link></li>
-                <li><Link href="/services" className="hover:text-white transition-colors">Fertility Programs</Link></li>
-                <li><Link href="/services" className="hover:text-white transition-colors">Consultations</Link></li>
-                <li><Link href="/services" className="hover:text-white transition-colors">Workshops</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Panchakarma</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Chronic Diseases</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Mental Health</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Fertility</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-white/70">
-                <li>📧 info@ayurvedafertility.com</li>
+                <li>📧 info@ayurvedawellness.com</li>
                 <li>📞 +1 (555) 123-4567</li>
                 <li>📍 123 Wellness Lane, Healing City</li>
                 <li>🕐 Mon-Fri: 9am-6pm</li>
@@ -362,7 +284,7 @@ export default function About() {
             </div>
           </div>
           <div className="border-t border-white/10 pt-8 text-center text-white/70">
-            <p>&copy; 2026 Ayurveda Fertility Clinic. All rights reserved. | Privacy Policy | Terms of Service</p>
+            <p>&copy; 2026 Ayurveda Wellness Clinic. All rights reserved. | Privacy Policy | Terms of Service</p>
           </div>
         </div>
       </footer>
