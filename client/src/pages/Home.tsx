@@ -10,6 +10,9 @@ import { TestimonialVideoSection } from "@/components/TestimonialVideoSection";
 import { FilteredBeforeAfterGallery } from "@/components/FilteredBeforeAfterGallery";
 import { TreatmentDurationCalculator } from "@/components/TreatmentDurationCalculator";
 import { TestimonialReviewSection } from "@/components/TestimonialReviewSection";
+import { AvailabilityCalendar } from "@/components/AvailabilityCalendar";
+import { SuccessStoriesBlog } from "@/components/SuccessStoriesBlog";
+import { ReferralRewardsProgram } from "@/components/ReferralRewardsProgram";
 
 export default function Home() {
   const treatments = [
@@ -328,6 +331,15 @@ export default function Home() {
 
       {/* Testimonial Review Section */}
       <TestimonialReviewSection />
+
+      {/* Availability Calendar */}
+      <AvailabilityCalendar />
+
+      {/* Success Stories Blog */}
+      <SuccessStoriesBlog />
+
+      {/* Referral Rewards Program */}
+      <ReferralRewardsProgram />
 
       {/* Patient Testimonials with Stock Images */}
       <section className="py-20 bg-white">
