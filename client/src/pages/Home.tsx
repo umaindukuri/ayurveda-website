@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heart, Leaf, Wind, Flame, Droplets, Brain, Zap, Users, Award, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
+import { BookingModal } from "@/components/BookingModal";
+import { FAQSection } from "@/components/FAQSection";
 
 export default function Home() {
   const treatments = [
@@ -100,7 +102,7 @@ export default function Home() {
             <Link href="/about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">About</Link>
             <Link href="/testimonials" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Testimonials</Link>
           </div>
-          <Button className="bg-primary hover:bg-primary/90 text-white text-sm px-6 flex-shrink-0">Book Consultation</Button>
+          <BookingModal triggerText="Book Consultation" />
         </div>
       </nav>
 
@@ -118,9 +120,7 @@ export default function Home() {
             Discover the transformative power of authentic Ayurvedic Panchakarma and personalized wellness treatments rooted in 5,000 years of healing wisdom.
           </p>
           <div className="flex gap-4">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-base px-8">
-              Begin Your Journey
-            </Button>
+            <BookingModal triggerText="Begin Your Journey" variant="default" />
             <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10 text-base px-8">
               Learn More
             </Button>
@@ -399,6 +399,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQSection />
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-primary/10 to-secondary/10 border-t border-border">
