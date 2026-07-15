@@ -5,12 +5,14 @@ import { Link } from "wouter";
 import { BookingModal } from "@/components/BookingModal";
 import { CompactHeader } from "@/components/CompactHeader";
 import { FAQSection } from "@/components/FAQSection";
+import { SearchableFAQ } from "@/components/SearchableFAQ";
 import { SocialMediaLinks } from "@/components/SocialMediaLinks";
 import { FilteredTreatmentChart } from "@/components/FilteredTreatmentChart";
 import { TestimonialVideoSection } from "@/components/TestimonialVideoSection";
 import { FilteredBeforeAfterGallery } from "@/components/FilteredBeforeAfterGallery";
 import { TreatmentDurationCalculator } from "@/components/TreatmentDurationCalculator";
 import { TestimonialReviewSection } from "@/components/TestimonialReviewSection";
+import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 import { EnhancedAvailabilityCalendar } from "@/components/EnhancedAvailabilityCalendar";
 import { SuccessStoriesBlog } from "@/components/SuccessStoriesBlog";
 import { ReferralRewardsProgram } from "@/components/ReferralRewardsProgram";
@@ -330,28 +332,7 @@ export default function Home() {
         <div className="container max-w-5xl">
           <h2 className="text-3xl font-playfair font-bold text-foreground mb-8 text-center">Patient Success Stories</h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, idx) => (
-              <Card key={idx} className="border-border hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex justify-between items-start mb-3">
-                    <div>
-                      <CardTitle>{testimonial.name}</CardTitle>
-                      <CardDescription>{testimonial.condition}</CardDescription>
-                    </div>
-                    <div className="flex gap-0.5">
-                      {Array(testimonial.rating).fill(0).map((_, i) => (
-                        <span key={i} className="text-primary text-lg">★</span>
-                      ))}
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground italic">"{testimonial.quote}"</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <TestimonialsCarousel />
 
           <div className="text-center mt-8">
             <Link href="/testimonials">
@@ -418,7 +399,12 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <FAQSection />
+      <div className="py-10 bg-white">
+        <div className="container max-w-5xl">
+          <h2 className="text-3xl font-playfair font-bold text-foreground mb-8 text-center">Frequently Asked Questions</h2>
+          <SearchableFAQ />
+        </div>
+      </div>
 
       {/* CTA Section */}
       <section className="py-12 bg-gradient-to-r from-primary/10 to-secondary/10 border-t border-border">
