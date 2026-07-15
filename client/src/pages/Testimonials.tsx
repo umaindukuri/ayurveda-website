@@ -121,7 +121,7 @@ export default function Testimonials() {
         <div className="container flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
             <img src="/manus-storage/dr_kalyan_logo_final_07bd8e78.png" alt="Ayurveda Wellness Clinic" className="h-10 w-10" />
-            <span className="font-playfair text-xl font-bold text-primary">Ayurveda Wellness</span>
+            <span className="text-xl font-bold text-primary">Dr. Kalyan Ayurveda</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
             <Link href="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Home</Link>
@@ -136,7 +136,7 @@ export default function Testimonials() {
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-b from-primary/5 to-white">
         <div className="container max-w-4xl text-center">
-          <h1 className="text-5xl font-playfair font-bold text-foreground mb-4">Patient Success Stories</h1>
+          <h1 className="text-5xl font-bold text-foreground mb-4">Patient Success Stories</h1>
           <p className="text-xl text-muted-foreground">
             Real transformations from patients who have recovered from conditions modern medicine couldn't resolve.
           </p>

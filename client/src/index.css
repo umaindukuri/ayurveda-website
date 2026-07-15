@@ -43,7 +43,8 @@
 }
 
 :root {
-  /* Ayurveda Fertility Clinic - Warm Gold & Sage Green Palette */
+  /* Ayurveda Wellness Clinic - Warm Gold & Sage Green Palette */
+  --font-sans: 'Inter', sans-serif;
   --primary: oklch(0.62 0.18 70); /* Warm Gold #D4A574 */
   --primary-foreground: oklch(0.98 0.001 0); /* Cream */
   --sidebar-primary: oklch(0.62 0.18 70);
@@ -120,11 +121,11 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
     font-family: 'Inter', sans-serif;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 600;
   }
   h1 {

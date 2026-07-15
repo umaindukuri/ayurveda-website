@@ -89,7 +89,7 @@ export default function Home() {
         <div className="container flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
             <img src="/manus-storage/dr_kalyan_logo_final_07bd8e78.png" alt="Dr. Kalyan Ayurveda" className="h-10 w-10" />
-            <span className="font-playfair text-lg font-bold text-primary">Ayurveda Fertility</span>
+            <span className="text-lg font-bold text-primary">Dr. Kalyan Ayurveda</span>
           </div>
           <div className="hidden md:flex items-center gap-12">
             <Link href="/" className="text-sm font-medium text-primary font-semibold">Home</Link>
@@ -110,7 +110,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent"></div>
         <div className="relative z-10 container max-w-2xl text-left text-white pl-12">
-          <h1 className="text-7xl font-playfair font-bold mb-6 leading-tight">Restore Your Health Naturally</h1>
+          <h1 className="text-7xl font-bold mb-6 leading-tight">Restore Your Health Naturally</h1>
           <p className="text-xl mb-8 font-light leading-relaxed max-w-xl">
             Discover the transformative power of authentic Ayurvedic Panchakarma and personalized wellness treatments rooted in 5,000 years of healing wisdom.
           </p>
@@ -129,7 +129,7 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="container max-w-5xl">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-playfair font-bold text-foreground mb-4">Why Choose Authentic Ayurveda?</h2>
+            <h2 className="text-5xl font-bold text-foreground mb-4">Why Choose Authentic Ayurveda?</h2>
             <p className="text-xl text-muted-foreground">
               While modern medicine treats symptoms, Ayurveda heals the root cause—restoring balance to prevent disease and optimize wellness.
             </p>
@@ -419,7 +419,7 @@ export default function Home() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <img src="/manus-storage/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-8 w-8 invert" />
-                <span className="font-playfair font-bold">Ayurveda Wellness</span>
+                <span className="font-bold">Dr. Kalyan Ayurveda</span>
               </div>
               <p className="text-white/70">
                 Authentic Ayurvedic healing for chronic diseases, wellness optimization, and natural transformation.
