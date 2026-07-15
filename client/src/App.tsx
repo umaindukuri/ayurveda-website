@@ -21,6 +21,7 @@ import AyurvediaBasics from "./pages/AyurvediaBasics";
 import SubmitTestimonial from "./pages/SubmitTestimonial";
 import Analytics from "./pages/Analytics";
 import EmailAutomation from "./pages/EmailAutomation";
+import BookingSuccess from "./pages/BookingSuccess";
 
 
 function Router() {
@@ -39,6 +40,7 @@ function Router() {
       <Route path="/submit-testimonial" component={SubmitTestimonial} />
       <Route path="/analytics" component={Analytics} />
       <Route path="/email-automation" component={EmailAutomation} />
+      <Route path="/booking-success" component={BookingSuccess} />
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { BookingModal } from '@/components/BookingModal';
+import { MobileMenuDrawer } from '@/components/MobileMenuDrawer';
 import { X, ChevronDown } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -94,8 +95,9 @@ export function CompactHeader() {
             </div>
           </div>
 
-          {/* CTA Button */}
-          <div className="flex-shrink-0">
+          {/* Mobile Menu & CTA Button */}
+          <div className="flex items-center gap-3 flex-shrink-0">
+            <MobileMenuDrawer />
             <BookingModal triggerText="Book Now" />
           </div>
         </div>
