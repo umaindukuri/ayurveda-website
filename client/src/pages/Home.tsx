@@ -88,7 +88,7 @@ export default function Home() {
       <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-border shadow-sm">
         <div className="container flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
-            <img src="/manus-storage/dr_kalyan_logo_ca924a88.png" alt="Dr. Kalyan Ayurveda" className="h-10 w-10" />
+            <img src="/manus-storage/dr_kalyan_logo_final_07bd8e78.png" alt="Dr. Kalyan Ayurveda" className="h-10 w-10" />
             <span className="font-playfair text-lg font-bold text-primary">Ayurveda Fertility</span>
           </div>
           <div className="hidden md:flex items-center gap-12">
@@ -418,7 +418,7 @@ export default function Home() {
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <img src="/manus-storage/dr_kalyan_logo_ca924a88.png" alt="Logo" className="h-8 w-8 invert" />
+                <img src="/manus-storage/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-8 w-8 invert" />
                 <span className="font-playfair font-bold">Ayurveda Wellness</span>
               </div>
               <p className="text-white/70">
