@@ -16,8 +16,8 @@ import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 import { EnhancedAvailabilityCalendar } from "@/components/EnhancedAvailabilityCalendar";
 import { SuccessStoriesBlog } from "@/components/SuccessStoriesBlog";
 import { ReferralRewardsProgram } from "@/components/ReferralRewardsProgram";
-import { PatientRatingsWidget } from "@/components/PatientRatingsWidget";
-import { TreatmentOutcomeDashboard } from "@/components/TreatmentOutcomeDashboard";
+import { FilterablePatientRatings } from "@/components/FilterablePatientRatings";
+import { EnhancedDashboardWithTooltips } from "@/components/EnhancedDashboardWithTooltips";
 
 export default function Home() {
   const treatments = [
@@ -342,7 +342,7 @@ export default function Home() {
       <section className="py-10 bg-white">
         <div className="container max-w-5xl">
           <h2 className="text-3xl font-playfair font-bold text-foreground mb-8 text-center">Patient Testimonials & Ratings</h2>
-          <PatientRatingsWidget />
+          <FilterablePatientRatings />
         </div>
       </section>
 
@@ -350,7 +350,7 @@ export default function Home() {
       <section className="py-10 bg-muted/30">
         <div className="container max-w-6xl">
           <h2 className="text-3xl font-playfair font-bold text-foreground mb-8 text-center">Treatment Outcomes & Success Rates</h2>
-          <TreatmentOutcomeDashboard />
+          <EnhancedDashboardWithTooltips />
         </div>
       </section>
 
