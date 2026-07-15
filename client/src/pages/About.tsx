@@ -10,14 +10,14 @@ export default function About() {
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-border shadow-sm">
         <div className="container flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
-            <img src="/manus-storage/ayurveda_logo_30556739.png" alt="Ayurveda Wellness Clinic" className="h-10 w-10" />
-            <span className="font-playfair text-xl font-bold text-primary">Ayurveda Wellness</span>
+            <img src="/manus-storage/dr_kalyan_logo_ca924a88.png" alt="Dr. Kalyan Ayurveda" className="h-10 w-10" />
+            <span className="font-playfair text-lg font-bold text-primary">Ayurveda Fertility</span>
           </div>
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-12">
             <Link href="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Home</Link>
-            <Link href="/treatments" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Treatments</Link>
+            <Link href="/treatments" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Services</Link>
             <Link href="/about" className="text-sm font-medium text-primary font-semibold">About</Link>
-            <Link href="/testimonials" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Success Stories</Link>
+            <Link href="/testimonials" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Testimonials</Link>
             <Button className="bg-primary hover:bg-primary/90 text-white">Book Consultation</Button>
           </div>
         </div>
@@ -248,7 +248,7 @@ export default function About() {
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <img src="/manus-storage/ayurveda_logo_30556739.png" alt="Logo" className="h-8 w-8 invert" />
+                <img src="/manus-storage/dr_kalyan_logo_ca924a88.png" alt="Logo" className="h-8 w-8 invert" />
                 <span className="font-playfair font-bold">Ayurveda Wellness</span>
               </div>
               <p className="text-white/70">

@@ -88,7 +88,7 @@ export default function Home() {
       <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-border shadow-sm">
         <div className="container flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
-            <img src="/manus-storage/ayurveda_logo_30556739.png" alt="Ayurveda Fertility" className="h-10 w-10" />
+            <img src="/manus-storage/dr_kalyan_logo_ca924a88.png" alt="Dr. Kalyan Ayurveda" className="h-10 w-10" />
             <span className="font-playfair text-lg font-bold text-primary">Ayurveda Fertility</span>
           </div>
           <div className="hidden md:flex items-center gap-12">
@@ -110,9 +110,9 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent"></div>
         <div className="relative z-10 container max-w-2xl text-left text-white pl-12">
-          <h1 className="text-7xl font-playfair font-bold mb-6 leading-tight">Restore Your Fertility Naturally</h1>
+          <h1 className="text-7xl font-playfair font-bold mb-6 leading-tight">Restore Your Health Naturally</h1>
           <p className="text-xl mb-8 font-light leading-relaxed max-w-xl">
-            Discover the transformative power of authentic Ayurvedic Panchakarma and personalized fertility treatments rooted in 5,000 years of healing wisdom.
+            Discover the transformative power of authentic Ayurvedic Panchakarma and personalized wellness treatments rooted in 5,000 years of healing wisdom.
           </p>
           <div className="flex gap-4">
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-base px-8">
@@ -418,7 +418,7 @@ export default function Home() {
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <img src="/manus-storage/ayurveda_logo_30556739.png" alt="Logo" className="h-8 w-8 invert" />
+                <img src="/manus-storage/dr_kalyan_logo_ca924a88.png" alt="Logo" className="h-8 w-8 invert" />
                 <span className="font-playfair font-bold">Ayurveda Wellness</span>
               </div>
               <p className="text-white/70">
