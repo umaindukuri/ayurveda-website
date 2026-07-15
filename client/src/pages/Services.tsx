@@ -8,7 +8,7 @@ export default function Services() {
     <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-border shadow-sm">
-        <div className="container flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 px-6 max-w-full">
           <div className="flex items-center gap-2">
             <img src="/manus-storage/dr_kalyan_logo_final_07bd8e78.png" alt="Ayurveda Fertility Clinic" className="h-10 w-10" />
             <span className="font-playfair text-xl font-bold text-primary">Ayurveda Fertility</span>
