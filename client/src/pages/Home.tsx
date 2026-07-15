@@ -85,7 +85,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-border shadow-sm">
+      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-border shadow-sm">
         <div className="container flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
             <img src="/manus-storage/ayurveda_logo_30556739.png" alt="Ayurveda Wellness Clinic" className="h-10 w-10" />
@@ -96,15 +96,17 @@ export default function Home() {
             <Link href="/treatments" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Treatments</Link>
             <Link href="/about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">About</Link>
             <Link href="/testimonials" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Success Stories</Link>
+            <Link href="/blog" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Blog</Link>
+            <Link href="/contact" className="text-sm font-medium text-foreground hover:text-primary transition-colors">Contact</Link>
             <Button className="bg-primary hover:bg-primary/90 text-white">Book Consultation</Button>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero Section with Stock Image */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <img 
-          src="/manus-storage/hero_meditation_f2e3e5c4.png" 
+          src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1600&h=900&fit=crop" 
           alt="Ayurvedic Wellness" 
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -136,7 +138,7 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-border">
+            <Card className="border-border hover:shadow-lg transition-shadow">
               <CardHeader>
                 <Leaf className="w-12 h-12 text-primary mb-2" />
                 <CardTitle>Root Cause Healing</CardTitle>
@@ -148,7 +150,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="border-border">
+            <Card className="border-border hover:shadow-lg transition-shadow">
               <CardHeader>
                 <Heart className="w-12 h-12 text-secondary mb-2" />
                 <CardTitle>Holistic Integration</CardTitle>
@@ -160,7 +162,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="border-border">
+            <Card className="border-border hover:shadow-lg transition-shadow">
               <CardHeader>
                 <Award className="w-12 h-12 text-primary mb-2" />
                 <CardTitle>Proven Results</CardTitle>
@@ -209,7 +211,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Panchakarma Highlight */}
+      {/* Panchakarma Highlight with Stock Image */}
       <section className="py-20 bg-white">
         <div className="container max-w-5xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -242,9 +244,9 @@ export default function Home() {
             </div>
             <div>
               <img 
-                src="/manus-storage/ayurveda_treatment_604e7957.png" 
+                src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&h=400&fit=crop" 
                 alt="Panchakarma Treatment" 
-                className="rounded-lg shadow-lg"
+                className="rounded-lg shadow-lg w-full"
               />
             </div>
           </div>
@@ -257,7 +259,7 @@ export default function Home() {
           <h2 className="text-4xl font-playfair font-bold text-foreground mb-16 text-center">Conditions We Successfully Treat</h2>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-lg border border-border p-8">
+            <div className="bg-white rounded-lg border border-border p-8 hover:shadow-lg transition-shadow">
               <h3 className="text-2xl font-playfair font-bold text-foreground mb-6">Chronic Diseases</h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li>✓ Arthritis &amp; Joint Pain</li>
@@ -269,7 +271,7 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="bg-white rounded-lg border border-border p-8">
+            <div className="bg-white rounded-lg border border-border p-8 hover:shadow-lg transition-shadow">
               <h3 className="text-2xl font-playfair font-bold text-foreground mb-6">Digestive &amp; Metabolic</h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li>✓ IBS &amp; Inflammatory Bowel Disease</li>
@@ -281,7 +283,7 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="bg-white rounded-lg border border-border p-8">
+            <div className="bg-white rounded-lg border border-border p-8 hover:shadow-lg transition-shadow">
               <h3 className="text-2xl font-playfair font-bold text-foreground mb-6">Respiratory &amp; Allergies</h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li>✓ Asthma &amp; Bronchitis</li>
@@ -293,7 +295,7 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="bg-white rounded-lg border border-border p-8">
+            <div className="bg-white rounded-lg border border-border p-8 hover:shadow-lg transition-shadow">
               <h3 className="text-2xl font-playfair font-bold text-foreground mb-6">Skin &amp; Mental Health</h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li>✓ Eczema &amp; Psoriasis</li>
@@ -308,14 +310,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Patient Testimonials */}
+      {/* Patient Testimonials with Stock Images */}
       <section className="py-20 bg-white">
         <div className="container max-w-5xl">
           <h2 className="text-4xl font-playfair font-bold text-foreground mb-16 text-center">Patient Success Stories</h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             {testimonials.map((testimonial, idx) => (
-              <Card key={idx} className="border-border">
+              <Card key={idx} className="border-border hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex justify-between items-start mb-3">
                     <div>
@@ -404,9 +406,11 @@ export default function Home() {
           <p className="text-lg text-muted-foreground mb-8">
             Schedule a personalized consultation to discuss your health concerns and create your customized treatment plan.
           </p>
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-base">
-            Book Your Consultation
-          </Button>
+          <Link href="/contact">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-base">
+              Book Your Consultation
+            </Button>
+          </Link>
         </div>
       </section>
 
@@ -435,10 +439,10 @@ export default function Home() {
             <div>
               <h4 className="font-semibold mb-4">Treatment Areas</h4>
               <ul className="space-y-2 text-white/70">
-                <li><Link href="/treatments/chronic-diseases" className="hover:text-white transition-colors">Chronic Diseases</Link></li>
-                <li><Link href="/treatments/digestive-health" className="hover:text-white transition-colors">Digestive Health</Link></li>
-                <li><Link href="/treatments/mental-health" className="hover:text-white transition-colors">Mental Health</Link></li>
-                <li><Link href="/treatments/fertility" className="hover:text-white transition-colors">Fertility</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Panchakarma</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Chronic Diseases</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Mental Health</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Fertility</Link></li>
               </ul>
             </div>
             <div>
@@ -452,7 +456,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-white/10 pt-8 text-center text-white/70">
-            <p>&copy; 2026 Ayurveda Wellness Clinic. All rights reserved. | Privacy Policy | Terms of Service</p>
+            <p>&copy; 2026 Ayurveda Wellness Clinic. All rights reserved. | <Link href="/contact" className="hover:text-white">Privacy Policy</Link> | <Link href="/contact" className="hover:text-white">Terms of Service</Link></p>
           </div>
         </div>
       </footer>
