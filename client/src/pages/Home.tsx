@@ -5,7 +5,7 @@ import { Link } from "wouter";
 import { BookingModal } from "@/components/BookingModal";
 import { FAQSection } from "@/components/FAQSection";
 import { SocialMediaLinks } from "@/components/SocialMediaLinks";
-import { TreatmentComparisonChart } from "@/components/TreatmentComparisonChart";
+import { FilteredTreatmentChart } from "@/components/FilteredTreatmentChart";
 import { TestimonialVideoSection } from "@/components/TestimonialVideoSection";
 
 export default function Home() {
@@ -355,8 +355,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Treatment Comparison Chart */}
-      <TreatmentComparisonChart />
+      {/* Treatment Comparison Chart with Filters */}
+      <FilteredTreatmentChart />
 
       {/* Program Options */}
       <section className="py-20 bg-gradient-to-b from-white to-white/50">

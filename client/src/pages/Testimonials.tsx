@@ -261,9 +261,16 @@ export default function Testimonials() {
           <p className="text-lg text-muted-foreground mb-8">
             Join thousands of patients who have recovered from chronic diseases and achieved lasting wellness. Schedule your personalized consultation today.
           </p>
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-base">
-            Book Your Consultation
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-base">
+              Book Your Consultation
+            </Button>
+            <Link href="/submit-testimonial">
+              <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/5 text-base w-full sm:w-auto">
+                Share Your Story
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 

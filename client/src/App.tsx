@@ -5,6 +5,7 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { WhatsAppWidget } from "./components/WhatsAppWidget";
+import { LiveChatWidget } from "./components/LiveChatWidget";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import About from "./pages/About";
@@ -14,6 +15,7 @@ import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import AyurvedaCures from "./pages/AyurvedaCures";
 import AyurvediaBasics from "./pages/AyurvediaBasics";
+import SubmitTestimonial from "./pages/SubmitTestimonial";
 
 
 function Router() {
@@ -28,6 +30,7 @@ function Router() {
       <Route path={"/contact"} component={Contact} />
       <Route path={"/ayurveda-cures"} component={AyurvedaCures} />
       <Route path={"/ayurveda-basics"} component={AyurvediaBasics} />
+      <Route path={"/submit-testimonial"} component={SubmitTestimonial} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
@@ -51,6 +54,7 @@ function App() {
           <Toaster />
           <Router />
           <WhatsAppWidget />
+          <LiveChatWidget />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
