@@ -237,9 +237,11 @@ export default function Home() {
                   <span className="text-muted-foreground"><strong>Heals the mind</strong> and nervous system</span>
                 </li>
               </ul>
-              <Button className="bg-primary hover:bg-primary/90 text-white">
-                Explore Panchakarma Programs
-              </Button>
+              <Link href="/panchakarma-programs">
+                <Button className="bg-primary hover:bg-primary/90 text-white">
+                  Explore Panchakarma Programs
+                </Button>
+              </Link>
             </div>
             <div>
             <img 
@@ -363,6 +365,78 @@ export default function Home() {
             Watch real patients share their remarkable healing journeys and transformations through authentic Ayurvedic treatment
           </p>
           <TestimonialVideoCarousel />
+        </div>
+      </section>
+
+      {/* Therapy Showcase Section */}
+      <section className="py-16 bg-gradient-to-b from-white to-white/50">
+        <div className="container max-w-6xl">
+          <h2 className="text-4xl font-bold text-foreground mb-4 text-center">Our Signature Therapies</h2>
+          <p className="text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+            Experience authentic Ayurvedic treatments performed by experienced practitioners in our therapy rooms
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all">
+              <img 
+                src="/manus-storage/slide_1_abhyanga_massage_generated.webp" 
+                alt="Abhyanga - Traditional Oil Massage"
+                className="w-full h-80 object-cover hover:scale-105 transition-transform duration-300"
+              />
+              <div className="p-6 bg-white">
+                <p className="text-sm font-semibold text-primary mb-1">Traditional Oil Massage</p>
+                <h3 className="text-2xl font-bold text-foreground mb-3">Abhyanga</h3>
+                <p className="text-muted-foreground">Deep therapeutic full-body oil massage using medicated oils tailored to your dosha. Improves circulation, nourishes tissues, and calms the nervous system.</p>
+              </div>
+            </div>
+
+            <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all">
+              <img 
+                src="/manus-storage/slide_2_shirodhara_therapy_generated.webp" 
+                alt="Shirodhara - Therapeutic Oil Pouring"
+                className="w-full h-80 object-cover hover:scale-105 transition-transform duration-300"
+              />
+              <div className="p-6 bg-white">
+                <p className="text-sm font-semibold text-primary mb-1">Therapeutic Oil Pouring</p>
+                <h3 className="text-2xl font-bold text-foreground mb-3">Shirodhara</h3>
+                <p className="text-muted-foreground">Warm medicated oil flows continuously onto the forehead, deeply calming the mind and nervous system. Excellent for anxiety, insomnia, and mental clarity.</p>
+              </div>
+            </div>
+
+            <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all">
+              <img 
+                src="/manus-storage/slide_3_marma_point_therapy_generated.webp" 
+                alt="Marma Point Therapy - Energy Point Healing"
+                className="w-full h-80 object-cover hover:scale-105 transition-transform duration-300"
+              />
+              <div className="p-6 bg-white">
+                <p className="text-sm font-semibold text-primary mb-1">Energy Point Healing</p>
+                <h3 className="text-2xl font-bold text-foreground mb-3">Marma Point Therapy</h3>
+                <p className="text-muted-foreground">Precise stimulation of vital energy points (marmas) to balance the body's energy channels and promote holistic healing.</p>
+              </div>
+            </div>
+
+            <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all">
+              <img 
+                src="/manus-storage/slide_4_panchakarma_prep_generated.webp" 
+                alt="Panchakarma Treatment Preparation"
+                className="w-full h-80 object-cover hover:scale-105 transition-transform duration-300"
+              />
+              <div className="p-6 bg-white">
+                <p className="text-sm font-semibold text-primary mb-1">Pre-Treatment Consultation</p>
+                <h3 className="text-2xl font-bold text-foreground mb-3">Panchakarma Preparation</h3>
+                <p className="text-muted-foreground">Comprehensive assessment and preparation ensuring optimal results from your Panchakarma treatment. Includes dietary guidance and lifestyle recommendations.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <Link href="/panchakarma-programs">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white">
+                Explore All Panchakarma Programs
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 

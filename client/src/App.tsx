@@ -19,6 +19,7 @@ import Contact from "./pages/Contact";
 import AyurvedaCures from "./pages/AyurvedaCures";
 import AyurvediaBasics from "./pages/AyurvediaBasics";
 import SubmitTestimonial from "./pages/SubmitTestimonial";
+import PanchakarmaPrograms from "./pages/PanchakarmaPrograms";
 import Analytics from "./pages/Analytics";
 import EmailAutomation from "./pages/EmailAutomation";
 import BookingSuccess from "./pages/BookingSuccess";
@@ -40,6 +41,7 @@ function Router() {
       <Route path={"/ayurveda-cures"} component={AyurvedaCures} />
       <Route path={"/ayurveda-basics"} component={AyurvediaBasics} />
       <Route path="/submit-testimonial" component={SubmitTestimonial} />
+      <Route path="/panchakarma-programs" component={PanchakarmaPrograms} />
       <Route path="/analytics" component={Analytics} />
       <Route path="/email-automation" component={EmailAutomation} />
       <Route path="/booking-success" component={BookingSuccess} />
