@@ -58,7 +58,7 @@ const videoTestimonials: VideoTestimonial[] = [
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
     description: 'David struggled with anxiety for years. Through Shirodhara and meditation practices, he found lasting peace without pharmaceutical interventions.',
     results: ['Anxiety symptoms eliminated', 'Better sleep quality', 'Improved focus', 'Emotional stability'],
-    thumbnail: '/manus-storage/video-thumb-anxiety_ba02e1e8.png'
+    thumbnail: '/manus-storage/video-thumb-anxiety_2ec41ab8.png'
   },
   {
     id: '4',

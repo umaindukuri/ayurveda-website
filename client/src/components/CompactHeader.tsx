@@ -82,14 +82,8 @@ export function CompactHeader() {
                 <Link href="/ayurveda-cures" className="block px-4 py-2 text-xs text-foreground hover:bg-primary/10 hover:text-primary transition-colors first:rounded-t-lg">
                   Ayurveda Cures
                 </Link>
-                <Link href="/ayurveda-basics" className="block px-4 py-2 text-xs text-foreground hover:bg-primary/10 hover:text-primary transition-colors">
+                <Link href="/ayurveda-basics" className="block px-4 py-2 text-xs text-foreground hover:bg-primary/10 hover:text-primary transition-colors last:rounded-b-lg">
                   Ayurveda Basics
-                </Link>
-                <Link href="/analytics" className="block px-4 py-2 text-xs text-foreground hover:bg-primary/10 hover:text-primary transition-colors">
-                  Analytics
-                </Link>
-                <Link href="/email-automation" className="block px-4 py-2 text-xs text-foreground hover:bg-primary/10 hover:text-primary transition-colors last:rounded-b-lg">
-                  Email Automation
                 </Link>
               </div>
             </div>
