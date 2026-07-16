@@ -36,7 +36,7 @@ export function TestimonialVideoSection() {
       id: '3',
       title: "Anxiety Relief - Found Inner Peace",
       condition: "Chronic Anxiety",
-      thumbnail: "/manus-storage/ayurveda_wellness_spa_interior_1e8d2c9a.png",
+      thumbnail: "/manus-storage/anxiety-relief-thumb-final_524ff34b.png",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       duration: "3:15"
     }
