@@ -42,6 +42,15 @@ export default function Testimonials() {
       image: "/manus-storage/treatment_skin_health_e6507ce9.png"
     },
     {
+      name: "Sneha P.",
+      location: "Mumbai, India",
+      condition: "Hormonal & Fertility",
+      story: "Against all odds, after 3 years of infertility and multiple failed treatments, I discovered Dr. Kalyan's Ayurvedic approach. The personalized Panchakarma program combined with Uttara Basti treatments balanced my hormones naturally. I conceived naturally within 4 months and now have a beautiful healthy baby. This journey taught me that sometimes the ancient wisdom works better than modern medicine.",
+      rating: 5,
+      highlight: "Natural conception after 3 years of infertility",
+      image: "/manus-storage/treatment_fertility_wellness_a1b2c3d4.png"
+    },
+    {
       name: "Robert & Susan",
       location: "Sydney, Australia",
       condition: "Unexplained Infertility (5 years)",
