@@ -25,10 +25,12 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <img 
-                src="/manus-storage/ayurveda_wellness_spa_070b5ed8.png" 
-                alt="Ayurveda Wellness Clinic" 
-                className="rounded-lg shadow-lg"
+                src="/manus-storage/pasted_file_qJnmC3_image_3ff4f246.png" 
+                alt="Dr. I. Kalyan Chakravarthy, M.D. (Ayurveda)" 
+                className="rounded-lg shadow-lg border-4 border-primary/20"
               />
+              <p className="text-center text-sm text-muted-foreground mt-4 font-semibold">Dr. I. Kalyan Chakravarthy, M.D. (Ayurveda)</p>
+              <p className="text-center text-xs text-muted-foreground">Founder & Chief Ayurvedic Physician</p>
             </div>
             <div>
               <h2 className="text-4xl font-bold text-foreground mb-6">Dr. Kalyan's Ayurveda Specialities & Panchakarma Center</h2>
