@@ -48,7 +48,7 @@ export default function Testimonials() {
       story: "Against all odds, after 3 years of infertility and multiple failed treatments, I discovered Dr. Kalyan's Ayurvedic approach. The personalized Panchakarma program combined with Uttara Basti treatments balanced my hormones naturally. I conceived naturally within 4 months and now have a beautiful healthy baby. This journey taught me that sometimes the ancient wisdom works better than modern medicine.",
       rating: 5,
       highlight: "Natural conception after 3 years of infertility",
-      image: "/manus-storage/sneha-fertility-testimonial-thumb_5c88f689.png"
+      image: "/manus-storage/sneha-fertility-thumb-final_25d16e8c.png"
     },
     {
       name: "Robert & Susan",
