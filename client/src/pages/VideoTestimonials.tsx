@@ -55,7 +55,7 @@ const videoTestimonials: VideoTestimonial[] = [
     duration: '3:48',
     patientName: 'David K.',
     patientAge: '45',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoUrl: '/manus-storage/anxiety-relief-testimonial_34882589.mp4',
     description: 'David struggled with anxiety for years. Through Shirodhara and meditation practices, he found lasting peace without pharmaceutical interventions.',
     results: ['Anxiety symptoms eliminated', 'Better sleep quality', 'Improved focus', 'Emotional stability'],
     thumbnail: '/manus-storage/video-thumb-anxiety_2ec41ab8.png'
@@ -228,15 +228,28 @@ export default function VideoTestimonials() {
           {selectedVideo && (
             <div className="space-y-6">
               <div className="aspect-video bg-black rounded-lg overflow-hidden">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src={selectedVideo.videoUrl}
-                  title={selectedVideo.title}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                {selectedVideo.videoUrl.includes('youtube.com') || selectedVideo.videoUrl.includes('youtu.be') ? (
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={selectedVideo.videoUrl}
+                    title={selectedVideo.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                ) : (
+                  <video
+                    width="100%"
+                    height="100%"
+                    controls
+                    autoPlay
+                    className="w-full h-full"
+                  >
+                    <source src={selectedVideo.videoUrl} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                )}
               </div>
               <div className="space-y-4">
                 <div className="grid md:grid-cols-2 gap-4">
