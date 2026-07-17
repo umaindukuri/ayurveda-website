@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Play, X } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { LazyImage } from './LazyImage';
+
 
 interface Video {
   id: string;
@@ -21,7 +21,7 @@ export function TestimonialVideoSection() {
       id: '1',
       title: "Arthritis Recovery - Complete Pain Relief",
       condition: "Rheumatoid Arthritis",
-      thumbnail: "/manus-storage/panchakarma_treatment_vibrant_optimized.webp",
+      thumbnail: "/manus-storage/panchakarma_treatment_vibrant_d075a65b.png",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       duration: "3:45"
     },
@@ -29,7 +29,7 @@ export function TestimonialVideoSection() {
       id: '2',
       title: "Diabetes Management - Blood Sugar Normalized",
       condition: "Type 2 Diabetes",
-      thumbnail: "/manus-storage/hero_meditation_premium_optimized.webp",
+      thumbnail: "/manus-storage/hero_meditation_premium_0f0d5eb0.png",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       duration: "4:20"
     },
@@ -37,7 +37,7 @@ export function TestimonialVideoSection() {
       id: '3',
       title: "Anxiety Relief - Found Inner Peace",
       condition: "Chronic Anxiety",
-      thumbnail: "/manus-storage/anxiety-relief-thumb-final_optimized.webp",
+      thumbnail: "/manus-storage/anxiety-relief-thumb-final_524ff34b.png",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       duration: "3:15"
     }
@@ -63,10 +63,11 @@ export function TestimonialVideoSection() {
             >
               <CardContent className="p-0">
                 <div className="relative overflow-hidden bg-black/5 aspect-video">
-                  <LazyImage 
+                  <img 
                     src={video.thumbnail} 
                     alt={video.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center">
                     <div className="bg-primary hover:bg-primary/90 rounded-full p-4 transition-all transform group-hover:scale-110">

@@ -19,7 +19,7 @@ import { ReferralRewardsProgram } from "@/components/ReferralRewardsProgram";
 import { FilterablePatientRatings } from "@/components/FilterablePatientRatings";
 import { EnhancedDashboardWithTooltips } from "@/components/EnhancedDashboardWithTooltips";
 import { TestimonialVideoCarousel } from "@/components/TestimonialVideoCarousel";
-import { LazyImage } from "@/components/LazyImage";
+
 
 export default function Home() {
   const treatments = [
@@ -107,10 +107,11 @@ export default function Home() {
 
       {/* Hero Section - Premium */}
       <section className="relative h-[calc(100vh-120px)] flex items-center justify-start overflow-hidden">
-      <LazyImage
-        src="/manus-storage/hero_meditation_premium_optimized.webp"
+      <img
+        src="/manus-storage/hero_meditation_premium_0f0d5eb0.png"
         alt="Restore Your Fertility Naturally"
         className="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
       />
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent"></div>
         <div className="relative z-10 container max-w-2xl text-left text-white pl-12">
@@ -245,10 +246,11 @@ export default function Home() {
               </Link>
             </div>
             <div>
-        <LazyImage
-          src="/manus-storage/panchakarma_treatment_vibrant_optimized.webp"
+        <img
+          src="/manus-storage/panchakarma_treatment_vibrant_d075a65b.png"
           alt="Panchakarma Treatment"
           className="w-full h-full object-cover"
+          loading="lazy"
         />
             </div>
           </div>
