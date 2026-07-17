@@ -8,6 +8,10 @@ import { WhatsAppWidget } from "./components/WhatsAppWidget";
 import { LiveChatWidget } from "./components/LiveChatWidget";
 import { TawkToChat } from "./components/TawkToChat";
 import { SEOSchemaMarkup } from "./components/SEOSchemaMarkup";
+import { analytics } from "./lib/analytics";
+
+// Initialize analytics on app load
+analytics.trackEvent('page_load', { timestamp: new Date().toISOString() });
 
 import Home from "@/pages/Home";
 import VideoTestimonials from "@/pages/VideoTestimonials";
