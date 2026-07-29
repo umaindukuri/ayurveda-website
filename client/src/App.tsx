@@ -32,6 +32,8 @@ import AppointmentManagement from "./pages/AppointmentManagement";
 import AdminInquiries from "./pages/AdminInquiries";
 import AdminAppointments from "./pages/AdminAppointments";
 import Pricing from "./pages/Pricing";
+import MyAppointments from "./pages/MyAppointments";
+import Shop from "./pages/Shop";
 import BookAppointment from "./pages/BookAppointment";
 
 function Router() {
@@ -58,6 +60,8 @@ function Router() {
       <Route path="/admin/inquiries" component={AdminInquiries} />
       <Route path="/admin/appointments" component={AdminAppointments} />
       <Route path="/treatments/pricing" component={Pricing} />
+      <Route path="/my-appointments" component={MyAppointments} />
+      <Route path="/shop" component={Shop} />
       <Route path="/book-appointment" component={BookAppointment} />
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}

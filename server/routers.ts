@@ -223,6 +223,18 @@ export const appRouter = router({
       return { dates: rows.map(r => ({ id: r.id, date: r.blockedDate instanceof Date ? r.blockedDate.toISOString().slice(0, 10) : String(r.blockedDate), reason: r.reason })) };
     }),
 
+    myAppointments: protectedProcedure.query(async ({ ctx }) => {
+      const db = await getDb();
+      if (!db) return [];
+      const { desc, or, eq: drizzleEq } = await import("drizzle-orm");
+      // Match by email (patients book without login, so we match on email)
+      return db
+        .select()
+        .from(appointments)
+        .where(drizzleEq(appointments.email, ctx.user.email ?? ""))
+        .orderBy(desc(appointments.appointmentDate));
+    }),
+
     getBookedSlots: publicProcedure
       .input(z.object({ date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/) }))
       .query(async ({ input }) => {

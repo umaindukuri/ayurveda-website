@@ -3,7 +3,7 @@ import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { BookingModal } from '@/components/BookingModal';
 import { MobileMenuDrawer } from '@/components/MobileMenuDrawer';
-import { ChevronDown, Inbox, CalendarCheck } from 'lucide-react';
+import { ChevronDown, Inbox, CalendarCheck, CalendarDays } from 'lucide-react';
 import { toast } from 'sonner';
 import { useAuth } from '@/_core/hooks/useAuth';
 import { trpc } from '@/lib/trpc';
@@ -84,6 +84,7 @@ export function CompactHeader() {
             <Link href="/" className="text-xs font-medium text-primary font-semibold hover:text-primary/80 transition-colors">Home</Link>
             <Link href="/treatments" className="text-xs font-medium text-foreground hover:text-primary transition-colors">Treatments</Link>
             <Link href="/treatments/pricing" className="text-xs font-medium text-foreground hover:text-primary transition-colors">Pricing</Link>
+            <Link href="/shop" className="text-xs font-medium text-foreground hover:text-primary transition-colors">Shop</Link>
             <Link href="/about" className="text-xs font-medium text-foreground hover:text-primary transition-colors">About</Link>
             <Link href="/testimonials" className="text-xs font-medium text-foreground hover:text-primary transition-colors">Success Stories</Link>
             <Link href="/video-testimonials" className="text-xs font-medium text-foreground hover:text-primary transition-colors">Videos</Link>
@@ -107,6 +108,13 @@ export function CompactHeader() {
 
           {/* Mobile Menu & CTA Button */}
           <div className="flex items-center gap-3 flex-shrink-0">
+            {user && !isAdmin && (
+              <Link href="/my-appointments">
+                <button className="flex items-center justify-center w-9 h-9 rounded-full hover:bg-primary/10 transition-colors" title="My Appointments">
+                  <CalendarDays className="w-5 h-5 text-primary" />
+                </button>
+              </Link>
+            )}
             {isAdmin && (
               <>
                 <Link href="/admin/inquiries">
