@@ -5,7 +5,7 @@ import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import { TRPCError } from "@trpc/server";
 import { notifyOwner } from "./_core/notification";
 import { getDb } from "./db";
-import { contactInquiries } from "../drizzle/schema";
+import { contactInquiries, appointments } from "../drizzle/schema";
 import { z } from "zod";
 
 const contactSchema = z.object({
@@ -60,6 +60,51 @@ export const appRouter = router({
         return { rows, total: rows.length };
       }),
 
+    listAppointments: protectedProcedure
+      .input(z.object({
+        status: z.enum(["pending", "confirmed", "cancelled", "completed", "all"]).default("all"),
+        limit: z.number().min(1).max(100).default(50),
+      }))
+      .query(async ({ ctx, input }) => {
+        if (ctx.user.role !== "admin") throw new TRPCError({ code: "FORBIDDEN" });
+        const db = await getDb();
+        if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "DB unavailable" });
+        const { desc, eq: drizzleEq } = await import("drizzle-orm");
+        const rows = await db
+          .select()
+          .from(appointments)
+          .where(input.status !== "all" ? drizzleEq(appointments.status, input.status as any) : undefined)
+          .orderBy(desc(appointments.createdAt))
+          .limit(input.limit);
+        return rows;
+      }),
+
+    updateAppointmentStatus: protectedProcedure
+      .input(z.object({
+        id: z.number(),
+        status: z.enum(["pending", "confirmed", "cancelled", "completed"]),
+      }))
+      .mutation(async ({ ctx, input }) => {
+        if (ctx.user.role !== "admin") throw new TRPCError({ code: "FORBIDDEN" });
+        const db = await getDb();
+        if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "DB unavailable" });
+        const { eq: drizzleEq } = await import("drizzle-orm");
+        await db.update(appointments).set({ status: input.status }).where(drizzleEq(appointments.id, input.id));
+        return { success: true };
+      }),
+
+    newInquiryCount: protectedProcedure.query(async ({ ctx }) => {
+      if (ctx.user.role !== "admin") return { count: 0 };
+      const db = await getDb();
+      if (!db) return { count: 0 };
+      const { eq: drizzleEq, count } = await import("drizzle-orm");
+      const [result] = await db
+        .select({ count: count() })
+        .from(contactInquiries)
+        .where(drizzleEq(contactInquiries.status, "new"));
+      return { count: Number(result?.count ?? 0) };
+    }),
+
     updateStatus: protectedProcedure
       .input(z.object({
         id: z.number(),
@@ -75,6 +120,75 @@ export const appRouter = router({
           .set({ status: input.status })
           .where(drizzleEq(contactInquiries.id, input.id));
         return { success: true };
+      }),
+  }),
+
+  appointments: router({
+    book: publicProcedure
+      .input(z.object({
+        name: z.string().min(1).max(255),
+        email: z.string().email().max(320),
+        phone: z.string().min(6).max(30),
+        treatmentType: z.enum(["consultation","panchakarma","fertility","chronic_disease","digestive","respiratory","skin","mental_health","rejuvenation","other"]).default("consultation"),
+        appointmentDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+        timeSlot: z.string().min(1).max(20),
+        notes: z.string().max(1000).optional(),
+      }))
+      .mutation(async ({ input }) => {
+        const db = await getDb();
+        if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "DB unavailable" });
+        const result = await db.insert(appointments).values({
+          name: input.name,
+          email: input.email,
+          phone: input.phone,
+          treatmentType: input.treatmentType,
+          appointmentDate: new Date(input.appointmentDate + "T00:00:00") as any,
+          timeSlot: input.timeSlot,
+          notes: input.notes ?? null,
+          status: "pending",
+        });
+        const id = Number((result as any)[0]?.insertId);
+        const treatmentLabels: Record<string, string> = {
+          consultation: "General Consultation",
+          panchakarma: "Panchakarma",
+          fertility: "Fertility Treatment",
+          chronic_disease: "Chronic Disease Management",
+          digestive: "Digestive Health",
+          respiratory: "Respiratory Wellness",
+          skin: "Skin Conditions",
+          mental_health: "Mental Health & Stress",
+          rejuvenation: "Rejuvenation & Anti-Aging",
+          other: "Other",
+        };
+        await notifyOwner({
+          title: `New Appointment Request: ${input.name}`,
+          content: [
+            `Patient: ${input.name}`,
+            `Email: ${input.email}`,
+            `Phone: ${input.phone}`,
+            `Treatment: ${treatmentLabels[input.treatmentType] ?? input.treatmentType}`,
+            `Date: ${input.appointmentDate}`,
+            `Time: ${input.timeSlot}`,
+            input.notes ? `Notes: ${input.notes}` : null,
+          ].filter(Boolean).join("\n"),
+        }).catch(() => {});
+        return { success: true, id };
+      }),
+
+    getBookedSlots: publicProcedure
+      .input(z.object({ date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/) }))
+      .query(async ({ input }) => {
+        const db = await getDb();
+        if (!db) return { slots: [] };
+        const { and, ne, sql } = await import("drizzle-orm");
+        const rows = await db
+          .select({ timeSlot: appointments.timeSlot })
+          .from(appointments)
+          .where(and(
+            sql`DATE(${appointments.appointmentDate}) = ${input.date}`,
+            ne(appointments.status, "cancelled"),
+          ));
+        return { slots: rows.map(r => r.timeSlot) };
       }),
   }),
 

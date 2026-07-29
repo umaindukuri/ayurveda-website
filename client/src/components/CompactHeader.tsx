@@ -3,12 +3,21 @@ import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { BookingModal } from '@/components/BookingModal';
 import { MobileMenuDrawer } from '@/components/MobileMenuDrawer';
-import { X, ChevronDown } from 'lucide-react';
+import { ChevronDown, Inbox } from 'lucide-react';
 import { toast } from 'sonner';
+import { useAuth } from '@/_core/hooks/useAuth';
+import { trpc } from '@/lib/trpc';
 
 export function CompactHeader() {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
+  const { user } = useAuth();
+  const isAdmin = user?.role === 'admin';
+  const { data: countData } = trpc.admin.newInquiryCount.useQuery(undefined, {
+    enabled: isAdmin,
+    refetchInterval: 60_000,
+  });
+  const newCount = countData?.count ?? 0;
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -91,6 +100,18 @@ export function CompactHeader() {
 
           {/* Mobile Menu & CTA Button */}
           <div className="flex items-center gap-3 flex-shrink-0">
+            {isAdmin && (
+              <Link href="/admin/inquiries">
+                <button className="relative flex items-center justify-center w-9 h-9 rounded-full hover:bg-primary/10 transition-colors" title="Patient Inquiries">
+                  <Inbox className="w-5 h-5 text-primary" />
+                  {newCount > 0 && (
+                    <span className="absolute -top-0.5 -right-0.5 flex items-center justify-center w-4 h-4 rounded-full bg-red-500 text-white text-[10px] font-bold leading-none">
+                      {newCount > 9 ? '9+' : newCount}
+                    </span>
+                  )}
+                </button>
+              </Link>
+            )}
             <MobileMenuDrawer />
             <BookingModal triggerText="Book Now" />
           </div>

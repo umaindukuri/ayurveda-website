@@ -15,6 +15,13 @@
       "when": 1785345824760,
       "tag": "0001_first_drax",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1785346803644,
+      "tag": "0002_numerous_black_bird",
+      "breakpoints": true
     }
   ]
 }
