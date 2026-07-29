@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight, Play, Star } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play, Star, X } from 'lucide-react';
+import { Link } from 'wouter';
 
 interface TestimonialVideo {
   id: string;
@@ -23,10 +24,10 @@ const testimonialVideos: TestimonialVideo[] = [
     condition: 'Infertility & PCOS',
     beforeAfter: 'Struggled for 5 years → Natural pregnancy in 8 months',
     videoThumbnail: '/images/carousel-thumb-infertility_9453379d.png',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-    duration: '4:32',
+    videoUrl: '/images/testimonial-fertility-sarah-placeholder_d5b706c4.mp4',
+    duration: '0:08',
     rating: 5,
-    testimonialText: 'Dr. Kalyan\'s personalized Ayurvedic treatment gave me hope when I had lost it. The combination of herbal medicines and lifestyle changes worked wonders.',
+    testimonialText: "Dr. Kalyan's personalized Ayurvedic treatment gave me hope when I had lost it. The combination of herbal medicines and lifestyle changes worked wonders.",
     treatmentDuration: '8 months',
   },
   {
@@ -35,8 +36,8 @@ const testimonialVideos: TestimonialVideo[] = [
     condition: 'Chronic Back Pain',
     beforeAfter: 'Severe pain limiting mobility → Pain-free and active',
     videoThumbnail: '/images/carousel-thumb-back-pain_ace4f1e7.png',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-    duration: '5:15',
+    videoUrl: '/images/testimonial-arthritis-james-placeholder_9ad0abac.mp4',
+    duration: '0:08',
     rating: 5,
     testimonialText: 'After 3 years of conventional treatment, Ayurveda gave me relief. The Panchakarma therapy was transformative.',
     treatmentDuration: '6 months',
@@ -47,10 +48,10 @@ const testimonialVideos: TestimonialVideo[] = [
     condition: 'Thyroid Imbalance',
     beforeAfter: 'Medication dependent → Normalized TSH levels naturally',
     videoThumbnail: '/images/carousel-thumb-thyroid_cea4486a.png',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-    duration: '3:48',
+    videoUrl: '/images/testimonial-anxiety-david-placeholder_9c7bf059.mp4',
+    duration: '0:08',
     rating: 5,
-    testimonialText: 'I reduced my thyroid medication significantly. Dr. Kalyan\'s approach to root cause treatment is remarkable.',
+    testimonialText: "I reduced my thyroid medication significantly. Dr. Kalyan's approach to root cause treatment is remarkable.",
     treatmentDuration: '5 months',
   },
   {
@@ -59,8 +60,8 @@ const testimonialVideos: TestimonialVideo[] = [
     condition: 'Digestive Issues & IBS',
     beforeAfter: 'Frequent symptoms → Stable digestion and energy',
     videoThumbnail: '/images/carousel-thumb-digestion_622eeb69.png',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-    duration: '4:20',
+    videoUrl: '/images/testimonial-digestive-robert-placeholder_d5d72f4a.mp4',
+    duration: '0:08',
     rating: 5,
     testimonialText: 'The dietary recommendations and herbal formulations completely changed my digestive health. I feel energized again.',
     treatmentDuration: '4 months',
@@ -71,14 +72,13 @@ export function TestimonialVideoCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedVideo, setSelectedVideo] = useState<TestimonialVideo | null>(null);
   const [autoPlay, setAutoPlay] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     if (!autoPlay) return;
-
     const interval = setInterval(() => {
       setCurrentIndex(prev => (prev + 1) % testimonialVideos.length);
     }, 6000);
-
     return () => clearInterval(interval);
   }, [autoPlay]);
 
@@ -97,6 +97,14 @@ export function TestimonialVideoCarousel() {
     setCurrentIndex(index);
   };
 
+  const handleClose = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+    setSelectedVideo(null);
+  };
+
   const currentVideo = testimonialVideos[currentIndex];
 
   return (
@@ -105,7 +113,6 @@ export function TestimonialVideoCarousel() {
       <div className="relative">
         <Card className="overflow-hidden bg-black">
           <div className="relative aspect-video bg-gradient-to-br from-gray-900 to-black flex items-center justify-center group">
-            {/* Thumbnail with Play Button */}
             <div className="relative w-full h-full">
               <img
                 src={currentVideo.videoThumbnail}
@@ -208,7 +215,6 @@ export function TestimonialVideoCarousel() {
           <p className="text-3xl font-bold text-green-900">87%</p>
           <p className="text-xs text-green-600 mt-2">of patients see significant improvement</p>
         </Card>
-
         <Card className="p-4 bg-gradient-to-br from-blue-50 to-cyan-50 border-blue-200">
           <p className="text-xs text-blue-600 font-semibold mb-1">Average Rating</p>
           <div className="flex items-center gap-2">
@@ -220,7 +226,6 @@ export function TestimonialVideoCarousel() {
             </div>
           </div>
         </Card>
-
         <Card className="p-4 bg-gradient-to-br from-purple-50 to-pink-50 border-purple-200">
           <p className="text-xs text-purple-600 font-semibold mb-1">Patient Testimonials</p>
           <p className="text-3xl font-bold text-purple-900">500+</p>
@@ -234,30 +239,41 @@ export function TestimonialVideoCarousel() {
         <p className="text-foreground/60 mb-4">
           Join hundreds of patients who have found relief and wellness through authentic Ayurvedic treatment.
         </p>
-        <a href="/">
+        <Link href="/book-appointment">
           <Button className="bg-primary hover:bg-primary/90 text-white">
             Book Your Consultation Today
           </Button>
-        </a>
+        </Link>
       </div>
 
-      {/* Video Modal */}
+      {/* Video Modal — HTML5 player, no YouTube iframe */}
       {selectedVideo && (
         <div
           className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
-          onClick={() => setSelectedVideo(null)}
+          onClick={handleClose}
         >
-          <div className="bg-black rounded-lg max-w-2xl w-full aspect-video" onClick={e => e.stopPropagation()}>
-            <iframe
-              width="100%"
-              height="100%"
-              src={selectedVideo.videoUrl}
-              title={selectedVideo.patientName}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="rounded-lg"
-            />
+          <div
+            className="bg-black rounded-lg max-w-2xl w-full overflow-hidden"
+            onClick={e => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between px-4 py-2 bg-gray-900">
+              <p className="text-white text-sm font-medium truncate">{selectedVideo.patientName} — {selectedVideo.condition}</p>
+              <button onClick={handleClose} className="text-white/70 hover:text-white p-1 rounded transition-colors">
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="aspect-video bg-black">
+              <video
+                ref={videoRef}
+                src={selectedVideo.videoUrl}
+                controls
+                autoPlay
+                playsInline
+                className="w-full h-full"
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
         </div>
       )}

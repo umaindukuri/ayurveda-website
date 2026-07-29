@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Play, X } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-
+import { Link } from 'wouter';
 
 interface Video {
   id: string;
@@ -15,6 +15,7 @@ interface Video {
 
 export function TestimonialVideoSection() {
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const testimonialVideos: Video[] = [
     {
@@ -22,26 +23,34 @@ export function TestimonialVideoSection() {
       title: "Arthritis Recovery - Complete Pain Relief",
       condition: "Rheumatoid Arthritis",
       thumbnail: "/images/panchakarma_treatment_vibrant_d075a65b.png",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      duration: "3:45"
+      videoUrl: "/images/testimonial-arthritis-james-placeholder_9ad0abac.mp4",
+      duration: "0:08"
     },
     {
       id: '2',
       title: "Diabetes Management - Blood Sugar Normalized",
       condition: "Type 2 Diabetes",
       thumbnail: "/images/hero_meditation_premium_0f0d5eb0.png",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      duration: "4:20"
+      videoUrl: "/images/testimonial-diabetes-maria-placeholder_ce571f6b.mp4",
+      duration: "0:08"
     },
     {
       id: '3',
       title: "Anxiety Relief - Found Inner Peace",
       condition: "Chronic Anxiety",
       thumbnail: "/images/anxiety-relief-thumb-final_524ff34b.png",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      duration: "3:15"
+      videoUrl: "/images/testimonial-anxiety-david-placeholder_9c7bf059.mp4",
+      duration: "0:08"
     }
   ];
+
+  const handleClose = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+    setSelectedVideo(null);
+  };
 
   return (
     <section className="py-20 bg-white">
@@ -56,15 +65,15 @@ export function TestimonialVideoSection() {
         {/* Video Grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {testimonialVideos.map((video) => (
-            <Card 
-              key={video.id} 
+            <Card
+              key={video.id}
               className="border-border overflow-hidden hover:shadow-lg transition-all cursor-pointer group"
               onClick={() => setSelectedVideo(video)}
             >
               <CardContent className="p-0">
                 <div className="relative overflow-hidden bg-black/5 aspect-video">
-                  <img 
-                    src={video.thumbnail} 
+                  <img
+                    src={video.thumbnail}
                     alt={video.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
@@ -89,8 +98,14 @@ export function TestimonialVideoSection() {
 
         {/* Video Modal */}
         {selectedVideo && (
-          <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+          <div
+            className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+            onClick={handleClose}
+          >
+            <div
+              className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col"
+              onClick={e => e.stopPropagation()}
+            >
               {/* Header */}
               <div className="bg-foreground text-white p-4 flex items-center justify-between">
                 <div>
@@ -98,7 +113,7 @@ export function TestimonialVideoSection() {
                   <h3 className="text-lg font-semibold">{selectedVideo.title}</h3>
                 </div>
                 <button
-                  onClick={() => setSelectedVideo(null)}
+                  onClick={handleClose}
                   className="p-2 hover:bg-white/10 rounded-lg transition-colors"
                   aria-label="Close video"
                 >
@@ -108,16 +123,16 @@ export function TestimonialVideoSection() {
 
               {/* Video Container */}
               <div className="relative bg-black aspect-video">
-                <iframe
+                <video
+                  ref={videoRef}
                   src={selectedVideo.videoUrl}
-                  title={selectedVideo.title}
-                  width="100%"
-                  height="100%"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
+                  controls
+                  autoPlay
                   className="w-full h-full"
-                />
+                  playsInline
+                >
+                  Your browser does not support the video tag.
+                </video>
               </div>
 
               {/* Footer */}
@@ -125,9 +140,11 @@ export function TestimonialVideoSection() {
                 <p className="text-sm text-muted-foreground mb-4">
                   Interested in experiencing similar results? Schedule your consultation with Dr. Kalyan today.
                 </p>
-                <Button className="w-full bg-primary hover:bg-primary/90 text-white">
-                  Book Your Consultation
-                </Button>
+                <Link href="/book-appointment">
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-white">
+                    Book Your Consultation
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -138,9 +155,11 @@ export function TestimonialVideoSection() {
           <p className="text-muted-foreground mb-6">
             These are just a few of the hundreds of patients we've helped transform their health
           </p>
-          <Button variant="outline" className="border-primary text-primary hover:bg-primary/5">
-            View All Success Stories
-          </Button>
+          <Link href="/video-testimonials">
+            <Button variant="outline" className="border-primary text-primary hover:bg-primary/5">
+              View All Success Stories
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
