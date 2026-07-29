@@ -29,8 +29,7 @@ import EmailAutomation from "./pages/EmailAutomation";
 import BookingSuccess from "./pages/BookingSuccess";
 import SMSReminders from "./pages/SMSReminders";
 import AppointmentManagement from "./pages/AppointmentManagement";
-import AdminInquiries from "./pages/AdminInquiries";
-import AdminAppointments from "./pages/AdminAppointments";
+
 import Pricing from "./pages/Pricing";
 import MyAppointments from "./pages/MyAppointments";
 import Shop from "./pages/Shop";
@@ -57,8 +56,7 @@ function Router() {
       <Route path="/booking-success" component={BookingSuccess} />
       <Route path="/sms-reminders" component={SMSReminders} />
       <Route path="/appointment-management" component={AppointmentManagement} />
-      <Route path="/admin/inquiries" component={AdminInquiries} />
-      <Route path="/admin/appointments" component={AdminAppointments} />
+
       <Route path="/treatments/pricing" component={Pricing} />
       <Route path="/my-appointments" component={MyAppointments} />
       <Route path="/shop" component={Shop} />

@@ -1,20 +1,9 @@
-import { SEO } from "@/components/SEO";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
-import { trpc } from "@/lib/trpc";
-import { addDays, format, isBefore, isWeekend, startOfDay } from "date-fns";
-import { Calendar, CheckCircle, ChevronLeft, ChevronRight, Clock, Loader2, Phone } from "lucide-react";
-import { useMemo, useState } from "react";
-import { toast } from "sonner";
+import { SEO } from "@/components/SEO";
+import { Calendar, Clock, Phone, CheckCircle, ChevronLeft, ChevronRight } from "lucide-react";
+import { format, addDays, startOfToday, isSunday } from "date-fns";
 import { Link } from "wouter";
-
-const MORNING_SLOTS = ["8:00 AM", "8:30 AM", "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM"];
-const EVENING_SLOTS = ["5:00 PM", "5:30 PM", "6:00 PM", "6:30 PM", "7:00 PM", "7:30 PM", "8:00 PM", "8:30 PM"];
-const ALL_SLOTS = [...MORNING_SLOTS, ...EVENING_SLOTS];
 
 const TREATMENT_OPTIONS = [
   { value: "consultation", label: "General Consultation" },
@@ -29,363 +18,288 @@ const TREATMENT_OPTIONS = [
   { value: "other", label: "Other" },
 ];
 
-function buildCalendarDays(viewYear: number, viewMonth: number) {
-  const firstDay = new Date(viewYear, viewMonth, 1);
-  const lastDay = new Date(viewYear, viewMonth + 1, 0);
-  const startOffset = firstDay.getDay(); // 0=Sun
-  const days: (Date | null)[] = Array(startOffset).fill(null);
-  for (let d = 1; d <= lastDay.getDate(); d++) {
-    days.push(new Date(viewYear, viewMonth, d));
+const MORNING_SLOTS = ["8:00 AM", "8:30 AM", "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM"];
+const EVENING_SLOTS = ["5:00 PM", "5:30 PM", "6:00 PM", "6:30 PM", "7:00 PM", "7:30 PM", "8:00 PM", "8:30 PM"];
+
+function buildCalendar(baseDate: Date): Date[] {
+  const days: Date[] = [];
+  for (let i = 0; i < 30; i++) {
+    const d = addDays(baseDate, i);
+    if (!isSunday(d)) days.push(d);
   }
   return days;
 }
 
 export default function BookAppointment() {
-  const today = startOfDay(new Date());
-  const [viewMonth, setViewMonth] = useState(today.getMonth());
-  const [viewYear, setViewYear] = useState(today.getFullYear());
+  const today = startOfToday();
+  const [step, setStep] = useState<1 | 2 | 3>(1);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedSlot, setSelectedSlot] = useState<string | null>(null);
-  const [step, setStep] = useState<"calendar" | "form" | "success">("calendar");
-  const [form, setForm] = useState({ name: "", email: "", phone: "", treatmentType: "consultation", notes: "" });
+  const [calendarWeekStart, setCalendarWeekStart] = useState(0);
+  const [form, setForm] = useState({ name: "", phone: "", email: "", treatment: "consultation", notes: "" });
 
-  const dateStr = selectedDate ? format(selectedDate, "yyyy-MM-dd") : "";
-  const { data: bookedData } = trpc.appointments.getBookedSlots.useQuery(
-    { date: dateStr },
-    { enabled: !!selectedDate }
-  );
-  const bookedSlots = bookedData?.slots ?? [];
+  const availableDays = buildCalendar(today);
+  const weekDays = availableDays.slice(calendarWeekStart, calendarWeekStart + 7);
 
-  const { data: blockedData } = trpc.appointments.getBlockedDates.useQuery();
-  const blockedDateSet = useMemo(() => {
-    const s = new Set<string>();
-    blockedData?.dates.forEach(d => s.add(d.date));
-    return s;
-  }, [blockedData]);
-
-  const calDays = useMemo(() => buildCalendarDays(viewYear, viewMonth), [viewYear, viewMonth]);
-
-  const bookMutation = trpc.appointments.book.useMutation({
-    onSuccess: () => setStep("success"),
-    onError: (e) => toast.error(e.message || "Booking failed. Please try again."),
-  });
-
-  const prevMonth = () => {
-    if (viewMonth === 0) { setViewMonth(11); setViewYear(y => y - 1); }
-    else setViewMonth(m => m - 1);
+  const handleWhatsApp = () => {
+    const treatmentLabel = TREATMENT_OPTIONS.find(t => t.value === form.treatment)?.label ?? form.treatment;
+    const dateStr = selectedDate ? format(selectedDate, "EEEE, MMMM d yyyy") : "";
+    const msg = [
+      `Hello Dr. Kalyan, I'd like to book an appointment.`,
+      ``,
+      `Name: ${form.name}`,
+      `Phone: ${form.phone}`,
+      form.email ? `Email: ${form.email}` : null,
+      `Treatment: ${treatmentLabel}`,
+      `Preferred Date: ${dateStr}`,
+      `Preferred Time: ${selectedSlot}`,
+      form.notes ? `Notes: ${form.notes}` : null,
+    ].filter(Boolean).join("\n");
+    window.open(`https://wa.me/919281332544?text=${encodeURIComponent(msg)}`, "_blank");
   };
-  const nextMonth = () => {
-    if (viewMonth === 11) { setViewMonth(0); setViewYear(y => y + 1); }
-    else setViewMonth(m => m + 1);
-  };
-
-  const isDisabled = (d: Date) => {
-    const ds = format(d, "yyyy-MM-dd");
-    return isBefore(d, today) || isWeekend(d) || blockedDateSet.has(ds);
-  };
-
-  const handleDateClick = (d: Date) => {
-    if (isDisabled(d)) return;
-    setSelectedDate(d);
-    setSelectedSlot(null);
-  };
-
-  const handleSlotClick = (slot: string) => {
-    if (bookedSlots.includes(slot)) return;
-    setSelectedSlot(slot);
-  };
-
-  const handleProceed = () => {
-    if (!selectedDate || !selectedSlot) return;
-    setStep("form");
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!selectedDate || !selectedSlot) return;
-    bookMutation.mutate({
-      ...form,
-      treatmentType: form.treatmentType as any,
-      appointmentDate: format(selectedDate, "yyyy-MM-dd"),
-      timeSlot: selectedSlot,
-      notes: form.notes || undefined,
-    });
-  };
-
-  const whatsappMsg = selectedDate && selectedSlot
-    ? encodeURIComponent(`Hello Dr. Kalyan Ayurveda, I would like to book an appointment on ${format(selectedDate, "dd MMM yyyy")} at ${selectedSlot}.`)
-    : encodeURIComponent("Hello Dr. Kalyan Ayurveda, I would like to book an appointment.");
-
-  if (step === "success") {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center px-4">
-        <SEO title="Appointment Confirmed | Dr. Kalyan Ayurveda" url="/book-appointment" />
-        <Card className="max-w-md w-full text-center border-border">
-          <CardContent className="pt-10 pb-8 px-8">
-            <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-            <h1 className="text-2xl font-bold text-foreground mb-2">Appointment Requested!</h1>
-            <p className="text-muted-foreground mb-2">
-              Your appointment request for{" "}
-              <strong>{selectedDate ? format(selectedDate, "dd MMM yyyy") : ""}</strong> at{" "}
-              <strong>{selectedSlot}</strong> has been received.
-            </p>
-            <p className="text-sm text-muted-foreground mb-6">
-              Dr. Kalyan's team will confirm your appointment shortly. You can also reach us directly on WhatsApp.
-            </p>
-            <div className="flex flex-col gap-3">
-              <a
-                href={`https://wa.me/919281332544?text=${whatsappMsg}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white py-2.5 rounded-lg text-sm font-medium transition-colors"
-              >
-                <Phone className="w-4 h-4" />
-                Confirm via WhatsApp
-              </a>
-              <Link href="/">
-                <Button variant="outline" className="w-full">Back to Home</Button>
-              </Link>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  }
 
   return (
-    <div className="min-h-screen bg-background">
-      <SEO title="Book an Appointment | Dr. Kalyan Ayurveda" url="/book-appointment" />
+    <div className="min-h-screen bg-gray-50">
+      <SEO
+        title="Book an Appointment — Dr. Kalyan Ayurveda"
+        description="Book your Ayurvedic consultation or Panchakarma treatment with Dr. Kalyan. Available Mon–Sat, morning and evening slots."
+      />
 
-      <div className="container max-w-4xl py-10">
-        <div className="mb-8 text-center">
-          <h1 className="text-3xl font-bold text-foreground mb-2">Book Your Appointment</h1>
-          <p className="text-muted-foreground">
-            Clinic hours: Mon–Sat, 8:00 AM–1:00 PM &amp; 5:00 PM–9:00 PM
-          </p>
+      {/* Header */}
+      <div className="bg-white border-b border-border px-6 py-4">
+        <div className="max-w-2xl mx-auto flex items-center gap-3">
+          <Link href="/">
+            <button className="text-muted-foreground hover:text-foreground">
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+          </Link>
+          <div>
+            <h1 className="text-lg font-bold text-foreground">Book an Appointment</h1>
+            <p className="text-xs text-muted-foreground">Dr. Kalyan Ayurveda · Mon–Sat · 8 AM–1 PM & 5–9 PM</p>
+          </div>
         </div>
+      </div>
 
-        {step === "calendar" && (
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Calendar */}
-            <Card className="border-border">
-              <CardHeader className="pb-3">
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-base font-semibold">
-                    {format(new Date(viewYear, viewMonth, 1), "MMMM yyyy")}
-                  </CardTitle>
-                  <div className="flex gap-1">
-                    <Button variant="ghost" size="icon" className="w-7 h-7" onClick={prevMonth}>
-                      <ChevronLeft className="w-4 h-4" />
-                    </Button>
-                    <Button variant="ghost" size="icon" className="w-7 h-7" onClick={nextMonth}>
-                      <ChevronRight className="w-4 h-4" />
-                    </Button>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-7 text-center text-xs text-muted-foreground mb-2">
-                  {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map(d => (
-                    <div key={d} className="py-1 font-medium">{d}</div>
-                  ))}
-                </div>
-                <div className="grid grid-cols-7 gap-1">
-                  {calDays.map((day, i) => {
-                    if (!day) return <div key={i} />;
-                    const disabled = isDisabled(day);
-                    const isSelected = selectedDate && format(day, "yyyy-MM-dd") === format(selectedDate, "yyyy-MM-dd");
-                    return (
+      {/* Steps indicator */}
+      <div className="bg-white border-b border-border px-6 py-3">
+        <div className="max-w-2xl mx-auto flex items-center gap-2 text-sm">
+          {[["1", "Choose Date & Time"], ["2", "Your Details"], ["3", "Confirm"]].map(([n, label], i) => (
+            <div key={n} className="flex items-center gap-2">
+              {i > 0 && <div className="w-8 h-px bg-border" />}
+              <div className={`flex items-center gap-1.5 ${step >= Number(n) ? "text-primary font-medium" : "text-muted-foreground"}`}>
+                <div className={`w-5 h-5 rounded-full flex items-center justify-center text-xs ${step >= Number(n) ? "bg-primary text-white" : "bg-muted text-muted-foreground"}`}>{n}</div>
+                <span className="hidden sm:inline">{label}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="max-w-2xl mx-auto px-6 py-8">
+
+        {/* Step 1: Date & Time */}
+        {step === 1 && (
+          <div className="space-y-6">
+            <div>
+              <h2 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
+                <Calendar className="w-4 h-4 text-primary" /> Select a Date
+              </h2>
+              <div className="flex items-center justify-between mb-2">
+                <button
+                  onClick={() => setCalendarWeekStart(Math.max(0, calendarWeekStart - 7))}
+                  disabled={calendarWeekStart === 0}
+                  className="p-1 rounded hover:bg-muted disabled:opacity-30"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+                <span className="text-sm text-muted-foreground">
+                  {format(weekDays[0], "MMM d")} – {format(weekDays[weekDays.length - 1], "MMM d, yyyy")}
+                </span>
+                <button
+                  onClick={() => setCalendarWeekStart(Math.min(availableDays.length - 7, calendarWeekStart + 7))}
+                  disabled={calendarWeekStart + 7 >= availableDays.length}
+                  className="p-1 rounded hover:bg-muted disabled:opacity-30"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+              <div className="grid grid-cols-7 gap-1.5">
+                {weekDays.map(d => {
+                  const isSelected = selectedDate && format(d, "yyyy-MM-dd") === format(selectedDate, "yyyy-MM-dd");
+                  return (
+                    <button
+                      key={d.toISOString()}
+                      onClick={() => { setSelectedDate(d); setSelectedSlot(null); }}
+                      className={`rounded-lg py-2.5 text-center text-sm transition-colors ${isSelected ? "bg-primary text-white font-semibold" : "bg-white border border-border hover:border-primary hover:text-primary"}`}
+                    >
+                      <div className="text-xs opacity-70">{format(d, "EEE")}</div>
+                      <div className="font-medium">{format(d, "d")}</div>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {selectedDate && (
+              <div>
+                <h2 className="text-base font-semibold text-foreground mb-3 flex items-center gap-2">
+                  <Clock className="w-4 h-4 text-primary" /> Select a Time
+                </h2>
+                <div className="mb-2">
+                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-2">Morning (8 AM – 1 PM)</p>
+                  <div className="flex flex-wrap gap-2">
+                    {MORNING_SLOTS.map(slot => (
                       <button
-                        key={i}
-                        onClick={() => handleDateClick(day)}
-                        disabled={disabled}
-                        className={`text-xs py-2 rounded-md transition-colors font-medium
-                          ${disabled ? "text-muted-foreground/40 cursor-not-allowed" : "hover:bg-primary/10 cursor-pointer"}
-                          ${isSelected ? "bg-primary text-white hover:bg-primary" : ""}
-                        `}
+                        key={slot}
+                        onClick={() => setSelectedSlot(slot)}
+                        className={`px-3 py-1.5 rounded-lg text-sm border transition-colors ${selectedSlot === slot ? "bg-primary text-white border-primary font-medium" : "bg-white border-border hover:border-primary hover:text-primary"}`}
                       >
-                        {day.getDate()}
+                        {slot}
                       </button>
-                    );
-                  })}
+                    ))}
+                  </div>
                 </div>
-                <p className="text-xs text-muted-foreground mt-3 text-center">Weekends unavailable</p>
-              </CardContent>
-            </Card>
+                <div className="mt-3">
+                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-2">Evening (5 PM – 9 PM)</p>
+                  <div className="flex flex-wrap gap-2">
+                    {EVENING_SLOTS.map(slot => (
+                      <button
+                        key={slot}
+                        onClick={() => setSelectedSlot(slot)}
+                        className={`px-3 py-1.5 rounded-lg text-sm border transition-colors ${selectedSlot === slot ? "bg-primary text-white border-primary font-medium" : "bg-white border-border hover:border-primary hover:text-primary"}`}
+                      >
+                        {slot}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
 
-            {/* Time Slots */}
-            <Card className="border-border">
-              <CardHeader className="pb-3">
-                <CardTitle className="text-base font-semibold flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-primary" />
-                  {selectedDate ? `Slots for ${format(selectedDate, "EEE, dd MMM")}` : "Select a date first"}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                {!selectedDate ? (
-                  <div className="flex flex-col items-center justify-center py-10 text-muted-foreground gap-2">
-                    <Calendar className="w-10 h-10 text-muted-foreground/40" />
-                    <p className="text-sm">Pick a date on the calendar</p>
-                  </div>
-                ) : (
-                  <div className="space-y-4">
-                    <div>
-                      <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">Morning</p>
-                      <div className="grid grid-cols-3 gap-1.5">
-                        {MORNING_SLOTS.map(slot => {
-                          const booked = bookedSlots.includes(slot);
-                          return (
-                            <button
-                              key={slot}
-                              onClick={() => handleSlotClick(slot)}
-                              disabled={booked}
-                              className={`text-xs py-2 px-1 rounded border transition-colors font-medium
-                                ${booked ? "border-border text-muted-foreground/40 cursor-not-allowed bg-muted/30" : "border-border hover:border-primary hover:text-primary cursor-pointer"}
-                                ${selectedSlot === slot ? "bg-primary text-white border-primary hover:text-white" : ""}
-                              `}
-                            >
-                              {slot}
-                            </button>
-                          );
-                        })}
-                      </div>
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">Evening</p>
-                      <div className="grid grid-cols-3 gap-1.5">
-                        {EVENING_SLOTS.map(slot => {
-                          const booked = bookedSlots.includes(slot);
-                          return (
-                            <button
-                              key={slot}
-                              onClick={() => handleSlotClick(slot)}
-                              disabled={booked}
-                              className={`text-xs py-2 px-1 rounded border transition-colors font-medium
-                                ${booked ? "border-border text-muted-foreground/40 cursor-not-allowed bg-muted/30" : "border-border hover:border-primary hover:text-primary cursor-pointer"}
-                                ${selectedSlot === slot ? "bg-primary text-white border-primary hover:text-white" : ""}
-                              `}
-                            >
-                              {slot}
-                            </button>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
+            <Button
+              className="w-full bg-primary hover:bg-primary/90 text-white"
+              disabled={!selectedDate || !selectedSlot}
+              onClick={() => setStep(2)}
+            >
+              Continue
+            </Button>
           </div>
         )}
 
-        {step === "calendar" && (
-          <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-between items-center">
-            <div className="text-sm text-muted-foreground">
-              {selectedDate && selectedSlot
-                ? `Selected: ${format(selectedDate, "EEE, dd MMM yyyy")} at ${selectedSlot}`
-                : "Please select a date and time slot"}
+        {/* Step 2: Patient Details */}
+        {step === 2 && (
+          <div className="space-y-4">
+            <div className="bg-white rounded-xl border border-border p-4 text-sm text-muted-foreground mb-2">
+              <span className="font-medium text-foreground">{selectedDate ? format(selectedDate, "EEEE, MMMM d yyyy") : ""}</span>
+              <span className="mx-2">·</span>
+              <span>{selectedSlot}</span>
+              <button onClick={() => setStep(1)} className="ml-3 text-primary text-xs underline">Change</button>
             </div>
+
+            <div>
+              <label className="block text-sm font-medium text-foreground mb-1">Full Name *</label>
+              <input
+                type="text"
+                value={form.name}
+                onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
+                placeholder="Your full name"
+                className="w-full border border-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-foreground mb-1">Phone Number *</label>
+              <input
+                type="tel"
+                value={form.phone}
+                onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
+                placeholder="+91 98765 43210"
+                className="w-full border border-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-foreground mb-1">Email (optional)</label>
+              <input
+                type="email"
+                value={form.email}
+                onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
+                placeholder="your@email.com"
+                className="w-full border border-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-foreground mb-1">Treatment Type</label>
+              <select
+                value={form.treatment}
+                onChange={e => setForm(f => ({ ...f, treatment: e.target.value }))}
+                className="w-full border border-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 bg-white"
+              >
+                {TREATMENT_OPTIONS.map(t => <option key={t.value} value={t.value}>{t.label}</option>)}
+              </select>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-foreground mb-1">Additional Notes (optional)</label>
+              <textarea
+                value={form.notes}
+                onChange={e => setForm(f => ({ ...f, notes: e.target.value }))}
+                placeholder="Briefly describe your health concern or any specific requirements..."
+                rows={3}
+                className="w-full border border-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 resize-none"
+              />
+            </div>
+
             <div className="flex gap-3">
-              <a
-                href={`https://wa.me/919281332544?text=${whatsappMsg}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="outline" className="gap-2 text-green-600 border-green-300 hover:bg-green-50">
-                  <Phone className="w-4 h-4" />
-                  Book via WhatsApp
-                </Button>
-              </a>
+              <Button variant="outline" onClick={() => setStep(1)} className="flex-1">Back</Button>
               <Button
-                onClick={handleProceed}
-                disabled={!selectedDate || !selectedSlot}
-                className="gap-2"
+                className="flex-1 bg-primary hover:bg-primary/90 text-white"
+                disabled={!form.name.trim() || !form.phone.trim()}
+                onClick={() => setStep(3)}
               >
-                <Calendar className="w-4 h-4" />
-                Continue
+                Review Booking
               </Button>
             </div>
           </div>
         )}
 
-        {step === "form" && (
-          <Card className="max-w-lg mx-auto border-border">
-            <CardHeader>
-              <CardTitle className="text-lg">Your Details</CardTitle>
-              <p className="text-sm text-muted-foreground">
-                {selectedDate ? format(selectedDate, "EEE, dd MMM yyyy") : ""} at {selectedSlot}
-              </p>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="col-span-2">
-                    <Label htmlFor="name">Full Name *</Label>
-                    <Input
-                      id="name"
-                      value={form.name}
-                      onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
-                      placeholder="Your full name"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="email">Email *</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={form.email}
-                      onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
-                      placeholder="you@example.com"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="phone">Phone *</Label>
-                    <Input
-                      id="phone"
-                      value={form.phone}
-                      onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
-                      placeholder="+91 98765 43210"
-                      required
-                    />
-                  </div>
-                  <div className="col-span-2">
-                    <Label htmlFor="treatment">Treatment Type</Label>
-                    <Select value={form.treatmentType} onValueChange={v => setForm(f => ({ ...f, treatmentType: v }))}>
-                      <SelectTrigger>
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {TREATMENT_OPTIONS.map(o => (
-                          <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="col-span-2">
-                    <Label htmlFor="notes">Notes / Symptoms (optional)</Label>
-                    <Textarea
-                      id="notes"
-                      value={form.notes}
-                      onChange={e => setForm(f => ({ ...f, notes: e.target.value }))}
-                      placeholder="Briefly describe your health concern..."
-                      rows={3}
-                    />
-                  </div>
-                </div>
-                <div className="flex gap-3 pt-2">
-                  <Button type="button" variant="outline" onClick={() => setStep("calendar")} className="flex-1">
-                    Back
-                  </Button>
-                  <Button type="submit" disabled={bookMutation.isPending} className="flex-1 gap-2">
-                    {bookMutation.isPending && <Loader2 className="w-4 h-4 animate-spin" />}
-                    Confirm Appointment
-                  </Button>
-                </div>
-              </form>
-            </CardContent>
-          </Card>
+        {/* Step 3: Confirm via WhatsApp */}
+        {step === 3 && (
+          <div className="space-y-4">
+            <div className="bg-white rounded-xl border border-border p-5 space-y-3">
+              <h2 className="font-semibold text-foreground">Booking Summary</h2>
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between"><span className="text-muted-foreground">Date</span><span className="font-medium">{selectedDate ? format(selectedDate, "EEEE, MMMM d yyyy") : ""}</span></div>
+                <div className="flex justify-between"><span className="text-muted-foreground">Time</span><span className="font-medium">{selectedSlot}</span></div>
+                <div className="flex justify-between"><span className="text-muted-foreground">Name</span><span className="font-medium">{form.name}</span></div>
+                <div className="flex justify-between"><span className="text-muted-foreground">Phone</span><span className="font-medium">{form.phone}</span></div>
+                <div className="flex justify-between"><span className="text-muted-foreground">Treatment</span><span className="font-medium">{TREATMENT_OPTIONS.find(t => t.value === form.treatment)?.label}</span></div>
+                {form.notes && <div className="flex justify-between"><span className="text-muted-foreground">Notes</span><span className="font-medium text-right max-w-[60%]">{form.notes}</span></div>}
+              </div>
+            </div>
+
+            <div className="bg-green-50 border border-green-200 rounded-xl p-4 text-sm text-green-800">
+              <p className="font-medium mb-1">How it works</p>
+              <p>Clicking "Confirm via WhatsApp" will open WhatsApp with your booking details pre-filled. Send the message to Dr. Kalyan and you'll receive a confirmation within a few hours.</p>
+            </div>
+
+            <div className="flex gap-3">
+              <Button variant="outline" onClick={() => setStep(2)} className="flex-1">Back</Button>
+              <Button
+                className="flex-1 bg-green-600 hover:bg-green-700 text-white flex items-center justify-center gap-2"
+                onClick={handleWhatsApp}
+              >
+                <Phone className="w-4 h-4" />
+                Confirm via WhatsApp
+              </Button>
+            </div>
+
+            <p className="text-center text-xs text-muted-foreground">
+              Prefer to call?{" "}
+              <a href="tel:+919281332544" className="text-primary underline">+91 92813 32544</a>
+            </p>
+          </div>
         )}
       </div>
     </div>

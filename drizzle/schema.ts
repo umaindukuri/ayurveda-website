@@ -1,4 +1,4 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, bigint, date, time } from "drizzle-orm/mysql-core";
+import { boolean, int, mysqlEnum, mysqlTable, text, timestamp, varchar, bigint, date } from "drizzle-orm/mysql-core";
 
 export const users = mysqlTable("users", {
   id: int("id").autoincrement().primaryKey(),
@@ -67,6 +67,9 @@ export const appointments = mysqlTable("appointments", {
   timeSlot: varchar("timeSlot", { length: 20 }).notNull(),
   notes: text("notes"),
   status: mysqlEnum("status", ["pending", "confirmed", "cancelled", "completed"]).default("pending").notNull(),
+  userId: int("userId"),
+  referralCode: varchar("referralCode", { length: 20 }),
+  discountApplied: boolean("discountApplied").default(false).notNull(),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
 });
 export type Appointment = typeof appointments.$inferSelect;
@@ -80,3 +83,15 @@ export const blockedDates = mysqlTable("blocked_dates", {
 });
 export type BlockedDate = typeof blockedDates.$inferSelect;
 export type InsertBlockedDate = typeof blockedDates.$inferInsert;
+
+// Each user gets one referral code; tracks how many successful referrals they have
+export const referrals = mysqlTable("referrals", {
+  id: int("id").autoincrement().primaryKey(),
+  referrerId: int("referrerId").notNull(),
+  referralCode: varchar("referralCode", { length: 20 }).notNull().unique(),
+  referredAppointmentId: int("referredAppointmentId"),
+  rewardClaimed: boolean("rewardClaimed").default(false).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+export type Referral = typeof referrals.$inferSelect;
+export type InsertReferral = typeof referrals.$inferInsert;

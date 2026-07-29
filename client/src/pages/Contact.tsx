@@ -10,7 +10,6 @@ import { Link } from "wouter";
 import { useState } from "react";
 import { toast } from "sonner";
 import { CompactHeader } from "@/components/CompactHeader";
-import { trpc } from "@/lib/trpc";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -23,16 +22,6 @@ export default function Contact() {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const submitMutation = trpc.contact.submit.useMutation({
-    onSuccess: () => {
-      setSubmitted(true);
-      setFormData({ name: "", email: "", phone: "", subject: "", message: "", inquiryType: "general" });
-    },
-    onError: (err) => {
-      toast.error(err.message || "Something went wrong. Please try again.");
-    },
-  });
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -44,14 +33,20 @@ export default function Contact() {
       toast.error("Please fill in all required fields");
       return;
     }
-    submitMutation.mutate({
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone || undefined,
-      subject: formData.subject || undefined,
-      message: formData.message,
-      inquiryType: formData.inquiryType,
-    });
+    const msg = [
+      `Hello Dr. Kalyan,`,
+      ``,
+      `Name: ${formData.name}`,
+      formData.phone ? `Phone: ${formData.phone}` : null,
+      `Email: ${formData.email}`,
+      formData.subject ? `Subject: ${formData.subject}` : null,
+      `Type: ${formData.inquiryType}`,
+      ``,
+      formData.message,
+    ].filter(Boolean).join("\n");
+    window.open(`https://wa.me/919281332544?text=${encodeURIComponent(msg)}`, "_blank");
+    setSubmitted(true);
+    setFormData({ name: "", email: "", phone: "", subject: "", message: "", inquiryType: "general" });
   };
 
   return (
@@ -238,9 +233,8 @@ export default function Contact() {
                       <Button
                         type="submit"
                         className="w-full bg-primary hover:bg-primary/90 text-white"
-                        disabled={submitMutation.isPending}
                       >
-                        {submitMutation.isPending ? "Sending..." : "Send Message"}
+                        Send via WhatsApp
                       </Button>
                     </form>
                   )}

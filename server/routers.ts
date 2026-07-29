@@ -5,7 +5,7 @@ import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import { TRPCError } from "@trpc/server";
 import { notifyOwner } from "./_core/notification";
 import { getDb } from "./db";
-import { contactInquiries, appointments, blockedDates } from "../drizzle/schema";
+import { contactInquiries, appointments, blockedDates, referrals } from "../drizzle/schema";
 import { z } from "zod";
 
 const contactSchema = z.object({
@@ -17,17 +17,21 @@ const contactSchema = z.object({
   inquiryType: z.enum(["general", "booking", "treatment", "other"]).default("general"),
 });
 
+// Generate a short unique referral code
+function generateReferralCode(name: string): string {
+  const prefix = name.replace(/[^a-zA-Z]/g, "").toUpperCase().slice(0, 6) || "KALYAN";
+  const suffix = Math.random().toString(36).toUpperCase().slice(2, 6);
+  return `${prefix}-${suffix}`;
+}
+
 export const appRouter = router({
-    // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
   system: systemRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {
       const cookieOptions = getSessionCookieOptions(ctx.req);
       ctx.res.clearCookie(COOKIE_NAME, { ...cookieOptions, maxAge: -1 });
-      return {
-        success: true,
-      } as const;
+      return { success: true } as const;
     }),
   }),
 
@@ -53,10 +57,6 @@ export const appRouter = router({
           .orderBy(desc(contactInquiries.createdAt))
           .limit(input.limit)
           .offset(input.offset);
-        const [countResult] = await db
-          .select({ count: contactInquiries.id })
-          .from(contactInquiries)
-          .where(conditions.length ? conditions[0] : undefined);
         return { rows, total: rows.length };
       }),
 
@@ -168,10 +168,24 @@ export const appRouter = router({
         appointmentDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
         timeSlot: z.string().min(1).max(20),
         notes: z.string().max(1000).optional(),
+        referralCode: z.string().max(20).optional(),
       }))
-      .mutation(async ({ input }) => {
+      .mutation(async ({ ctx, input }) => {
         const db = await getDb();
         if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "DB unavailable" });
+        const { eq: drizzleEq } = await import("drizzle-orm");
+
+        // Validate referral code if provided
+        let discountApplied = false;
+        let referralRow: typeof referrals.$inferSelect | undefined;
+        if (input.referralCode) {
+          const [found] = await db.select().from(referrals).where(drizzleEq(referrals.referralCode, input.referralCode)).limit(1);
+          if (found && !found.referredAppointmentId) {
+            referralRow = found;
+            discountApplied = true;
+          }
+        }
+
         const result = await db.insert(appointments).values({
           name: input.name,
           email: input.email,
@@ -181,8 +195,17 @@ export const appRouter = router({
           timeSlot: input.timeSlot,
           notes: input.notes ?? null,
           status: "pending",
+          userId: ctx.user?.id ?? null,
+          referralCode: input.referralCode ?? null,
+          discountApplied,
         });
         const id = Number((result as any)[0]?.insertId);
+
+        // Mark referral as used
+        if (referralRow && id) {
+          await db.update(referrals).set({ referredAppointmentId: id }).where(drizzleEq(referrals.id, referralRow.id));
+        }
+
         const treatmentLabels: Record<string, string> = {
           consultation: "General Consultation",
           panchakarma: "Panchakarma",
@@ -204,10 +227,11 @@ export const appRouter = router({
             `Treatment: ${treatmentLabels[input.treatmentType] ?? input.treatmentType}`,
             `Date: ${input.appointmentDate}`,
             `Time: ${input.timeSlot}`,
+            discountApplied ? `Referral Code: ${input.referralCode} (10% discount applied)` : null,
             input.notes ? `Notes: ${input.notes}` : null,
           ].filter(Boolean).join("\n"),
         }).catch(() => {});
-        return { success: true, id };
+        return { success: true, id, discountApplied };
       }),
 
     getBlockedDates: publicProcedure.query(async () => {
@@ -227,11 +251,14 @@ export const appRouter = router({
       const db = await getDb();
       if (!db) return [];
       const { desc, or, eq: drizzleEq } = await import("drizzle-orm");
-      // Match by email (patients book without login, so we match on email)
       return db
         .select()
         .from(appointments)
-        .where(drizzleEq(appointments.email, ctx.user.email ?? ""))
+        .where(
+          ctx.user.id
+            ? or(drizzleEq(appointments.userId, ctx.user.id), drizzleEq(appointments.email, ctx.user.email ?? ""))
+            : drizzleEq(appointments.email, ctx.user.email ?? "")
+        )
         .orderBy(desc(appointments.appointmentDate));
     }),
 
@@ -250,6 +277,45 @@ export const appRouter = router({
           ));
         return { slots: rows.map(r => r.timeSlot) };
       }),
+  }),
+
+  referrals: router({
+    // Get or create the current user's referral code
+    getMyCode: protectedProcedure.query(async ({ ctx }) => {
+      const db = await getDb();
+      if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "DB unavailable" });
+      const { eq: drizzleEq } = await import("drizzle-orm");
+      const [existing] = await db.select().from(referrals).where(drizzleEq(referrals.referrerId, ctx.user.id)).limit(1);
+      if (existing) return { code: existing.referralCode, referrals: await db.select().from(referrals).where(drizzleEq(referrals.referrerId, ctx.user.id)) };
+      // Create a new referral code for this user
+      const code = generateReferralCode(ctx.user.name ?? ctx.user.email ?? "PATIENT");
+      await db.insert(referrals).values({ referrerId: ctx.user.id, referralCode: code });
+      return { code, referrals: [] };
+    }),
+
+    // Validate a referral code (public — used on booking form)
+    validate: publicProcedure
+      .input(z.object({ code: z.string().max(20) }))
+      .query(async ({ input }) => {
+        const db = await getDb();
+        if (!db) return { valid: false };
+        const { eq: drizzleEq } = await import("drizzle-orm");
+        const [found] = await db.select().from(referrals).where(drizzleEq(referrals.referralCode, input.code)).limit(1);
+        // Valid if exists and not yet used
+        return { valid: !!found && !found.referredAppointmentId };
+      }),
+
+    // Get referral stats for the current user
+    myStats: protectedProcedure.query(async ({ ctx }) => {
+      const db = await getDb();
+      if (!db) return { code: null, totalReferrals: 0, pendingRewards: 0 };
+      const { eq: drizzleEq, count } = await import("drizzle-orm");
+      const myReferrals = await db.select().from(referrals).where(drizzleEq(referrals.referrerId, ctx.user.id));
+      const code = myReferrals[0]?.referralCode ?? null;
+      const totalReferrals = myReferrals.filter(r => !!r.referredAppointmentId).length;
+      const pendingRewards = myReferrals.filter(r => !!r.referredAppointmentId && !r.rewardClaimed).length;
+      return { code, totalReferrals, pendingRewards };
+    }),
   }),
 
   contact: router({
