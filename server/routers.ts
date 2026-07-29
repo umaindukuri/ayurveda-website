@@ -1,7 +1,8 @@
 import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
-import { publicProcedure, router } from "./_core/trpc";
+import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
+import { TRPCError } from "@trpc/server";
 import { notifyOwner } from "./_core/notification";
 import { getDb } from "./db";
 import { contactInquiries } from "../drizzle/schema";
@@ -28,6 +29,53 @@ export const appRouter = router({
         success: true,
       } as const;
     }),
+  }),
+
+  admin: router({
+    listInquiries: protectedProcedure
+      .input(z.object({
+        status: z.enum(["new", "contacted", "resolved", "all"]).default("all"),
+        limit: z.number().min(1).max(100).default(50),
+        offset: z.number().min(0).default(0),
+      }))
+      .query(async ({ ctx, input }) => {
+        if (ctx.user.role !== "admin") throw new TRPCError({ code: "FORBIDDEN" });
+        const db = await getDb();
+        if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "DB unavailable" });
+        const { desc, eq: drizzleEq } = await import("drizzle-orm");
+        const conditions = input.status !== "all"
+          ? [drizzleEq(contactInquiries.status, input.status as "new" | "contacted" | "resolved")]
+          : [];
+        const rows = await db
+          .select()
+          .from(contactInquiries)
+          .where(conditions.length ? conditions[0] : undefined)
+          .orderBy(desc(contactInquiries.createdAt))
+          .limit(input.limit)
+          .offset(input.offset);
+        const [countResult] = await db
+          .select({ count: contactInquiries.id })
+          .from(contactInquiries)
+          .where(conditions.length ? conditions[0] : undefined);
+        return { rows, total: rows.length };
+      }),
+
+    updateStatus: protectedProcedure
+      .input(z.object({
+        id: z.number(),
+        status: z.enum(["new", "contacted", "resolved"]),
+      }))
+      .mutation(async ({ ctx, input }) => {
+        if (ctx.user.role !== "admin") throw new TRPCError({ code: "FORBIDDEN" });
+        const db = await getDb();
+        if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "DB unavailable" });
+        const { eq: drizzleEq } = await import("drizzle-orm");
+        await db
+          .update(contactInquiries)
+          .set({ status: input.status })
+          .where(drizzleEq(contactInquiries.id, input.id));
+        return { success: true };
+      }),
   }),
 
   contact: router({
