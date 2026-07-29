@@ -79,7 +79,7 @@ Her story gives hope to thousands of women struggling with infertility and hormo
       author: 'Dr. Kalyan',
       date: 'January 20, 2024',
       readTime: '7 min read',
-      image: '/images/ayurveda_wellness_spa_interior_1e8d2c9a.png',
+      image: '/images/ayurveda_wellness_spa_interior_1e8d2c9a.webp',
       category: 'Hormonal & Fertility',
       condition: 'PCOS & Infertility'
     },

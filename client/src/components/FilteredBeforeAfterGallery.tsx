@@ -73,7 +73,7 @@ export function FilteredBeforeAfterGallery() {
       condition: 'PCOS & Infertility',
       treatmentType: 'hormonal',
       duration: '21-Day Program',
-      before: '/images/ayurveda_wellness_spa_interior_1e8d2c9a.png',
+      before: '/images/ayurveda_wellness_spa_interior_1e8d2c9a.webp',
       after: '/images/blog_dosha_balance_d9df3e57.png',
       beforeDescription: 'Irregular cycles, hormonal imbalance, anxiety',
       afterDescription: 'Regular cycles, balanced hormones, peaceful',
