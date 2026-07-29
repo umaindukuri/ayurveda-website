@@ -31,6 +31,7 @@ import SMSReminders from "./pages/SMSReminders";
 import AppointmentManagement from "./pages/AppointmentManagement";
 import AdminInquiries from "./pages/AdminInquiries";
 import AdminAppointments from "./pages/AdminAppointments";
+import Pricing from "./pages/Pricing";
 import BookAppointment from "./pages/BookAppointment";
 
 function Router() {
@@ -56,6 +57,7 @@ function Router() {
       <Route path="/appointment-management" component={AppointmentManagement} />
       <Route path="/admin/inquiries" component={AdminInquiries} />
       <Route path="/admin/appointments" component={AdminAppointments} />
+      <Route path="/treatments/pricing" component={Pricing} />
       <Route path="/book-appointment" component={BookAppointment} />
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}

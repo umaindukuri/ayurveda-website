@@ -71,3 +71,12 @@ export const appointments = mysqlTable("appointments", {
 });
 export type Appointment = typeof appointments.$inferSelect;
 export type InsertAppointment = typeof appointments.$inferInsert;
+
+export const blockedDates = mysqlTable("blocked_dates", {
+  id: int("id").autoincrement().primaryKey(),
+  blockedDate: date("blockedDate").notNull().unique(),
+  reason: varchar("reason", { length: 255 }),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+export type BlockedDate = typeof blockedDates.$inferSelect;
+export type InsertBlockedDate = typeof blockedDates.$inferInsert;

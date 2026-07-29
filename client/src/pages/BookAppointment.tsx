@@ -56,6 +56,13 @@ export default function BookAppointment() {
   );
   const bookedSlots = bookedData?.slots ?? [];
 
+  const { data: blockedData } = trpc.appointments.getBlockedDates.useQuery();
+  const blockedDateSet = useMemo(() => {
+    const s = new Set<string>();
+    blockedData?.dates.forEach(d => s.add(d.date));
+    return s;
+  }, [blockedData]);
+
   const calDays = useMemo(() => buildCalendarDays(viewYear, viewMonth), [viewYear, viewMonth]);
 
   const bookMutation = trpc.appointments.book.useMutation({
@@ -72,7 +79,10 @@ export default function BookAppointment() {
     else setViewMonth(m => m + 1);
   };
 
-  const isDisabled = (d: Date) => isBefore(d, today) || isWeekend(d);
+  const isDisabled = (d: Date) => {
+    const ds = format(d, "yyyy-MM-dd");
+    return isBefore(d, today) || isWeekend(d) || blockedDateSet.has(ds);
+  };
 
   const handleDateClick = (d: Date) => {
     if (isDisabled(d)) return;

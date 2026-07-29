@@ -5,7 +5,7 @@ import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import { TRPCError } from "@trpc/server";
 import { notifyOwner } from "./_core/notification";
 import { getDb } from "./db";
-import { contactInquiries, appointments } from "../drizzle/schema";
+import { contactInquiries, appointments, blockedDates } from "../drizzle/schema";
 import { z } from "zod";
 
 const contactSchema = z.object({
@@ -93,6 +93,41 @@ export const appRouter = router({
         return { success: true };
       }),
 
+    addBlockedDate: protectedProcedure
+      .input(z.object({
+        date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+        reason: z.string().max(255).optional(),
+      }))
+      .mutation(async ({ ctx, input }) => {
+        if (ctx.user.role !== "admin") throw new TRPCError({ code: "FORBIDDEN" });
+        const db = await getDb();
+        if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "DB unavailable" });
+        await db.insert(blockedDates).values({
+          blockedDate: new Date(input.date + "T00:00:00") as any,
+          reason: input.reason ?? null,
+        });
+        return { success: true };
+      }),
+
+    removeBlockedDate: protectedProcedure
+      .input(z.object({ id: z.number() }))
+      .mutation(async ({ ctx, input }) => {
+        if (ctx.user.role !== "admin") throw new TRPCError({ code: "FORBIDDEN" });
+        const db = await getDb();
+        if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "DB unavailable" });
+        const { eq: drizzleEq } = await import("drizzle-orm");
+        await db.delete(blockedDates).where(drizzleEq(blockedDates.id, input.id));
+        return { success: true };
+      }),
+
+    listBlockedDates: protectedProcedure.query(async ({ ctx }) => {
+      if (ctx.user.role !== "admin") throw new TRPCError({ code: "FORBIDDEN" });
+      const db = await getDb();
+      if (!db) return [];
+      const { asc } = await import("drizzle-orm");
+      return db.select().from(blockedDates).orderBy(asc(blockedDates.blockedDate));
+    }),
+
     newInquiryCount: protectedProcedure.query(async ({ ctx }) => {
       if (ctx.user.role !== "admin") return { count: 0 };
       const db = await getDb();
@@ -174,6 +209,19 @@ export const appRouter = router({
         }).catch(() => {});
         return { success: true, id };
       }),
+
+    getBlockedDates: publicProcedure.query(async () => {
+      const db = await getDb();
+      if (!db) return { dates: [] };
+      const { gte } = await import("drizzle-orm");
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const rows = await db
+        .select()
+        .from(blockedDates)
+        .where(gte(blockedDates.blockedDate, today as any));
+      return { dates: rows.map(r => ({ id: r.id, date: r.blockedDate instanceof Date ? r.blockedDate.toISOString().slice(0, 10) : String(r.blockedDate), reason: r.reason })) };
+    }),
 
     getBookedSlots: publicProcedure
       .input(z.object({ date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/) }))
