@@ -35,6 +35,7 @@ import MyAppointments from "./pages/MyAppointments";
 import Shop from "./pages/Shop";
 import BookAppointment from "@/pages/BookAppointment";
 import TreatmentDetail from "@/pages/TreatmentDetail";
+import BlogPost from "@/pages/BlogPost";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -63,6 +64,7 @@ function Router() {
       <Route path="/shop" component={Shop} />
       <Route path="/book-appointment" component={BookAppointment} />
       <Route path="/treatments/:slug" component={TreatmentDetail} />
+      <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

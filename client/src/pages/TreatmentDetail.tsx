@@ -83,7 +83,7 @@ const TREATMENTS: Record<string, TreatmentData> = {
     duration: "14–90 Days",
     successRate: "78%",
     patientsHelped: "800+",
-    heroImage: "/images/hero_meditation_premium_0f0d5eb0.webp",
+    heroImage: "/images/hero_chronic-diseases.jpg",
     overview: "Chronic diseases are the result of long-standing doshic imbalances, accumulated toxins (ama), and weakened digestive fire (Agni). Unlike modern medicine which primarily manages symptoms, Ayurveda identifies and addresses the root cause — restoring the body's innate healing intelligence. Dr. Kalyan's approach combines Panchakarma detoxification, personalized herbal formulations, dietary therapy, and lifestyle modifications to create lasting transformation in chronic conditions.",
     benefits: [
       "Addresses root cause rather than suppressing symptoms",
@@ -132,7 +132,7 @@ const TREATMENTS: Record<string, TreatmentData> = {
     duration: "7–30 Days",
     successRate: "82%",
     patientsHelped: "600+",
-    heroImage: "/images/hero_meditation_premium_0f0d5eb0.webp",
+    heroImage: "/images/hero_digestive-health.jpg",
     overview: "In Ayurveda, all disease begins with impaired digestion. Agni — the digestive fire — is the cornerstone of health. When Agni is weakened, food is not properly digested, leading to the formation of ama (undigested metabolic waste) that clogs channels and creates disease. Dr. Kalyan's digestive health program focuses on rekindling Agni, removing accumulated ama, healing the gut lining, and restoring proper digestive function through a combination of herbal medicines, dietary therapy, and targeted Panchakarma procedures.",
     benefits: [
       "Eliminates bloating, gas, and abdominal discomfort",
@@ -181,7 +181,7 @@ const TREATMENTS: Record<string, TreatmentData> = {
     duration: "14–45 Days",
     successRate: "75%",
     patientsHelped: "350+",
-    heroImage: "/images/hero_meditation_premium_0f0d5eb0.webp",
+    heroImage: "/images/hero_respiratory.jpg",
     overview: "Respiratory conditions in Ayurveda are primarily caused by imbalanced Kapha and Vata doshas, accumulated mucus (shleshma) in the respiratory channels, and weakened lung immunity (Pranavaha Srotas). Dr. Kalyan's respiratory wellness program combines powerful Kapha-reducing therapies, broncho-dilating herbal formulations, Nasya (nasal treatments), and specialized breathing practices to restore clear, healthy respiratory function.",
     benefits: [
       "Reduces frequency and severity of asthma attacks",
@@ -229,7 +229,7 @@ const TREATMENTS: Record<string, TreatmentData> = {
     duration: "21–60 Days",
     successRate: "80%",
     patientsHelped: "450+",
-    heroImage: "/images/hero_meditation_premium_0f0d5eb0.webp",
+    heroImage: "/images/hero_skin-health.jpg",
     overview: "In Ayurveda, skin conditions are a reflection of internal imbalances — primarily vitiated blood (Rakta dhatu), impaired liver function, and accumulated toxins (ama). Topical treatments alone cannot provide lasting relief because they address only the surface manifestation. Dr. Kalyan's skin health program works from the inside out — purifying the blood, healing the liver, removing deep-seated toxins, and nourishing the skin from within using classical Ayurvedic blood-purifying herbs and targeted Panchakarma procedures.",
     benefits: [
       "Clears chronic skin conditions from the root",
@@ -277,7 +277,7 @@ const TREATMENTS: Record<string, TreatmentData> = {
     duration: "7–30 Days",
     successRate: "83%",
     patientsHelped: "400+",
-    heroImage: "/images/hero_meditation_premium_0f0d5eb0.webp",
+    heroImage: "/images/hero_mental-health.jpg",
     overview: "Mental health conditions in Ayurveda are understood as imbalances in Prana Vata (the life force governing the mind and nervous system), vitiated Sadhaka Pitta (the fire of intelligence and emotion), and depleted Tarpaka Kapha (the nourishing fluid of the brain). Dr. Kalyan's mental wellness program combines deeply calming therapies like Shirodhara, Abhyanga, and Nasya with adaptogenic herbal formulations, meditation guidance, and lifestyle restructuring to restore genuine inner peace and emotional resilience.",
     benefits: [
       "Reduces anxiety and panic attacks significantly",
@@ -325,7 +325,7 @@ const TREATMENTS: Record<string, TreatmentData> = {
     duration: "90–180 Days",
     successRate: "72%",
     patientsHelped: "300+",
-    heroImage: "/images/hero_meditation_premium_0f0d5eb0.webp",
+    heroImage: "/images/hero_fertility.jpg",
     overview: "Fertility challenges in Ayurveda are understood as imbalances in Shukra dhatu (reproductive tissue) and Artava (female reproductive essence), often caused by accumulated toxins, hormonal disruption, poor nutrition, and chronic stress. Dr. Kalyan's fertility program is a comprehensive 3–6 month protocol that purifies the reproductive channels, nourishes and strengthens reproductive tissues, balances hormones naturally, and optimizes the body's environment for conception. This program is suitable for both men and women and can be used alongside IVF/IUI to improve success rates.",
     benefits: [
       "Improves egg quality and ovarian reserve",
@@ -374,7 +374,7 @@ const TREATMENTS: Record<string, TreatmentData> = {
     duration: "14–30 Days",
     successRate: "90%",
     patientsHelped: "250+",
-    heroImage: "/images/hero_meditation_premium_0f0d5eb0.webp",
+    heroImage: "/images/hero_rejuvenation.jpg",
     overview: "Rasayana — the science of rejuvenation — is one of the eight branches of classical Ayurveda. It encompasses a comprehensive system of therapies, herbal formulations, and lifestyle practices designed to rebuild depleted tissues, reverse cellular aging, restore youthful vitality, and extend healthy lifespan. Unlike cosmetic anti-aging approaches, Rasayana works at the cellular level — nourishing the seven dhatus (body tissues) from the inside out, strengthening Ojas (vital essence), and restoring the body's innate regenerative capacity.",
     benefits: [
       "Reverses cellular aging and tissue degeneration",
