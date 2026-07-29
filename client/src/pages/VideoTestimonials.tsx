@@ -29,10 +29,10 @@ const videoTestimonials: VideoTestimonial[] = [
     duration: '4:32',
     patientName: 'James M.',
     patientAge: '58',
-    videoUrl: '/manus-storage/testimonial-arthritis-james-placeholder_9ad0abac.mp4',
+    videoUrl: '/images/testimonial-arthritis-james-placeholder_9ad0abac.mp4',
     description: 'James suffered from severe joint pain for 10 years. After completing the 21-day Panchakarma program, he regained mobility and returned to his favorite activities.',
     results: ['100% pain reduction', 'Improved mobility', 'Discontinued pain medications', 'Active lifestyle restored'],
-    thumbnail: '/manus-storage/video-thumb-arthritis_686bce95.png'
+    thumbnail: '/images/video-thumb-arthritis_686bce95.png'
   },
   {
     id: '2',
@@ -42,10 +42,10 @@ const videoTestimonials: VideoTestimonial[] = [
     duration: '5:15',
     patientName: 'Maria S.',
     patientAge: '52',
-    videoUrl: '/manus-storage/testimonial-diabetes-maria-placeholder_ce571f6b.mp4',
+    videoUrl: '/images/testimonial-diabetes-maria-placeholder_ce571f6b.mp4',
     description: 'Maria\'s blood sugar levels normalized after completing one 14-day program. She shares how dietary changes and herbal treatments transformed her health.',
     results: ['Normal blood sugar levels', 'Weight loss of 8kg', 'Increased energy', 'Reduced medication dependency'],
-    thumbnail: '/manus-storage/video-thumb-diabetes_a2bc2afd.png'
+    thumbnail: '/images/video-thumb-diabetes_a2bc2afd.png'
   },
   {
     id: '3',
@@ -55,10 +55,10 @@ const videoTestimonials: VideoTestimonial[] = [
     duration: '3:48',
     patientName: 'David K.',
     patientAge: '45',
-    videoUrl: '/manus-storage/testimonial-anxiety-david-placeholder_9c7bf059.mp4',
+    videoUrl: '/images/testimonial-anxiety-david-placeholder_9c7bf059.mp4',
     description: 'David struggled with anxiety for years. Through Shirodhara and meditation practices, he found lasting peace without pharmaceutical interventions.',
     results: ['Anxiety symptoms eliminated', 'Better sleep quality', 'Improved focus', 'Emotional stability'],
-    thumbnail: '/manus-storage/video-thumb-anxiety_2ec41ab8.png'
+    thumbnail: '/images/video-thumb-anxiety_2ec41ab8.png'
   },
   {
     id: '4',
@@ -68,10 +68,10 @@ const videoTestimonials: VideoTestimonial[] = [
     duration: '4:12',
     patientName: 'Lisa T.',
     patientAge: '38',
-    videoUrl: '/manus-storage/testimonial-eczema-lisa-placeholder_a2b63c06.mp4',
+    videoUrl: '/images/testimonial-eczema-lisa-placeholder_a2b63c06.mp4',
     description: 'Lisa\'s eczema cleared completely within 2 months. She explains how the holistic approach addressed the root cause rather than just treating symptoms.',
     results: ['Complete skin clearance', 'No itching or irritation', 'Improved confidence', 'Sustained results'],
-    thumbnail: '/manus-storage/video-thumb-eczema_f88e5484.png'
+    thumbnail: '/images/video-thumb-eczema_f88e5484.png'
   },
   {
     id: '5',
@@ -81,10 +81,10 @@ const videoTestimonials: VideoTestimonial[] = [
     duration: '5:42',
     patientName: 'Sarah M.',
     patientAge: '35',
-    videoUrl: '/manus-storage/testimonial-fertility-sarah-placeholder_d5b706c4.mp4',
+    videoUrl: '/images/testimonial-fertility-sarah-placeholder_d5b706c4.mp4',
     description: 'Sarah conceived naturally after 3 years of trying. The fertility-focused Ayurvedic treatment balanced her hormones and restored reproductive health.',
     results: ['Natural conception', 'Healthy pregnancy', 'Balanced hormones', 'Restored confidence'],
-    thumbnail: '/manus-storage/video-thumb-fertility_fd34ed2b.png'
+    thumbnail: '/images/video-thumb-fertility_fd34ed2b.png'
   },
   {
     id: '6',
@@ -94,10 +94,10 @@ const videoTestimonials: VideoTestimonial[] = [
     duration: '4:05',
     patientName: 'Robert P.',
     patientAge: '48',
-    videoUrl: '/manus-storage/testimonial-digestive-robert-placeholder_d5d72f4a.mp4',
+    videoUrl: '/images/testimonial-digestive-robert-placeholder_d5d72f4a.mp4',
     description: 'Robert suffered from IBS for 15 years. After the treatment program, his digestive issues resolved completely, and he enjoys food without fear.',
     results: ['IBS symptoms eliminated', 'Improved digestion', 'Better energy levels', 'Quality of life restored'],
-    thumbnail: '/manus-storage/video-thumb-digestion_acafb7ba.png'
+    thumbnail: '/images/video-thumb-digestion_acafb7ba.png'
   }
 ];
 
@@ -315,7 +315,7 @@ export default function VideoTestimonials() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <img src="/manus-storage/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-6 w-6 invert" />
+                <img src="/images/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-6 w-6 invert" />
                 <span className="font-bold text-sm">Ayurveda Wellness</span>
               </div>
               <p className="text-white/70 text-xs leading-relaxed">

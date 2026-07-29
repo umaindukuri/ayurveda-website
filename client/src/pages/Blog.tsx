@@ -13,7 +13,7 @@ export default function Blog() {
       author: "Dr. Kalyan Chakravarthy",
       date: "July 10, 2026",
       category: "Ayurveda Basics",
-      image: "/manus-storage/blog_dosha_balance_d9df3e57.png"
+      image: "/images/blog_dosha_balance_d9df3e57.png"
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ export default function Blog() {
       author: "Dr. Kalyan Chakravarthy",
       date: "July 8, 2026",
       category: "Panchakarma",
-      image: "/manus-storage/blog_panchakarma_guide_c9ed2d56.png"
+      image: "/images/blog_panchakarma_guide_c9ed2d56.png"
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ export default function Blog() {
       author: "Dr. Kalyan Chakravarthy",
       date: "July 5, 2026",
       category: "Chronic Diseases",
-      image: "/manus-storage/treatment_chronic_disease_62ef6750.png"
+      image: "/images/treatment_chronic_disease_62ef6750.png"
     },
     {
       id: 4,
@@ -40,7 +40,7 @@ export default function Blog() {
       author: "Dr. Kalyan Chakravarthy",
       date: "July 1, 2026",
       category: "Mental Health",
-      image: "/manus-storage/treatment_mental_health_d3e27509.png"
+      image: "/images/treatment_mental_health_d3e27509.png"
     },
     {
       id: 5,
@@ -49,7 +49,7 @@ export default function Blog() {
       author: "Dr. Kalyan Chakravarthy",
       date: "June 28, 2026",
       category: "Digestive Health",
-      image: "/manus-storage/treatment_digestive_health_866aa1e8.png"
+      image: "/images/treatment_digestive_health_866aa1e8.png"
     },
     {
       id: 6,
@@ -58,7 +58,7 @@ export default function Blog() {
       author: "Dr. Kalyan Chakravarthy",
       date: "June 25, 2026",
       category: "Lifestyle",
-      image: "/manus-storage/blog_ayurveda_basics_75397dab.png"
+      image: "/images/blog_ayurveda_basics_75397dab.png"
     },
     {
       id: 7,
@@ -67,7 +67,7 @@ export default function Blog() {
       author: "Dr. Kalyan Chakravarthy",
       date: "June 22, 2026",
       category: "Fertility",
-      image: "/manus-storage/treatment_skin_health_e6507ce9.png"
+      image: "/images/treatment_skin_health_e6507ce9.png"
     },
     {
       id: 8,
@@ -76,7 +76,7 @@ export default function Blog() {
       author: "Dr. Kalyan Chakravarthy",
       date: "June 19, 2026",
       category: "Anti-Aging",
-      image: "/manus-storage/treatment_respiratory_18e9bd3b.png"
+      image: "/images/treatment_respiratory_18e9bd3b.png"
     }
   ];
 
@@ -239,7 +239,7 @@ export default function Blog() {
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <img src="/manus-storage/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-8 w-8 invert" />
+                <img src="/images/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-8 w-8 invert" />
                 <span className="font-playfair font-bold">Ayurveda Wellness</span>
               </div>
               <p className="text-white/70">

@@ -58,28 +58,28 @@ export default function PanchakarmaPrograms() {
       name: "Abhyanga",
       subtitle: "Traditional Oil Massage",
       description: "Deep therapeutic full-body oil massage using medicated oils tailored to your dosha. Improves circulation, nourishes tissues, and calms the nervous system.",
-      image: "/manus-storage/slide_1_abhyanga_massage_generated.webp"
+      image: "/images/slide_1_abhyanga_massage_generated.webp"
     },
     {
       id: 2,
       name: "Shirodhara",
       subtitle: "Therapeutic Oil Pouring",
       description: "Warm medicated oil flows continuously onto the forehead, deeply calming the mind and nervous system. Excellent for anxiety, insomnia, and mental clarity.",
-      image: "/manus-storage/slide_2_shirodhara_therapy_generated.webp"
+      image: "/images/slide_2_shirodhara_therapy_generated.webp"
     },
     {
       id: 3,
       name: "Marma Point Therapy",
       subtitle: "Energy Point Healing",
       description: "Precise stimulation of vital energy points (marmas) to balance the body's energy channels and promote holistic healing.",
-      image: "/manus-storage/slide_3_marma_point_therapy_generated.webp"
+      image: "/images/slide_3_marma_point_therapy_generated.webp"
     },
     {
       id: 4,
       name: "Panchakarma Preparation",
       subtitle: "Pre-Treatment Consultation",
       description: "Comprehensive assessment and preparation ensuring optimal results from your Panchakarma treatment. Includes dietary guidance and lifestyle recommendations.",
-      image: "/manus-storage/slide_4_panchakarma_prep_generated.webp"
+      image: "/images/slide_4_panchakarma_prep_generated.webp"
     }
   ];
 
@@ -282,7 +282,7 @@ export default function PanchakarmaPrograms() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <img src="/manus-storage/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-6 w-6 invert" />
+                <img src="/images/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-6 w-6 invert" />
                 <span className="font-bold text-sm">Ayurveda Wellness</span>
               </div>
               <p className="text-white/70 text-xs leading-relaxed">

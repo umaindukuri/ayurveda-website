@@ -25,7 +25,7 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <img 
-                src="/manus-storage/pasted_file_qJnmC3_image_3ff4f246.png" 
+                src="/images/pasted_file_qJnmC3_image_3ff4f246.png" 
                 alt="Dr. I. Kalyan Chakravarthy, M.D. (Ayurveda)" 
                 className="rounded-lg shadow-lg border-4 border-primary/20"
               />
@@ -236,7 +236,7 @@ export default function About() {
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <img src="/manus-storage/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-8 w-8 invert" />
+                <img src="/images/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-8 w-8 invert" />
                 <span className="font-playfair font-bold">Ayurveda Wellness</span>
               </div>
               <p className="text-white/70">
