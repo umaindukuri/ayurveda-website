@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -110,6 +111,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
+    <SEO title="Ayurvedic Panchakarma & Fertility Treatment" description="Restore your health naturally with authentic Ayurvedic Panchakarma and personalized wellness treatments in Hyderabad. 5,000 years of healing wisdom." keywords="Ayurveda Hyderabad, Panchakarma, fertility treatment, holistic healing, Dr Kalyan" url="/" />
       {/* Compact Header with Newsletter */}
       <CompactHeader />
 

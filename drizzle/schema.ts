@@ -33,3 +33,18 @@ export const mediaFiles = mysqlTable("media_files", {
 
 export type MediaFile = typeof mediaFiles.$inferSelect;
 export type InsertMediaFile = typeof mediaFiles.$inferInsert;
+
+export const contactInquiries = mysqlTable("contact_inquiries", {
+  id: int("id").autoincrement().primaryKey(),
+  name: varchar("name", { length: 255 }).notNull(),
+  email: varchar("email", { length: 320 }).notNull(),
+  phone: varchar("phone", { length: 30 }),
+  subject: varchar("subject", { length: 255 }),
+  message: text("message").notNull(),
+  inquiryType: mysqlEnum("inquiryType", ["general", "booking", "treatment", "other"]).default("general").notNull(),
+  status: mysqlEnum("status", ["new", "contacted", "resolved"]).default("new").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type ContactInquiry = typeof contactInquiries.$inferSelect;
+export type InsertContactInquiry = typeof contactInquiries.$inferInsert;

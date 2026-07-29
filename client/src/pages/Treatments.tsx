@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heart, Leaf, Wind, Flame, Droplets, Brain, Zap, Award } from "lucide-react";
@@ -214,6 +215,7 @@ export default function Treatments() {
 
   return (
     <div className="min-h-screen bg-background">
+    <SEO title="Ayurvedic Treatments" description="Explore our comprehensive Ayurvedic treatments: Panchakarma, chronic disease management, fertility, skin health, mental wellness, and more in Hyderabad." keywords="Ayurvedic treatments Hyderabad, Panchakarma treatment, Ayurveda chronic disease, fertility Ayurveda" url="/treatments" />
       <CompactHeader />
 
       {/* Hero Section */}

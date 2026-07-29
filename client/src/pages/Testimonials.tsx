@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "wouter";
@@ -126,6 +127,7 @@ export default function Testimonials() {
 
   return (
     <div className="min-h-screen bg-background">
+    <SEO title="Patient Success Stories" description="Read inspiring patient success stories from Dr. Kalyan Ayurveda. Real healing journeys from arthritis, diabetes, fertility, skin conditions, and more." keywords="Ayurveda testimonials, patient success stories, Panchakarma results, Ayurveda healing stories" url="/testimonials" />
       <CompactHeader />
 
       {/* Hero Section */}

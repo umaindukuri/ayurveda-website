@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Leaf, Heart, Droplets, Award, BookOpen, Users } from "lucide-react";
@@ -7,6 +8,7 @@ import { CompactHeader } from "@/components/CompactHeader";
 export default function About() {
   return (
     <div className="min-h-screen bg-background">
+    <SEO title="About Dr. Kalyan" description="Meet Dr. Kalyan, a leading Ayurvedic physician in Hyderabad with expertise in Panchakarma, chronic disease management, and holistic wellness." keywords="Dr Kalyan Ayurveda, Ayurvedic doctor Hyderabad, Panchakarma specialist" url="/about" />
       <CompactHeader />
 
       {/* Hero Section */}

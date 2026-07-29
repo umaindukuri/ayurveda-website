@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar, User, ArrowRight } from "lucide-react";
@@ -84,6 +85,7 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen bg-background">
+    <SEO title="Ayurveda Blog & Health Articles" description="Learn about Ayurvedic health, wellness tips, dosha balancing, Panchakarma benefits, and natural healing from Dr. Kalyan Ayurveda." keywords="Ayurveda blog, Ayurvedic health tips, dosha balance, Panchakarma benefits" url="/blog" />
       <CompactHeader />
 
       {/* Hero Section */}

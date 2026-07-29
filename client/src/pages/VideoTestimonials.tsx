@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -114,6 +115,7 @@ export default function VideoTestimonials() {
 
   return (
     <div className="min-h-screen bg-background">
+    <SEO title="Patient Testimonial Videos" description="Watch real patient testimonial videos from Dr. Kalyan Ayurveda. See how Ayurvedic treatment transformed lives with arthritis, diabetes, anxiety, and more." keywords="Ayurveda testimonial videos, patient stories Ayurveda, Panchakarma results videos" url="/video-testimonials" />
       <CompactHeader />
 
       {/* Hero Section */}

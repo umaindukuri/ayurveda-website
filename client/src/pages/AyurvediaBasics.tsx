@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -7,6 +8,7 @@ import { CompactHeader } from "@/components/CompactHeader";
 export default function AyurvediaBasics() {
   return (
     <div className="min-h-screen bg-background">
+    <SEO title="Ayurveda Basics" description="Learn the fundamentals of Ayurveda — doshas, Panchakarma, herbal medicine, and the ancient science of holistic health and wellness." keywords="Ayurveda basics, what is Ayurveda, doshas explained, Ayurvedic medicine basics" url="/ayurveda-basics" />
       <CompactHeader />
 
       {/* Hero Section */}
