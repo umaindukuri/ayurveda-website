@@ -1,4 +1,4 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, bigint } from "drizzle-orm/mysql-core";
+import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, bigint, date, time } from "drizzle-orm/mysql-core";
 
 export const users = mysqlTable("users", {
   id: int("id").autoincrement().primaryKey(),
@@ -11,7 +11,6 @@ export const users = mysqlTable("users", {
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
   lastSignedIn: timestamp("lastSignedIn").defaultNow().notNull(),
 });
-
 export type User = typeof users.$inferSelect;
 export type InsertUser = typeof users.$inferInsert;
 
@@ -30,7 +29,6 @@ export const mediaFiles = mysqlTable("media_files", {
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });
-
 export type MediaFile = typeof mediaFiles.$inferSelect;
 export type InsertMediaFile = typeof mediaFiles.$inferInsert;
 
@@ -45,6 +43,31 @@ export const contactInquiries = mysqlTable("contact_inquiries", {
   status: mysqlEnum("status", ["new", "contacted", "resolved"]).default("new").notNull(),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
 });
-
 export type ContactInquiry = typeof contactInquiries.$inferSelect;
 export type InsertContactInquiry = typeof contactInquiries.$inferInsert;
+
+export const appointments = mysqlTable("appointments", {
+  id: int("id").autoincrement().primaryKey(),
+  name: varchar("name", { length: 255 }).notNull(),
+  email: varchar("email", { length: 320 }).notNull(),
+  phone: varchar("phone", { length: 30 }).notNull(),
+  treatmentType: mysqlEnum("treatmentType", [
+    "consultation",
+    "panchakarma",
+    "fertility",
+    "chronic_disease",
+    "digestive",
+    "respiratory",
+    "skin",
+    "mental_health",
+    "rejuvenation",
+    "other",
+  ]).default("consultation").notNull(),
+  appointmentDate: date("appointmentDate").notNull(),
+  timeSlot: varchar("timeSlot", { length: 20 }).notNull(),
+  notes: text("notes"),
+  status: mysqlEnum("status", ["pending", "confirmed", "cancelled", "completed"]).default("pending").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+export type Appointment = typeof appointments.$inferSelect;
+export type InsertAppointment = typeof appointments.$inferInsert;

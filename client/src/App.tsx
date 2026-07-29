@@ -29,6 +29,8 @@ import EmailAutomation from "./pages/EmailAutomation";
 import BookingSuccess from "./pages/BookingSuccess";
 import SMSReminders from "./pages/SMSReminders";
 import AppointmentManagement from "./pages/AppointmentManagement";
+import AdminInquiries from "./pages/AdminInquiries";
+import BookAppointment from "./pages/BookAppointment";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -51,6 +53,8 @@ function Router() {
       <Route path="/booking-success" component={BookingSuccess} />
       <Route path="/sms-reminders" component={SMSReminders} />
       <Route path="/appointment-management" component={AppointmentManagement} />
+      <Route path="/admin/inquiries" component={AdminInquiries} />
+      <Route path="/book-appointment" component={BookAppointment} />
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
