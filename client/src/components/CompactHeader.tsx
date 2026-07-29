@@ -6,16 +6,71 @@ import { MobileMenuDrawer } from '@/components/MobileMenuDrawer';
 import { ChevronDown } from 'lucide-react';
 import { toast } from 'sonner';
 
+// Brevo (formerly Sendinblue) newsletter subscription
+// To activate: create a free account at https://brevo.com, get your API key and list ID,
+// then set VITE_BREVO_API_KEY and VITE_BREVO_LIST_ID in your environment variables.
+const BREVO_API_KEY = (import.meta as any).env?.VITE_BREVO_API_KEY as string | undefined;
+const BREVO_LIST_ID = (import.meta as any).env?.VITE_BREVO_LIST_ID as string | undefined;
+
 export function CompactHeader() {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) {
       toast.error('Please enter your email');
       return;
     }
+
+    // If Brevo is configured, use their API
+    if (BREVO_API_KEY && BREVO_LIST_ID) {
+      setIsLoading(true);
+      try {
+        const res = await fetch('https://api.brevo.com/v3/contacts', {
+          method: 'POST',
+          headers: {
+            'accept': 'application/json',
+            'content-type': 'application/json',
+            'api-key': BREVO_API_KEY,
+          },
+          body: JSON.stringify({
+            email,
+            listIds: [parseInt(BREVO_LIST_ID)],
+            updateEnabled: true,
+          }),
+        });
+        if (res.ok || res.status === 204) {
+          toast.success('Subscribed! Welcome to our wellness community 🌿');
+          setIsSubscribed(true);
+          setEmail('');
+          setTimeout(() => setIsSubscribed(false), 4000);
+        } else if (res.status === 400) {
+          const data = await res.json();
+          if (data?.code === 'duplicate_parameter') {
+            toast.success('You are already subscribed! 🌿');
+            setEmail('');
+          } else {
+            toast.error('Could not subscribe. Please try again.');
+          }
+        } else {
+          throw new Error('Brevo API error');
+        }
+      } catch {
+        // Fallback to WhatsApp if Brevo fails
+        const msg = encodeURIComponent(`Hello Dr. Kalyan, I'd like to subscribe to your wellness newsletter. My email is: ${email}`);
+        window.open(`https://wa.me/919281332544?text=${msg}`, '_blank');
+        setIsSubscribed(true);
+        setEmail('');
+        setTimeout(() => setIsSubscribed(false), 3000);
+      } finally {
+        setIsLoading(false);
+      }
+      return;
+    }
+
+    // Fallback: send via WhatsApp if Brevo not configured
     const msg = encodeURIComponent(`Hello Dr. Kalyan, I'd like to subscribe to your wellness newsletter. My email is: ${email}`);
     window.open(`https://wa.me/919281332544?text=${msg}`, '_blank');
     setIsSubscribed(true);
@@ -43,9 +98,10 @@ export function CompactHeader() {
             <Button
               type="submit"
               size="sm"
-              className="bg-white text-primary hover:bg-white/90 text-xs md:text-sm px-3 py-1 h-auto flex-shrink-0"
+              disabled={isLoading}
+              className="bg-white text-primary hover:bg-white/90 text-xs md:text-sm px-3 py-1 h-auto flex-shrink-0 disabled:opacity-70"
             >
-              {isSubscribed ? '✓' : 'Subscribe'}
+              {isLoading ? '...' : isSubscribed ? '✓ Subscribed!' : 'Subscribe'}
             </Button>
           </form>
         </div>

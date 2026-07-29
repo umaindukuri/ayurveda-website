@@ -120,13 +120,28 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="mt-12 rounded-lg overflow-hidden shadow-lg h-64 bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-primary mx-auto mb-2 opacity-50" />
-                  <p className="text-muted-foreground">Prashanth Hills Colony, Raidurg Navkhalsa</p>
-                </div>
+              {/* Google Maps Embed */}
+              <div className="mt-12 rounded-xl overflow-hidden shadow-lg border border-border">
+                <iframe
+                  title="Dr. Kalyan Ayurveda Clinic Location"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.9!2d78.3742!3d17.4235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93dc3dc3dc3d%3A0x0!2sPrashanth+Hills+Colony%2C+Raidurg+Navkhalsa%2C+Hyderabad%2C+Telangana+500081!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                  width="100%"
+                  height="280"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
+              <a
+                href="https://maps.google.com/?q=Prashanth+Hills+Colony,+Raidurg+Navkhalsa,+Hyderabad,+Telangana"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 flex items-center justify-center gap-2 w-full py-3 px-4 bg-primary text-white rounded-xl font-medium hover:bg-primary/90 transition-colors"
+              >
+                <MapPin className="w-4 h-4" />
+                Open in Google Maps
+              </a>
             </div>
 
             {/* Contact Form */}
