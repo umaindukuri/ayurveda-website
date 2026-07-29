@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "wouter";
@@ -12,7 +13,7 @@ export default function Testimonials() {
       story: "After 10 years of joint pain and limited mobility, I was losing hope. The 21-day Panchakarma program transformed my life. I'm now pain-free, active again, and off most medications. The holistic approach addressed the root cause, not just symptoms.",
       rating: 5,
       highlight: "Pain-free after 10 years of suffering",
-      image: "/manus-storage/treatment_chronic_disease_62ef6750.png"
+      image: "/images/treatment_chronic_disease_62ef6750.png"
     },
     {
       name: "Maria S.",
@@ -21,7 +22,7 @@ export default function Testimonials() {
       story: "My blood sugar levels were completely out of control despite medication. After one 14-day program, my glucose normalized. The dietary guidance and herbal treatments gave me my health back. I'm now off insulin and managing naturally.",
       rating: 5,
       highlight: "Blood sugar normalized, off insulin",
-      image: "/manus-storage/treatment_digestive_health_866aa1e8.png"
+      image: "/images/treatment_digestive_health_866aa1e8.png"
     },
     {
       name: "David K.",
@@ -30,7 +31,7 @@ export default function Testimonials() {
       story: "Years of anxiety and sleepless nights were destroying my life. Shirodhara and meditation practices calmed my nervous system in ways medication never could. I now sleep deeply and feel genuinely peaceful for the first time in years.",
       rating: 5,
       highlight: "Anxiety resolved, sleeping peacefully",
-      image: "/manus-storage/treatment_mental_health_d3e27509.png"
+      image: "/images/treatment_mental_health_d3e27509.png"
     },
     {
       name: "Lisa T.",
@@ -39,7 +40,7 @@ export default function Testimonials() {
       story: "My skin was covered in painful eczema that no dermatologist could help. My skin cleared completely within 2 months of treatment. The holistic approach addressed the root cause—internal inflammation—not just symptoms.",
       rating: 5,
       highlight: "Severe eczema completely cleared",
-      image: "/manus-storage/treatment_skin_health_e6507ce9.png"
+      image: "/images/treatment_skin_health_e6507ce9.png"
     },
     {
       name: "Sneha P.",
@@ -48,7 +49,7 @@ export default function Testimonials() {
       story: "Against all odds, after 3 years of infertility and multiple failed treatments, I discovered Dr. Kalyan's Ayurvedic approach. The personalized Panchakarma program combined with Uttara Basti treatments balanced my hormones naturally. I conceived naturally within 4 months and now have a beautiful healthy baby. This journey taught me that sometimes the ancient wisdom works better than modern medicine.",
       rating: 5,
       highlight: "Natural conception after 3 years of infertility",
-      image: "/manus-storage/sneha-fertility-thumb-final_25d16e8c.png"
+      image: "/images/sneha-fertility-thumb-final_25d16e8c.png"
     },
     {
       name: "Robert & Susan",
@@ -57,7 +58,7 @@ export default function Testimonials() {
       story: "After 5 years of trying to conceive with no medical explanation, we were devastated. We completed a 14-day program together and conceived naturally within 3 months. We now have a beautiful 2-year-old daughter. The Ayurvedic approach gave us hope.",
       rating: 5,
       highlight: "Natural conception after 5 years",
-      image: "/manus-storage/blog_panchakarma_guide_c9ed2d56.png"
+      image: "/images/blog_panchakarma_guide_c9ed2d56.png"
     },
     {
       name: "Emma T.",
@@ -66,7 +67,7 @@ export default function Testimonials() {
       story: "I suffered from severe IBS, bloating, and food sensitivities for years. After the Panchakarma program, my digestion completely normalized. I can now eat foods I couldn't tolerate before. My energy and quality of life have transformed.",
       rating: 5,
       highlight: "IBS resolved, digestion normalized",
-      image: "/manus-storage/treatment_digestive_health_866aa1e8.png"
+      image: "/images/treatment_digestive_health_866aa1e8.png"
     },
     {
       name: "Michael K.",
@@ -75,7 +76,7 @@ export default function Testimonials() {
       story: "I had severe asthma since childhood and was on multiple inhalers. After one program, my breathing capacity improved dramatically. I now rarely use inhalers and can exercise without limitation. The Nasya therapy was transformative.",
       rating: 5,
       highlight: "Asthma dramatically improved",
-      image: "/manus-storage/treatment_respiratory_18e9bd3b.png"
+      image: "/images/treatment_respiratory_18e9bd3b.png"
     },
     {
       name: "Priya D.",
@@ -84,7 +85,7 @@ export default function Testimonials() {
       story: "I was in a deep depression from years of work stress. The combination of Panchakarma, yoga, meditation, and herbal support lifted my mood naturally. I'm now energized, clear-headed, and genuinely happy for the first time in years.",
       rating: 5,
       highlight: "Depression resolved, burnout healed",
-      image: "/manus-storage/treatment_mental_health_d3e27509.png"
+      image: "/images/treatment_mental_health_d3e27509.png"
     },
     {
       name: "Thomas W.",
@@ -93,7 +94,7 @@ export default function Testimonials() {
       story: "My blood pressure was dangerously high despite medications. After the program, it normalized. My cholesterol improved, and my cardiologist was amazed. I feel healthier than I have in decades.",
       rating: 5,
       highlight: "Hypertension normalized naturally",
-      image: "/manus-storage/treatment_chronic_disease_62ef6750.png"
+      image: "/images/treatment_chronic_disease_62ef6750.png"
     },
     {
       name: "Sophia L.",
@@ -102,7 +103,7 @@ export default function Testimonials() {
       story: "Menopause was devastating—hot flashes, mood swings, sleep issues. The Panchakarma program and Rasayana therapy balanced my hormones naturally. I'm now thriving through menopause without hormone replacement therapy.",
       rating: 5,
       highlight: "Menopause symptoms resolved naturally",
-      image: "/manus-storage/blog_ayurveda_basics_75397dab.png"
+      image: "/images/blog_ayurveda_basics_75397dab.png"
     },
     {
       name: "Christopher M.",
@@ -111,7 +112,7 @@ export default function Testimonials() {
       story: "I was exhausted all the time despite sleeping. After the program, my energy returned completely. The Rasayana therapy rejuvenated me at a cellular level. I'm now more energetic and vital than I've been in years.",
       rating: 5,
       highlight: "Energy and vitality fully restored",
-      image: "/manus-storage/blog_panchakarma_guide_c9ed2d56.png"
+      image: "/images/blog_panchakarma_guide_c9ed2d56.png"
     },
     {
       name: "Ananya D.",
@@ -120,12 +121,13 @@ export default function Testimonials() {
       story: "PCOS made me believe I couldn't conceive. After the 21-day program with specialized Uttara Basti treatments, my cycles became regular. I conceived naturally within 6 months and now have a healthy 1-year-old son.",
       rating: 5,
       highlight: "PCOS resolved, natural conception",
-      image: "/manus-storage/blog_dosha_balance_d9df3e57.png"
+      image: "/images/blog_dosha_balance_d9df3e57.png"
     }
   ];
 
   return (
     <div className="min-h-screen bg-background">
+    <SEO title="Patient Success Stories" description="Read inspiring patient success stories from Dr. Kalyan Ayurveda. Real healing journeys from arthritis, diabetes, fertility, skin conditions, and more." keywords="Ayurveda testimonials, patient success stories, Panchakarma results, Ayurveda healing stories" url="/testimonials" />
       <CompactHeader />
 
       {/* Hero Section */}
@@ -275,7 +277,7 @@ export default function Testimonials() {
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <img src="/manus-storage/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-8 w-8 invert" />
+                <img src="/images/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-8 w-8 invert" />
                 <span className="font-playfair font-bold">Ayurveda Wellness</span>
               </div>
               <p className="text-white/70">

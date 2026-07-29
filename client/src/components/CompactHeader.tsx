@@ -56,7 +56,7 @@ export function CompactHeader() {
           {/* Logo */}
           <Link href="/">
             <div className="flex items-center gap-2 cursor-pointer flex-shrink-0">
-              <img src="/manus-storage/dr_kalyan_logo_final_07bd8e78.png" alt="Dr. Kalyan Ayurveda" className="h-10 w-10" />
+              <img src="/images/dr_kalyan_logo_final_07bd8e78.png" alt="Dr. Kalyan Ayurveda" className="h-10 w-10" />
               <div className="flex flex-col">
                 <span className="text-xs font-bold text-primary leading-tight">Dr. Kalyan</span>
                 <span className="text-xs font-bold text-primary leading-tight">Ayurveda</span>

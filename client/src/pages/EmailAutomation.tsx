@@ -15,7 +15,7 @@ export default function EmailAutomation() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <img src="/manus-storage/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-6 w-6 invert" />
+                <img src="/images/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-6 w-6 invert" />
                 <span className="font-bold text-sm">Ayurveda Wellness</span>
               </div>
               <p className="text-white/70 text-xs leading-relaxed">

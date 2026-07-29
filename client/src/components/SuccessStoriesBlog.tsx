@@ -39,7 +39,7 @@ His success story demonstrates the power of authentic Ayurvedic healing when com
       author: 'Dr. Kalyan',
       date: 'March 15, 2024',
       readTime: '5 min read',
-      image: '/manus-storage/treatment_chronic_disease_62ef6750.png',
+      image: '/images/treatment_chronic_disease_62ef6750.png',
       category: 'Musculoskeletal',
       condition: 'Severe Arthritis'
     },
@@ -59,7 +59,7 @@ This case exemplifies how Ayurveda addresses the root cause rather than just tre
       author: 'Dr. Kalyan',
       date: 'February 28, 2024',
       readTime: '6 min read',
-      image: '/manus-storage/treatment_skin_health_e6507ce9.png',
+      image: '/images/treatment_skin_health_e6507ce9.png',
       category: 'Skin & Dermatology',
       condition: 'Severe Eczema'
     },
@@ -79,7 +79,7 @@ Her story gives hope to thousands of women struggling with infertility and hormo
       author: 'Dr. Kalyan',
       date: 'January 20, 2024',
       readTime: '7 min read',
-      image: '/manus-storage/ayurveda_wellness_spa_interior_1e8d2c9a.png',
+      image: '/images/ayurveda_wellness_spa_interior_1e8d2c9a.webp',
       category: 'Hormonal & Fertility',
       condition: 'PCOS & Infertility'
     },
@@ -99,7 +99,7 @@ Her transformation shows how Ayurveda can address mental health holistically by 
       author: 'Dr. Kalyan',
       date: 'December 10, 2023',
       readTime: '5 min read',
-      image: '/manus-storage/treatment_mental_health_d3e27509.png',
+      image: '/images/treatment_mental_health_d3e27509.png',
       category: 'Mental Health',
       condition: 'Anxiety & Depression'
     },
@@ -119,7 +119,7 @@ His case demonstrates how Ayurveda can reverse metabolic disorders when combined
       author: 'Dr. Kalyan',
       date: 'November 5, 2023',
       readTime: '6 min read',
-      image: '/manus-storage/panchakarma_treatment_vibrant_d075a65b.png',
+      image: '/images/panchakarma_treatment_vibrant_d075a65b.png',
       category: 'Digestive Health',
       condition: 'Type 2 Diabetes'
     },
@@ -139,7 +139,7 @@ His recovery shows how addressing the underlying imbalance is more effective tha
       author: 'Dr. Kalyan',
       date: 'October 18, 2023',
       readTime: '5 min read',
-      image: '/manus-storage/hero_meditation_premium_0f0d5eb0.png',
+      image: '/images/hero_meditation_premium_0f0d5eb0.png',
       category: 'Musculoskeletal',
       condition: 'Chronic Back Pain'
     }

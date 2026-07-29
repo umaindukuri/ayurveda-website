@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heart, Leaf, Wind, Flame, Droplets, Brain, Zap, Award } from "lucide-react";
@@ -22,7 +23,7 @@ export default function Treatments() {
       ],
       procedures: ["Abhyanga (Oil Massage)", "Nasya (Nasal Therapy)", "Basti (Enema Therapy)", "Vamana (Therapeutic Vomiting)", "Virechana (Therapeutic Purgation)"],
       successRate: "70-80%",
-      image: "/manus-storage/blog_panchakarma_guide_c9ed2d56.png"
+      image: "/images/blog_panchakarma_guide_c9ed2d56.png"
     },
     {
       id: "chronic-diseases",
@@ -48,7 +49,7 @@ export default function Treatments() {
         "Prevent disease progression",
         "Enhance overall vitality"
       ],
-      image: "/manus-storage/treatment_chronic_disease_62ef6750.png"
+      image: "/images/treatment_chronic_disease_62ef6750.png"
     },
     {
       id: "digestive-health",
@@ -75,7 +76,7 @@ export default function Treatments() {
         "Increase energy levels",
         "Heal the gut lining"
       ],
-      image: "/manus-storage/treatment_digestive_health_866aa1e8.png"
+      image: "/images/treatment_digestive_health_866aa1e8.png"
     },
     {
       id: "respiratory",
@@ -102,7 +103,7 @@ export default function Treatments() {
         "Reduce allergy symptoms",
         "Improve sleep quality"
       ],
-      image: "/manus-storage/treatment_respiratory_18e9bd3b.png"
+      image: "/images/treatment_respiratory_18e9bd3b.png"
     },
     {
       id: "skin-health",
@@ -129,7 +130,7 @@ export default function Treatments() {
         "Prevent recurrence",
         "Improve skin texture &amp; tone"
       ],
-      image: "/manus-storage/treatment_skin_health_e6507ce9.png"
+      image: "/images/treatment_skin_health_e6507ce9.png"
     },
     {
       id: "mental-health",
@@ -156,7 +157,7 @@ export default function Treatments() {
         "Reduce stress & burnout",
         "Restore emotional peace"
       ],
-      image: "/manus-storage/treatment_mental_health_d3e27509.png"
+      image: "/images/treatment_mental_health_d3e27509.png"
     },
     {
       id: "fertility",
@@ -214,6 +215,7 @@ export default function Treatments() {
 
   return (
     <div className="min-h-screen bg-background">
+    <SEO title="Ayurvedic Treatments" description="Explore our comprehensive Ayurvedic treatments: Panchakarma, chronic disease management, fertility, skin health, mental wellness, and more in Hyderabad." keywords="Ayurvedic treatments Hyderabad, Panchakarma treatment, Ayurveda chronic disease, fertility Ayurveda" url="/treatments" />
       <CompactHeader />
 
       {/* Hero Section */}
@@ -388,7 +390,7 @@ export default function Treatments() {
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <img src="/manus-storage/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-8 w-8 invert" />
+                <img src="/images/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-8 w-8 invert" />
                 <span className="font-playfair font-bold">Ayurveda Wellness</span>
               </div>
               <p className="text-white/70">

@@ -1,3 +1,5 @@
+import { SEO } from "@/components/SEO";
+import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Heart, Leaf, Wind, Flame, Droplets, Brain, Zap, Users, Award, ArrowRight } from "lucide-react";
@@ -22,6 +24,13 @@ import { TestimonialVideoCarousel } from "@/components/TestimonialVideoCarousel"
 
 
 export default function Home() {
+  // The useAuth hook provides authentication state.
+  // To implement login/logout, call logout(), or start login from an event
+  // handler: onClick={() => startLogin()} (imported from "@/const"). Never call
+  // startLogin() during render (no href={startLogin()}) — it mints a one-time
+  // nonce cookie and must run only at the moment of navigation.
+  let { user, loading, error, isAuthenticated, logout } = useAuth();
+
   const treatments = [
     {
       icon: Droplets,
@@ -102,13 +111,14 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
+    <SEO title="Ayurvedic Panchakarma & Fertility Treatment" description="Restore your health naturally with authentic Ayurvedic Panchakarma and personalized wellness treatments in Hyderabad. 5,000 years of healing wisdom." keywords="Ayurveda Hyderabad, Panchakarma, fertility treatment, holistic healing, Dr Kalyan" url="/" />
       {/* Compact Header with Newsletter */}
       <CompactHeader />
 
       {/* Hero Section - Premium */}
       <section className="relative h-[calc(100vh-120px)] flex items-center justify-start overflow-hidden">
       <img
-        src="/manus-storage/hero_meditation_premium_0f0d5eb0.png"
+        src="/images/hero_meditation_premium_0f0d5eb0.png"
         alt="Restore Your Fertility Naturally"
         className="absolute inset-0 w-full h-full object-cover"
         loading="lazy"
@@ -247,7 +257,7 @@ export default function Home() {
             </div>
             <div>
         <img
-          src="/manus-storage/panchakarma_treatment_vibrant_d075a65b.png"
+          src="/images/panchakarma_treatment_vibrant_d075a65b.png"
           alt="Panchakarma Treatment"
           className="w-full h-full object-cover"
           loading="lazy"
@@ -382,7 +392,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all">
               <img 
-                src="/manus-storage/slide_1_abhyanga_massage_generated.webp" 
+                src="/images/slide_1_abhyanga_massage_generated.webp" 
                 alt="Abhyanga - Traditional Oil Massage"
                 className="w-full h-80 object-cover hover:scale-105 transition-transform duration-300"
               />
@@ -395,7 +405,7 @@ export default function Home() {
 
             <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all">
               <img 
-                src="/manus-storage/slide_2_shirodhara_therapy_generated.webp" 
+                src="/images/slide_2_shirodhara_therapy_generated.webp" 
                 alt="Shirodhara - Therapeutic Oil Pouring"
                 className="w-full h-80 object-cover hover:scale-105 transition-transform duration-300"
               />
@@ -408,7 +418,7 @@ export default function Home() {
 
             <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all">
               <img 
-                src="/manus-storage/slide_3_marma_point_therapy_generated.webp" 
+                src="/images/slide_3_marma_point_therapy_generated.webp" 
                 alt="Marma Point Therapy - Energy Point Healing"
                 className="w-full h-80 object-cover hover:scale-105 transition-transform duration-300"
               />
@@ -421,7 +431,7 @@ export default function Home() {
 
             <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all">
               <img 
-                src="/manus-storage/slide_4_panchakarma_prep_generated.webp" 
+                src="/images/slide_4_panchakarma_prep_generated.webp" 
                 alt="Panchakarma Treatment Preparation"
                 className="w-full h-80 object-cover hover:scale-105 transition-transform duration-300"
               />
@@ -539,7 +549,7 @@ export default function Home() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <img src="/manus-storage/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-6 w-6 invert" />
+                <img src="/images/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-6 w-6 invert" />
                 <span className="font-bold text-sm">Ayurveda Wellness</span>
               </div>
               <p className="text-white/70 text-xs leading-relaxed">

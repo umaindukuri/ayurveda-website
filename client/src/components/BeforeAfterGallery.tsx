@@ -25,8 +25,8 @@ export function BeforeAfterGallery() {
       name: 'Rajesh M.',
       condition: 'Severe Arthritis',
       duration: '21-Day Program',
-      before: '/manus-storage/treatment_chronic_disease_62ef6750.png',
-      after: '/manus-storage/panchakarma_treatment_vibrant_d075a65b.png',
+      before: '/images/treatment_chronic_disease_62ef6750.png',
+      after: '/images/panchakarma_treatment_vibrant_d075a65b.png',
       beforeDescription: 'Severe joint pain, limited mobility, swollen knees',
       afterDescription: 'Pain-free movement, full flexibility restored',
       result: 'Complete recovery - back to active lifestyle'
@@ -36,8 +36,8 @@ export function BeforeAfterGallery() {
       name: 'Priya S.',
       condition: 'Severe Eczema',
       duration: '14-Day Program',
-      before: '/manus-storage/treatment_skin_health_e6507ce9.png',
-      after: '/manus-storage/treatment_digestive_health_866aa1e8.png',
+      before: '/images/treatment_skin_health_e6507ce9.png',
+      after: '/images/treatment_digestive_health_866aa1e8.png',
       beforeDescription: 'Extensive skin inflammation, itching, redness',
       afterDescription: 'Clear, healthy skin with natural glow',
       result: 'Skin completely cleared - medication-free'
@@ -47,8 +47,8 @@ export function BeforeAfterGallery() {
       name: 'Amit K.',
       condition: 'Chronic Back Pain',
       duration: '14-Day Program',
-      before: '/manus-storage/treatment_mental_health_d3e27509.png',
-      after: '/manus-storage/hero_meditation_premium_0f0d5eb0.png',
+      before: '/images/treatment_mental_health_d3e27509.png',
+      after: '/images/hero_meditation_premium_0f0d5eb0.png',
       beforeDescription: 'Constant back pain, poor posture, limited activity',
       afterDescription: 'Straight posture, pain-free, active and energetic',
       result: 'Pain eliminated - returned to work without discomfort'
@@ -58,8 +58,8 @@ export function BeforeAfterGallery() {
       name: 'Sneha D.',
       condition: 'PCOS & Infertility',
       duration: '21-Day Program',
-      before: '/manus-storage/ayurveda_wellness_spa_interior_1e8d2c9a.png',
-      after: '/manus-storage/blog_dosha_balance_d9df3e57.png',
+      before: '/images/ayurveda_wellness_spa_interior_1e8d2c9a.webp',
+      after: '/images/blog_dosha_balance_d9df3e57.png',
       beforeDescription: 'Irregular cycles, hormonal imbalance, anxiety',
       afterDescription: 'Regular cycles, balanced hormones, peaceful',
       result: 'Natural conception achieved - now 6 months pregnant'

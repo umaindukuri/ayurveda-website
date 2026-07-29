@@ -1,13 +1,16 @@
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Phone, Mail, MapPin, Clock, CheckCircle2 } from "lucide-react";
 import { Link } from "wouter";
 import { useState } from "react";
 import { toast } from "sonner";
 import { CompactHeader } from "@/components/CompactHeader";
+import { trpc } from "@/lib/trpc";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,46 +18,45 @@ export default function Contact() {
     email: "",
     phone: "",
     subject: "",
-    message: ""
+    message: "",
+    inquiryType: "general" as "general" | "booking" | "treatment" | "other",
   });
+  const [submitted, setSubmitted] = useState(false);
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const submitMutation = trpc.contact.submit.useMutation({
+    onSuccess: () => {
+      setSubmitted(true);
+      setFormData({ name: "", email: "", phone: "", subject: "", message: "", inquiryType: "general" });
+    },
+    onError: (err) => {
+      toast.error(err.message || "Something went wrong. Please try again.");
+    },
+  });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Validate form
     if (!formData.name || !formData.email || !formData.message) {
       toast.error("Please fill in all required fields");
       return;
     }
-
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
-      toast.success("Thank you! We'll get back to you within 24 hours.");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: ""
-      });
-      setIsSubmitting(false);
-    }, 1000);
+    submitMutation.mutate({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone || undefined,
+      subject: formData.subject || undefined,
+      message: formData.message,
+      inquiryType: formData.inquiryType,
+    });
   };
 
   return (
     <div className="min-h-screen bg-background">
+    <SEO title="Contact Us" description="Get in touch with Dr. Kalyan Ayurveda. Book a consultation, ask about treatments, or visit our clinic in Hyderabad." keywords="contact Dr Kalyan Ayurveda, book Ayurveda consultation Hyderabad, Ayurveda clinic contact" url="/contact" />
       <CompactHeader />
 
       {/* Hero Section */}
@@ -127,7 +129,7 @@ export default function Contact() {
               <div className="mt-12 rounded-lg overflow-hidden shadow-lg h-64 bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
                 <div className="text-center">
                   <MapPin className="w-12 h-12 text-primary mx-auto mb-2 opacity-50" />
-                  <p className="text-muted-foreground">123 Wellness Lane, Healing City</p>
+                  <p className="text-muted-foreground">Prashanth Hills Colony, Raidurg Navkhalsa</p>
                 </div>
               </div>
             </div>
@@ -137,78 +139,111 @@ export default function Contact() {
               <Card className="border-border">
                 <CardHeader>
                   <CardTitle>Send us a Message</CardTitle>
-                  <CardDescription>Fill out the form below and we'll get back to you shortly.</CardDescription>
+                  <CardDescription>Fill out the form below and we'll get back to you within 24 hours.</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Full Name *</Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="John Doe"
-                        required
-                      />
+                  {submitted ? (
+                    <div className="flex flex-col items-center justify-center py-12 text-center gap-4">
+                      <CheckCircle2 className="w-16 h-16 text-green-500" />
+                      <h3 className="text-xl font-semibold text-foreground">Message Received!</h3>
+                      <p className="text-muted-foreground max-w-xs">
+                        Thank you for reaching out. Dr. Kalyan's team will contact you within 24 hours.
+                      </p>
+                      <Button variant="outline" onClick={() => setSubmitted(false)} className="mt-2">
+                        Send Another Message
+                      </Button>
                     </div>
+                  ) : (
+                    <form onSubmit={handleSubmit} className="space-y-5">
+                      <div className="space-y-2">
+                        <Label htmlFor="inquiryType">Inquiry Type</Label>
+                        <Select
+                          value={formData.inquiryType}
+                          onValueChange={(val) =>
+                            setFormData(prev => ({ ...prev, inquiryType: val as typeof formData.inquiryType }))
+                          }
+                        >
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select inquiry type" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="general">General Inquiry</SelectItem>
+                            <SelectItem value="booking">Book Appointment</SelectItem>
+                            <SelectItem value="treatment">Treatment Question</SelectItem>
+                            <SelectItem value="other">Other</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email Address *</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="john@example.com"
-                        required
-                      />
-                    </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="name">Full Name *</Label>
+                        <Input
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          placeholder="Your full name"
+                          required
+                        />
+                      </div>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">Phone Number</Label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder="+1 (555) 123-4567"
-                      />
-                    </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="email">Email Address *</Label>
+                        <Input
+                          id="email"
+                          name="email"
+                          type="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="your@email.com"
+                          required
+                        />
+                      </div>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="subject">Subject</Label>
-                      <Input
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleChange}
-                        placeholder="Inquiry about treatments"
-                      />
-                    </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="phone">Phone Number</Label>
+                        <Input
+                          id="phone"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          placeholder="+91 98765 43210"
+                        />
+                      </div>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="message">Message *</Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        placeholder="Tell us about your health concerns and how we can help..."
-                        rows={6}
-                        required
-                      />
-                    </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="subject">Subject</Label>
+                        <Input
+                          id="subject"
+                          name="subject"
+                          value={formData.subject}
+                          onChange={handleChange}
+                          placeholder="e.g. Panchakarma inquiry"
+                        />
+                      </div>
 
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-primary hover:bg-primary/90 text-white"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? "Sending..." : "Send Message"}
-                    </Button>
-                  </form>
+                      <div className="space-y-2">
+                        <Label htmlFor="message">Message *</Label>
+                        <Textarea
+                          id="message"
+                          name="message"
+                          value={formData.message}
+                          onChange={handleChange}
+                          placeholder="Tell us about your health concerns and how we can help..."
+                          rows={5}
+                          required
+                        />
+                      </div>
+
+                      <Button
+                        type="submit"
+                        className="w-full bg-primary hover:bg-primary/90 text-white"
+                        disabled={submitMutation.isPending}
+                      >
+                        {submitMutation.isPending ? "Sending..." : "Send Message"}
+                      </Button>
+                    </form>
+                  )}
                 </CardContent>
               </Card>
             </div>
@@ -228,7 +263,7 @@ export default function Contact() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  You can book a consultation by clicking the "Book Consultation" button on our website, calling us at +1 (555) 123-4567, or filling out the contact form above. We'll respond within 24 hours to confirm your appointment.
+                  You can book a consultation by clicking the "Book Consultation" button on our website, calling us at +91 92813 32544, or filling out the contact form above. We'll respond within 24 hours to confirm your appointment.
                 </p>
               </CardContent>
             </Card>
@@ -257,17 +292,6 @@ export default function Contact() {
 
             <Card className="border-border">
               <CardHeader>
-                <CardTitle>Do you work with insurance?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  We accept most major insurance plans. Please contact us directly to verify your coverage and discuss payment options. We also offer flexible payment plans for those without insurance.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border">
-              <CardHeader>
                 <CardTitle>Can Ayurveda complement my current medications?</CardTitle>
               </CardHeader>
               <CardContent>
@@ -287,7 +311,14 @@ export default function Contact() {
           <p className="text-lg text-muted-foreground mb-8">
             Don't wait another day. Schedule your personalized consultation and take the first step toward lasting wellness.
           </p>
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-base">
+          <Button
+            size="lg"
+            className="bg-primary hover:bg-primary/90 text-white text-base"
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+              setTimeout(() => setSubmitted(false), 300);
+            }}
+          >
             Book Your Consultation
           </Button>
         </div>
@@ -299,7 +330,7 @@ export default function Contact() {
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <img src="/manus-storage/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-8 w-8 invert" />
+                <img src="/images/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-8 w-8 invert" />
                 <span className="font-playfair font-bold">Ayurveda Wellness</span>
               </div>
               <p className="text-white/70">
@@ -327,14 +358,15 @@ export default function Contact() {
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-white/70">
-                <li>📧 <a href="mailto:contact@drkalyan.com" className="hover:text-white">contact@drkalyan.com</a></li>
-                <li>📞 <a href="tel:+919281332544" className="hover:text-white">+91 92813 32544</a></li>
-                <li>📍 Flat No.102, Plot No.309, Near Volkswagen Service Centre, Prashanth Hills Colony, Raidurg Navkhalsa</li>
-                <li>🕐 8:00 AM - 1:00 PM | 5:00 PM - 9:00 PM</li>
+                <li><a href="mailto:contact@drkalyan.com" className="hover:text-white">contact@drkalyan.com</a></li>
+                <li><a href="tel:+919281332544" className="hover:text-white">+91 92813 32544</a></li>
+                <li className="text-sm leading-snug">Flat No.102, Plot No.309, Near Volkswagen Service Centre, Prashanth Hills Colony, Raidurg Navkhalsa</li>
+                <li>8:00 AM - 1:00 PM | 5:00 PM - 9:00 PM</li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-white/10 pt-8 text-center text-white/70">
+          <div className="border-t border-white/10 pt-8 text-center">
+            <p className="text-white/70">© 2026 Dr. Kalyan Ayurveda. All rights reserved.</p>
           </div>
         </div>
       </footer>
