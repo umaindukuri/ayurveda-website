@@ -48,7 +48,7 @@ export const getThumbUrl = (thumbName: string): string => {
 export const getHeroUrl = (): string => {
   const base = import.meta.env.VITE_MEDIA_BASE;
   if (base === 'manus') {
-    return '/manus-storage/new_hero_homepage_76443ba6.jpg';
+    return '/manus-storage/DrKalyan-heroimage_6efd3afd.jpeg';
   }
-  return '/images/new_hero_homepage.jpg';
+  return '/images/DrKalyan-heroimage.jpeg';
 };
