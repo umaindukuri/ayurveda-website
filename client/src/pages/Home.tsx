@@ -431,7 +431,7 @@ export default function Home() {
 
             <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all">
               <img 
-                src="/images/slide_4_panchakarma_prep_generated.webp" 
+                src="/images/slide_4_panchakarma_prep_generated.jpg" 
                 alt="Panchakarma Treatment Preparation"
                 className="w-full h-80 object-cover hover:scale-105 transition-transform duration-300"
               />
