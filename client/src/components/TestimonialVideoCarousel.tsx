@@ -66,6 +66,30 @@ const testimonialVideos: TestimonialVideo[] = [
     testimonialText: 'The dietary recommendations and herbal formulations completely changed my digestive health. I feel energized again.',
     treatmentDuration: '4 months',
   },
+  {
+    id: 'vid-005',
+    patientName: 'Priya R.',
+    condition: 'Premature Aging & Fatigue',
+    beforeAfter: 'Exhausted and aging rapidly → Radiant skin and restored vitality',
+    videoThumbnail: '/manus-storage/thumb_rejuvenation_7e24628a.jpg',
+    videoUrl: '/manus-storage/final_rejuvenation_34961382.mp4',
+    duration: '1:13',
+    rating: 5,
+    testimonialText: 'After the 28-day Rasayana program, my skin is glowing, my energy is back, and the joint stiffness I had accepted as normal is completely gone.',
+    treatmentDuration: '28 days',
+  },
+  {
+    id: 'vid-006',
+    patientName: 'Arjun S.',
+    condition: 'Chronic Asthma',
+    beforeAfter: 'Inhaler 4x daily for 15 years → Breathing freely, no bronchitis',
+    videoThumbnail: '/manus-storage/thumb_respiratory_67633c14.jpg',
+    videoUrl: '/manus-storage/final_respiratory_323bbb3e.mp4',
+    duration: '1:14',
+    rating: 5,
+    testimonialText: 'I have not needed my inhaler in over eight months. Dr. Kalyan gave me my breath back — and with it, my life.',
+    treatmentDuration: '2 months',
+  },
 ];
 
 export function TestimonialVideoCarousel() {

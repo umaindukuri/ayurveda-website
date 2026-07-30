@@ -16,3 +16,6 @@
 - [x] Replace homepage hero image with one featuring Dr. Kalyan in a welcoming pose
 - [x] Add a Dr. Kalyan clinic consultation scene as the middle clip in each of the 6 testimonial videos
 - [x] Replace video thumbnail placeholders with real first-frame extracts from each crossfaded video
+
+- [x] Add Rejuvenation category video testimonial (Priya R., anti-aging / vitality)
+- [x] Add Respiratory category video testimonial (Arjun S., asthma / breathing)

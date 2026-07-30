@@ -99,10 +99,36 @@ const videoTestimonials: VideoTestimonial[] = [
     description: 'Robert suffered from IBS for 15 years. After the treatment program, his digestive issues resolved completely, and he enjoys food without fear.',
     results: ['IBS symptoms eliminated', 'Improved digestion', 'Better energy levels', 'Quality of life restored'],
     thumbnail: '/manus-storage/thumb_digestive_bc7376be.jpg'
+  },
+  {
+    id: '7',
+    title: 'Rejuvenation: Feeling Younger at 58',
+    condition: 'Premature Aging & Fatigue',
+    category: 'Rejuvenation',
+    duration: '1:13',
+    patientName: 'Priya R.',
+    patientAge: '58',
+    videoUrl: '/manus-storage/final_rejuvenation_34961382.mp4',
+    description: 'Priya felt exhausted and was aging rapidly. After the 28-day Rasayana rejuvenation program, her energy, skin vitality, and joint health were completely restored.',
+    results: ['Radiant, glowing skin', 'Energy levels of her 40s restored', 'Joint stiffness eliminated', 'Lasting cellular renewal'],
+    thumbnail: '/manus-storage/thumb_rejuvenation_7e24628a.jpg'
+  },
+  {
+    id: '8',
+    title: 'Asthma Freedom: 15 Years of Breathing Difficulty Resolved',
+    condition: 'Chronic Asthma',
+    category: 'Respiratory',
+    duration: '1:14',
+    patientName: 'Arjun S.',
+    patientAge: '42',
+    videoUrl: '/manus-storage/final_respiratory_323bbb3e.mp4',
+    description: 'Arjun used inhalers 3–4 times daily for 15 years. After Vasaka herbal treatment and Nasya nasal therapy, he had his first season change without bronchitis in over a decade.',
+    results: ['Inhaler use eliminated', 'No bronchitis episodes', 'Improved lung capacity', 'Uninterrupted sleep restored'],
+    thumbnail: '/manus-storage/thumb_respiratory_67633c14.jpg'
   }
 ];
 
-const categories = ['All', 'Musculoskeletal', 'Metabolic', 'Mental Health', 'Skin', 'Fertility', 'Digestive'];
+const categories = ['All', 'Musculoskeletal', 'Metabolic', 'Mental Health', 'Skin', 'Fertility', 'Digestive', 'Rejuvenation', 'Respiratory'];
 
 export default function VideoTestimonials() {
   const [selectedCategory, setSelectedCategory] = useState('All');

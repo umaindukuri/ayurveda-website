@@ -41,6 +41,22 @@ export function TestimonialVideoSection() {
       thumbnail: "/images/anxiety-relief-thumb-final_524ff34b.png",
       videoUrl: "/manus-storage/drk_xf_anxiety_f9ca1504.mp4",
       duration: "0:08"
+    },
+    {
+      id: '4',
+      title: "Rejuvenation - Feeling Younger at 58",
+      condition: "Premature Aging & Fatigue",
+      thumbnail: "/manus-storage/thumb_rejuvenation_7e24628a.jpg",
+      videoUrl: "/manus-storage/final_rejuvenation_34961382.mp4",
+      duration: "1:13"
+    },
+    {
+      id: '5',
+      title: "Asthma Freedom - 15 Years of Breathing Difficulty Resolved",
+      condition: "Chronic Asthma",
+      thumbnail: "/manus-storage/thumb_respiratory_67633c14.jpg",
+      videoUrl: "/manus-storage/final_respiratory_323bbb3e.mp4",
+      duration: "1:14"
     }
   ];
 
