@@ -6,6 +6,7 @@ import { Heart, Leaf, Wind, Flame, Droplets, Brain, Zap, Users, Award, ArrowRigh
 import { Link } from "wouter";
 import { BookingModal } from "@/components/BookingModal";
 import { CompactHeader } from "@/components/CompactHeader";
+import { getHeroUrl } from '@/lib/mediaUrl';
 import { FAQSection } from "@/components/FAQSection";
 import { SearchableFAQ } from "@/components/SearchableFAQ";
 import { SocialMediaLinks } from "@/components/SocialMediaLinks";
@@ -118,7 +119,7 @@ export default function Home() {
       {/* Hero Section - Premium */}
       <section className="relative h-[calc(100vh-120px)] flex items-center justify-start overflow-hidden">
         <img
-          src="/images/new_hero_homepage.jpg"
+          src={getHeroUrl()}
           alt="Dr. Kalyan welcoming patients at his Ayurvedic clinic"
           className="absolute inset-0 w-full h-full object-cover object-center"
           loading="lazy"

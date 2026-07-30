@@ -1,3 +1,4 @@
+import { getVideoUrl, getThumbUrl } from '@/lib/mediaUrl';
 import { useRef, useState } from 'react';
 import { Play, X } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
@@ -23,7 +24,7 @@ export function TestimonialVideoSection() {
       title: "Arthritis Recovery - Complete Pain Relief",
       condition: "Rheumatoid Arthritis",
       thumbnail: "/images/panchakarma_treatment_vibrant_d075a65b.png",
-      videoUrl: "/videos/v2_arthritis.mp4",
+      videoUrl: getVideoUrl('v2_arthritis'),
       duration: "0:08"
     },
     {
@@ -31,7 +32,7 @@ export function TestimonialVideoSection() {
       title: "Diabetes Management - Blood Sugar Normalized",
       condition: "Type 2 Diabetes",
       thumbnail: "/images/hero_meditation_premium_0f0d5eb0.png",
-      videoUrl: "/videos/v2_diabetes.mp4",
+      videoUrl: getVideoUrl('v2_diabetes'),
       duration: "0:08"
     },
     {
@@ -39,7 +40,7 @@ export function TestimonialVideoSection() {
       title: "Anxiety Relief - Found Inner Peace",
       condition: "Chronic Anxiety",
       thumbnail: "/images/anxiety-relief-thumb-final_524ff34b.png",
-      videoUrl: "/videos/v2_anxiety.mp4",
+      videoUrl: getVideoUrl('v2_anxiety'),
       duration: "0:08"
     },
     {
@@ -47,7 +48,7 @@ export function TestimonialVideoSection() {
       title: "Rejuvenation - Feeling Younger at 58",
       condition: "Premature Aging & Fatigue",
       thumbnail: "/images/thumbs/thumb_rejuvenation.jpg",
-      videoUrl: "/videos/v2_rejuvenation.mp4",
+      videoUrl: getVideoUrl('v2_rejuvenation'),
       duration: "1:13"
     },
     {
@@ -55,7 +56,7 @@ export function TestimonialVideoSection() {
       title: "Asthma Freedom - 15 Years of Breathing Difficulty Resolved",
       condition: "Chronic Asthma",
       thumbnail: "/images/thumbs/thumb_respiratory.jpg",
-      videoUrl: "/videos/v2_respiratory.mp4",
+      videoUrl: getVideoUrl('v2_respiratory'),
       duration: "1:14"
     }
   ];

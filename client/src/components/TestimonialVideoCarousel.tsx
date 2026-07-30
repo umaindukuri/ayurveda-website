@@ -1,3 +1,4 @@
+import { getVideoUrl, getThumbUrl } from '@/lib/mediaUrl';
 import { useRef, useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -24,7 +25,7 @@ const testimonialVideos: TestimonialVideo[] = [
     condition: 'Infertility & PCOS',
     beforeAfter: 'Struggled for 5 years → Natural pregnancy in 8 months',
     videoThumbnail: '/images/thumb-priya-fertility.jpg',
-    videoUrl: '/videos/v2_fertility.mp4',
+    videoUrl: getVideoUrl('v2_fertility'),
     duration: '0:08',
     rating: 5,
     testimonialText: "Dr. Kalyan's personalized Ayurvedic treatment gave me hope when I had lost it. The combination of herbal medicines and lifestyle changes worked wonders.",
@@ -36,7 +37,7 @@ const testimonialVideos: TestimonialVideo[] = [
     condition: 'Chronic Back Pain',
     beforeAfter: 'Severe pain limiting mobility → Pain-free and active',
     videoThumbnail: '/images/thumb-rajesh-backpain.jpg',
-    videoUrl: '/videos/v2_arthritis.mp4',
+    videoUrl: getVideoUrl('v2_arthritis'),
     duration: '0:08',
     rating: 5,
     testimonialText: 'After 3 years of conventional treatment, Ayurveda gave me relief. The Panchakarma therapy was transformative.',
@@ -48,7 +49,7 @@ const testimonialVideos: TestimonialVideo[] = [
     condition: 'Thyroid Imbalance',
     beforeAfter: 'Medication dependent → Normalized TSH levels naturally',
     videoThumbnail: '/images/thumb-anjali-thyroid.jpg',
-    videoUrl: '/videos/v2_anxiety.mp4',
+    videoUrl: getVideoUrl('v2_anxiety'),
     duration: '0:08',
     rating: 5,
     testimonialText: "I reduced my thyroid medication significantly. Dr. Kalyan's approach to root cause treatment is remarkable.",
@@ -60,7 +61,7 @@ const testimonialVideos: TestimonialVideo[] = [
     condition: 'Digestive Issues & IBS',
     beforeAfter: 'Frequent symptoms → Stable digestion and energy',
     videoThumbnail: '/images/thumb-deepak-digestive.jpg',
-    videoUrl: '/videos/v2_digestive.mp4',
+    videoUrl: getVideoUrl('v2_digestive'),
     duration: '0:08',
     rating: 5,
     testimonialText: 'The dietary recommendations and herbal formulations completely changed my digestive health. I feel energized again.',
@@ -72,7 +73,7 @@ const testimonialVideos: TestimonialVideo[] = [
     condition: 'Premature Aging & Fatigue',
     beforeAfter: 'Exhausted and aging rapidly → Radiant skin and restored vitality',
     videoThumbnail: '/images/thumbs/thumb_rejuvenation.jpg',
-    videoUrl: '/videos/v2_rejuvenation.mp4',
+    videoUrl: getVideoUrl('v2_rejuvenation'),
     duration: '1:13',
     rating: 5,
     testimonialText: 'After the 28-day Rasayana program, my skin is glowing, my energy is back, and the joint stiffness I had accepted as normal is completely gone.',
@@ -84,7 +85,7 @@ const testimonialVideos: TestimonialVideo[] = [
     condition: 'Chronic Asthma',
     beforeAfter: 'Inhaler 4x daily for 15 years → Breathing freely, no bronchitis',
     videoThumbnail: '/images/thumbs/thumb_respiratory.jpg',
-    videoUrl: '/videos/v2_respiratory.mp4',
+    videoUrl: getVideoUrl('v2_respiratory'),
     duration: '1:14',
     rating: 5,
     testimonialText: 'I have not needed my inhaler in over eight months. Dr. Kalyan gave me my breath back — and with it, my life.',

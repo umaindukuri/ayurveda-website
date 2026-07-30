@@ -6,6 +6,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/u
 import { Play, Filter, X } from 'lucide-react';
 import { Link } from 'wouter';
 import { CompactHeader } from '@/components/CompactHeader';
+import { getVideoUrl, getThumbUrl } from '@/lib/mediaUrl';
 
 interface VideoTestimonial {
   id: string;
@@ -30,10 +31,10 @@ const videoTestimonials: VideoTestimonial[] = [
     duration: '0:45',
     patientName: 'James M.',
     patientAge: '58',
-    videoUrl: '/videos/v2_arthritis.mp4',
+    videoUrl: getVideoUrl('v2_arthritis'),
     description: 'James suffered from severe joint pain for 10 years. After completing the 21-day Panchakarma program, he regained mobility and returned to his favorite activities.',
     results: ['100% pain reduction', 'Improved mobility', 'Discontinued pain medications', 'Active lifestyle restored'],
-    thumbnail: '/images/thumbs/thumb_arthritis.jpg'
+    thumbnail: getThumbUrl('thumb_arthritis')
   },
   {
     id: '2',
@@ -43,10 +44,10 @@ const videoTestimonials: VideoTestimonial[] = [
     duration: '0:45',
     patientName: 'Maria S.',
     patientAge: '52',
-    videoUrl: '/videos/v2_diabetes.mp4',
+    videoUrl: getVideoUrl('v2_diabetes'),
     description: 'Maria\'s blood sugar levels normalized after completing one 14-day program. She shares how dietary changes and herbal treatments transformed her health.',
     results: ['Normal blood sugar levels', 'Weight loss of 8kg', 'Increased energy', 'Reduced medication dependency'],
-    thumbnail: '/images/thumbs/thumb_diabetes.jpg'
+    thumbnail: getThumbUrl('thumb_diabetes')
   },
   {
     id: '3',
@@ -56,10 +57,10 @@ const videoTestimonials: VideoTestimonial[] = [
     duration: '0:51',
     patientName: 'David K.',
     patientAge: '45',
-    videoUrl: '/videos/v2_anxiety.mp4',
+    videoUrl: getVideoUrl('v2_anxiety'),
     description: 'David struggled with anxiety for years. Through Shirodhara and meditation practices, he found lasting peace without pharmaceutical interventions.',
     results: ['Anxiety symptoms eliminated', 'Better sleep quality', 'Improved focus', 'Emotional stability'],
-    thumbnail: '/images/thumbs/thumb_anxiety.jpg'
+    thumbnail: getThumbUrl('thumb_anxiety')
   },
   {
     id: '4',
@@ -69,10 +70,10 @@ const videoTestimonials: VideoTestimonial[] = [
     duration: '0:47',
     patientName: 'Lisa T.',
     patientAge: '38',
-    videoUrl: '/videos/v2_eczema.mp4',
+    videoUrl: getVideoUrl('v2_eczema'),
     description: 'Lisa\'s eczema cleared completely within 2 months. She explains how the holistic approach addressed the root cause rather than just treating symptoms.',
     results: ['Complete skin clearance', 'No itching or irritation', 'Improved confidence', 'Sustained results'],
-    thumbnail: '/images/thumbs/thumb_eczema.jpg'
+    thumbnail: getThumbUrl('thumb_eczema')
   },
   {
     id: '5',
@@ -82,10 +83,10 @@ const videoTestimonials: VideoTestimonial[] = [
     duration: '0:56',
     patientName: 'Sarah M.',
     patientAge: '35',
-    videoUrl: '/videos/v2_fertility.mp4',
+    videoUrl: getVideoUrl('v2_fertility'),
     description: 'Sarah conceived naturally after 3 years of trying. The fertility-focused Ayurvedic treatment balanced her hormones and restored reproductive health.',
     results: ['Natural conception', 'Healthy pregnancy', 'Balanced hormones', 'Restored confidence'],
-    thumbnail: '/images/thumbs/thumb_fertility.jpg'
+    thumbnail: getThumbUrl('thumb_fertility')
   },
   {
     id: '6',
@@ -95,10 +96,10 @@ const videoTestimonials: VideoTestimonial[] = [
     duration: '0:54',
     patientName: 'Robert P.',
     patientAge: '48',
-    videoUrl: '/videos/v2_digestive.mp4',
+    videoUrl: getVideoUrl('v2_digestive'),
     description: 'Robert suffered from IBS for 15 years. After the treatment program, his digestive issues resolved completely, and he enjoys food without fear.',
     results: ['IBS symptoms eliminated', 'Improved digestion', 'Better energy levels', 'Quality of life restored'],
-    thumbnail: '/images/thumbs/thumb_digestive.jpg'
+    thumbnail: getThumbUrl('thumb_digestive')
   },
   {
     id: '7',
@@ -108,10 +109,10 @@ const videoTestimonials: VideoTestimonial[] = [
     duration: '1:13',
     patientName: 'Priya R.',
     patientAge: '58',
-    videoUrl: '/videos/v2_rejuvenation.mp4',
+    videoUrl: getVideoUrl('v2_rejuvenation'),
     description: 'Priya felt exhausted and was aging rapidly. After the 28-day Rasayana rejuvenation program, her energy, skin vitality, and joint health were completely restored.',
     results: ['Radiant, glowing skin', 'Energy levels of her 40s restored', 'Joint stiffness eliminated', 'Lasting cellular renewal'],
-    thumbnail: '/images/thumbs/thumb_rejuvenation.jpg'
+    thumbnail: getThumbUrl('thumb_rejuvenation')
   },
   {
     id: '8',
@@ -121,10 +122,10 @@ const videoTestimonials: VideoTestimonial[] = [
     duration: '1:14',
     patientName: 'Arjun S.',
     patientAge: '42',
-    videoUrl: '/videos/v2_respiratory.mp4',
+    videoUrl: getVideoUrl('v2_respiratory'),
     description: 'Arjun used inhalers 3–4 times daily for 15 years. After Vasaka herbal treatment and Nasya nasal therapy, he had his first season change without bronchitis in over a decade.',
     results: ['Inhaler use eliminated', 'No bronchitis episodes', 'Improved lung capacity', 'Uninterrupted sleep restored'],
-    thumbnail: '/images/thumbs/thumb_respiratory.jpg'
+    thumbnail: getThumbUrl('thumb_respiratory')
   }
 ];
 
