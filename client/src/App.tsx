@@ -29,9 +29,13 @@ import EmailAutomation from "./pages/EmailAutomation";
 import BookingSuccess from "./pages/BookingSuccess";
 import SMSReminders from "./pages/SMSReminders";
 import AppointmentManagement from "./pages/AppointmentManagement";
-import AdminInquiries from "./pages/AdminInquiries";
-import AdminAppointments from "./pages/AdminAppointments";
-import BookAppointment from "./pages/BookAppointment";
+
+import Pricing from "./pages/Pricing";
+import MyAppointments from "./pages/MyAppointments";
+import Shop from "./pages/Shop";
+import BookAppointment from "@/pages/BookAppointment";
+import TreatmentDetail from "@/pages/TreatmentDetail";
+import BlogPost from "@/pages/BlogPost";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -54,9 +58,13 @@ function Router() {
       <Route path="/booking-success" component={BookingSuccess} />
       <Route path="/sms-reminders" component={SMSReminders} />
       <Route path="/appointment-management" component={AppointmentManagement} />
-      <Route path="/admin/inquiries" component={AdminInquiries} />
-      <Route path="/admin/appointments" component={AdminAppointments} />
+
+      <Route path="/treatments/pricing" component={Pricing} />
+      <Route path="/my-appointments" component={MyAppointments} />
+      <Route path="/shop" component={Shop} />
       <Route path="/book-appointment" component={BookAppointment} />
+      <Route path="/treatments/:slug" component={TreatmentDetail} />
+      <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
