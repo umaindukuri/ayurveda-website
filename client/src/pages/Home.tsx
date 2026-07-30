@@ -118,7 +118,7 @@ export default function Home() {
       {/* Hero Section - Premium */}
       <section className="relative h-[calc(100vh-120px)] flex items-center justify-start overflow-hidden">
         <img
-          src="/manus-storage/new_hero_homepage_76443ba6.jpg"
+          src="/images/new_hero_homepage.jpg"
           alt="Dr. Kalyan welcoming patients at his Ayurvedic clinic"
           className="absolute inset-0 w-full h-full object-cover object-center"
           loading="lazy"
