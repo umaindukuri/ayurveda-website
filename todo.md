@@ -1,4 +1,5 @@
-- [ ] Update testimonial videos so clips with Dr. Kalyan in therapy/treatment rooms use male patients, while solo patient testimonial clips may remain any gender; apply smooth crossfades and redeploy.
+- [x] Update testimonial videos so clips with Dr. Kalyan in therapy/treatment rooms use male patients, while solo patient testimonial clips may remain any gender; apply smooth crossfades and redeploy.
+- [x] Audit all site images for doctor identity: replace generic doctors with Dr. Kalyan in hero_chronic-diseases.jpg, hero_fertility.jpg, and slide_4_panchakarma_prep.jpg.
 
 # Audit notes for current clip set
 - arthritis clip 2: solo male patient, no doctor visible
