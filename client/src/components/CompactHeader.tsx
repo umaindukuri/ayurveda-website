@@ -129,7 +129,10 @@ export function CompactHeader() {
             <Link href="/shop" className="text-xs font-medium text-foreground hover:text-primary transition-colors">Shop</Link>
             <Link href="/about" className="text-xs font-medium text-foreground hover:text-primary transition-colors">About</Link>
             <Link href="/testimonials" className="text-xs font-medium text-foreground hover:text-primary transition-colors">Success Stories</Link>
-            <Link href="/video-testimonials" className="text-xs font-medium text-foreground hover:text-primary transition-colors">Videos</Link>
+            <Link href="/video-testimonials" className="text-xs font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1.5">
+              Videos
+              <span className="inline-flex items-center justify-center bg-primary text-white text-[9px] font-bold rounded-full w-[18px] h-[18px] leading-none flex-shrink-0">8</span>
+            </Link>
 
             {/* Learn Dropdown */}
             <div className="relative group">

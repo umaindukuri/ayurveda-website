@@ -17,7 +17,7 @@ export function MobileMenuDrawer() {
     { label: 'Treatments', href: '/treatments' },
     { label: 'About', href: '/about' },
     { label: 'Success Stories', href: '/testimonials' },
-    { label: 'Videos', href: '/video-testimonials' },
+    { label: 'Videos (8)', href: '/video-testimonials' },
   ];
 
   const learnSubmenu = [

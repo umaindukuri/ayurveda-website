@@ -19,3 +19,6 @@
 
 - [x] Add Rejuvenation category video testimonial (Priya R., anti-aging / vitality)
 - [x] Add Respiratory category video testimonial (Arjun S., asthma / breathing)
+
+- [x] Fix homepage hero grey placeholder — Dr. Kalyan welcome image confirmed live with stronger gradient overlay (from-black/65 via-black/40)
+- [x] Add Videos (8) count badge to the Videos nav link (desktop + mobile)

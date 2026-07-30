@@ -123,7 +123,7 @@ export default function Home() {
         className="absolute inset-0 w-full h-full object-cover"
         loading="lazy"
       />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/40 to-black/10"></div>
         <div className="relative z-10 container max-w-2xl text-left text-white pl-12">
           <h1 className="text-7xl font-bold mb-6 leading-tight">Restore Your Health Naturally</h1>
           <p className="text-xl mb-8 font-light leading-relaxed max-w-xl">
