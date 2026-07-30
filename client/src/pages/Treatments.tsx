@@ -23,7 +23,7 @@ export default function Treatments() {
       ],
       procedures: ["Abhyanga (Oil Massage)", "Nasya (Nasal Therapy)", "Basti (Enema Therapy)", "Vamana (Therapeutic Vomiting)", "Virechana (Therapeutic Purgation)"],
       successRate: "70-80%",
-      image: "/images/blog_panchakarma_guide_c9ed2d56.png"
+      image: "/images/blog_panchakarma_guide_c9ed2d56.webp"
     },
     {
       id: "chronic-diseases",
@@ -49,7 +49,7 @@ export default function Treatments() {
         "Prevent disease progression",
         "Enhance overall vitality"
       ],
-      image: "/images/treatment_chronic_disease_62ef6750.png"
+      image: "/images/treatment_chronic_disease_62ef6750.webp"
     },
     {
       id: "digestive-health",
@@ -76,7 +76,7 @@ export default function Treatments() {
         "Increase energy levels",
         "Heal the gut lining"
       ],
-      image: "/images/treatment_digestive_health_866aa1e8.png"
+      image: "/images/treatment_digestive_health_866aa1e8.webp"
     },
     {
       id: "respiratory",
@@ -103,7 +103,7 @@ export default function Treatments() {
         "Reduce allergy symptoms",
         "Improve sleep quality"
       ],
-      image: "/images/treatment_respiratory_18e9bd3b.png"
+      image: "/images/treatment_respiratory_18e9bd3b.webp"
     },
     {
       id: "skin-health",
@@ -130,7 +130,7 @@ export default function Treatments() {
         "Prevent recurrence",
         "Improve skin texture &amp; tone"
       ],
-      image: "/images/treatment_skin_health_e6507ce9.png"
+      image: "/images/treatment_skin_health_e6507ce9.webp"
     },
     {
       id: "mental-health",
@@ -157,7 +157,7 @@ export default function Treatments() {
         "Reduce stress & burnout",
         "Restore emotional peace"
       ],
-      image: "/images/treatment_mental_health_d3e27509.png"
+      image: "/images/treatment_mental_health_d3e27509.webp"
     },
     {
       id: "fertility",

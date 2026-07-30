@@ -23,7 +23,7 @@ export function TestimonialVideoSection() {
       id: '1',
       title: "Arthritis Recovery - Complete Pain Relief",
       condition: "Rheumatoid Arthritis",
-      thumbnail: "/images/panchakarma_treatment_vibrant_d075a65b.png",
+      thumbnail: "/images/panchakarma_treatment_vibrant_d075a65b.webp",
       videoUrl: getVideoUrl('v2_arthritis'),
       duration: "0:08"
     },
@@ -39,7 +39,7 @@ export function TestimonialVideoSection() {
       id: '3',
       title: "Anxiety Relief - Found Inner Peace",
       condition: "Chronic Anxiety",
-      thumbnail: "/images/anxiety-relief-thumb-final_524ff34b.png",
+      thumbnail: "/images/anxiety-relief-thumb-final_524ff34b.webp",
       videoUrl: getVideoUrl('v2_anxiety'),
       duration: "0:08"
     },
