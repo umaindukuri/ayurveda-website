@@ -24,4 +24,6 @@
 - [x] Add Videos (8) count badge to the Videos nav link (desktop + mobile)
 
 - [x] Wire contact form to also send email notification to contact@drkalyanayurveda.com on submission
-- [ ] Advise on Google Business Profile email update
+- [x] Advise on Google Business Profile email update (manual step — instructions provided to user)
+
+- [ ] Rebuild all 8 testimonial videos sequentially (speech first, then timed video clips) to fix audio-video lag
