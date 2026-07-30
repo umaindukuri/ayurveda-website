@@ -86,7 +86,7 @@ export default function PanchakarmaPrograms() {
 
   return (
     <div className="min-h-screen bg-background">
-    <SEO title="Panchakarma Programs" description="Authentic Panchakarma detoxification programs in Hyderabad. Choose from 7-day, 14-day, or 21-day programs for deep healing and rejuvenation." keywords="Panchakarma Hyderabad, Panchakarma program, Ayurvedic detox, Panchakarma center" url="/panchakarma-programs" />
+    <SEO title="Panchakarma Programs Hyderabad | 7, 14 & 21-Day Detox | Dr. Kalyan" description="Authentic Panchakarma detoxification programs at Dr. Kalyan Ayurveda, Hyderabad. Choose from 7-day, 14-day, or 21-day programs for deep healing, rejuvenation, and chronic disease reversal. Raidurg, Hyderabad." keywords="Panchakarma Hyderabad, Panchakarma program, Ayurvedic detox, Panchakarma center" url="/panchakarma-programs" />
       <CompactHeader />
 
       {/* Hero Section */}

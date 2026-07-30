@@ -31,18 +31,18 @@ export const getThumbUrl = (thumbName: string): string => {
   const base = import.meta.env.VITE_MEDIA_BASE;
   if (base === 'manus') {
     const manusThumbMap: Record<string, string> = {
-      'thumb_arthritis': '/manus-storage/thumb_arthritis_f721144f.jpg',
-      'thumb_diabetes': '/manus-storage/thumb_diabetes_aaabefc5.jpg',
-      'thumb_anxiety': '/manus-storage/thumb_anxiety_537e80ea.jpg',
-      'thumb_eczema': '/manus-storage/thumb_eczema_d1c5839e.jpg',
-      'thumb_fertility': '/manus-storage/thumb_fertility_2247b1e4.jpg',
-      'thumb_digestive': '/manus-storage/thumb_digestive_75a920f9.jpg',
-      'thumb_rejuvenation': '/manus-storage/thumb_rejuvenation_9894a534.jpg',
-      'thumb_respiratory': '/manus-storage/thumb_respiratory_b8b7fbac.jpg',
+      'thumb_arthritis': '/manus-storage/thumb_arthritis_74647a5b.webp',
+      'thumb_diabetes': '/manus-storage/thumb_diabetes_ec597aae.webp',
+      'thumb_anxiety': '/manus-storage/thumb_anxiety_c2a3ab16.webp',
+      'thumb_eczema': '/manus-storage/thumb_eczema_8b363bdc.webp',
+      'thumb_fertility': '/manus-storage/thumb_fertility_a291da51.webp',
+      'thumb_digestive': '/manus-storage/thumb_digestive_01c4dbfb.webp',
+      'thumb_rejuvenation': '/manus-storage/thumb_rejuvenation_059735df.webp',
+      'thumb_respiratory': '/manus-storage/thumb_respiratory_b34f082e.webp',
     };
-    return manusThumbMap[thumbName] || `/images/thumbs/${thumbName}.jpg`;
+    return manusThumbMap[thumbName] || `/images/thumbs/${thumbName}.webp`;
   }
-  return `/images/thumbs/${thumbName}.jpg`;
+  return `/images/thumbs/${thumbName}.webp`;
 };
 
 export const getHeroUrl = (): string => {

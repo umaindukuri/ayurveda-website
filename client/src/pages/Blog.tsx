@@ -93,7 +93,7 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEO title="Ayurveda Blog & Health Articles" description="Learn about Ayurvedic health, wellness tips, dosha balancing, Panchakarma benefits, and natural healing from Dr. Kalyan Ayurveda." keywords="Ayurveda blog, Ayurvedic health tips, dosha balance, Panchakarma benefits" url="/blog" />
+      <SEO title="Ayurveda Blog & Health Articles | Dr. Kalyan Hyderabad" description="Learn about Ayurvedic health, wellness tips, dosha balancing, Panchakarma benefits, and natural healing from Dr. Kalyan Ayurveda, Hyderabad." keywords="Ayurveda blog, Ayurvedic health tips, dosha balance, Panchakarma benefits" url="/blog" />
       <CompactHeader />
 
       {/* Hero Section */}

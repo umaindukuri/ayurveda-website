@@ -3,6 +3,17 @@
   <url><loc>https://drkalyanayurveda.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://drkalyanayurveda.com/treatments</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://drkalyanayurveda.com/panchakarma-programs</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://drkalyanayurveda.com/treatments/panchakarma</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://drkalyanayurveda.com/treatments/chronic-diseases</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://drkalyanayurveda.com/treatments/digestive-health</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://drkalyanayurveda.com/treatments/respiratory</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://drkalyanayurveda.com/treatments/skin-health</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://drkalyanayurveda.com/treatments/mental-health</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://drkalyanayurveda.com/treatments/fertility</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://drkalyanayurveda.com/treatments/rejuvenation</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://drkalyanayurveda.com/treatments/pricing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://drkalyanayurveda.com/book-appointment</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://drkalyanayurveda.com/shop</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://drkalyanayurveda.com/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://drkalyanayurveda.com/contact</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://drkalyanayurveda.com/testimonials</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>

@@ -8,7 +8,7 @@ import { CompactHeader } from "@/components/CompactHeader";
 export default function About() {
   return (
     <div className="min-h-screen bg-background">
-    <SEO title="About Dr. Kalyan" description="Meet Dr. Kalyan, a leading Ayurvedic physician in Hyderabad with expertise in Panchakarma, chronic disease management, and holistic wellness." keywords="Dr Kalyan Ayurveda, Ayurvedic doctor Hyderabad, Panchakarma specialist" url="/about" />
+    <SEO title="About Dr. Kalyan | Ayurvedic Physician Hyderabad" description="Meet Dr. Kalyan, a leading Ayurvedic physician in Hyderabad specialising in Panchakarma, chronic disease management, and holistic wellness. Located at Prashanth Hills Colony, Raidurg, Hyderabad." keywords="Dr Kalyan Ayurveda, Ayurvedic doctor Hyderabad, Panchakarma specialist" url="/about" />
       <CompactHeader />
 
       {/* Hero Section */}
