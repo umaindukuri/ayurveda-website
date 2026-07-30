@@ -23,7 +23,7 @@ export function TestimonialVideoSection() {
       title: "Arthritis Recovery - Complete Pain Relief",
       condition: "Rheumatoid Arthritis",
       thumbnail: "/images/panchakarma_treatment_vibrant_d075a65b.png",
-      videoUrl: "/images/testimonial-arthritis-james-placeholder_9ad0abac.mp4",
+      videoUrl: "/manus-storage/final_arthritis_bb8f7c2c.mp4",
       duration: "0:08"
     },
     {
@@ -31,7 +31,7 @@ export function TestimonialVideoSection() {
       title: "Diabetes Management - Blood Sugar Normalized",
       condition: "Type 2 Diabetes",
       thumbnail: "/images/hero_meditation_premium_0f0d5eb0.png",
-      videoUrl: "/images/testimonial-diabetes-maria-placeholder_ce571f6b.mp4",
+      videoUrl: "/manus-storage/final_diabetes_0c9d2036.mp4",
       duration: "0:08"
     },
     {
@@ -39,7 +39,7 @@ export function TestimonialVideoSection() {
       title: "Anxiety Relief - Found Inner Peace",
       condition: "Chronic Anxiety",
       thumbnail: "/images/anxiety-relief-thumb-final_524ff34b.png",
-      videoUrl: "/images/testimonial-anxiety-david-placeholder_9c7bf059.mp4",
+      videoUrl: "/manus-storage/final_anxiety_0fd48568.mp4",
       duration: "0:08"
     }
   ];
