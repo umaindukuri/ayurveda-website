@@ -12,3 +12,7 @@
 - About page image saved at /tmp/dr_kalyan_reference.webp
 - Appearance: clean-shaven Indian male doctor, warm smile, cream/beige Nehru jacket, seated at desk
 
+
+- [x] Replace homepage hero image with one featuring Dr. Kalyan in a welcoming pose
+- [x] Add a Dr. Kalyan clinic consultation scene as the middle clip in each of the 6 testimonial videos
+- [x] Replace video thumbnail placeholders with real first-frame extracts from each crossfaded video

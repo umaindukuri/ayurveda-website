@@ -118,7 +118,7 @@ export default function Home() {
       {/* Hero Section - Premium */}
       <section className="relative h-[calc(100vh-120px)] flex items-center justify-start overflow-hidden">
       <img
-        src="/images/hero_meditation_premium_0f0d5eb0.png"
+        src="/manus-storage/new_hero_homepage_76443ba6.jpg"
         alt="Restore Your Fertility Naturally"
         className="absolute inset-0 w-full h-full object-cover"
         loading="lazy"
