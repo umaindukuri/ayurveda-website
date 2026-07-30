@@ -48,7 +48,7 @@ const testimonialVideos: TestimonialVideo[] = [
     condition: 'Thyroid Imbalance',
     beforeAfter: 'Medication dependent → Normalized TSH levels naturally',
     videoThumbnail: '/images/thumb-anjali-thyroid.jpg',
-    videoUrl: '/manus-storage/v2_anxiety_4094f39b.mp4',
+    videoUrl: '/manus-storage/v2_anxiety_e9334d26.mp4',
     duration: '0:08',
     rating: 5,
     testimonialText: "I reduced my thyroid medication significantly. Dr. Kalyan's approach to root cause treatment is remarkable.",

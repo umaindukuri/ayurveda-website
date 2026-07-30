@@ -56,7 +56,7 @@ const videoTestimonials: VideoTestimonial[] = [
     duration: '0:51',
     patientName: 'David K.',
     patientAge: '45',
-    videoUrl: '/manus-storage/v2_anxiety_4094f39b.mp4',
+    videoUrl: '/manus-storage/v2_anxiety_e9334d26.mp4',
     description: 'David struggled with anxiety for years. Through Shirodhara and meditation practices, he found lasting peace without pharmaceutical interventions.',
     results: ['Anxiety symptoms eliminated', 'Better sleep quality', 'Improved focus', 'Emotional stability'],
     thumbnail: '/manus-storage/thumb_anxiety_537e80ea.jpg'

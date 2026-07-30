@@ -26,4 +26,4 @@
 - [x] Wire contact form to also send email notification to contact@drkalyanayurveda.com on submission
 - [x] Advise on Google Business Profile email update (manual step — instructions provided to user)
 
-- [ ] Rebuild all 8 testimonial videos sequentially (speech first, then timed video clips) to fix audio-video lag
+- [x] Rebuild all 8 testimonial videos sequentially (speech first, then timed video clips) to fix audio-video lag

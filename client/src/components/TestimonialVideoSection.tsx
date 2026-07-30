@@ -39,7 +39,7 @@ export function TestimonialVideoSection() {
       title: "Anxiety Relief - Found Inner Peace",
       condition: "Chronic Anxiety",
       thumbnail: "/images/anxiety-relief-thumb-final_524ff34b.png",
-      videoUrl: "/manus-storage/v2_anxiety_4094f39b.mp4",
+      videoUrl: "/manus-storage/v2_anxiety_e9334d26.mp4",
       duration: "0:08"
     },
     {
