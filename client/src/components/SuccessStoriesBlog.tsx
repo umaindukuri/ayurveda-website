@@ -39,7 +39,7 @@ His success story demonstrates the power of authentic Ayurvedic healing when com
       author: 'Dr. Kalyan',
       date: 'March 15, 2024',
       readTime: '5 min read',
-      image: '/images/treatment_chronic_disease_62ef6750.png',
+      image: '/images/treatment_chronic_disease_62ef6750.webp',
       category: 'Musculoskeletal',
       condition: 'Severe Arthritis'
     },
@@ -59,7 +59,7 @@ This case exemplifies how Ayurveda addresses the root cause rather than just tre
       author: 'Dr. Kalyan',
       date: 'February 28, 2024',
       readTime: '6 min read',
-      image: '/images/treatment_skin_health_e6507ce9.png',
+      image: '/images/treatment_skin_health_e6507ce9.webp',
       category: 'Skin & Dermatology',
       condition: 'Severe Eczema'
     },
@@ -99,7 +99,7 @@ Her transformation shows how Ayurveda can address mental health holistically by 
       author: 'Dr. Kalyan',
       date: 'December 10, 2023',
       readTime: '5 min read',
-      image: '/images/treatment_mental_health_d3e27509.png',
+      image: '/images/treatment_mental_health_d3e27509.webp',
       category: 'Mental Health',
       condition: 'Anxiety & Depression'
     },
@@ -119,7 +119,7 @@ His case demonstrates how Ayurveda can reverse metabolic disorders when combined
       author: 'Dr. Kalyan',
       date: 'November 5, 2023',
       readTime: '6 min read',
-      image: '/images/panchakarma_treatment_vibrant_d075a65b.png',
+      image: '/images/panchakarma_treatment_vibrant_d075a65b.webp',
       category: 'Digestive Health',
       condition: 'Type 2 Diabetes'
     },

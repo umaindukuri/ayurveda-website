@@ -120,9 +120,10 @@ export default function Home() {
       <section className="relative h-[calc(100vh-120px)] flex items-center justify-start overflow-hidden">
         <img
           src={getHeroUrl()}
-          alt="Dr. Kalyan welcoming patients at his Ayurvedic clinic"
+          alt="Dr. Kalyan performing Nadi Pariksha pulse diagnosis with a patient"
           className="absolute inset-0 w-full h-full object-cover object-center"
-          loading="lazy"
+          loading="eager"
+          fetchPriority="high"
         />
         {/* Gradient only covers the left 45% — Dr. Kalyan on the right remains fully visible */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" style={{backgroundSize: '55% 100%', backgroundRepeat: 'no-repeat'}}></div>
@@ -261,7 +262,7 @@ export default function Home() {
             </div>
             <div>
         <img
-          src="/images/panchakarma_treatment_vibrant_d075a65b.png"
+          src="/images/panchakarma_treatment_vibrant_d075a65b.webp"
           alt="Panchakarma Treatment"
           className="w-full h-full object-cover"
           loading="lazy"
