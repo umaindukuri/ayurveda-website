@@ -22,3 +22,6 @@
 
 - [x] Fix homepage hero grey placeholder — Dr. Kalyan welcome image confirmed live with stronger gradient overlay (from-black/65 via-black/40)
 - [x] Add Videos (8) count badge to the Videos nav link (desktop + mobile)
+
+- [x] Wire contact form to also send email notification to contact@drkalyanayurveda.com on submission
+- [ ] Advise on Google Business Profile email update
