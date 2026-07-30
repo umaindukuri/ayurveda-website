@@ -80,7 +80,7 @@ export default function PanchakarmaPrograms() {
       name: "Panchakarma Preparation",
       subtitle: "Pre-Treatment Consultation",
       description: "Comprehensive assessment and preparation ensuring optimal results from your Panchakarma treatment. Includes dietary guidance and lifestyle recommendations.",
-      image: "/images/slide_4_panchakarma_prep_generated.webp"
+      image: "/images/slide_4_panchakarma_prep_generated.jpg"
     }
   ];
 

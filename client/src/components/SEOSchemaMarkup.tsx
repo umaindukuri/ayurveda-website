@@ -9,7 +9,7 @@ export function SEOSchemaMarkup() {
       name: 'Dr. Kalyan Ayurveda',
       url: 'https://drkalyanayu rveda.com',
       telephone: '+91-92813-32544',
-      email: 'contact@drkalyan.com',
+      email: 'contact@drkalyanayurveda.com',
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Flat No.102, Plot No.309, Near Volkswagen Service Centre',

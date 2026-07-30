@@ -114,7 +114,7 @@ export default function AppointmentManagement() {
                 <span className="group-open:rotate-180 transition-transform">▼</span>
               </summary>
               <p className="text-sm text-foreground/60 mt-3">
-                If you can't find a suitable time, please contact us directly at +91 92813 32544 or email contact@drkalyan.com. Our team will help you find the perfect appointment time.
+                If you can't find a suitable time, please contact us directly at +91 92813 32544 or email contact@drkalyanayurveda.com. Our team will help you find the perfect appointment time.
               </p>
             </details>
           </div>
@@ -134,9 +134,9 @@ export default function AppointmentManagement() {
                 Call Us: +91 92813 32544
               </Button>
             </a>
-            <a href="mailto:contact@drkalyan.com">
+            <a href="mailto:contact@drkalyanayurveda.com">
               <Button variant="outline">
-                Email: contact@drkalyan.com
+                Email: contact@drkalyanayurveda.com
               </Button>
             </a>
           </div>
@@ -176,7 +176,7 @@ export default function AppointmentManagement() {
             <div>
               <h4 className="font-semibold mb-3 text-sm">Contact</h4>
               <ul className="space-y-1 text-white/70 text-xs">
-                <li><a href="mailto:contact@drkalyan.com" className="hover:text-white">contact@drkalyan.com</a></li>
+                <li><a href="mailto:contact@drkalyanayurveda.com" className="hover:text-white">contact@drkalyanayurveda.com</a></li>
                 <li><a href="tel:+919281332544" className="hover:text-white">+91 92813 32544</a></li>
               </ul>
             </div>

@@ -132,7 +132,7 @@ export default function SMSReminders() {
             <div>
               <h4 className="font-semibold mb-3 text-sm">Contact</h4>
               <ul className="space-y-1 text-white/70 text-xs">
-                <li><a href="mailto:contact@drkalyan.com" className="hover:text-white">contact@drkalyan.com</a></li>
+                <li><a href="mailto:contact@drkalyanayurveda.com" className="hover:text-white">contact@drkalyanayurveda.com</a></li>
                 <li><a href="tel:+919281332544" className="hover:text-white">+91 92813 32544</a></li>
               </ul>
             </div>

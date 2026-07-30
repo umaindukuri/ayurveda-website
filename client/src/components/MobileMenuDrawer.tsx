@@ -17,7 +17,7 @@ export function MobileMenuDrawer() {
     { label: 'Treatments', href: '/treatments' },
     { label: 'About', href: '/about' },
     { label: 'Success Stories', href: '/testimonials' },
-    { label: 'Videos', href: '/video-testimonials' },
+    { label: 'Videos (8)', href: '/video-testimonials' },
   ];
 
   const learnSubmenu = [
@@ -115,10 +115,10 @@ export function MobileMenuDrawer() {
                       +91 92813 32544
                     </a>
                     <a
-                      href="mailto:contact@drkalyan.com"
+                      href="mailto:contact@drkalyanayurveda.com"
                       className="block text-sm font-medium text-primary hover:text-primary/80 transition-colors"
                     >
-                      contact@drkalyan.com
+                      contact@drkalyanayurveda.com
                     </a>
                   </div>
                 </div>

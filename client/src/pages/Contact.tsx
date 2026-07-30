@@ -5,11 +5,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Phone, Mail, MapPin, Clock, CheckCircle2 } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, CheckCircle2, Loader2 } from "lucide-react";
 import { Link } from "wouter";
 import { useState } from "react";
 import { toast } from "sonner";
 import { CompactHeader } from "@/components/CompactHeader";
+import { trpc } from "@/lib/trpc";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -21,18 +22,40 @@ export default function Contact() {
     inquiryType: "general" as "general" | "booking" | "treatment" | "other",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const submitContact = trpc.contact.submit.useMutation();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       toast.error("Please fill in all required fields");
       return;
     }
+    setIsSubmitting(true);
+    try {
+      // Save to DB and send email notification to contact@drkalyanayurveda.com
+      await submitContact.mutateAsync({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || undefined,
+        subject: formData.subject || undefined,
+        message: formData.message,
+        inquiryType: formData.inquiryType,
+      });
+      toast.success("Message sent! We'll get back to you shortly.");
+    } catch {
+      // Non-blocking: still proceed to WhatsApp even if server save fails
+      toast.error("Could not save your message to our server — please use WhatsApp below.");
+    } finally {
+      setIsSubmitting(false);
+    }
+    // Also open WhatsApp as a secondary channel
     const msg = [
       `Hello Dr. Kalyan,`,
       ``,
@@ -247,9 +270,14 @@ export default function Contact() {
 
                       <Button
                         type="submit"
-                        className="w-full bg-primary hover:bg-primary/90 text-white"
+                        disabled={isSubmitting}
+                        className="w-full bg-primary hover:bg-primary/90 text-white disabled:opacity-70"
                       >
-                        Send via WhatsApp
+                        {isSubmitting ? (
+                          <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Sending...</>
+                        ) : (
+                          "Send Message & Open WhatsApp"
+                        )}
                       </Button>
                     </form>
                   )}
@@ -367,7 +395,7 @@ export default function Contact() {
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-white/70">
-                <li><a href="mailto:contact@drkalyan.com" className="hover:text-white">contact@drkalyan.com</a></li>
+                <li><a href="mailto:contact@drkalyanayurveda.com" className="hover:text-white">contact@drkalyanayurveda.com</a></li>
                 <li><a href="tel:+919281332544" className="hover:text-white">+91 92813 32544</a></li>
                 <li className="text-sm leading-snug">Flat No.102, Plot No.309, Near Volkswagen Service Centre, Prashanth Hills Colony, Raidurg Navkhalsa</li>
                 <li>8:00 AM - 1:00 PM | 5:00 PM - 9:00 PM</li>

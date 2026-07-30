@@ -117,23 +117,26 @@ export default function Home() {
 
       {/* Hero Section - Premium */}
       <section className="relative h-[calc(100vh-120px)] flex items-center justify-start overflow-hidden">
-      <img
-        src="/images/hero_meditation_premium_0f0d5eb0.png"
-        alt="Restore Your Fertility Naturally"
-        className="absolute inset-0 w-full h-full object-cover"
-        loading="lazy"
-      />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-transparent"></div>
-        <div className="relative z-10 container max-w-2xl text-left text-white pl-12">
-          <h1 className="text-7xl font-bold mb-6 leading-tight">Restore Your Health Naturally</h1>
-          <p className="text-xl mb-8 font-light leading-relaxed max-w-xl">
-            Discover the transformative power of authentic Ayurvedic Panchakarma and personalized wellness treatments rooted in 5,000 years of healing wisdom.
-          </p>
-          <div className="flex gap-4">
-            <BookingModal triggerText="Begin Your Journey" variant="default" />
-            <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10 text-base px-8">
-              Learn More
-            </Button>
+        <img
+          src="/manus-storage/new_hero_homepage_76443ba6.jpg"
+          alt="Dr. Kalyan welcoming patients at his Ayurvedic clinic"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          loading="lazy"
+        />
+        {/* Gradient only covers the left 45% — Dr. Kalyan on the right remains fully visible */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" style={{backgroundSize: '55% 100%', backgroundRepeat: 'no-repeat'}}></div>
+        <div className="relative z-10 w-full flex items-center">
+          <div className="text-left text-white pl-10 pr-4" style={{maxWidth: '42%'}}>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-lg">Restore Your Health Naturally</h1>
+            <p className="text-base mb-6 font-light leading-relaxed drop-shadow-md">
+              Discover the transformative power of authentic Ayurvedic Panchakarma and personalized wellness treatments rooted in 5,000 years of healing wisdom.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <BookingModal triggerText="Begin Your Journey" variant="default" />
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10 text-base px-6">
+                Learn More
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -431,7 +434,7 @@ export default function Home() {
 
             <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all">
               <img 
-                src="/images/slide_4_panchakarma_prep_generated.webp" 
+                src="/images/slide_4_panchakarma_prep_generated.jpg" 
                 alt="Panchakarma Treatment Preparation"
                 className="w-full h-80 object-cover hover:scale-105 transition-transform duration-300"
               />
@@ -577,7 +580,7 @@ export default function Home() {
             <div>
               <h4 className="font-semibold mb-3 text-sm">Contact</h4>
               <ul className="space-y-1 text-white/70 text-xs">
-                <li><a href="mailto:contact@drkalyan.com" className="hover:text-white">contact@drkalyan.com</a></li>
+                <li><a href="mailto:contact@drkalyanayurveda.com" className="hover:text-white">contact@drkalyanayurveda.com</a></li>
                 <li><a href="tel:+919281332544" className="hover:text-white">+91 92813 32544</a></li>
                 <li className="text-xs leading-snug">Flat No.102, Plot No.309, Near Volkswagen Service Centre, Prashanth Hills Colony, Raidurg Navkhalsa</li>
                 <li>8:00 AM - 1:00 PM | 5:00 PM - 9:00 PM</li>
