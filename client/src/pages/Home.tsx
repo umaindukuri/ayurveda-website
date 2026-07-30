@@ -577,7 +577,7 @@ export default function Home() {
             <div>
               <h4 className="font-semibold mb-3 text-sm">Contact</h4>
               <ul className="space-y-1 text-white/70 text-xs">
-                <li><a href="mailto:contact@drkalyan.com" className="hover:text-white">contact@drkalyan.com</a></li>
+                <li><a href="mailto:contact@drkalyanayurveda.com" className="hover:text-white">contact@drkalyanayurveda.com</a></li>
                 <li><a href="tel:+919281332544" className="hover:text-white">+91 92813 32544</a></li>
                 <li className="text-xs leading-snug">Flat No.102, Plot No.309, Near Volkswagen Service Centre, Prashanth Hills Colony, Raidurg Navkhalsa</li>
                 <li>8:00 AM - 1:00 PM | 5:00 PM - 9:00 PM</li>

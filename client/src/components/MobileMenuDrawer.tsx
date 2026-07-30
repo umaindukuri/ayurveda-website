@@ -115,10 +115,10 @@ export function MobileMenuDrawer() {
                       +91 92813 32544
                     </a>
                     <a
-                      href="mailto:contact@drkalyan.com"
+                      href="mailto:contact@drkalyanayurveda.com"
                       className="block text-sm font-medium text-primary hover:text-primary/80 transition-colors"
                     >
-                      contact@drkalyan.com
+                      contact@drkalyanayurveda.com
                     </a>
                   </div>
                 </div>
