@@ -8,7 +8,7 @@ import { CompactHeader } from "@/components/CompactHeader";
 export default function AyurvediaBasics() {
   return (
     <div className="min-h-screen bg-background">
-    <SEO title="Ayurveda Basics" description="Learn the fundamentals of Ayurveda — doshas, Panchakarma, herbal medicine, and the ancient science of holistic health and wellness." keywords="Ayurveda basics, what is Ayurveda, doshas explained, Ayurvedic medicine basics" url="/ayurveda-basics" />
+    <SEO title="Ayurveda Basics | Learn Doshas & Panchakarma | Dr. Kalyan" description="Learn the fundamentals of Ayurveda — doshas, Panchakarma, herbal medicine, and the ancient science of holistic health and wellness at Dr. Kalyan Ayurveda, Hyderabad." keywords="Ayurveda basics, what is Ayurveda, doshas explained, Ayurvedic medicine basics" url="/ayurveda-basics" />
       <CompactHeader />
 
       {/* Hero Section */}

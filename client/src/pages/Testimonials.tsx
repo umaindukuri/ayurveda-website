@@ -127,7 +127,7 @@ export default function Testimonials() {
 
   return (
     <div className="min-h-screen bg-background">
-    <SEO title="Patient Success Stories" description="Read inspiring patient success stories from Dr. Kalyan Ayurveda. Real healing journeys from arthritis, diabetes, fertility, skin conditions, and more." keywords="Ayurveda testimonials, patient success stories, Panchakarma results, Ayurveda healing stories" url="/testimonials" />
+    <SEO title="Patient Success Stories | Dr. Kalyan Ayurveda Hyderabad" description="Read inspiring patient success stories from Dr. Kalyan Ayurveda, Hyderabad. Real healing journeys from arthritis, diabetes, fertility, skin conditions, and more. Authentic Panchakarma results." keywords="Ayurveda testimonials, patient success stories, Panchakarma results, Ayurveda healing stories" url="/testimonials" />
       <CompactHeader />
 
       {/* Hero Section */}

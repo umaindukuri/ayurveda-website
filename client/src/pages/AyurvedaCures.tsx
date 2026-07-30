@@ -109,7 +109,7 @@ export default function AyurvedaCures() {
 
   return (
     <div className="min-h-screen bg-background">
-    <SEO title="Ayurvedic Cures & Remedies" description="Discover evidence-based Ayurvedic cures and remedies for common and chronic conditions. Natural healing with authentic Ayurvedic medicine." keywords="Ayurvedic cures, Ayurvedic remedies, natural healing, Ayurveda medicine" url="/ayurveda-cures" />
+    <SEO title="Ayurvedic Cures & Remedies | Dr. Kalyan Hyderabad" description="Discover evidence-based Ayurvedic cures and remedies for common and chronic conditions. Natural healing with authentic Ayurvedic medicine at Dr. Kalyan Ayurveda, Hyderabad." keywords="Ayurvedic cures, Ayurvedic remedies, natural healing, Ayurveda medicine" url="/ayurveda-cures" />
       <CompactHeader />
 
       {/* Hero Section */}

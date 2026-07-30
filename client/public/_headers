@@ -1,0 +1,27 @@
+# Cloudflare Pages cache headers
+# Images — cache for 1 year (immutable, content-hashed filenames)
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Videos — cache for 1 year
+/videos/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fonts — cache for 1 year
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Sitemap — revalidate weekly
+/sitemap.xml
+  Cache-Control: public, max-age=604800
+
+# Robots — revalidate weekly
+/robots.txt
+  Cache-Control: public, max-age=604800
+
+# HTML pages — always revalidate (SPA routing)
+/*
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
