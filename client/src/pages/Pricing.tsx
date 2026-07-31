@@ -101,7 +101,7 @@ export default function Pricing() {
       {/* Header */}
       <section className="bg-gradient-to-br from-primary/5 to-secondary/5 py-16 border-b border-border">
         <div className="container max-w-4xl text-center">
-          <h1 className="text-4xl font-bold text-foreground mb-4">Treatment Pricing</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">Treatment Pricing</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Transparent, all-inclusive pricing with no hidden charges. All packages include medicines, therapies, and follow-up consultations as listed.
           </p>
@@ -115,7 +115,7 @@ export default function Pricing() {
       <section className="py-14">
         <div className="container max-w-5xl">
           <h2 className="text-2xl font-bold text-foreground mb-8">Consultations</h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
             {consultations.map(c => (
               <div key={c.name} className="bg-white rounded-xl border border-border p-6">
                 <div className="flex items-start justify-between mb-3">
@@ -145,7 +145,7 @@ export default function Pricing() {
         <div className="container max-w-5xl">
           <h2 className="text-2xl font-bold text-foreground mb-2">Panchakarma Packages</h2>
           <p className="text-muted-foreground mb-8">All-inclusive residential and outpatient programs. Prices include therapies, medicines, and consultations.</p>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
             {packages.map(pkg => (
               <div
                 key={pkg.name}

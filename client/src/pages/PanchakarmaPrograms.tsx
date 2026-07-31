@@ -93,7 +93,7 @@ export default function PanchakarmaPrograms() {
       <section className="py-16 bg-gradient-to-r from-primary/10 to-secondary/10">
         <div className="container max-w-5xl">
           <div className="text-center">
-            <h1 className="text-5xl font-bold text-foreground mb-4">Panchakarma Programs</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-4">Panchakarma Programs</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Experience the transformative power of authentic Ayurvedic detoxification. Choose the program that matches your healing goals.
             </p>
@@ -104,7 +104,7 @@ export default function PanchakarmaPrograms() {
       {/* Program Options */}
       <section className="py-16 bg-white">
         <div className="container max-w-6xl">
-          <h2 className="text-4xl font-bold text-foreground mb-12 text-center">Our Treatment Programs</h2>
+          <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-foreground mb-8 text-center">Our Treatment Programs</h2>
           
           <div className="grid md:grid-cols-3 gap-8">
             {programs.map((program, idx) => (
@@ -150,7 +150,7 @@ export default function PanchakarmaPrograms() {
       {/* Therapy Showcase */}
       <section className="py-16 bg-gradient-to-b from-white to-white/50">
         <div className="container max-w-6xl">
-          <h2 className="text-4xl font-bold text-foreground mb-4 text-center">Core Therapies Included</h2>
+          <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-foreground mb-4 text-center">Core Therapies Included</h2>
           <p className="text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
             Each program includes our signature Ayurvedic therapies performed by experienced practitioners in our authentic therapy rooms
           </p>
@@ -181,7 +181,7 @@ export default function PanchakarmaPrograms() {
       {/* What to Expect */}
       <section className="py-16 bg-white">
         <div className="container max-w-5xl">
-          <h2 className="text-4xl font-bold text-foreground mb-12 text-center">What to Expect During Your Program</h2>
+          <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-foreground mb-8 text-center">What to Expect During Your Program</h2>
           
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-6">
@@ -266,7 +266,7 @@ export default function PanchakarmaPrograms() {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-primary/10 to-secondary/10">
         <div className="container max-w-3xl text-center">
-          <h2 className="text-4xl font-bold text-foreground mb-4">Ready to Transform Your Health?</h2>
+          <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-foreground mb-4">Ready to Transform Your Health?</h2>
           <p className="text-lg text-muted-foreground mb-8">
             Schedule a consultation with Dr. Kalyan to discuss which program is right for your unique health needs.
           </p>
@@ -281,7 +281,7 @@ export default function PanchakarmaPrograms() {
       {/* Footer */}
       <footer className="bg-foreground text-white py-8">
         <div className="container">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             <div>
               <div className="flex items-center gap-2 mb-3">
                 <img src="/images/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-6 w-6 invert" />

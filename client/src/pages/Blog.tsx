@@ -99,7 +99,7 @@ export default function Blog() {
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-b from-primary/5 to-white">
         <div className="container max-w-4xl text-center">
-          <h1 className="text-5xl font-bold text-foreground mb-4">Ayurveda Wellness Blog</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-4">Ayurveda Wellness Blog</h1>
           <p className="text-xl text-muted-foreground">
             Discover ancient wisdom and modern insights about Ayurvedic healing, wellness, and natural health optimization.
           </p>
@@ -214,7 +214,7 @@ export default function Blog() {
       {/* Newsletter Signup */}
       <section className="py-20 bg-gradient-to-r from-primary/10 to-secondary/10 border-t border-border">
         <div className="container max-w-2xl text-center">
-          <h2 className="text-4xl font-playfair font-bold text-foreground mb-6">Subscribe to Our Newsletter</h2>
+          <h2 className="text-xl sm:text-2xl md:text-4xl font-playfair font-bold text-foreground mb-4">Subscribe to Our Newsletter</h2>
           <p className="text-lg text-muted-foreground mb-8">
             Get weekly insights about Ayurvedic wellness, healing tips, and special offers delivered to your inbox.
           </p>
@@ -235,7 +235,7 @@ export default function Blog() {
       {/* CTA Section */}
       <section className="py-20 bg-white border-t border-border">
         <div className="container max-w-3xl text-center">
-          <h2 className="text-4xl font-playfair font-bold text-foreground mb-6">Ready to Transform Your Health?</h2>
+          <h2 className="text-xl sm:text-2xl md:text-4xl font-playfair font-bold text-foreground mb-4">Ready to Transform Your Health?</h2>
           <p className="text-lg text-muted-foreground mb-8">
             Learn more about our comprehensive treatment programs and schedule your personalized consultation today.
           </p>
@@ -250,7 +250,7 @@ export default function Blog() {
       {/* Footer */}
       <footer className="bg-foreground text-white py-16">
         <div className="container">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <img src="/images/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-8 w-8 invert" />

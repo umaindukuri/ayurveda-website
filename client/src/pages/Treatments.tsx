@@ -221,7 +221,7 @@ export default function Treatments() {
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-b from-primary/5 to-white">
         <div className="container max-w-4xl text-center">
-          <h1 className="text-5xl font-bold text-foreground mb-4">Comprehensive Treatment Offerings</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-4">Comprehensive Treatment Offerings</h1>
           <p className="text-xl text-muted-foreground">
             From chronic disease management to preventive wellness, we offer authentic Ayurvedic solutions for every health concern.
           </p>
@@ -229,7 +229,7 @@ export default function Treatments() {
       </section>
 
       {/* Treatment Categories */}
-      <section className="py-20 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="container max-w-6xl">
           {treatmentCategories.map((category, idx) => {
             const Icon = category.icon;
@@ -240,7 +240,7 @@ export default function Treatments() {
                     <Icon className="w-10 h-10 text-primary" />
                   </div>
                   <div>
-                    <h2 className="text-4xl font-playfair font-bold text-foreground mb-2">{category.title}</h2>
+                    <h2 className="text-xl sm:text-2xl md:text-4xl font-playfair font-bold text-foreground mb-2">{category.title}</h2>
                     <p className="text-lg text-secondary font-semibold mb-3">{category.subtitle}</p>
                     <p className="text-lg text-muted-foreground">{category.description}</p>
                   </div>
@@ -303,9 +303,9 @@ export default function Treatments() {
       </section>
 
       {/* Program Options */}
-      <section className="py-20 bg-gradient-to-b from-white to-white/50">
+      <section className="py-10 sm:py-16 bg-gradient-to-b from-white to-white/50">
         <div className="container max-w-5xl">
-          <h2 className="text-4xl font-playfair font-bold text-foreground mb-16 text-center">Customized Treatment Programs</h2>
+          <h2 className="text-xl sm:text-2xl md:text-4xl font-playfair font-bold text-foreground mb-8 text-center">Customized Treatment Programs</h2>
 
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="border-border hover:shadow-lg transition-shadow">
@@ -372,9 +372,9 @@ export default function Treatments() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary/10 to-secondary/10 border-t border-border">
+      <section className="py-10 sm:py-16 bg-gradient-to-r from-primary/10 to-secondary/10 border-t border-border">
         <div className="container max-w-3xl text-center">
-          <h2 className="text-4xl font-playfair font-bold text-foreground mb-6">Ready to Begin Your Healing?</h2>
+          <h2 className="text-xl sm:text-2xl md:text-4xl font-playfair font-bold text-foreground mb-6">Ready to Begin Your Healing?</h2>
           <p className="text-lg text-muted-foreground mb-8">
             Schedule a personalized consultation to discuss your health concerns and create your customized treatment plan.
           </p>
@@ -387,7 +387,7 @@ export default function Treatments() {
       {/* Footer */}
       <footer className="bg-foreground text-white py-16">
         <div className="container">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <img src="/images/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-8 w-8 invert" />
