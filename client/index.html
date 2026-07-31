@@ -33,27 +33,70 @@
     <meta name="twitter:description" content="Authentic Ayurvedic treatment in Hyderabad. Expert Panchakarma, fertility treatment, and holistic wellness." />
     <meta name="twitter:image" content="https://drkalyanayurveda.com/images/DrKalyan-heroimage.webp" />
 
-    <!-- Local Business Schema -->
+    <!-- Local Business Schema (MedicalBusiness + Physician) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "MedicalClinic",
+      "@type": ["MedicalClinic", "MedicalBusiness"],
       "name": "Dr. Kalyan Ayurveda Specialities & Panchakarma Center",
-      "description": "Authentic Ayurvedic treatment center offering Panchakarma, fertility treatment, chronic disease management, and holistic wellness in Hyderabad.",
+      "alternateName": "Dr. Kalyan Ayurveda",
+      "description": "Authentic Ayurvedic treatment center in Hyderabad offering Panchakarma detoxification, fertility treatment, chronic disease management, skin conditions, mental health, and holistic wellness by Dr. Kalyan.",
       "url": "https://drkalyanayurveda.com",
       "telephone": "+91-92813-32544",
-      "email": "contact@drkalyan.com",
+      "email": "contact@drkalyanayurveda.com",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Flat No.102, Plot No.309, Near Volkswagen Service Centre, Prashanth Hills Colony",
         "addressLocality": "Raidurg Navkhalsa",
         "addressRegion": "Telangana",
+        "postalCode": "500032",
         "addressCountry": "IN"
       },
-      "openingHours": ["Mo-Su 08:00-13:00", "Mo-Su 17:00-21:00"],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "17.4239",
+        "longitude": "78.3647"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "08:00",
+          "closes": "13:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "17:00",
+          "closes": "21:00"
+        }
+      ],
       "image": "https://drkalyanayurveda.com/images/DrKalyan-heroimage.webp",
+      "logo": "https://drkalyanayurveda.com/images/dr_kalyan_logo_final_07bd8e78.png",
       "priceRange": "₹₹",
-      "medicalSpecialty": ["Ayurveda", "Panchakarma", "Fertility Treatment", "Chronic Disease Management"]
+      "currenciesAccepted": "INR",
+      "paymentAccepted": "Cash, UPI, Credit Card",
+      "medicalSpecialty": "Ayurvedic Medicine",
+      "availableService": [
+        {"@type": "MedicalTherapy", "name": "Panchakarma Detoxification"},
+        {"@type": "MedicalTherapy", "name": "Shirodhara"},
+        {"@type": "MedicalTherapy", "name": "Abhyanga (Ayurvedic Massage)"},
+        {"@type": "MedicalTherapy", "name": "Fertility & Reproductive Health Treatment"},
+        {"@type": "MedicalTherapy", "name": "Chronic Disease Management"},
+        {"@type": "MedicalTherapy", "name": "Skin Conditions Treatment"},
+        {"@type": "MedicalTherapy", "name": "Stress & Mental Health Therapy"}
+      ],
+      "employee": {
+        "@type": "Physician",
+        "name": "Dr. Kalyan",
+        "jobTitle": "Ayurvedic Physician",
+        "medicalSpecialty": "Ayurvedic Medicine",
+        "image": "https://drkalyanayurveda.com/images/DrKalyan-heroimage.webp",
+        "worksFor": {"@type": "MedicalClinic", "name": "Dr. Kalyan Ayurveda Specialities & Panchakarma Center"}
+      },
+      "sameAs": [
+        "https://drkalyanayurveda.com"
+      ]
     }
     </script>
 

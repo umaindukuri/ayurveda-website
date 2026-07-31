@@ -283,6 +283,50 @@ export default function Shop() {
           </Link>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="bg-foreground text-white py-10">
+        <div className="container px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <img src="/images/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-8 w-8 invert" />
+                <span className="font-playfair font-bold">Ayurveda Wellness</span>
+              </div>
+              <p className="text-white/70 text-sm">Authentic Ayurvedic healing for chronic diseases, wellness optimization, and natural transformation.</p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-white/70 text-sm">
+                <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Treatments</Link></li>
+                <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
+                <li><Link href="/testimonials" className="hover:text-white transition-colors">Success Stories</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Treatment Areas</h4>
+              <ul className="space-y-2 text-white/70 text-sm">
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Panchakarma</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Chronic Diseases</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Mental Health</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Fertility</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Contact</h4>
+              <ul className="space-y-2 text-white/70 text-sm">
+                <li>📞 <a href="tel:+919281332544" className="hover:text-white">+91 92813 32544</a></li>
+                <li>📍 Prashanth Hills Colony, Raidurg, Hyderabad</li>
+                <li>🕐 8:00 AM–1:00 PM · 5:00 PM–9:00 PM</li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-white/10 pt-6 text-center text-white/60 text-sm">
+            © 2026 Dr. Kalyan Ayurveda. All rights reserved.
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
