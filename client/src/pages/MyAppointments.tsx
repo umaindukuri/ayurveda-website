@@ -1,3 +1,4 @@
+import { CompactHeader } from "@/components/CompactHeader";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
 import { Calendar, Phone, MessageCircle } from "lucide-react";

@@ -1,3 +1,4 @@
+import { CompactHeader } from "@/components/CompactHeader";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
 import { Check, Phone } from "lucide-react";
@@ -93,6 +94,7 @@ const specialtyPrograms = [
 export default function Pricing() {
   return (
     <div className="min-h-screen bg-background">
+      <CompactHeader />
       <SEO
         title="Treatment Pricing — Dr. Kalyan Ayurveda"
         description="Transparent pricing for Ayurvedic consultations, Panchakarma packages, and specialty treatment programs at Dr. Kalyan Ayurveda, Hyderabad."

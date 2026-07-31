@@ -1,3 +1,4 @@
+import { CompactHeader } from "@/components/CompactHeader";
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link, useRoute } from "wouter";
@@ -435,6 +436,7 @@ export default function TreatmentDetail() {
 
   return (
     <div className="min-h-screen bg-background">
+      <CompactHeader />
       <SEO
         title={`${treatment.title} | Dr. Kalyan Ayurveda`}
         description={treatment.seoDescription}

@@ -1,3 +1,4 @@
+import { CompactHeader } from "@/components/CompactHeader";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -175,6 +176,7 @@ export default function Shop() {
 
   return (
     <div className="min-h-screen bg-background">
+      <CompactHeader />
       <SEO
         title="Herbal Products Shop — Dr. Kalyan Ayurveda"
         description="Authentic Ayurvedic herbs, formulations, and wellness products recommended by Dr. Kalyan. Order via WhatsApp for home delivery."
