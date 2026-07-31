@@ -1,3 +1,4 @@
+import { CompactHeader } from "@/components/CompactHeader";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
 import { Check, Phone } from "lucide-react";
@@ -56,7 +57,7 @@ const packages = [
       "Virechana (therapeutic purgation)",
       "Basti (medicated enema) if required",
       "Marma point therapy",
-      "Herbal medicines for 21 days",
+      "Herbal medicines for 14 days",
       "2 follow-up consultations",
     ],
     highlighted: true,
@@ -92,16 +93,24 @@ const specialtyPrograms = [
 
 export default function Pricing() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-16 md:pb-0">
+      <CompactHeader />
       <SEO
         title="Treatment Pricing — Dr. Kalyan Ayurveda"
         description="Transparent pricing for Ayurvedic consultations, Panchakarma packages, and specialty treatment programs at Dr. Kalyan Ayurveda, Hyderabad."
       />
 
+      {/* Breadcrumb */}
+      <div className="container max-w-5xl py-3">
+        <Link href="/treatments" className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors">
+          ← Back to Treatments
+        </Link>
+      </div>
+
       {/* Header */}
       <section className="bg-gradient-to-br from-primary/5 to-secondary/5 py-16 border-b border-border">
         <div className="container max-w-4xl text-center">
-          <h1 className="text-4xl font-bold text-foreground mb-4">Treatment Pricing</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">Treatment Pricing</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Transparent, all-inclusive pricing with no hidden charges. All packages include medicines, therapies, and follow-up consultations as listed.
           </p>
@@ -115,7 +124,7 @@ export default function Pricing() {
       <section className="py-14">
         <div className="container max-w-5xl">
           <h2 className="text-2xl font-bold text-foreground mb-8">Consultations</h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
             {consultations.map(c => (
               <div key={c.name} className="bg-white rounded-xl border border-border p-6">
                 <div className="flex items-start justify-between mb-3">
@@ -145,7 +154,7 @@ export default function Pricing() {
         <div className="container max-w-5xl">
           <h2 className="text-2xl font-bold text-foreground mb-2">Panchakarma Packages</h2>
           <p className="text-muted-foreground mb-8">All-inclusive residential and outpatient programs. Prices include therapies, medicines, and consultations.</p>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
             {packages.map(pkg => (
               <div
                 key={pkg.name}
@@ -216,6 +225,50 @@ export default function Pricing() {
           <p className="text-xs text-muted-foreground mt-4">* Prices are indicative and may vary based on individual treatment requirements. GST applicable where applicable.</p>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="bg-foreground text-white py-10">
+        <div className="container px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <img src="/images/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-8 w-8 invert" />
+                <span className="font-playfair font-bold">Ayurveda Wellness</span>
+              </div>
+              <p className="text-white/70 text-sm">Authentic Ayurvedic healing for chronic diseases, wellness optimization, and natural transformation.</p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-white/70 text-sm">
+                <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Treatments</Link></li>
+                <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
+                <li><Link href="/testimonials" className="hover:text-white transition-colors">Success Stories</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Treatment Areas</h4>
+              <ul className="space-y-2 text-white/70 text-sm">
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Panchakarma</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Chronic Diseases</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Mental Health</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Fertility</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Contact</h4>
+              <ul className="space-y-2 text-white/70 text-sm">
+                <li>📞 <a href="tel:+919281332544" className="hover:text-white">+91 92813 32544</a></li>
+                <li>📍 Prashanth Hills Colony, Raidurg, Hyderabad</li>
+                <li>🕐 8:00 AM–1:00 PM · 5:00 PM–9:00 PM</li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-white/10 pt-6 text-center text-white/60 text-sm">
+            © 2026 Dr. Kalyan Ayurveda. All rights reserved.
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

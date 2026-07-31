@@ -7,7 +7,7 @@ import { Calendar } from 'lucide-react';
 
 export default function AppointmentManagement() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white pb-16 md:pb-0">
       <CompactHeader />
 
       {/* Hero Section */}

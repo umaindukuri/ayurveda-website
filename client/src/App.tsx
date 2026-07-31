@@ -36,6 +36,7 @@ import Shop from "./pages/Shop";
 import BookAppointment from "@/pages/BookAppointment";
 import TreatmentDetail from "@/pages/TreatmentDetail";
 import BlogPost from "@/pages/BlogPost";
+import { AdminGuard } from "@/components/AdminGuard";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -53,11 +54,11 @@ function Router() {
       <Route path={"/ayurveda-basics"} component={AyurvediaBasics} />
       <Route path="/submit-testimonial" component={SubmitTestimonial} />
       <Route path="/panchakarma-programs" component={PanchakarmaPrograms} />
-      <Route path="/analytics" component={Analytics} />
-      <Route path="/email-automation" component={EmailAutomation} />
+      <Route path="/analytics">{() => <AdminGuard><Analytics /></AdminGuard>}</Route>
+      <Route path="/email-automation">{() => <AdminGuard><EmailAutomation /></AdminGuard>}</Route>
       <Route path="/booking-success" component={BookingSuccess} />
-      <Route path="/sms-reminders" component={SMSReminders} />
-      <Route path="/appointment-management" component={AppointmentManagement} />
+      <Route path="/sms-reminders">{() => <AdminGuard><SMSReminders /></AdminGuard>}</Route>
+      <Route path="/appointment-management">{() => <AdminGuard><AppointmentManagement /></AdminGuard>}</Route>
 
       <Route path="/treatments/pricing" component={Pricing} />
       <Route path="/my-appointments" component={MyAppointments} />

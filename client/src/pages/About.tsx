@@ -7,14 +7,14 @@ import { CompactHeader } from "@/components/CompactHeader";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-16 md:pb-0">
     <SEO title="About Dr. Kalyan | Ayurvedic Physician Hyderabad" description="Meet Dr. Kalyan, a leading Ayurvedic physician in Hyderabad specialising in Panchakarma, chronic disease management, and holistic wellness. Located at Prashanth Hills Colony, Raidurg, Hyderabad." keywords="Dr Kalyan Ayurveda, Ayurvedic doctor Hyderabad, Panchakarma specialist" url="/about" />
       <CompactHeader />
 
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-b from-primary/5 to-white">
         <div className="container max-w-4xl text-center">
-          <h1 className="text-5xl font-bold text-foreground mb-4">About Our Clinic</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-4">About Our Clinic</h1>
           <p className="text-xl text-muted-foreground">
             Authentic Ayurvedic healing for chronic diseases, wellness optimization, and natural transformation.
           </p>
@@ -22,9 +22,9 @@ export default function About() {
       </section>
 
       {/* Clinic Overview */}
-      <section className="py-20 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="container max-w-5xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+          <div className="grid md:grid-cols-2 gap-8 items-center mb-10">
             <div>
               <img 
                 src="/images/pasted_file_qJnmC3_image_3ff4f246.png" 
@@ -35,7 +35,7 @@ export default function About() {
               <p className="text-center text-xs text-muted-foreground">Founder & Chief Ayurvedic Physician</p>
             </div>
             <div>
-              <h2 className="text-4xl font-bold text-foreground mb-6">Dr. Kalyan's Ayurveda Specialities & Panchakarma Center</h2>
+              <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-foreground mb-4">Dr. Kalyan's Ayurveda Specialities & Panchakarma Center</h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 Under the expert guidance of <strong>Dr. I. Kalyan Chakravarthy, M.D. (Ayurveda)</strong>, our clinic is dedicated to providing authentic, evidence-based Ayurvedic treatment for chronic diseases, fertility enhancement, and complete wellness optimization. With specialized expertise in Panchakarma detoxification, we offer comprehensive treatment programs for every health condition.
               </p>
@@ -73,10 +73,10 @@ export default function About() {
       </section>
 
       {/* Our Philosophy */}
-      <section className="py-20 bg-gradient-to-b from-white to-white/50">
+      <section className="py-10 sm:py-16 bg-gradient-to-b from-white to-white/50">
         <div className="container max-w-4xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-playfair font-bold text-foreground mb-4">Our Philosophy</h2>
+            <h2 className="text-xl sm:text-2xl md:text-4xl font-playfair font-bold text-foreground mb-4">Our Philosophy</h2>
             <p className="text-lg text-muted-foreground">
               A holistic approach to healing grounded in ancient wisdom and modern compassion.
             </p>
@@ -123,9 +123,9 @@ export default function About() {
       </section>
 
       {/* Treatment Spectrum */}
-      <section className="py-20 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="container max-w-5xl">
-          <h2 className="text-4xl font-playfair font-bold text-foreground mb-16 text-center">Our Treatment Spectrum</h2>
+          <h2 className="text-xl sm:text-2xl md:text-4xl font-playfair font-bold text-foreground mb-8 text-center">Our Treatment Spectrum</h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white rounded-lg border border-border p-8">
@@ -176,9 +176,9 @@ export default function About() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-gradient-to-b from-white to-white/50">
+      <section className="py-10 sm:py-16 bg-gradient-to-b from-white to-white/50">
         <div className="container max-w-4xl">
-          <h2 className="text-4xl font-playfair font-bold text-foreground mb-16 text-center">Why Choose Our Clinic?</h2>
+          <h2 className="text-xl sm:text-2xl md:text-4xl font-playfair font-bold text-foreground mb-8 text-center">Why Choose Our Clinic?</h2>
 
           <div className="space-y-6">
             <div className="bg-white rounded-lg border border-border p-8">
@@ -220,9 +220,9 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary/10 to-secondary/10 border-t border-border">
+      <section className="py-10 sm:py-16 bg-gradient-to-r from-primary/10 to-secondary/10 border-t border-border">
         <div className="container max-w-3xl text-center">
-          <h2 className="text-4xl font-playfair font-bold text-foreground mb-6">Ready to Begin Your Healing?</h2>
+          <h2 className="text-xl sm:text-2xl md:text-4xl font-playfair font-bold text-foreground mb-4">Ready to Begin Your Healing?</h2>
           <p className="text-lg text-muted-foreground mb-8">
             Schedule a personalized consultation with our experienced practitioners to discuss your health concerns and create your customized treatment plan.
           </p>
@@ -235,7 +235,7 @@ export default function About() {
       {/* Footer */}
       <footer className="bg-foreground text-white py-16">
         <div className="container">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <img src="/images/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-8 w-8 invert" />

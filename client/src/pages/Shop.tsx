@@ -1,3 +1,4 @@
+import { CompactHeader } from "@/components/CompactHeader";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -13,7 +14,7 @@ const PRODUCTS = [
     id: 1,
     name: "Ashwagandha Root Powder",
     category: "Stress & Sleep",
-    price: 380,
+    price: 310,
     unit: "100g",
     description: "Premium KSM-66 Ashwagandha for stress relief, energy, and hormonal balance. Adaptogen of choice for modern lifestyle stress.",
     benefits: ["Reduces cortisol", "Improves sleep quality", "Boosts energy & stamina"],
@@ -25,7 +26,7 @@ const PRODUCTS = [
     id: 2,
     name: "Triphala Churna",
     category: "Digestive",
-    price: 280,
+    price: 230,
     unit: "200g",
     description: "Classical three-fruit formula (Amalaki, Bibhitaki, Haritaki) for gentle daily detoxification and digestive health.",
     benefits: ["Gentle daily detox", "Improves digestion", "Rich in antioxidants"],
@@ -73,7 +74,7 @@ const PRODUCTS = [
     id: 6,
     name: "Chyawanprash Special",
     category: "Immunity",
-    price: 480,
+    price: 380,
     unit: "500g",
     description: "Traditional Rasayana formula with 40+ herbs led by Amalaki. Builds immunity, vitality, and respiratory health.",
     benefits: ["Boosts immunity", "Respiratory health", "Anti-aging Rasayana"],
@@ -85,7 +86,7 @@ const PRODUCTS = [
     id: 7,
     name: "Mahanarayan Tail",
     category: "Joints",
-    price: 420,
+    price: 335,
     unit: "100ml",
     description: "Classical medicated oil for joint pain, arthritis, muscle stiffness, and Vata disorders. For external application.",
     benefits: ["Relieves joint pain", "Reduces stiffness", "Nourishes muscles"],
@@ -133,7 +134,7 @@ const PRODUCTS = [
     id: 11,
     name: "Dashamoola Kwath",
     category: "Joints",
-    price: 310,
+    price: 250,
     unit: "200g",
     description: "Ten-root decoction powder for Vata pacification, joint pain, back pain, and post-Panchakarma recovery.",
     benefits: ["Vata pacification", "Back & joint pain", "Post-Panchakarma care"],
@@ -174,7 +175,8 @@ export default function Shop() {
   });
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-16 md:pb-0">
+      <CompactHeader />
       <SEO
         title="Herbal Products Shop — Dr. Kalyan Ayurveda"
         description="Authentic Ayurvedic herbs, formulations, and wellness products recommended by Dr. Kalyan. Order via WhatsApp for home delivery."
@@ -281,6 +283,50 @@ export default function Shop() {
           </Link>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="bg-foreground text-white py-10">
+        <div className="container px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <img src="/images/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-8 w-8 invert" />
+                <span className="font-playfair font-bold">Ayurveda Wellness</span>
+              </div>
+              <p className="text-white/70 text-sm">Authentic Ayurvedic healing for chronic diseases, wellness optimization, and natural transformation.</p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-white/70 text-sm">
+                <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Treatments</Link></li>
+                <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
+                <li><Link href="/testimonials" className="hover:text-white transition-colors">Success Stories</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Treatment Areas</h4>
+              <ul className="space-y-2 text-white/70 text-sm">
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Panchakarma</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Chronic Diseases</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Mental Health</Link></li>
+                <li><Link href="/treatments" className="hover:text-white transition-colors">Fertility</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Contact</h4>
+              <ul className="space-y-2 text-white/70 text-sm">
+                <li>📞 <a href="tel:+919281332544" className="hover:text-white">+91 92813 32544</a></li>
+                <li>📍 Prashanth Hills Colony, Raidurg, Hyderabad</li>
+                <li>🕐 8:00 AM–1:00 PM · 5:00 PM–9:00 PM</li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-white/10 pt-6 text-center text-white/60 text-sm">
+            © 2026 Dr. Kalyan Ayurveda. All rights reserved.
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

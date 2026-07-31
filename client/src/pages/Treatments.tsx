@@ -32,9 +32,9 @@ export default function Treatments() {
       subtitle: "Healing What Modern Medicine Cannot",
       description: "Ayurveda excels at treating chronic diseases by addressing root causes rather than suppressing symptoms.",
       conditions: [
-        "Arthritis &amp; Joint Pain",
+        "Arthritis & Joint Pain",
         "Type 2 Diabetes",
-        "Hypertension &amp; Heart Disease",
+        "Hypertension & Heart Disease",
         "Autoimmune Disorders",
         "Chronic Fatigue",
         "Fibromyalgia",
@@ -54,22 +54,22 @@ export default function Treatments() {
     {
       id: "digestive-health",
       icon: Leaf,
-      title: "Digestive &amp; Metabolic Health",
+      title: "Digestive & Metabolic Health",
       subtitle: "Restore Your Digestive Fire (Agni)",
       description: "Poor digestion is the root of most diseases. We restore your digestive fire and heal the gut.",
       conditions: [
-        "IBS &amp; Inflammatory Bowel Disease",
-        "Acid Reflux &amp; GERD",
-        "Constipation &amp; Bloating",
-        "Malabsorption &amp; Nutrient Deficiency",
+        "IBS & Inflammatory Bowel Disease",
+        "Acid Reflux & GERD",
+        "Constipation & Bloating",
+        "Malabsorption & Nutrient Deficiency",
         "Weight Management Issues",
-        "Liver &amp; Gallbladder Problems",
+        "Liver & Gallbladder Problems",
         "Candida Overgrowth",
         "Food Sensitivities"
       ],
       approach: "We assess your digestive capacity (Agni), identify food incompatibilities, and use Panchakarma, herbal digestives, and dietary protocols to restore optimal digestion.",
       benefits: [
-        "Eliminate bloating &amp; gas",
+        "Eliminate bloating & gas",
         "Normalize bowel function",
         "Improve nutrient absorption",
         "Achieve healthy weight",
@@ -85,10 +85,10 @@ export default function Treatments() {
       subtitle: "Breathe Freely Again",
       description: "Treat respiratory conditions by clearing excess Kapha and strengthening lung tissue.",
       conditions: [
-        "Asthma &amp; Bronchitis",
+        "Asthma & Bronchitis",
         "Allergic Rhinitis",
         "Chronic Cough",
-        "Sinusitis &amp; Nasal Congestion",
+        "Sinusitis & Nasal Congestion",
         "Sleep Apnea",
         "Seasonal Allergies",
         "Emphysema",
@@ -99,7 +99,7 @@ export default function Treatments() {
         "Clear chronic congestion",
         "Reduce asthma attacks",
         "Improve breathing capacity",
-        "Strengthen lungs &amp; sinuses",
+        "Strengthen lungs & sinuses",
         "Reduce allergy symptoms",
         "Improve sleep quality"
       ],
@@ -112,46 +112,46 @@ export default function Treatments() {
       subtitle: "Heal Skin From Within",
       description: "Skin diseases reflect internal imbalances. We heal the root cause to achieve radiant, healthy skin.",
       conditions: [
-        "Eczema &amp; Dermatitis",
+        "Eczema & Dermatitis",
         "Psoriasis",
-        "Acne &amp; Rosacea",
+        "Acne & Rosacea",
         "Urticaria (Hives)",
         "Vitiligo",
         "Fungal Infections",
         "Premature Aging",
-        "Hair Loss &amp; Alopecia"
+        "Hair Loss & Alopecia"
       ],
       approach: "We identify the dosha imbalance (usually Pitta excess), use Panchakarma to eliminate toxins, apply medicated oils and herbal treatments, and modify diet to cool inflammation.",
       benefits: [
         "Clear skin conditions from root",
-        "Reduce itching &amp; inflammation",
+        "Reduce itching & inflammation",
         "Achieve radiant complexion",
-        "Strengthen hair &amp; nails",
+        "Strengthen hair & nails",
         "Prevent recurrence",
-        "Improve skin texture &amp; tone"
+        "Improve skin texture & tone"
       ],
       image: "/images/treatment_skin_health_e6507ce9.webp"
     },
     {
       id: "mental-health",
       icon: Brain,
-      title: "Mental Health &amp; Stress",
-      subtitle: "Restore Emotional Balance &amp; Peace",
+      title: "Mental Health & Stress",
+      subtitle: "Restore Emotional Balance & Peace",
       description: "Ayurveda deeply understands and treats anxiety, depression, and stress-related disorders.",
       conditions: [
-        "Anxiety &amp; Panic Disorder",
-        "Depression &amp; Mood Disorders",
-        "Insomnia &amp; Sleep Disorders",
-        "ADHD &amp; Concentration Issues",
-        "Burnout &amp; Chronic Stress",
-        "OCD &amp; Obsessive Thoughts",
-        "PTSD &amp; Trauma",
+        "Anxiety & Panic Disorder",
+        "Depression & Mood Disorders",
+        "Insomnia & Sleep Disorders",
+        "ADHD & Concentration Issues",
+        "Burnout & Chronic Stress",
+        "OCD & Obsessive Thoughts",
+        "PTSD & Trauma",
         "Emotional Imbalance"
       ],
       approach: "We use Shirodhara (oil flow therapy), Nasya, meditation, yoga, herbal nervines (Ashwagandha, Brahmi), and lifestyle modifications to calm the nervous system and restore emotional balance.",
       benefits: [
         "Calm anxiety naturally",
-        "Lift depression &amp; mood",
+        "Lift depression & mood",
         "Improve sleep quality",
         "Enhance mental clarity",
         "Reduce stress & burnout",
@@ -162,22 +162,22 @@ export default function Treatments() {
     {
       id: "fertility",
       icon: Zap,
-      title: "Fertility &amp; Reproductive Health",
+      title: "Fertility & Reproductive Health",
       subtitle: "Restore Your Fertility Naturally",
       description: "Enhance fertility, balance hormones, and support reproductive wellness for both men and women.",
       conditions: [
-        "Female Infertility &amp; Unexplained Infertility",
-        "PCOS &amp; Hormonal Imbalance",
+        "Female Infertility & Unexplained Infertility",
+        "PCOS & Hormonal Imbalance",
         "Irregular Menstrual Cycles",
-        "Endometriosis &amp; Fibroids",
-        "Low Sperm Count &amp; Motility",
+        "Endometriosis & Fibroids",
+        "Low Sperm Count & Motility",
         "Sexual Dysfunction",
         "Recurrent Miscarriage",
-        "Menopause &amp; Hormonal Transition"
+        "Menopause & Hormonal Transition"
       ],
       approach: "We use specialized therapies like Uttara Basti (uterine nourishment) for women and Yapana Basti for men, combined with Panchakarma, herbal tonics, and lifestyle modifications.",
       benefits: [
-        "Enhance egg &amp; sperm quality",
+        "Enhance egg & sperm quality",
         "Balance hormones naturally",
         "Regulate menstrual cycles",
         "Support IVF success rates",
@@ -188,40 +188,40 @@ export default function Treatments() {
     {
       id: "rejuvenation",
       icon: Award,
-      title: "Rejuvenation &amp; Anti-Aging",
+      title: "Rejuvenation & Anti-Aging",
       subtitle: "Rasayana Therapy for Longevity",
       description: "Slow aging, enhance vitality, and achieve longevity through Rasayana (rejuvenation) therapy.",
       conditions: [
         "Premature Aging",
-        "Loss of Vitality &amp; Energy",
-        "Cognitive Decline &amp; Memory Loss",
+        "Loss of Vitality & Energy",
+        "Cognitive Decline & Memory Loss",
         "Weakened Immunity",
         "Chronic Degenerative Diseases",
-        "General Wellness &amp; Prevention",
+        "General Wellness & Prevention",
         "Athletic Performance Enhancement",
-        "Longevity &amp; Lifespan Extension"
+        "Longevity & Lifespan Extension"
       ],
       approach: "We use Rasayana herbs (Ashwagandha, Shatavari, Brahmi, Triphala), Panchakarma preparation, specialized oils, and lifestyle practices to rejuvenate all tissues and enhance longevity.",
       benefits: [
         "Slow aging process",
         "Enhance mental clarity",
         "Strengthen immunity",
-        "Increase energy &amp; vitality",
-        "Improve skin &amp; hair",
+        "Increase energy & vitality",
+        "Improve skin & hair",
         "Extend healthy lifespan"
       ]
     }
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-16 md:pb-0 overflow-x-hidden">
     <SEO title="Ayurvedic Treatments Hyderabad | Dr. Kalyan Panchakarma Center" description="Explore comprehensive Ayurvedic treatments at Dr. Kalyan Ayurveda, Hyderabad: Panchakarma detox, chronic disease management, fertility, skin health, and mental wellness. Prashanth Hills Colony, Raidurg." keywords="Ayurvedic treatments Hyderabad, Panchakarma treatment, Ayurveda chronic disease, fertility Ayurveda" url="/treatments" />
       <CompactHeader />
 
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-b from-primary/5 to-white">
         <div className="container max-w-4xl text-center">
-          <h1 className="text-5xl font-bold text-foreground mb-4">Comprehensive Treatment Offerings</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-4">Comprehensive Treatment Offerings</h1>
           <p className="text-xl text-muted-foreground">
             From chronic disease management to preventive wellness, we offer authentic Ayurvedic solutions for every health concern.
           </p>
@@ -229,18 +229,18 @@ export default function Treatments() {
       </section>
 
       {/* Treatment Categories */}
-      <section className="py-20 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="container max-w-6xl">
           {treatmentCategories.map((category, idx) => {
             const Icon = category.icon;
             return (
               <div key={idx} className="mb-20 last:mb-0">
-                <div className="flex gap-6 mb-8">
-                  <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Icon className="w-10 h-10 text-primary" />
+                <div className="flex gap-3 sm:gap-6 mb-8">
+                  <div className="w-12 h-12 sm:w-20 sm:h-20 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-6 h-6 sm:w-10 sm:h-10 text-primary" />
                   </div>
                   <div>
-                    <h2 className="text-4xl font-playfair font-bold text-foreground mb-2">{category.title}</h2>
+                    <h2 className="text-xl sm:text-2xl md:text-4xl font-playfair font-bold text-foreground mb-2">{category.title}</h2>
                     <p className="text-lg text-secondary font-semibold mb-3">{category.subtitle}</p>
                     <p className="text-lg text-muted-foreground">{category.description}</p>
                   </div>
@@ -303,25 +303,25 @@ export default function Treatments() {
       </section>
 
       {/* Program Options */}
-      <section className="py-20 bg-gradient-to-b from-white to-white/50">
+      <section className="py-10 sm:py-16 bg-gradient-to-b from-white to-white/50">
         <div className="container max-w-5xl">
-          <h2 className="text-4xl font-playfair font-bold text-foreground mb-16 text-center">Customized Treatment Programs</h2>
+          <h2 className="text-xl sm:text-2xl md:text-4xl font-playfair font-bold text-foreground mb-8 text-center">Customized Treatment Programs</h2>
 
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="border-border hover:shadow-lg transition-shadow">
               <CardHeader>
                 <CardTitle className="text-2xl">7-Day Intensive</CardTitle>
-                <CardDescription>Introduction &amp; Wellness</CardDescription>
+                <CardDescription>Introduction & Wellness</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
                   <p className="font-semibold text-foreground mb-2">Includes:</p>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>✓ Initial consultation &amp; assessment</li>
+                    <li>✓ Initial consultation & assessment</li>
                     <li>✓ Daily Abhyanga massage</li>
                     <li>✓ Nasya therapy</li>
                     <li>✓ Herbal treatments</li>
-                    <li>✓ Personalized diet &amp; lifestyle</li>
+                    <li>✓ Personalized diet & lifestyle</li>
                   </ul>
                 </div>
                 <Button className="w-full bg-primary hover:bg-primary/90 text-white">Learn More</Button>
@@ -351,7 +351,7 @@ export default function Treatments() {
             <Card className="border-border hover:shadow-lg transition-shadow">
               <CardHeader>
                 <CardTitle className="text-2xl">21-Day Transformation</CardTitle>
-                <CardDescription>Complete renewal &amp; healing</CardDescription>
+                <CardDescription>Complete renewal & healing</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
@@ -372,9 +372,9 @@ export default function Treatments() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary/10 to-secondary/10 border-t border-border">
+      <section className="py-10 sm:py-16 bg-gradient-to-r from-primary/10 to-secondary/10 border-t border-border">
         <div className="container max-w-3xl text-center">
-          <h2 className="text-4xl font-playfair font-bold text-foreground mb-6">Ready to Begin Your Healing?</h2>
+          <h2 className="text-xl sm:text-2xl md:text-4xl font-playfair font-bold text-foreground mb-6">Ready to Begin Your Healing?</h2>
           <p className="text-lg text-muted-foreground mb-8">
             Schedule a personalized consultation to discuss your health concerns and create your customized treatment plan.
           </p>
@@ -387,7 +387,7 @@ export default function Treatments() {
       {/* Footer */}
       <footer className="bg-foreground text-white py-16">
         <div className="container">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <img src="/images/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-8 w-8 invert" />

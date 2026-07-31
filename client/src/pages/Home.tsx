@@ -1,123 +1,55 @@
 import { SEO } from "@/components/SEO";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Heart, Leaf, Wind, Flame, Droplets, Brain, Zap, Users, Award, ArrowRight } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Heart, Leaf, Wind, Flame, Droplets, Brain, Zap, Award, ArrowRight, Star, Phone, MapPin, Clock } from "lucide-react";
 import { Link } from "wouter";
 import { BookingModal } from "@/components/BookingModal";
 import { CompactHeader } from "@/components/CompactHeader";
-import { getHeroUrl } from '@/lib/mediaUrl';
-import { FAQSection } from "@/components/FAQSection";
-import { SearchableFAQ } from "@/components/SearchableFAQ";
 import { SocialMediaLinks } from "@/components/SocialMediaLinks";
-import { FilteredTreatmentChart } from "@/components/FilteredTreatmentChart";
-import { TestimonialVideoSection } from "@/components/TestimonialVideoSection";
-import { FilteredBeforeAfterGallery } from "@/components/FilteredBeforeAfterGallery";
-import { TreatmentDurationCalculator } from "@/components/TreatmentDurationCalculator";
-import { TestimonialReviewSection } from "@/components/TestimonialReviewSection";
-import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
-import { EnhancedAvailabilityCalendar } from "@/components/EnhancedAvailabilityCalendar";
-import { SuccessStoriesBlog } from "@/components/SuccessStoriesBlog";
-import { ReferralRewardsProgram } from "@/components/ReferralRewardsProgram";
-import { FilterablePatientRatings } from "@/components/FilterablePatientRatings";
-import { EnhancedDashboardWithTooltips } from "@/components/EnhancedDashboardWithTooltips";
-import { TestimonialVideoCarousel } from "@/components/TestimonialVideoCarousel";
-
+import { getHeroUrl } from "@/lib/mediaUrl";
 
 export default function Home() {
-  // The useAuth hook provides authentication state.
-  // To implement login/logout, call logout(), or start login from an event
-  // handler: onClick={() => startLogin()} (imported from "@/const"). Never call
-  // startLogin() during render (no href={startLogin()}) — it mints a one-time
-  // nonce cookie and must run only at the moment of navigation.
   let { user, loading, error, isAuthenticated, logout } = useAuth();
 
   const treatments = [
-    {
-      icon: Droplets,
-      title: "Panchakarma Detoxification",
-      description: "Deep cleansing and rejuvenation through authentic 5-procedure detoxification",
-      link: "/treatments/panchakarma"
-    },
-    {
-      icon: Heart,
-      title: "Chronic Disease Management",
-      description: "Natural healing for arthritis, diabetes, hypertension, and long-term conditions",
-      link: "/treatments/chronic-diseases"
-    },
-    {
-      icon: Leaf,
-      title: "Digestive & Metabolic Health",
-      description: "Restore digestive fire, heal IBS, improve metabolism and nutrient absorption",
-      link: "/treatments/digestive-health"
-    },
-    {
-      icon: Wind,
-      title: "Respiratory Wellness",
-      description: "Treat asthma, bronchitis, allergies, and breathing disorders naturally",
-      link: "/treatments/respiratory"
-    },
-    {
-      icon: Flame,
-      title: "Skin Conditions",
-      description: "Heal eczema, psoriasis, acne, and achieve radiant skin from within",
-      link: "/treatments/skin-health"
-    },
-    {
-      icon: Brain,
-      title: "Mental Health & Stress",
-      description: "Manage anxiety, depression, insomnia, and restore emotional balance",
-      link: "/treatments/mental-health"
-    },
-    {
-      icon: Zap,
-      title: "Fertility & Reproductive Health",
-      description: "Enhance fertility, balance hormones, and support reproductive wellness",
-      link: "/treatments/fertility"
-    },
-    {
-      icon: Award,
-      title: "Rejuvenation & Anti-Aging",
-      description: "Rasayana therapy for longevity, vitality, and age-reversal",
-      link: "/treatments/rejuvenation"
-    }
+    { icon: Droplets, title: "Panchakarma Detox", description: "Deep cleansing through authentic 5-procedure detoxification", link: "/treatments/panchakarma" },
+    { icon: Heart, title: "Chronic Diseases", description: "Natural healing for arthritis, diabetes, hypertension", link: "/treatments/chronic-diseases" },
+    { icon: Leaf, title: "Digestive Health", description: "Restore digestive fire, heal IBS, improve metabolism", link: "/treatments/digestive-health" },
+    { icon: Wind, title: "Respiratory Wellness", description: "Treat asthma, bronchitis, and allergies naturally", link: "/treatments/respiratory" },
+    { icon: Flame, title: "Skin Conditions", description: "Heal eczema, psoriasis, acne from within", link: "/treatments/skin-health" },
+    { icon: Brain, title: "Mental Health", description: "Manage anxiety, depression, insomnia naturally", link: "/treatments/mental-health" },
+    { icon: Zap, title: "Fertility & Hormones", description: "Enhance fertility, balance hormones naturally", link: "/treatments/fertility" },
+    { icon: Award, title: "Rejuvenation", description: "Rasayana therapy for longevity and vitality", link: "/treatments/rejuvenation" },
   ];
 
   const testimonials = [
-    {
-      name: "James M.",
-      condition: "Rheumatoid Arthritis",
-      quote: "After 10 years of joint pain and limited mobility, the 21-day Panchakarma program transformed my life. I'm now pain-free and active again.",
-      rating: 5
-    },
-    {
-      name: "Maria S.",
-      condition: "Type 2 Diabetes",
-      quote: "My blood sugar levels normalized after just one program. The dietary guidance and herbal treatments gave me my health back.",
-      rating: 5
-    },
-    {
-      name: "David K.",
-      condition: "Chronic Anxiety",
-      quote: "Shirodhara and meditation practices calmed my nervous system in ways medication never could. I feel genuinely peaceful.",
-      rating: 5
-    },
-    {
-      name: "Lisa T.",
-      condition: "Severe Eczema",
-      quote: "My skin cleared completely within 2 months. The holistic approach addressed the root cause, not just symptoms.",
-      rating: 5
-    }
+    { name: "James M.", condition: "Rheumatoid Arthritis", quote: "After 10 years of joint pain, the 21-day Panchakarma program transformed my life. I'm now pain-free and active again.", rating: 5 },
+    { name: "Maria S.", condition: "Type 2 Diabetes", quote: "My blood sugar levels normalized after just one program. The dietary guidance and herbal treatments gave me my health back.", rating: 5 },
+    { name: "David K.", condition: "Chronic Anxiety", quote: "Shirodhara and meditation practices calmed my nervous system in ways medication never could. I feel genuinely peaceful.", rating: 5 },
+  ];
+
+  const stats = [
+    { value: "3,000+", label: "Patients Healed" },
+    { value: "25+", label: "Years Experience" },
+    { value: "70-80%", label: "Success Rate" },
+    { value: "5,000", label: "Years of Wisdom" },
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-    <SEO title="Dr. Kalyan Ayurveda Specialities & Panchakarma Center | Hyderabad" description="Restore your health naturally with authentic Ayurvedic Panchakarma and personalized wellness treatments in Hyderabad. 5,000 years of healing wisdom." keywords="Ayurveda Hyderabad, Panchakarma, fertility treatment, holistic healing, Dr Kalyan" url="/" />
-      {/* Compact Header with Newsletter */}
+    <div className="min-h-screen bg-background pb-16 md:pb-0">
+      <SEO
+        title="Dr. Kalyan Ayurveda Specialities & Panchakarma Center | Hyderabad"
+        description="Restore your health naturally with authentic Ayurvedic Panchakarma and personalized wellness treatments in Hyderabad. 5,000 years of healing wisdom."
+        keywords="Ayurveda Hyderabad, Panchakarma, fertility treatment, holistic healing, Dr Kalyan"
+        url="/"
+      />
+
+      {/* Header */}
       <CompactHeader />
 
-      {/* Hero Section - Premium */}
-      <section className="relative h-[calc(100vh-120px)] flex items-center justify-start overflow-hidden">
+      {/* Hero Section */}
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
         <img
           src={getHeroUrl()}
           alt="Dr. Kalyan performing Nadi Pariksha pulse diagnosis with a patient"
@@ -125,67 +57,81 @@ export default function Home() {
           loading="eager"
           fetchPriority="high"
         />
-        {/* Gradient only covers the left 45% — Dr. Kalyan on the right remains fully visible */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" style={{backgroundSize: '55% 100%', backgroundRepeat: 'no-repeat'}}></div>
-        <div className="relative z-10 w-full flex items-center">
-          <div className="text-left text-white pl-10 pr-4" style={{maxWidth: '42%'}}>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-lg">Restore Your Health Naturally</h1>
-            <p className="text-base mb-6 font-light leading-relaxed drop-shadow-md">
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-transparent"></div>
+        <div className="relative z-10 w-full px-4 sm:px-8 md:px-12 py-16">
+          <div className="max-w-xs sm:max-w-sm md:max-w-lg">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 leading-tight text-white drop-shadow-lg">
+              Restore Your Health Naturally
+            </h1>
+            <p className="text-sm sm:text-base mb-6 font-light leading-relaxed text-white/90 drop-shadow-md">
               Discover the transformative power of authentic Ayurvedic Panchakarma and personalized wellness treatments rooted in 5,000 years of healing wisdom.
             </p>
             <div className="flex flex-wrap gap-3">
               <BookingModal triggerText="Begin Your Journey" variant="default" />
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10 text-base px-6">
-                Learn More
-              </Button>
+              <Link href="/treatments">
+                <Button size="default" variant="outline" className="text-white border-white hover:bg-white/10 text-sm sm:text-base">
+                  Explore Treatments
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Stats Bar */}
+      <section className="bg-primary py-5">
+        <div className="container px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-white">
+            {stats.map((stat, i) => (
+              <div key={i}>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold">{stat.value}</div>
+                <div className="text-xs sm:text-sm text-white/80 mt-0.5">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Why Ayurveda */}
-      <section className="py-10 bg-white">
-        <div className="container max-w-5xl">
+      <section className="py-10 sm:py-12 bg-white">
+        <div className="container max-w-5xl px-4">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-foreground mb-2">Why Choose Authentic Ayurveda?</h2>
-            <p className="text-xl text-muted-foreground">
-              While modern medicine treats symptoms, Ayurveda heals the root cause—restoring balance to prevent disease and optimize wellness.
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-2">Why Choose Authentic Ayurveda?</h2>
+            <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
+              While modern medicine treats symptoms, Ayurveda heals the root cause — restoring balance to prevent disease and optimize wellness.
             </p>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             <Card className="border-border hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Leaf className="w-12 h-12 text-primary mb-2" />
-                <CardTitle>Root Cause Healing</CardTitle>
+              <CardHeader className="pb-2">
+                <Leaf className="w-9 h-9 text-primary mb-2" />
+                <CardTitle className="text-base">Root Cause Healing</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
-                  We identify and address the underlying imbalances causing disease, not just suppress symptoms. This leads to lasting, transformative healing.
+                <p className="text-sm text-muted-foreground">
+                  We identify and address the underlying imbalances causing disease — not just suppress symptoms — for lasting, transformative healing.
                 </p>
               </CardContent>
             </Card>
-
             <Card className="border-border hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Heart className="w-12 h-12 text-secondary mb-2" />
-                <CardTitle>Holistic Integration</CardTitle>
+              <CardHeader className="pb-2">
+                <Heart className="w-9 h-9 text-secondary mb-2" />
+                <CardTitle className="text-base">Holistic Integration</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
-                  We treat the whole person—body, mind, and spirit. Panchakarma, nutrition, lifestyle, yoga, and meditation work together for complete healing.
+                <p className="text-sm text-muted-foreground">
+                  We treat the whole person — body, mind, and spirit. Panchakarma, nutrition, lifestyle, yoga, and meditation work together.
                 </p>
               </CardContent>
             </Card>
-
             <Card className="border-border hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Award className="w-12 h-12 text-primary mb-2" />
-                <CardTitle>Proven Results</CardTitle>
+              <CardHeader className="pb-2">
+                <Award className="w-9 h-9 text-primary mb-2" />
+                <CardTitle className="text-base">Proven Results</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
-                  Thousands of patients have recovered from conditions modern medicine couldn't resolve. Success rates of 70-80% for specific treatments.
+                <p className="text-sm text-muted-foreground">
+                  Thousands of patients recovered from conditions modern medicine couldn't resolve. Success rates of 70–80% for specific treatments.
                 </p>
               </CardContent>
             </Card>
@@ -194,29 +140,28 @@ export default function Home() {
       </section>
 
       {/* Treatment Categories */}
-      <section className="py-10 bg-gradient-to-b from-white to-white/50">
-        <div className="container max-w-6xl">
-          <div className="text-center mb-10">
-            <h2 className="text-4xl font-playfair font-bold text-foreground mb-2">Comprehensive Treatment Offerings</h2>
-            <p className="text-xl text-muted-foreground">
-              From chronic disease management to preventive wellness, we offer authentic Ayurvedic solutions for every health concern.
+      <section className="py-10 sm:py-12 bg-gray-50">
+        <div className="container max-w-6xl px-4">
+          <div className="text-center mb-8">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-playfair font-bold text-foreground mb-2">Our Treatment Specialities</h2>
+            <p className="text-sm sm:text-base text-muted-foreground">
+              Authentic Ayurvedic solutions for every health concern.
             </p>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
             {treatments.map((treatment, idx) => {
               const Icon = treatment.icon;
               return (
                 <Link key={idx} href={treatment.link}>
                   <Card className="border-border hover:shadow-lg transition-all cursor-pointer h-full group">
-                    <CardHeader>
-                      <Icon className="w-10 h-10 text-primary mb-3 group-hover:scale-110 transition-transform" />
-                      <CardTitle className="text-lg">{treatment.title}</CardTitle>
+                    <CardHeader className="pb-1 pt-4 px-3 sm:px-4">
+                      <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-primary mb-2 group-hover:scale-110 transition-transform" />
+                      <CardTitle className="text-xs sm:text-sm leading-snug">{treatment.title}</CardTitle>
                     </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-muted-foreground mb-4">{treatment.description}</p>
-                      <div className="flex items-center gap-2 text-primary font-semibold text-sm">
-                        Learn More <ArrowRight className="w-4 h-4" />
+                    <CardContent className="px-3 sm:px-4 pb-4">
+                      <p className="text-xs text-muted-foreground mb-2 leading-relaxed hidden sm:block">{treatment.description}</p>
+                      <div className="flex items-center gap-1 text-primary font-semibold text-xs mt-1">
+                        Learn More <ArrowRight className="w-3 h-3" />
                       </div>
                     </CardContent>
                   </Card>
@@ -224,335 +169,121 @@ export default function Home() {
               );
             })}
           </div>
-        </div>
-      </section>
-
-      {/* Panchakarma Highlight with Stock Image */}
-      <section className="py-10 bg-white">
-        <div className="container max-w-5xl">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h2 className="text-3xl font-playfair font-bold text-foreground mb-4">The Heart of Ayurvedic Healing: Panchakarma</h2>
-              <p className="text-base text-muted-foreground leading-relaxed mb-4">
-                Panchakarma is a comprehensive system of five coordinated detoxification procedures that gently yet profoundly cleanse the physiology from metabolic residue (ama). This ancient protocol is the foundation of authentic Ayurvedic treatment.
-              </p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex gap-3">
-                  <Leaf className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground"><strong>Removes toxins</strong> accumulated from diet, environment, and stress</span>
-                </li>
-                <li className="flex gap-3">
-                  <Heart className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground"><strong>Restores balance</strong> to the three doshas (Vata, Pitta, Kapha)</span>
-                </li>
-                <li className="flex gap-3">
-                  <Zap className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground"><strong>Rejuvenates tissues</strong> and strengthens immunity</span>
-                </li>
-                <li className="flex gap-3">
-                  <Brain className="w-6 h-6 text-secondary flex-shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground"><strong>Heals the mind</strong> and nervous system</span>
-                </li>
-              </ul>
-              <Link href="/panchakarma-programs">
-                <Button className="bg-primary hover:bg-primary/90 text-white">
-                  Explore Panchakarma Programs
-                </Button>
-              </Link>
-            </div>
-            <div>
-        <img
-          src="/images/panchakarma_treatment_vibrant_d075a65b.webp"
-          alt="Panchakarma Treatment"
-          className="w-full h-full object-cover"
-          loading="lazy"
-        />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Conditions We Treat */}
-      <section className="py-10 bg-gradient-to-b from-white to-white/50">
-        <div className="container max-w-5xl">
-          <h2 className="text-3xl font-playfair font-bold text-foreground mb-8 text-center">Conditions We Successfully Treat</h2>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-lg border border-border p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg font-playfair font-bold text-foreground mb-4">Chronic Diseases</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>✓ Arthritis &amp; Joint Pain</li>
-                <li>✓ Type 2 Diabetes</li>
-                <li>✓ Hypertension</li>
-                <li>✓ Heart Disease Prevention</li>
-                <li>✓ Autoimmune Disorders</li>
-                <li>✓ Chronic Fatigue</li>
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-lg border border-border p-8 hover:shadow-lg transition-shadow">
-              <h3 className="text-2xl font-playfair font-bold text-foreground mb-6">Digestive &amp; Metabolic</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>✓ IBS &amp; Inflammatory Bowel Disease</li>
-                <li>✓ Acid Reflux &amp; GERD</li>
-                <li>✓ Constipation &amp; Bloating</li>
-                <li>✓ Weight Management</li>
-                <li>✓ Malabsorption Issues</li>
-                <li>✓ Liver &amp; Gallbladder Health</li>
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-lg border border-border p-8 hover:shadow-lg transition-shadow">
-              <h3 className="text-2xl font-playfair font-bold text-foreground mb-6">Respiratory &amp; Allergies</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>✓ Asthma &amp; Bronchitis</li>
-                <li>✓ Allergic Rhinitis</li>
-                <li>✓ Chronic Cough</li>
-                <li>✓ Sinusitis</li>
-                <li>✓ Sleep Apnea</li>
-                <li>✓ Seasonal Allergies</li>
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-lg border border-border p-8 hover:shadow-lg transition-shadow">
-              <h3 className="text-2xl font-playfair font-bold text-foreground mb-6">Skin &amp; Mental Health</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>✓ Eczema &amp; Psoriasis</li>
-                <li>✓ Acne &amp; Rosacea</li>
-                <li>✓ Anxiety &amp; Panic Disorder</li>
-                <li>✓ Depression &amp; Mood Disorders</li>
-                <li>✓ Insomnia &amp; Sleep Issues</li>
-                <li>✓ Stress &amp; Burnout</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Patient Testimonial Videos */}
-      <TestimonialVideoSection />
-
-      {/* Before/After Transformation Gallery with Filters */}
-      <FilteredBeforeAfterGallery />
-
-      {/* Treatment Duration Calculator */}
-      <TreatmentDurationCalculator />
-
-      {/* Testimonial Review Section */}
-      <TestimonialReviewSection />
-
-      {/* Availability Calendar */}
-      <EnhancedAvailabilityCalendar />
-
-      {/* Success Stories Blog */}
-      <SuccessStoriesBlog />
-
-      {/* Referral Rewards Program */}
-      <ReferralRewardsProgram />
-
-      {/* Patient Testimonials with Stock Images */}
-      <section className="py-10 bg-white">
-        <div className="container max-w-5xl">
-          <h2 className="text-3xl font-playfair font-bold text-foreground mb-8 text-center">Patient Success Stories</h2>
-
-          <TestimonialsCarousel />
-        </div>
-      </section>
-
-      {/* Patient Ratings Widget */}
-      <section className="py-10 bg-white">
-        <div className="container max-w-5xl">
-          <h2 className="text-3xl font-playfair font-bold text-foreground mb-8 text-center">Patient Testimonials & Ratings</h2>
-          <FilterablePatientRatings />
-        </div>
-      </section>
-
-      {/* Treatment Outcome Dashboard */}
-      <section className="py-10 bg-muted/30">
-        <div className="container max-w-6xl">
-          <h2 className="text-3xl font-playfair font-bold text-foreground mb-8 text-center">Treatment Outcomes & Success Rates</h2>
-          <EnhancedDashboardWithTooltips />
-        </div>
-      </section>
-
-      {/* Testimonial Video Carousel */}
-      <section className="py-16 px-6 bg-gradient-to-br from-gray-50 to-white border-t border-border">
-        <div className="container">
-          <h2 className="text-3xl font-bold text-center text-foreground mb-3">Patient Transformation Videos</h2>
-          <p className="text-center text-foreground/60 mb-12 max-w-2xl mx-auto">
-            Watch real patients share their remarkable healing journeys and transformations through authentic Ayurvedic treatment
-          </p>
-          <TestimonialVideoCarousel />
-        </div>
-      </section>
-
-      {/* Therapy Showcase Section */}
-      <section className="py-16 bg-gradient-to-b from-white to-white/50">
-        <div className="container max-w-6xl">
-          <h2 className="text-4xl font-bold text-foreground mb-4 text-center">Our Signature Therapies</h2>
-          <p className="text-lg text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-            Experience authentic Ayurvedic treatments performed by experienced practitioners in our therapy rooms
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all">
-              <img 
-                src="/images/slide_1_abhyanga_massage_generated.webp" 
-                alt="Abhyanga - Traditional Oil Massage"
-                className="w-full h-80 object-cover hover:scale-105 transition-transform duration-300"
-              />
-              <div className="p-6 bg-white">
-                <p className="text-sm font-semibold text-primary mb-1">Traditional Oil Massage</p>
-                <h3 className="text-2xl font-bold text-foreground mb-3">Abhyanga</h3>
-                <p className="text-muted-foreground">Deep therapeutic full-body oil massage using medicated oils tailored to your dosha. Improves circulation, nourishes tissues, and calms the nervous system.</p>
-              </div>
-            </div>
-
-            <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all">
-              <img 
-                src="/images/slide_2_shirodhara_therapy_generated.webp" 
-                alt="Shirodhara - Therapeutic Oil Pouring"
-                className="w-full h-80 object-cover hover:scale-105 transition-transform duration-300"
-              />
-              <div className="p-6 bg-white">
-                <p className="text-sm font-semibold text-primary mb-1">Therapeutic Oil Pouring</p>
-                <h3 className="text-2xl font-bold text-foreground mb-3">Shirodhara</h3>
-                <p className="text-muted-foreground">Warm medicated oil flows continuously onto the forehead, deeply calming the mind and nervous system. Excellent for anxiety, insomnia, and mental clarity.</p>
-              </div>
-            </div>
-
-            <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all">
-              <img 
-                src="/images/slide_3_marma_point_therapy_generated.webp" 
-                alt="Marma Point Therapy - Energy Point Healing"
-                className="w-full h-80 object-cover hover:scale-105 transition-transform duration-300"
-              />
-              <div className="p-6 bg-white">
-                <p className="text-sm font-semibold text-primary mb-1">Energy Point Healing</p>
-                <h3 className="text-2xl font-bold text-foreground mb-3">Marma Point Therapy</h3>
-                <p className="text-muted-foreground">Precise stimulation of vital energy points (marmas) to balance the body's energy channels and promote holistic healing.</p>
-              </div>
-            </div>
-
-            <div className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all">
-              <img 
-                src="/images/slide_4_panchakarma_prep_generated.jpg" 
-                alt="Panchakarma Treatment Preparation"
-                className="w-full h-80 object-cover hover:scale-105 transition-transform duration-300"
-              />
-              <div className="p-6 bg-white">
-                <p className="text-sm font-semibold text-primary mb-1">Pre-Treatment Consultation</p>
-                <h3 className="text-2xl font-bold text-foreground mb-3">Panchakarma Preparation</h3>
-                <p className="text-muted-foreground">Comprehensive assessment and preparation ensuring optimal results from your Panchakarma treatment. Includes dietary guidance and lifestyle recommendations.</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <Link href="/panchakarma-programs">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white">
-                Explore All Panchakarma Programs
+          <div className="text-center mt-6">
+            <Link href="/treatments">
+              <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
+                View All Treatments
               </Button>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Testimonials Links */}
-      <section className="py-10 bg-white">
-        <div className="container max-w-5xl">
-          <div className="text-center mt-8">
+      {/* Panchakarma Teaser */}
+      <section className="py-10 sm:py-12 bg-white">
+        <div className="container max-w-5xl px-4">
+          <div className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-5 sm:p-8 md:p-10">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+              <div className="flex-1">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-playfair font-bold text-foreground mb-3">
+                  The Heart of Ayurvedic Healing: Panchakarma
+                </h2>
+                <p className="text-sm sm:text-base text-muted-foreground mb-5 leading-relaxed">
+                  A comprehensive 5-procedure detoxification that gently yet profoundly cleanses the body of metabolic residue. Available as 7-day, 14-day, and 21-day programs tailored to your condition.
+                </p>
+                <Link href="/panchakarma-programs">
+                  <Button className="bg-primary hover:bg-primary/90 text-white">
+                    Explore Panchakarma Programs
+                  </Button>
+                </Link>
+              </div>
+              <div className="flex flex-row md:flex-col gap-3 flex-wrap md:min-w-[160px]">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground"><Leaf className="w-4 h-4 text-primary flex-shrink-0" /> Removes toxins</div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground"><Heart className="w-4 h-4 text-secondary flex-shrink-0" /> Restores dosha balance</div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground"><Zap className="w-4 h-4 text-primary flex-shrink-0" /> Rejuvenates tissues</div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground"><Brain className="w-4 h-4 text-secondary flex-shrink-0" /> Heals the mind</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Patient Testimonials */}
+      <section className="py-10 sm:py-12 bg-gray-50">
+        <div className="container max-w-5xl px-4">
+          <div className="text-center mb-8">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-playfair font-bold text-foreground mb-2">Patient Success Stories</h2>
+            <p className="text-sm sm:text-base text-muted-foreground">Real healing journeys from our patients.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            {testimonials.map((t, i) => (
+              <div key={i} className="bg-white rounded-xl p-5 border border-border shadow-sm">
+                <div className="flex gap-0.5 mb-3">
+                  {[...Array(t.rating)].map((_, j) => (
+                    <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-sm text-muted-foreground italic mb-4 leading-relaxed">"{t.quote}"</p>
+                <div>
+                  <p className="text-sm font-semibold text-foreground">{t.name}</p>
+                  <p className="text-xs text-primary">{t.condition}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-6">
             <Link href="/testimonials">
-              <Button variant="outline" className="border-primary text-primary hover:bg-primary/5">
-                View All Success Stories
+              <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
+                Read More Success Stories
               </Button>
             </Link>
           </div>
         </div>
       </section>
-
-      {/* Treatment Comparison Chart with Filters */}
-      <FilteredTreatmentChart />
-
-      {/* Program Options */}
-      <section className="py-10 bg-gradient-to-b from-white to-white/50">
-        <div className="container max-w-5xl">
-          <h2 className="text-3xl font-playfair font-bold text-foreground mb-8 text-center">Customized Treatment Programs</h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-border hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="text-2xl">7-Day Intensive</CardTitle>
-                <CardDescription>Introduction to Ayurveda</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <p className="font-semibold text-foreground mb-2">Perfect for:</p>
-                  <p className="text-sm text-muted-foreground">First-time experience, wellness optimization, stress relief</p>
-                </div>
-                <Button className="w-full bg-primary hover:bg-primary/90 text-white">Learn More</Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border-primary shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-2xl">14-Day Therapeutic</CardTitle>
-                <CardDescription>Most popular program</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <p className="font-semibold text-foreground mb-2">Perfect for:</p>
-                  <p className="text-sm text-muted-foreground">Chronic disease treatment, significant health transformation</p>
-                </div>
-                <Button className="w-full bg-primary hover:bg-primary/90 text-white">Recommended</Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="text-2xl">21-Day Transformation</CardTitle>
-                <CardDescription>Complete renewal</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <p className="font-semibold text-foreground mb-2">Perfect for:</p>
-                  <p className="text-sm text-muted-foreground">Deep healing, rejuvenation, complete lifestyle reset</p>
-                </div>
-                <Button className="w-full bg-primary hover:bg-primary/90 text-white">Learn More</Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <div className="py-10 bg-white">
-        <div className="container max-w-5xl">
-          <h2 className="text-3xl font-playfair font-bold text-foreground mb-8 text-center">Frequently Asked Questions</h2>
-          <SearchableFAQ />
-        </div>
-      </div>
 
       {/* CTA Section */}
-      <section className="py-12 bg-gradient-to-r from-primary/10 to-secondary/10 border-t border-border">
-        <div className="container max-w-3xl text-center">
-          <h2 className="text-4xl font-playfair font-bold text-foreground mb-6">Begin Your Healing Journey</h2>
-          <p className="text-lg text-muted-foreground mb-8">
+      <section className="py-10 sm:py-12 bg-primary">
+        <div className="container max-w-3xl text-center px-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-playfair font-bold text-white mb-4">Begin Your Healing Journey</h2>
+          <p className="text-sm sm:text-base text-white/80 mb-6 max-w-xl mx-auto">
             Schedule a personalized consultation to discuss your health concerns and create your customized treatment plan.
           </p>
-          <Link href="/contact">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-base">
-              Book Your Consultation
-            </Button>
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <BookingModal triggerText="Book Your Consultation" variant="default" />
+            <Link href="/contact">
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10 w-full sm:w-auto">
+                Contact Us
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Contact Bar */}
+      <section className="py-5 bg-foreground text-white">
+        <div className="container px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center text-sm">
+            <a href="tel:+919281332544" className="flex items-center justify-center gap-2 text-white/80 hover:text-white transition-colors">
+              <Phone className="w-4 h-4 text-primary" />
+              <span>+91 92813 32544</span>
+            </a>
+            <div className="flex items-center justify-center gap-2 text-white/80">
+              <Clock className="w-4 h-4 text-primary" />
+              <span>8 AM–1 PM · 5 PM–9 PM</span>
+            </div>
+            <div className="flex items-center justify-center gap-2 text-white/80">
+              <MapPin className="w-4 h-4 text-primary" />
+              <span>Raidurg, Hyderabad</span>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-foreground text-white py-8">
-        <div className="container">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
+      <footer className="bg-foreground text-white py-8 border-t border-white/10">
+        <div className="container px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="col-span-2 md:col-span-1">
               <div className="flex items-center gap-2 mb-3">
                 <img src="/images/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-6 w-6 invert" />
                 <span className="font-bold text-sm">Ayurveda Wellness</span>
@@ -573,10 +304,10 @@ export default function Home() {
             <div>
               <h4 className="font-semibold mb-3 text-sm">Treatment Areas</h4>
               <ul className="space-y-1 text-white/70 text-xs">
-                <li><Link href="/treatments" className="hover:text-white transition-colors">Panchakarma</Link></li>
-                <li><Link href="/treatments" className="hover:text-white transition-colors">Chronic Diseases</Link></li>
-                <li><Link href="/treatments" className="hover:text-white transition-colors">Mental Health</Link></li>
-                <li><Link href="/treatments" className="hover:text-white transition-colors">Fertility</Link></li>
+                <li><Link href="/treatments/panchakarma" className="hover:text-white transition-colors">Panchakarma</Link></li>
+                <li><Link href="/treatments/chronic-diseases" className="hover:text-white transition-colors">Chronic Diseases</Link></li>
+                <li><Link href="/treatments/mental-health" className="hover:text-white transition-colors">Mental Health</Link></li>
+                <li><Link href="/treatments/fertility" className="hover:text-white transition-colors">Fertility</Link></li>
               </ul>
             </div>
             <div>
@@ -584,13 +315,13 @@ export default function Home() {
               <ul className="space-y-1 text-white/70 text-xs">
                 <li><a href="mailto:contact@drkalyanayurveda.com" className="hover:text-white">contact@drkalyanayurveda.com</a></li>
                 <li><a href="tel:+919281332544" className="hover:text-white">+91 92813 32544</a></li>
-                <li className="text-xs leading-snug">Flat No.102, Plot No.309, Near Volkswagen Service Centre, Prashanth Hills Colony, Raidurg Navkhalsa</li>
-                <li>8:00 AM - 1:00 PM | 5:00 PM - 9:00 PM</li>
+                <li className="leading-snug">Prashanth Hills Colony, Raidurg, Hyderabad</li>
+                <li>8:00 AM–1:00 PM | 5:00 PM–9:00 PM</li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-white/10 mt-6 pt-4 flex flex-col md:flex-row items-center justify-between gap-3">
-            <p className="text-white/70 text-xs text-center md:text-left">&copy; 2026 Dr. Kalyan Ayurveda. All rights reserved.</p>
+          <div className="border-t border-white/10 mt-6 pt-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p className="text-white/70 text-xs text-center sm:text-left">&copy; 2026 Dr. Kalyan Ayurveda. All rights reserved.</p>
             <SocialMediaLinks variant="footer" size="sm" />
           </div>
         </div>

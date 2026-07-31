@@ -141,7 +141,7 @@ export default function VideoTestimonials() {
     : videoTestimonials.filter(v => v.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-16 md:pb-0">
     <SEO title="Patient Testimonial Videos | Dr. Kalyan Ayurveda Hyderabad" description="Watch real patient testimonial videos from Dr. Kalyan Ayurveda. See how Ayurvedic treatment transformed lives with arthritis, diabetes, anxiety, and more." keywords="Ayurveda testimonial videos, patient stories Ayurveda, Panchakarma results videos" url="/video-testimonials" />
       <CompactHeader />
 
@@ -149,7 +149,7 @@ export default function VideoTestimonials() {
       <section className="py-12 bg-gradient-to-r from-primary/10 to-secondary/10">
         <div className="container max-w-5xl">
           <div className="text-center">
-            <h1 className="text-5xl font-bold text-foreground mb-4">Patient Video Testimonials</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-4">Patient Video Testimonials</h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Watch real patients share their transformation stories and healing journeys with Dr. Kalyan's authentic Ayurvedic treatments.
             </p>
@@ -326,7 +326,7 @@ export default function VideoTestimonials() {
       {/* CTA Section */}
       <section className="py-12 bg-gradient-to-r from-primary/10 to-secondary/10">
         <div className="container max-w-3xl text-center">
-          <h2 className="text-4xl font-bold text-foreground mb-4">Ready to Start Your Healing Journey?</h2>
+          <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-foreground mb-4">Ready to Start Your Healing Journey?</h2>
           <p className="text-lg text-muted-foreground mb-6">
             Schedule a personalized consultation with Dr. Kalyan to discuss your health concerns and create your customized treatment plan.
           </p>
@@ -341,7 +341,7 @@ export default function VideoTestimonials() {
       {/* Footer */}
       <footer className="bg-foreground text-white py-8">
         <div className="container">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             <div>
               <div className="flex items-center gap-2 mb-3">
                 <img src="/images/dr_kalyan_logo_final_07bd8e78.png" alt="Logo" className="h-6 w-6 invert" />

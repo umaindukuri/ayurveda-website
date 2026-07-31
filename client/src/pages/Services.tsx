@@ -6,7 +6,7 @@ import { CompactHeader } from "@/components/CompactHeader";
 
 export default function Services() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-16 md:pb-0">
       <CompactHeader />
 
       {/* Hero Section */}

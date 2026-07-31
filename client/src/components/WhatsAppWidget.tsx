@@ -17,46 +17,71 @@ export function WhatsAppWidget() {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
-      {expanded && (
-        <div className="flex flex-col items-end gap-2">
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2.5 rounded-full shadow-lg transition-all duration-200 hover:scale-105 text-sm font-medium whitespace-nowrap"
-            aria-label="Chat on WhatsApp"
-          >
-            <WhatsAppIcon className="w-4 h-4 flex-shrink-0" />
-            Chat on WhatsApp
-          </a>
-          <a
-            href={`tel:+${PHONE_NUMBER}`}
-            className="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-4 py-2.5 rounded-full shadow-lg transition-all duration-200 hover:scale-105 text-sm font-medium whitespace-nowrap"
-            aria-label={`Call ${PHONE_DISPLAY}`}
-          >
-            <Phone className="w-4 h-4 flex-shrink-0" />
-            {PHONE_DISPLAY}
-          </a>
-        </div>
-      )}
-      <button
-        onClick={() => setExpanded(prev => !prev)}
-        className={`flex items-center justify-center w-14 h-14 rounded-full shadow-lg transition-all duration-200 hover:scale-110 hover:shadow-xl ${
-          expanded ? "bg-gray-700 hover:bg-gray-800" : "bg-green-500 hover:bg-green-600"
-        } text-white`}
-        aria-label={expanded ? "Close contact options" : "Open contact options"}
-        title={expanded ? "Close" : "Contact us"}
-      >
-        {expanded ? (
-          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        ) : (
-          <WhatsAppIcon className="w-7 h-7" />
+    <>
+      {/* Mobile: direct WhatsApp + Call bar pinned to bottom */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 flex border-t border-white/10 shadow-2xl">
+        <a
+          href={`tel:+${PHONE_NUMBER}`}
+          className="flex-1 flex items-center justify-center gap-2 bg-primary text-white py-4 text-sm font-semibold active:bg-primary/90"
+          aria-label={`Call ${PHONE_DISPLAY}`}
+        >
+          <Phone className="w-5 h-5" />
+          Call Now
+        </a>
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-1 flex items-center justify-center gap-2 bg-green-500 text-white py-4 text-sm font-semibold active:bg-green-600"
+          aria-label="Chat on WhatsApp"
+        >
+          <WhatsAppIcon className="w-5 h-5" />
+          WhatsApp
+        </a>
+      </div>
+
+      {/* Desktop: floating expandable widget */}
+      <div className="hidden md:flex fixed bottom-6 right-6 z-50 flex-col items-end gap-3">
+        {expanded && (
+          <div className="flex flex-col items-end gap-2">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2.5 rounded-full shadow-lg transition-all duration-200 hover:scale-105 text-sm font-medium whitespace-nowrap"
+              aria-label="Chat on WhatsApp"
+            >
+              <WhatsAppIcon className="w-4 h-4 flex-shrink-0" />
+              Chat on WhatsApp
+            </a>
+            <a
+              href={`tel:+${PHONE_NUMBER}`}
+              className="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-4 py-2.5 rounded-full shadow-lg transition-all duration-200 hover:scale-105 text-sm font-medium whitespace-nowrap"
+              aria-label={`Call ${PHONE_DISPLAY}`}
+            >
+              <Phone className="w-4 h-4 flex-shrink-0" />
+              {PHONE_DISPLAY}
+            </a>
+          </div>
         )}
-      </button>
-    </div>
+        <button
+          onClick={() => setExpanded(prev => !prev)}
+          className={`flex items-center justify-center w-14 h-14 rounded-full shadow-lg transition-all duration-200 hover:scale-110 hover:shadow-xl ${
+            expanded ? "bg-gray-700 hover:bg-gray-800" : "bg-green-500 hover:bg-green-600"
+          } text-white`}
+          aria-label={expanded ? "Close contact options" : "Open contact options"}
+          title={expanded ? "Close" : "Contact us"}
+        >
+          {expanded ? (
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          ) : (
+            <WhatsAppIcon className="w-7 h-7" />
+          )}
+        </button>
+      </div>
+    </>
   );
 }
