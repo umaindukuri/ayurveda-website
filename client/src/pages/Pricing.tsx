@@ -57,7 +57,7 @@ const packages = [
       "Virechana (therapeutic purgation)",
       "Basti (medicated enema) if required",
       "Marma point therapy",
-      "Herbal medicines for 21 days",
+      "Herbal medicines for 14 days",
       "2 follow-up consultations",
     ],
     highlighted: true,

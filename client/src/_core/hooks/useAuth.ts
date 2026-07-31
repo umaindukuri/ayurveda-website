@@ -1,11 +1,27 @@
-// Static site version — no authentication
+import { trpc } from "@/lib/trpc";
+import { startLogin } from "@/const";
+
 export function useAuth() {
+  const { data: user, isLoading, error } = trpc.auth.me.useQuery(undefined, {
+    retry: false,
+    staleTime: 5 * 60 * 1000, // 5 minutes
+  });
+
+  const logoutMutation = trpc.auth.logout.useMutation({
+    onSuccess: () => {
+      window.location.href = "/";
+    },
+  });
+
   return {
-    user: null as null | { id: string; name: string; email: string; role: string },
-    loading: false,
-    error: null as null,
-    isAuthenticated: false,
+    user: user ?? null,
+    loading: isLoading,
+    error: error ?? null,
+    isAuthenticated: !!user,
     refresh: () => {},
-    logout: async () => {},
+    logout: async () => {
+      await logoutMutation.mutateAsync();
+    },
+    startLogin,
   };
 }

@@ -23,8 +23,6 @@ export function MobileMenuDrawer() {
   const learnSubmenu = [
     { label: 'Ayurveda Cures', href: '/ayurveda-cures' },
     { label: 'Ayurveda Basics', href: '/ayurveda-basics' },
-    { label: 'Analytics', href: '/analytics' },
-    { label: 'Email Automation', href: '/email-automation' },
   ];
 
   return (

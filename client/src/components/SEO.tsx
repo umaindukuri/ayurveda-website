@@ -7,6 +7,7 @@ interface SEOProps {
   image?: string;
   url?: string;
   type?: string;
+  noindex?: boolean;
 }
 
 const SITE_NAME = "Dr. Kalyan Ayurveda";
@@ -22,6 +23,7 @@ export function SEO({
   image = DEFAULT_IMAGE,
   url,
   type = "website",
+  noindex = false,
 }: SEOProps) {
   const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} | Ayurveda & Panchakarma Center, Hyderabad`;
   const canonicalUrl = url ? `${BASE_URL}${url}` : BASE_URL;
@@ -31,7 +33,7 @@ export function SEO({
     document.title = fullTitle;
     setMeta("name", "description", description);
     if (keywords) setMeta("name", "keywords", keywords);
-    setMeta("name", "robots", "index, follow");
+    setMeta("name", "robots", noindex ? "noindex, nofollow" : "index, follow");
 
     // Open Graph
     setMeta("property", "og:title", fullTitle);
