@@ -141,7 +141,7 @@ export default function VideoTestimonials() {
     : videoTestimonials.filter(v => v.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-16 md:pb-0">
     <SEO title="Patient Testimonial Videos | Dr. Kalyan Ayurveda Hyderabad" description="Watch real patient testimonial videos from Dr. Kalyan Ayurveda. See how Ayurvedic treatment transformed lives with arthritis, diabetes, anxiety, and more." keywords="Ayurveda testimonial videos, patient stories Ayurveda, Panchakarma results videos" url="/video-testimonials" />
       <CompactHeader />
 

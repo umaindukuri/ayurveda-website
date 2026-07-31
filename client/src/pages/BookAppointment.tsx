@@ -60,7 +60,7 @@ export default function BookAppointment() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pb-16 md:pb-0">
       <SEO
         title="Book an Appointment — Dr. Kalyan Ayurveda"
         description="Book your Ayurvedic consultation or Panchakarma treatment with Dr. Kalyan. Available Mon–Sat, morning and evening slots."

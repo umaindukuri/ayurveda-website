@@ -113,7 +113,7 @@ Thank you for choosing Dr. Kalyan Ayurveda!
 
   if (!bookingDetails) {
     return (
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white pb-16 md:pb-0">
         <CompactHeader />
         <div className="py-20 text-center">Loading...</div>
       </div>
@@ -121,7 +121,7 @@ Thank you for choosing Dr. Kalyan Ayurveda!
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white pb-16 md:pb-0">
       <CompactHeader />
 
       {/* Success Section */}

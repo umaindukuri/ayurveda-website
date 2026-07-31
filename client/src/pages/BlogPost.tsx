@@ -603,7 +603,7 @@ export default function BlogPost() {
 
   if (!article) {
     return (
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background pb-16 md:pb-0">
         <CompactHeader />
         <div className="container max-w-3xl py-20 text-center">
           <h1 className="text-3xl font-bold mb-4">Article Not Found</h1>
@@ -679,7 +679,7 @@ export default function BlogPost() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-16 md:pb-0">
       <SEO
         title={`${article.title} | Dr. Kalyan Ayurveda Blog`}
         description={article.excerpt}

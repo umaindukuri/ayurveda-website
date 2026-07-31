@@ -73,7 +73,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-16 md:pb-0">
     <SEO title="Contact Dr. Kalyan Ayurveda | Clinic in Raidurg, Hyderabad" description="Contact Dr. Kalyan Ayurveda Specialities & Panchakarma Center. Book a consultation or visit us at Prashanth Hills Colony, Raidurg, Hyderabad. Call or WhatsApp for appointments." keywords="contact Dr Kalyan Ayurveda, book Ayurveda consultation Hyderabad, Ayurveda clinic contact" url="/contact" />
       <CompactHeader />
 
@@ -144,27 +144,46 @@ export default function Contact() {
               </div>
 
               {/* Google Maps Embed */}
-              <div className="mt-12 rounded-xl overflow-hidden shadow-lg border border-border">
-                <iframe
-                  title="Dr. Kalyan Ayurveda Clinic Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.9!2d78.3742!3d17.4235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93dc3dc3dc3d%3A0x0!2sPrashanth+Hills+Colony%2C+Raidurg+Navkhalsa%2C+Hyderabad%2C+Telangana+500081!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-                  width="100%"
-                  height="280"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
+              <div className="mt-8">
+                <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                  <MapPin className="w-5 h-5 text-primary" />
+                  Find Us on the Map
+                </h3>
+                <div className="rounded-xl overflow-hidden shadow-lg border border-border">
+                  <iframe
+                    title="Dr. Kalyan Ayurveda Clinic Location"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4867!2d78.36470!3d17.42390!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93b9b9b9b9b9%3A0x0!2sPrashanth+Hills+Colony%2C+Raidurg+Navkhalsa%2C+Hyderabad%2C+Telangana+500032!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                    width="100%"
+                    height="340"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
+                <div className="mt-3 grid grid-cols-2 gap-3">
+                  <a
+                    href="https://maps.google.com/?q=Prashanth+Hills+Colony,+Raidurg+Navkhalsa,+Hyderabad,+Telangana+500032"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 py-3 px-4 bg-primary text-white rounded-xl font-medium hover:bg-primary/90 transition-colors text-sm"
+                  >
+                    <MapPin className="w-4 h-4" />
+                    Open in Maps
+                  </a>
+                  <a
+                    href="https://maps.google.com/maps/dir/?api=1&destination=17.4239,78.3647&travelmode=driving"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 py-3 px-4 bg-white border border-primary text-primary rounded-xl font-medium hover:bg-primary/5 transition-colors text-sm"
+                  >
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polygon points="3 11 22 2 13 21 11 13 3 11" />
+                    </svg>
+                    Get Directions
+                  </a>
+                </div>
               </div>
-              <a
-                href="https://maps.google.com/?q=Prashanth+Hills+Colony,+Raidurg+Navkhalsa,+Hyderabad,+Telangana"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 flex items-center justify-center gap-2 w-full py-3 px-4 bg-primary text-white rounded-xl font-medium hover:bg-primary/90 transition-colors"
-              >
-                <MapPin className="w-4 h-4" />
-                Open in Google Maps
-              </a>
             </div>
 
             {/* Contact Form */}

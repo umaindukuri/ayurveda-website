@@ -126,7 +126,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-16 md:pb-0">
     <SEO title="Patient Success Stories | Dr. Kalyan Ayurveda Hyderabad" description="Read inspiring patient success stories from Dr. Kalyan Ayurveda, Hyderabad. Real healing journeys from arthritis, diabetes, fertility, skin conditions, and more. Authentic Panchakarma results." keywords="Ayurveda testimonials, patient success stories, Panchakarma results, Ayurveda healing stories" url="/testimonials" />
       <CompactHeader />
 

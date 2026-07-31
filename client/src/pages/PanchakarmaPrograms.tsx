@@ -85,7 +85,7 @@ export default function PanchakarmaPrograms() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-16 md:pb-0">
     <SEO title="Panchakarma Programs Hyderabad | 7, 14 & 21-Day Detox | Dr. Kalyan" description="Authentic Panchakarma detoxification programs at Dr. Kalyan Ayurveda, Hyderabad. Choose from 7-day, 14-day, or 21-day programs for deep healing, rejuvenation, and chronic disease reversal. Raidurg, Hyderabad." keywords="Panchakarma Hyderabad, Panchakarma program, Ayurvedic detox, Panchakarma center" url="/panchakarma-programs" />
       <CompactHeader />
 

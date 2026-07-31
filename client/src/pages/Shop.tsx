@@ -175,7 +175,7 @@ export default function Shop() {
   });
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-16 md:pb-0">
       <CompactHeader />
       <SEO
         title="Herbal Products Shop — Dr. Kalyan Ayurveda"

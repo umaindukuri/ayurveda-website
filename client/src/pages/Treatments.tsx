@@ -214,7 +214,7 @@ export default function Treatments() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-16 md:pb-0">
     <SEO title="Ayurvedic Treatments Hyderabad | Dr. Kalyan Panchakarma Center" description="Explore comprehensive Ayurvedic treatments at Dr. Kalyan Ayurveda, Hyderabad: Panchakarma detox, chronic disease management, fertility, skin health, and mental wellness. Prashanth Hills Colony, Raidurg." keywords="Ayurvedic treatments Hyderabad, Panchakarma treatment, Ayurveda chronic disease, fertility Ayurveda" url="/treatments" />
       <CompactHeader />
 

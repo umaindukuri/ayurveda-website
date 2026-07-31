@@ -92,7 +92,7 @@ export default function Blog() {
   const categories = ["All", "Panchakarma", "Chronic Diseases", "Digestive Health", "Respiratory", "Skin Health", "Mental Health", "Fertility", "Rejuvenation"];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-16 md:pb-0">
       <SEO title="Ayurveda Blog & Health Articles | Dr. Kalyan Hyderabad" description="Learn about Ayurvedic health, wellness tips, dosha balancing, Panchakarma benefits, and natural healing from Dr. Kalyan Ayurveda, Hyderabad." keywords="Ayurveda blog, Ayurvedic health tips, dosha balance, Panchakarma benefits" url="/blog" />
       <CompactHeader />
 

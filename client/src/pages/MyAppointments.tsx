@@ -6,7 +6,7 @@ import { Link } from "wouter";
 
 export default function MyAppointments() {
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-6">
+    <div className="min-h-screen bg-gray-50 pb-16 md:pb-0 flex items-center justify-center px-6">
       <SEO title="My Appointments — Dr. Kalyan Ayurveda" description="View and manage your Ayurvedic treatment appointments." />
       <div className="text-center max-w-sm">
         <Calendar className="w-12 h-12 text-primary mx-auto mb-4" />
