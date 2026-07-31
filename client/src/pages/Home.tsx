@@ -249,7 +249,7 @@ export default function Home() {
             Schedule a personalized consultation to discuss your health concerns and create your customized treatment plan.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <BookingModal triggerText="Book Your Consultation" variant="default" className="bg-white text-primary hover:bg-white/90" />
+            <BookingModal triggerText="Book Your Consultation" variant="default" />
             <Link href="/contact">
               <Button size="lg" variant="outline" className="text-white border-white hover:bg-white/10 w-full sm:w-auto">
                 Contact Us
