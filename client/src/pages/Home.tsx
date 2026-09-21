@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background pb-16 md:pb-0">
       <SEO
-        title="Dr. Kalyan Ayurveda Specialities & Panchakarma Center | Hyderabad"
+        title="Dr. Kalyan Ayurveda Specialities & Panchakarma Clinic | Hyderabad"
         description="Restore your health naturally with authentic Ayurvedic Panchakarma and personalized wellness treatments in Hyderabad. 5,000 years of healing wisdom."
         keywords="Ayurveda Hyderabad, Panchakarma, fertility treatment, holistic healing, Dr Kalyan"
         url="/"

@@ -356,7 +356,7 @@ export default function SubmitTestimonial() {
             </div>
           </div>
           <div className="border-t border-white/10 pt-8 text-center text-white/70">
-            <p>&copy; 2026 Dr. Kalyan Ayurveda Specialities & Panchakarma Center. All rights reserved.</p>
+            <p>&copy; 2026 Dr. Kalyan Ayurveda Specialities & Panchakarma Clinic. All rights reserved.</p>
           </div>
         </div>
       </footer>

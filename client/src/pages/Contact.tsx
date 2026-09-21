@@ -74,7 +74,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-background pb-16 md:pb-0">
-    <SEO title="Contact Dr. Kalyan Ayurveda | Clinic in Raidurg, Hyderabad" description="Contact Dr. Kalyan Ayurveda Specialities & Panchakarma Center. Book a consultation or visit us at Prashanth Hills Colony, Raidurg, Hyderabad. Call or WhatsApp for appointments." keywords="contact Dr Kalyan Ayurveda, book Ayurveda consultation Hyderabad, Ayurveda clinic contact" url="/contact" />
+    <SEO title="Contact Dr. Kalyan Ayurveda | Clinic in Raidurg, Hyderabad" description="Contact Dr. Kalyan Ayurveda Specialities & Panchakarma Clinic. Book a consultation or visit us at Prashanth Hills Colony, Raidurg, Hyderabad. Call or WhatsApp for appointments." keywords="contact Dr Kalyan Ayurveda, book Ayurveda consultation Hyderabad, Ayurveda clinic contact" url="/contact" />
       <CompactHeader />
 
       {/* Hero Section */}

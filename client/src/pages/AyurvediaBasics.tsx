@@ -262,7 +262,7 @@ export default function AyurvediaBasics() {
             </div>
           </div>
           <div className="border-t border-background/20 pt-8 text-center text-sm opacity-80">
-            <p>© 2026 Dr. Kalyan Ayurveda Specialities & Panchakarma Center. All rights reserved.</p>
+            <p>© 2026 Dr. Kalyan Ayurveda Specialities & Panchakarma Clinic. All rights reserved.</p>
           </div>
         </div>
       </footer>

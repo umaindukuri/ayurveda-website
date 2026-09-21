@@ -35,7 +35,7 @@ export default function About() {
               <p className="text-center text-xs text-muted-foreground">Founder & Chief Ayurvedic Physician</p>
             </div>
             <div>
-              <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-foreground mb-4">Dr. Kalyan's Ayurveda Specialities & Panchakarma Center</h2>
+              <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-foreground mb-4">Dr. Kalyan Ayurveda Specialities & Panchakarma Clinic</h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 Under the expert guidance of <strong>Dr. I. Kalyan Chakravarthy, M.D. (Ayurveda)</strong>, our clinic is dedicated to providing authentic, evidence-based Ayurvedic treatment for chronic diseases, fertility enhancement, and complete wellness optimization. With specialized expertise in Panchakarma detoxification, we offer comprehensive treatment programs for every health condition.
               </p>
